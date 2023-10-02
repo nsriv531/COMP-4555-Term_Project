@@ -1,0 +1,55 @@
+[gd_scene load_steps=9 format=3 uid="uid://d2y3d5v6fgot5"]
+
+[ext_resource type="Script" path="res://addons/zylann.hterrain/hterrain.gd" id="1_ilc75"]
+[ext_resource type="Resource" path="res://PlutoTerrain/data.hterrain" id="2_177fn"]
+[ext_resource type="Script" path="res://addons/zylann.hterrain/hterrain_texture_set.gd" id="3_0l8wc"]
+[ext_resource type="Texture2D" uid="uid://bo5743p4g4jd8" path="res://textures/rocks_ground_04_diff_4k.jpg" id="4_40ndm"]
+[ext_resource type="Script" path="res://Player.gd" id="4_rjf1x"]
+[ext_resource type="Texture2D" uid="uid://d1p0yncgm3bbm" path="res://textures/rocks_ground_04_rough_4k.jpg" id="5_yc373"]
+
+[sub_resource type="Resource" id="Resource_2g886"]
+script = ExtResource("3_0l8wc")
+mode = 0
+textures = [[ExtResource("4_40ndm")], [ExtResource("5_yc373")]]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_u2n4x"]
+
+[node name="Pluto" type="Node3D"]
+
+[node name="HTerrain" type="Node3D" parent="."]
+script = ExtResource("1_ilc75")
+centered = true
+_terrain_data = ExtResource("2_177fn")
+chunk_size = 32
+collision_enabled = true
+collision_layer = 1
+collision_mask = 1
+shader_type = "Classic4Lite"
+custom_shader = null
+custom_globalmap_shader = null
+texture_set = SubResource("Resource_2g886")
+render_layers = 1
+cast_shadow = 1
+shader_params/u_ground_uv_scale = 20
+shader_params/u_depth_blending = true
+shader_params/u_triplanar = null
+shader_params/u_tile_reduction = null
+
+[node name="CharacterBody3D" type="CharacterBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 22.7091, 0)
+script = ExtResource("4_rjf1x")
+
+[node name="Head" type="Node3D" parent="CharacterBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -22.7091, 0)
+
+[node name="Camera3D" type="Camera3D" parent="CharacterBody3D/Head"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 23.2079, 0)
+current = true
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CharacterBody3D"]
+shape = SubResource("CapsuleShape3D_u2n4x")
+
+[node name="CSGBox3D" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 20.7127, 0)
+use_collision = true
+size = Vector3(10, 1, 10)
