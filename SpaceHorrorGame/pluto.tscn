@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://d2y3d5v6fgot5"]
+[gd_scene load_steps=13 format=3 uid="uid://d2y3d5v6fgot5"]
 
 [ext_resource type="Script" path="res://addons/zylann.hterrain/hterrain.gd" id="1_ilc75"]
 [ext_resource type="Resource" path="res://PlutoTerrain/data.hterrain" id="2_177fn"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://bo5743p4g4jd8" path="res://textures/rocks_ground_04_diff_4k.jpg" id="4_40ndm"]
 [ext_resource type="Script" path="res://Player.gd" id="4_rjf1x"]
 [ext_resource type="Texture2D" uid="uid://d1p0yncgm3bbm" path="res://textures/rocks_ground_04_rough_4k.jpg" id="5_yc373"]
+[ext_resource type="Texture2D" uid="uid://dssyj7g3kiepx" path="res://textures/skyboxTexture/pluto_edited.jpg" id="7_l5lar"]
 
 [sub_resource type="Resource" id="Resource_2g886"]
 script = ExtResource("3_0l8wc")
@@ -13,6 +14,16 @@ mode = 0
 textures = [[ExtResource("4_40ndm")], [ExtResource("5_yc373")]]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_u2n4x"]
+
+[sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_sh5q2"]
+panorama = ExtResource("7_l5lar")
+
+[sub_resource type="Sky" id="Sky_lgj26"]
+sky_material = SubResource("PanoramaSkyMaterial_sh5q2")
+
+[sub_resource type="Environment" id="Environment_him15"]
+background_mode = 2
+sky = SubResource("Sky_lgj26")
 
 [node name="Pluto" type="Node3D"]
 
@@ -53,3 +64,6 @@ shape = SubResource("CapsuleShape3D_u2n4x")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 20.7127, 0)
 use_collision = true
 size = Vector3(10, 1, 10)
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_him15")
