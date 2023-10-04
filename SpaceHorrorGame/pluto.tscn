@@ -6,7 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://bo5743p4g4jd8" path="res://textures/rocks_ground_04_diff_4k.jpg" id="4_40ndm"]
 [ext_resource type="Script" path="res://Player.gd" id="4_rjf1x"]
 [ext_resource type="Texture2D" uid="uid://d1p0yncgm3bbm" path="res://textures/rocks_ground_04_rough_4k.jpg" id="5_yc373"]
-[ext_resource type="Texture2D" uid="uid://dssyj7g3kiepx" path="res://textures/skyboxTexture/pluto_edited.jpg" id="7_l5lar"]
+[ext_resource type="Texture2D" uid="uid://dengovlsotrm8" path="res://textures/skyboxTexture/skybox_draft.hdr" id="7_yj2mc"]
 
 [sub_resource type="Resource" id="Resource_2g886"]
 script = ExtResource("3_0l8wc")
@@ -15,14 +15,15 @@ textures = [[ExtResource("4_40ndm")], [ExtResource("5_yc373")]]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_u2n4x"]
 
-[sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_sh5q2"]
-panorama = ExtResource("7_l5lar")
+[sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_ihmrq"]
+panorama = ExtResource("7_yj2mc")
 
 [sub_resource type="Sky" id="Sky_lgj26"]
-sky_material = SubResource("PanoramaSkyMaterial_sh5q2")
+sky_material = SubResource("PanoramaSkyMaterial_ihmrq")
 
 [sub_resource type="Environment" id="Environment_him15"]
 background_mode = 2
+background_energy_multiplier = 13.6
 sky = SubResource("Sky_lgj26")
 
 [node name="Pluto" type="Node3D"]
