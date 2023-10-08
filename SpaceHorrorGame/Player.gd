@@ -9,7 +9,7 @@ const SENSITIVITY = 0.003
 var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
 
 @onready var head = $Head
-@onready var camera = $Head/Camera3D
+@onready var camera = $"Head/Player Camera"
 
 func _ready():
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED

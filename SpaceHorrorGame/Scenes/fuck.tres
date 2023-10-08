@@ -1,0 +1,123 @@
+[gd_resource type="BoxMesh" load_steps=4 format=3 uid="uid://bevx5dkn2oat7"]
+
+[ext_resource type="Texture2D" uid="uid://d0rriwr3muss3" path="res://textures/rocks_pixel_albedo.jpg" id="1_23ffy"]
+
+[sub_resource type="Shader" id="Shader_p8bcm"]
+code = "// NOTE: Shader automatically converted from Godot Engine 4.1.stable's StandardMaterial3D.
+
+shader_type spatial;
+render_mode blend_mix,depth_draw_opaque,cull_back,diffuse_burley,specular_schlick_ggx;
+uniform vec4 albedo : source_color;
+uniform sampler2D texture_albedo : source_color,filter_nearest,repeat_enable;
+uniform float point_size : hint_range(0,128);
+uniform float roughness : hint_range(0,1);
+uniform sampler2D texture_metallic : hint_default_white,filter_nearest,repeat_enable;
+uniform vec4 metallic_texture_channel;
+uniform sampler2D texture_roughness : hint_roughness_r,filter_nearest,repeat_enable;
+uniform float specular;
+uniform float metallic;
+uniform vec3 uv1_scale;
+uniform vec3 uv1_offset;
+uniform vec3 uv2_scale;
+uniform vec3 uv2_offset;
+
+varying float UVx;
+varying float UVy;
+
+void vertex() {
+	UV=UV*uv1_scale.xy+uv1_offset.xy;
+}
+
+void fragment() {
+	vec2 base_uv = UV;
+	vec4 albedo_tex = texture(texture_albedo,base_uv);
+	ALBEDO = albedo.rgb * albedo_tex.rgb;
+	float metallic_tex = dot(texture(texture_metallic,base_uv),metallic_texture_channel);
+	METALLIC = metallic_tex * metallic;
+	vec4 roughness_texture_channel = vec4(1.0,0.0,0.0,0.0);
+	float roughness_tex = dot(texture(texture_roughness,base_uv),roughness_texture_channel);
+	ROUGHNESS = roughness_tex * roughness;
+	SPECULAR = specular;
+	UVx = UV.x;
+	UVy = UV.y;
+}
+
+void light() {
+    	//DIFFUSE_LIGHT = vec3(round((UVy * 16.0)) / 16.0,
+		//round((UVy * 16.0)) / 16.0,
+		// round((UVy * 16.0)) / 16.0); // optionally
+		
+		float startx = 1.0;
+		float endx = 2.0;
+		float starty = 1.0;
+		float endy = 2.0;
+		
+		float lightz = 2.0;
+		float lightx = startx + (endx - startx)/2.0;
+		float lighty = starty + (endy - starty)/2.0;
+		
+		float midx = 8.0 + cos(TIME) * 12.0;
+		float midy = 8.0 + sin(TIME) * 12.0;
+		float midz = 4.0 ;
+		
+		if(UVx >= startx && UVx <= endx && UVy >= starty && UVy <= endy){
+			float x = UVx;
+			float y = UVy;
+			/*vec2 xy = vec2(x,y);
+			x = ceil(x * 16.0) / 16.0;
+			x -= startx;
+			
+			y = ceil(y * 16.0) / 16.0;
+			y -= starty;
+			
+			x = abs(x - 0.5);
+			y = abs(y - 0.5);
+			x = -x + 0.5;
+			y = -y + 0.5;
+			
+			float intensity = 0.2;
+			float distx = abs(x - midx);
+			float disty = abs(y - midy);
+			float dist = sqrt((distx * distx) + (disty * disty));
+			dist = clamp(dist,0.0,1.0);
+			DIFFUSE_LIGHT = vec3(dist,dist,dist);*/
+			
+			x -= startx;
+			y -= starty;
+			
+			x = floor(x * 16.0)/16.0;
+			y = floor(y * 16.0)/16.0;
+			float z = 0.0;
+			
+			midx = midx / 16.0;
+			midy = midy / 16.0;
+			midz = midz / 16.0;
+			
+			float dist = distance(vec3(x,y,z), vec3(midx,midy,midz));
+			dist = 1.0 - dist;
+			DIFFUSE_LIGHT = vec3(dist,dist,dist);
+			
+			
+		}
+}
+"
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_bvsq3"]
+render_priority = 0
+shader = SubResource("Shader_p8bcm")
+shader_parameter/albedo = Color(1, 1, 1, 1)
+shader_parameter/point_size = 1.0
+shader_parameter/roughness = 1.0
+shader_parameter/metallic_texture_channel = null
+shader_parameter/specular = 0.5
+shader_parameter/metallic = 0.0
+shader_parameter/uv1_scale = Vector3(3, 2, 1)
+shader_parameter/uv1_offset = Vector3(0, 0, 0)
+shader_parameter/uv2_scale = Vector3(1, 1, 1)
+shader_parameter/uv2_offset = Vector3(0, 0, 0)
+shader_parameter/texture_albedo = ExtResource("1_23ffy")
+
+[resource]
+lightmap_size_hint = Vector2i(14, 21)
+material = SubResource("ShaderMaterial_bvsq3")
+subdivide_height = 16

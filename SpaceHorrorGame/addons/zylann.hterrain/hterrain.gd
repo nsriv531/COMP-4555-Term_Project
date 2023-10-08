@@ -494,6 +494,8 @@ func get_texture_set() -> HTerrainTextureSet:
 
 
 func set_texture_set(new_set: HTerrainTextureSet):
+	
+	
 	if _texture_set == new_set:
 		return
 
