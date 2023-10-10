@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://1csibo7xkgx1"]
+[gd_scene load_steps=21 format=3 uid="uid://1csibo7xkgx1"]
 
 [ext_resource type="Script" path="res://addons/zylann.hterrain/hterrain.gd" id="1_ilc75"]
 [ext_resource type="Resource" path="res://PlutoTerrain/data.hterrain" id="2_177fn"]
@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://d1p0yncgm3bbm" path="res://textures/rocks_ground_04_rough_4k.jpg" id="5_yc373"]
 [ext_resource type="Texture2D" uid="uid://cynk5yxfics7s" path="res://textures/skyboxTexture/pluto_skybox_1.5.hdr" id="7_g37dy"]
 [ext_resource type="Texture2D" uid="uid://b5ge1x8j13vsc" path="res://textures/Crosshair/ch1.png" id="7_nje7c"]
+[ext_resource type="Script" path="res://Camera3D.gd" id="7_r82oo"]
 [ext_resource type="Texture2D" uid="uid://cfn7vb30wndrl" path="res://textures/Crosshair/ch2.png" id="8_rreq8"]
 [ext_resource type="Script" path="res://TestInteractableBlock.gd" id="10_71eu1"]
 
@@ -86,6 +87,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -22.7091, 0)
 [node name="Camera3D" type="Camera3D" parent="CharacterBody3D/Head"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 23.2079, 0)
 current = true
+script = ExtResource("7_r82oo")
 
 [node name="CenterContainer" type="CenterContainer" parent="CharacterBody3D/Head/Camera3D"]
 anchors_preset = 15
@@ -99,6 +101,10 @@ texture_filter = 1
 custom_minimum_size = Vector2(32, 32)
 layout_mode = 2
 texture = SubResource("AnimatedTexture_g84ow")
+
+[node name="RayCast3D" type="RayCast3D" parent="CharacterBody3D/Head/Camera3D"]
+target_position = Vector3(0, 0, -5)
+debug_shape_thickness = 5
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="CharacterBody3D"]
 shape = SubResource("CapsuleShape3D_u2n4x")
