@@ -12,10 +12,7 @@ var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
 @onready var head = $Head
 @onready var camera = $Head/Camera3D
 
-
-
 @onready var crosshair = $Head/Camera3D/CenterContainer/Crosshair
-
 var cur_interactable = null
 
 func _ready():
@@ -29,7 +26,7 @@ func _unhandled_input(event):
 		camera.rotation.x = clamp(camera.rotation.x, deg_to_rad(-40), deg_to_rad(60))
 		interact_raycast(INTERACT_DISTANCE)
 		
-func _process(delta):
+func _process(_delta):
 	
 	if Input.is_action_just_pressed("ui_cancel"):
 		if Input.mouse_mode == Input.MOUSE_MODE_CAPTURED:
