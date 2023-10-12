@@ -1,7 +1,7 @@
 [gd_scene load_steps=10 format=3 uid="uid://bxs77loeut4cb"]
 
-[ext_resource type="PackedScene" uid="uid://cdck25n275rnn" path="res://assets/large_room_door.glb" id="1_rwah7"]
-[ext_resource type="Script" path="res://assets/LargeDoor.gd" id="2_gi1r2"]
+[ext_resource type="PackedScene" uid="uid://cdck25n275rnn" path="res://assets/large_door.glb" id="1_ly4tl"]
+[ext_resource type="Script" path="res://assets/Door.gd" id="2_djx5x"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_gptuv"]
 size = Vector3(2, 1, 2)
@@ -29,8 +29,8 @@ states/Door_Opening/position = Vector2(389, 100)
 states/End/position = Vector2(901, 100)
 states/Start/position = Vector2(201, 100)
 
-[node name="large_room_door" instance=ExtResource("1_rwah7")]
-script = ExtResource("2_gi1r2")
+[node name="large_door" instance=ExtResource("1_ly4tl")]
+script = ExtResource("2_djx5x")
 
 [node name="Area3D" type="Area3D" parent="Frame" index="0"]
 
@@ -38,13 +38,8 @@ script = ExtResource("2_gi1r2")
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0.991998, 0)
 shape = SubResource("BoxShape3D_gptuv")
 
-[node name="Skeleton3D" parent="Door_Rig" index="0"]
-bones/0/position = Vector3(4.02864e-08, 2.87591, 7.16952e-08)
-bones/2/position = Vector3(-2.60215, 0.480306, 1.84886e-07)
-bones/4/position = Vector3(2.36427, 0.474061, 1.7939e-07)
-
 [node name="Upper_Panel" parent="Door_Rig/Skeleton3D" index="0"]
-transform = Transform3D(1, 2.98023e-08, -8.71583e-08, -5.30761e-08, -1.34359e-07, -1, -1.19209e-07, 1, -1.15208e-07, 0.00454545, 1.21252, 0.000906016)
+transform = Transform3D(1, 2.98023e-08, -8.71583e-08, -5.30761e-08, -1.34359e-07, -1, -1.19209e-07, 1, -1.15208e-07, 0.00454545, 0.00342023, 0.000906016)
 bone_idx = 1
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Door_Rig/Skeleton3D/Upper_Panel" index="1"]
@@ -54,7 +49,7 @@ transform = Transform3D(1, 0, 3.43345e-15, 0, 1, 2.84217e-14, -1.74675e-15, 0, 1
 shape = SubResource("BoxShape3D_3kms5")
 
 [node name="Bottom_Panel_R" parent="Door_Rig/Skeleton3D" index="1"]
-transform = Transform3D(1, -1.16881e-07, 7.17118e-08, 1.46218e-07, 8.9407e-08, -1, 1.71829e-07, 1, 8.9407e-08, -1.99545, 0.00342071, 0.000906056)
+transform = Transform3D(1, -1.16881e-07, 7.17118e-08, 1.46218e-07, 8.9407e-08, -1, 1.71829e-07, 1, 8.9407e-08, 0.00454557, 0.00342074, 0.000906045)
 bone_idx = 3
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Door_Rig/Skeleton3D/Bottom_Panel_R" index="1"]
@@ -64,7 +59,7 @@ transform = Transform3D(1, 0, -6.77097e-14, 0, 1, 0, 1.4326e-13, 0, 1, -0.941303
 shape = SubResource("BoxShape3D_cnpof")
 
 [node name="Bottom_Panel_L" parent="Door_Rig/Skeleton3D" index="2"]
-transform = Transform3D(-1, 7.59028e-08, 3.76021e-08, -1.07742e-07, -5.96046e-08, -1, 2.00234e-08, 1, 8.9407e-08, 2.00455, 0.00342068, 0.000906021)
+transform = Transform3D(-1, 7.59028e-08, 3.76021e-08, -1.07742e-07, -5.96046e-08, -1, 2.00234e-08, 1, 8.9407e-08, 0.00454566, 0.00342074, 0.000906014)
 bone_idx = 5
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Door_Rig/Skeleton3D/Bottom_Panel_L" index="1"]
