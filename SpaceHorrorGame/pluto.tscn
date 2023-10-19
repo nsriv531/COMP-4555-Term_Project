@@ -1,17 +1,21 @@
-[gd_scene load_steps=22 format=3 uid="uid://1csibo7xkgx1"]
+[gd_scene load_steps=28 format=3 uid="uid://1csibo7xkgx1"]
 
 [ext_resource type="Script" path="res://addons/zylann.hterrain/hterrain.gd" id="1_ilc75"]
+[ext_resource type="Shader" path="res://Scripts/CameraEffects.gdshader" id="1_m1fa5"]
 [ext_resource type="Resource" path="res://PlutoTerrain/data.hterrain" id="2_177fn"]
 [ext_resource type="Script" path="res://addons/zylann.hterrain/hterrain_texture_set.gd" id="3_0l8wc"]
 [ext_resource type="Texture2D" uid="uid://bo5743p4g4jd8" path="res://textures/rocks_ground_04_diff_4k.jpg" id="4_40ndm"]
-[ext_resource type="Script" path="res://Player.gd" id="4_rjf1x"]
 [ext_resource type="Texture2D" uid="uid://d1p0yncgm3bbm" path="res://textures/rocks_ground_04_rough_4k.jpg" id="5_yc373"]
 [ext_resource type="Texture2D" uid="uid://cynk5yxfics7s" path="res://textures/skyboxTexture/pluto_skybox_1.5.hdr" id="7_g37dy"]
+[ext_resource type="Script" path="res://Scripts/Player.gd" id="7_lpn7i"]
 [ext_resource type="Texture2D" uid="uid://b5ge1x8j13vsc" path="res://textures/Crosshair/ch1.png" id="7_nje7c"]
 [ext_resource type="Texture2D" uid="uid://cfn7vb30wndrl" path="res://textures/Crosshair/ch2.png" id="8_rreq8"]
-[ext_resource type="Script" path="res://TestInteractableBlock.gd" id="10_71eu1"]
+[ext_resource type="Script" path="res://Effects.gd" id="10_3dsvg"]
+[ext_resource type="Texture2D" uid="uid://dh205y6pw3vdf" path="res://textures/note.png" id="10_xbnsg"]
+[ext_resource type="Script" path="res://Scripts/TestInteractableBlock.gd" id="11_gpuug"]
 [ext_resource type="PackedScene" uid="uid://bxs77loeut4cb" path="res://assets/large_door.tscn" id="11_pp1ux"]
 [ext_resource type="PackedScene" uid="uid://bd25meeoukb72" path="res://assets/small_door.tscn" id="12_shujh"]
+[ext_resource type="PackedScene" uid="uid://clehtd5os8h8o" path="res://Objects/Note.tscn" id="14_d2cap"]
 
 [sub_resource type="Resource" id="Resource_2g886"]
 script = ExtResource("3_0l8wc")
@@ -26,6 +30,15 @@ frame_1/texture = ExtResource("8_rreq8")
 frame_1/duration = 1.0
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_u2n4x"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_rarkt"]
+shader = ExtResource("1_m1fa5")
+shader_parameter/fadeWidth = 1.0
+shader_parameter/randRes = 10.0
+shader_parameter/baseAdd = 0.2
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_rquee"]
+albedo_color = Color(0, 0, 0, 1)
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_ihmrq"]
 panorama = ExtResource("7_g37dy")
@@ -80,7 +93,7 @@ shader_params/u_tile_reduction = null
 
 [node name="Player" type="CharacterBody3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.619539, 22.7091, 0)
-script = ExtResource("4_rjf1x")
+script = ExtResource("7_lpn7i")
 
 [node name="Head" type="Node3D" parent="Player"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -22.7091, 0)
@@ -98,9 +111,28 @@ grow_vertical = 2
 
 [node name="Crosshair" type="TextureRect" parent="Player/Head/Camera3D/CenterContainer"]
 texture_filter = 1
-custom_minimum_size = Vector2(32, 32)
 layout_mode = 2
 texture = SubResource("AnimatedTexture_g84ow")
+expand_mode = 1
+stretch_mode = 3
+
+[node name="CenterContainer2" type="CenterContainer" parent="Player/Head/Camera3D"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -112.5
+offset_top = -149.5
+offset_right = 112.5
+offset_bottom = 149.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="Player/Head/Camera3D/CenterContainer2"]
+visible = false
+layout_mode = 2
+texture = ExtResource("10_xbnsg")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Player"]
 shape = SubResource("CapsuleShape3D_u2n4x")
@@ -108,11 +140,36 @@ shape = SubResource("CapsuleShape3D_u2n4x")
 [node name="Timer" type="Timer" parent="Player"]
 autostart = true
 
+[node name="Effects" type="Control" parent="Player"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+script = ExtResource("10_3dsvg")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="Player/Effects"]
+
+[node name="ColorRect" type="ColorRect" parent="Player/Effects/CanvasLayer"]
+material = SubResource("ShaderMaterial_rarkt")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 6
+size_flags_vertical = 6
+mouse_filter = 1
+
 [node name="CSGBox3D" type="CSGBox3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 20.7127, 0)
 gi_mode = 2
 use_collision = true
 size = Vector3(10, 1, 10)
+material = SubResource("StandardMaterial3D_rquee")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_him15")
@@ -126,7 +183,7 @@ shadow_enabled = true
 shadow_opacity = 0.84
 
 [node name="TestInteractableBlock" type="StaticBody3D" parent="."]
-script = ExtResource("10_71eu1")
+script = ExtResource("11_gpuug")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="TestInteractableBlock"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.1667, 20.3632, 0)
@@ -141,5 +198,9 @@ transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 10, 19, 13)
 
 [node name="SmallDoor" parent="." instance=ExtResource("12_shujh")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20, 19, 13)
+
+[node name="Note" parent="." instance=ExtResource("14_d2cap")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.40112, 21.3045, -1.5085)
+noteImage = ExtResource("10_xbnsg")
 
 [connection signal="timeout" from="Player/Timer" to="Player" method="_on_timer_timeout"]

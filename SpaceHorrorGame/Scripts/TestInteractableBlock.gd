@@ -14,6 +14,6 @@ func _ready():
 func _process(_delta):
 	pass
 
-func interact():
+func interact(player):
 	$MeshInstance3D.material_override.albedo_color = color1
 	pass

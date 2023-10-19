@@ -6,13 +6,18 @@ const JUMP_VELOCITY = 4.5
 const SENSITIVITY = 0.003
 const INTERACT_DISTANCE = 3
 
+const CAMERA_MAX_ANGLE = 80
+const CAMERA_MIN_ANGLE = -80
+
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
 
 @onready var head = $Head
 @onready var camera = $Head/Camera3D
-
+@onready var noteTextRect = $Head/Camera3D/CenterContainer2/TextureRect
 @onready var crosshair = $Head/Camera3D/CenterContainer/Crosshair
+
+var showingNote:bool = false
 var cur_interactable = null
 
 func _ready():
@@ -20,22 +25,28 @@ func _ready():
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 
 func _unhandled_input(event):
-	if event is InputEventMouseMotion:
+	if event is InputEventMouseMotion and !showingNote:
 		head.rotate_y(-event.relative.x * SENSITIVITY)
 		camera.rotate_x(-event.relative.y * SENSITIVITY)
-		camera.rotation.x = clamp(camera.rotation.x, deg_to_rad(-40), deg_to_rad(60))
+		camera.rotation.x = clamp(camera.rotation.x, deg_to_rad(CAMERA_MIN_ANGLE), deg_to_rad(CAMERA_MAX_ANGLE))
 		interact_raycast(INTERACT_DISTANCE)
 		
 func _process(_delta):
 	
+	if showingNote:
+		if Input.is_action_just_pressed("interact") || Input.is_action_just_pressed("ui_cancel"):
+			showingNote = false
+			noteTextRect.visible = false
+		return
+	
 	if Input.is_action_just_pressed("ui_cancel"):
-		if Input.mouse_mode == Input.MOUSE_MODE_CAPTURED:
-			Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
-		else:	
-			get_tree().quit()
+			if Input.mouse_mode == Input.MOUSE_MODE_CAPTURED:
+				Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
+			else:	
+				get_tree().quit()
 			
 	if Input.is_action_just_pressed("interact") && cur_interactable:
-		cur_interactable.interact()
+		cur_interactable.interact(self)
 		
 	pass
 	
@@ -51,8 +62,12 @@ func _physics_process(delta):
 		
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.
-	var input_dir = Input.get_vector("left", "right", "forward", "back")
-	var direction = (head.transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
+	var direction = Vector3(0,0,0)
+	
+	if !showingNote:
+		var input_dir = Input.get_vector("left", "right", "forward", "back")
+		direction = (head.transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
+	
 	if direction:
 		velocity.x = direction.x * SPEED
 		velocity.z = direction.z * SPEED
@@ -80,3 +95,7 @@ func interact_raycast(distance):
 			crosshair.texture.current_frame = 1
 			cur_interactable = null
 	
+func showNote(note:Texture2D):
+	showingNote = true;
+	noteTextRect.visible = true
+	noteTextRect.texture = note
