@@ -14,18 +14,16 @@ var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
 
 @onready var head = $Head
 @onready var camera = $Head/Camera3D
-@onready var noteTextRect = $Head/Camera3D/CenterContainer2/TextureRect
-@onready var crosshair = $Head/Camera3D/CenterContainer/Crosshair
+@onready var effects = $Effects
+@onready var gui = $GUI
 
-var showingNote:bool = false
 var cur_interactable = null
 
 func _ready():
-	crosshair.texture.current_frame = 1
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 
 func _unhandled_input(event):
-	if event is InputEventMouseMotion and !showingNote:
+	if event is InputEventMouseMotion and !gui.showingNote:
 		head.rotate_y(-event.relative.x * SENSITIVITY)
 		camera.rotate_x(-event.relative.y * SENSITIVITY)
 		camera.rotation.x = clamp(camera.rotation.x, deg_to_rad(CAMERA_MIN_ANGLE), deg_to_rad(CAMERA_MAX_ANGLE))
@@ -33,10 +31,10 @@ func _unhandled_input(event):
 		
 func _process(_delta):
 	
-	if showingNote:
+	if gui.showingNote:
 		if Input.is_action_just_pressed("interact") || Input.is_action_just_pressed("ui_cancel"):
-			showingNote = false
-			noteTextRect.visible = false
+			gui.hideNote()
+			effects.hideBlur()
 		return
 	
 	if Input.is_action_just_pressed("ui_cancel"):
@@ -64,7 +62,7 @@ func _physics_process(delta):
 	# As good practice, you should replace UI actions with custom gameplay actions.
 	var direction = Vector3(0,0,0)
 	
-	if !showingNote:
+	if !gui.showingNote:
 		var input_dir = Input.get_vector("left", "right", "forward", "back")
 		direction = (head.transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
 	
@@ -89,13 +87,12 @@ func interact_raycast(distance):
 		var result = space_state.intersect_ray(query)
 		
 		if result && result.collider.has_method("interact"):
-			crosshair.texture.current_frame = 0
+			gui.crosshair_text_rect.texture.current_frame = 0
 			cur_interactable = result.collider	
 		else:
-			crosshair.texture.current_frame = 1
+			gui.crosshair_text_rect.texture.current_frame = 1
 			cur_interactable = null
 	
 func showNote(note:Texture2D):
-	showingNote = true;
-	noteTextRect.visible = true
-	noteTextRect.texture = note
+	effects.showBlur()
+	gui.showNote(note)
