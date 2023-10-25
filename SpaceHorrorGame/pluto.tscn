@@ -1,4 +1,4 @@
-[gd_scene load_steps=32 format=3 uid="uid://1csibo7xkgx1"]
+[gd_scene load_steps=36 format=3 uid="uid://1csibo7xkgx1"]
 
 [ext_resource type="Script" path="res://addons/zylann.hterrain/hterrain.gd" id="1_ilc75"]
 [ext_resource type="Shader" path="res://Scripts/CameraEffects.gdshader" id="1_m1fa5"]
@@ -19,6 +19,8 @@
 [ext_resource type="PackedScene" uid="uid://bd25meeoukb72" path="res://assets/small_door.tscn" id="12_shujh"]
 [ext_resource type="PackedScene" uid="uid://clehtd5os8h8o" path="res://Objects/Note.tscn" id="14_d2cap"]
 [ext_resource type="PackedScene" uid="uid://7nb1ucn8kuy1" path="res://models/landingpad.gltf" id="17_mk40t"]
+[ext_resource type="Script" path="res://ButtonSystem.gd" id="18_ay6ee"]
+[ext_resource type="Script" path="res://button.gd" id="19_8r8ar"]
 
 [sub_resource type="Resource" id="Resource_2g886"]
 script = ExtResource("3_0l8wc")
@@ -78,6 +80,12 @@ material = SubResource("StandardMaterial3D_7wr7n")
 
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_6jr4b"]
 points = PackedVector3Array(-0.5, -0.5, -0.5, 0.5, 0.5, 0.5, 0.5, -0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5, -0.5, 0.5, -0.5)
+
+[sub_resource type="BoxMesh" id="BoxMesh_yvi8c"]
+size = Vector3(0.1, 0.5, 0.2)
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_8wejw"]
+points = PackedVector3Array(0.05, 0.25, 0.1, -0.05, 0.25, 0.1, 0.05, -0.25, 0.1, 0.05, 0.25, -0.1, -0.05, 0.25, -0.1, -0.05, -0.25, 0.1, 0.05, -0.25, -0.1, -0.05, -0.25, -0.1)
 
 [node name="Pluto" type="Node3D"]
 
@@ -195,10 +203,10 @@ stretch_mode = 3
 [node name="WalkingSound" type="AudioStreamPlayer3D" parent="Player"]
 
 [node name="CSGBox3D" type="CSGBox3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 36.5135, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.491164, 5.40769, 20.8931, -12.0736)
 gi_mode = 2
 use_collision = true
-size = Vector3(10, 1, 10)
+size = Vector3(10, 1, 8.78895)
 material = SubResource("StandardMaterial3D_rquee")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
@@ -227,7 +235,20 @@ shape = SubResource("ConvexPolygonShape3D_6jr4b")
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -10.8445, 36.8834, 13)
 
 [node name="SmallDoor" parent="." instance=ExtResource("12_shujh")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.55945, 36.1323, 13)
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 2.16813, 21.2577, -11.9728)
+
+[node name="ButtonSystem" type="Node3D" parent="SmallDoor"]
+script = ExtResource("18_ay6ee")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="SmallDoor/ButtonSystem"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 1.341, 1.5731, 0.289089)
+script = ExtResource("19_8r8ar")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="SmallDoor/ButtonSystem/StaticBody3D"]
+mesh = SubResource("BoxMesh_yvi8c")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="SmallDoor/ButtonSystem/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_8wejw")
 
 [node name="Note" parent="." instance=ExtResource("14_d2cap")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 21.6463, 22.687, -12.5052)
