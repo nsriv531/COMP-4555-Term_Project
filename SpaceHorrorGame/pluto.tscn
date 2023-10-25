@@ -192,6 +192,8 @@ texture = SubResource("AnimatedTexture_g84ow")
 expand_mode = 1
 stretch_mode = 3
 
+[node name="WalkingSound" type="AudioStreamPlayer3D" parent="Player"]
+
 [node name="CSGBox3D" type="CSGBox3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 36.5135, 0)
 gi_mode = 2
@@ -239,5 +241,7 @@ transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 26, 21, 6)
 
 [node name="landingpad3" parent="." instance=ExtResource("17_mk40t")]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 26, 21, 24)
+
+[node name="BackgroundNoise" type="AudioStreamPlayer3D" parent="."]
 
 [connection signal="timeout" from="Player/Timer" to="Player" method="_on_timer_timeout"]

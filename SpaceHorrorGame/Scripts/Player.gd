@@ -16,6 +16,7 @@ var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
 @onready var camera = $Head/Camera3D
 @onready var effects = $Effects
 @onready var gui = $GUI
+@onready var walkingsound = $WalkingSound
 
 var cur_interactable = null
 
