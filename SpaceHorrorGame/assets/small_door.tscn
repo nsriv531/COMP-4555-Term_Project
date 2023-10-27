@@ -3,9 +3,6 @@
 [ext_resource type="PackedScene" uid="uid://d32pxhn7fkg5q" path="res://assets/small_door.glb" id="1_k5j0n"]
 [ext_resource type="Script" path="res://assets/Door.gd" id="2_dx7in"]
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_4w532"]
-size = Vector3(3, 3, 3)
-
 [sub_resource type="BoxShape3D" id="BoxShape3D_tv405"]
 size = Vector3(1, 1, 2)
 
@@ -26,14 +23,14 @@ states/Door_Closing/position = Vector2(696, 98)
 states/Door_Opening/node = SubResource("AnimationNodeAnimation_haa2x")
 states/Door_Opening/position = Vector2(383, 98)
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_4w532"]
+size = Vector3(3, 3, 3)
+
 [node name="small_door" instance=ExtResource("1_k5j0n")]
 script = ExtResource("2_dx7in")
 
-[node name="Area3D" type="Area3D" parent="Frame" index="0"]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Frame/Area3D" index="0"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 0)
-shape = SubResource("BoxShape3D_4w532")
+[node name="Frame" parent="." index="0"]
+visible = false
 
 [node name="Bottom_Panel" parent="Door_Rig/Skeleton3D" index="0"]
 transform = Transform3D(1.58457, 0, 0, 0, -1.88895e-07, -1.58457, 0, 1.58457, -1.88895e-07, 0, -0.792284, 0)
@@ -81,5 +78,11 @@ tree_root = SubResource("AnimationNodeStateMachine_mhe6y")
 anim_player = NodePath("../AnimationPlayer")
 active = true
 
-[connection signal="body_entered" from="Frame/Area3D" to="." method="_on_area_3d_body_entered"]
-[connection signal="body_exited" from="Frame/Area3D" to="." method="_on_area_3d_body_exited"]
+[node name="Area3D" type="Area3D" parent="." index="4"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 0)
+shape = SubResource("BoxShape3D_4w532")
+
+[connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]
+[connection signal="body_exited" from="Area3D" to="." method="_on_area_3d_body_exited"]
