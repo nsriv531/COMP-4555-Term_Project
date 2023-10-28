@@ -11,5 +11,6 @@ func _ready():
 func _process(delta):
 	pass
 
-func interact():
+func interact(player):
+	button_press.emit()
 	

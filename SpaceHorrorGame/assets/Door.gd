@@ -36,3 +36,8 @@ func _on_area_3d_body_exited(body):
 	#	print("Player outside area")
 	#	near = false
 	#	doorPlay(near)
+
+
+func _on_static_body_3d_button_press():
+	onButtonPress()
+	pass # Replace with function body.
