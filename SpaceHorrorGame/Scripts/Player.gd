@@ -84,7 +84,7 @@ func interact_raycast(distance):
 		var space_state = get_world_3d().direct_space_state
 		var from = camera.project_ray_origin(get_viewport().get_visible_rect().size / 2)
 		var to = from + camera.project_ray_normal(get_viewport().get_visible_rect().size / 2) * distance
-		var query = PhysicsRayQueryParameters3D.create(from,to)
+		var query = PhysicsRayQueryParameters3D.create(from,to,2)
 		var result = space_state.intersect_ray(query)
 		
 		if result && result.collider.has_method("interact"):

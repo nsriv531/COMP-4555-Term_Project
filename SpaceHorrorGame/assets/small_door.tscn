@@ -4,12 +4,13 @@
 [ext_resource type="Script" path="res://assets/Door.gd" id="2_dx7in"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_tv405"]
-size = Vector3(1, 1, 2)
+size = Vector3(1, 0.5, 2)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_pchl2"]
+size = Vector3(1, 0.5, 1)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_0onbn"]
-size = Vector3(1, 1, 6)
+size = Vector3(0.5, 0.5, 3)
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_svbno"]
 animation = &"Door Closing"
@@ -60,7 +61,7 @@ bone_idx = 5
 [node name="StaticBody3D" type="StaticBody3D" parent="Door_Rig/Skeleton3D/Right_Panel" index="1"]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Door_Rig/Skeleton3D/Right_Panel/StaticBody3D" index="0"]
-transform = Transform3D(0.5, 0, -8.88178e-16, 0, 0.5, 8.72103e-22, 9.26711e-16, 0, 0.5, -0.800001, 5.68434e-14, -1.45)
+transform = Transform3D(1, 0, -1.85342e-15, 0, 1, 0, 1.85342e-15, 0, 1, -0.800001, 5.68434e-14, -1.45)
 shape = SubResource("BoxShape3D_0onbn")
 
 [node name="Left_Panel" parent="Door_Rig/Skeleton3D" index="3"]
@@ -70,7 +71,7 @@ bone_idx = 7
 [node name="StaticBody3D" type="StaticBody3D" parent="Door_Rig/Skeleton3D/Left_Panel" index="1"]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Door_Rig/Skeleton3D/Left_Panel/StaticBody3D" index="0"]
-transform = Transform3D(0.5, 1.42109e-14, 1.23661e-15, 0, 0.5, 1.77636e-15, -8.88179e-16, 0, 0.5, -0.8, 2.84217e-14, -1.45)
+transform = Transform3D(1, 0, 1.77636e-15, 0, 1, 0, -1.77636e-15, 0, 1, -0.8, 2.84217e-14, -1.45)
 shape = SubResource("BoxShape3D_0onbn")
 
 [node name="AnimationTree" type="AnimationTree" parent="." index="3"]
