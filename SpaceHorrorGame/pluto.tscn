@@ -1,4 +1,4 @@
-[gd_scene load_steps=39 format=3 uid="uid://1csibo7xkgx1"]
+[gd_scene load_steps=74 format=3 uid="uid://1csibo7xkgx1"]
 
 [ext_resource type="Script" path="res://addons/zylann.hterrain/hterrain.gd" id="1_ilc75"]
 [ext_resource type="Shader" path="res://Scripts/CameraEffects.gdshader" id="1_m1fa5"]
@@ -12,9 +12,11 @@
 [ext_resource type="Texture2D" uid="uid://cfn7vb30wndrl" path="res://textures/Crosshair/ch2.png" id="8_rreq8"]
 [ext_resource type="Shader" path="res://blur.gdshader" id="9_1ektf"]
 [ext_resource type="Script" path="res://Effects.gd" id="10_3dsvg"]
+[ext_resource type="Shader" path="res://greenscreen.gdshader" id="10_dq8d4"]
 [ext_resource type="Script" path="res://GUI.gd" id="10_sxumy"]
 [ext_resource type="Texture2D" uid="uid://dh205y6pw3vdf" path="res://textures/note.png" id="10_xbnsg"]
 [ext_resource type="Script" path="res://Scripts/TestInteractableBlock.gd" id="11_gpuug"]
+[ext_resource type="Texture2D" uid="uid://cjd2w1befu7ug" path="res://ezgif-5-3568ee6a8d.png" id="11_tvc62"]
 [ext_resource type="PackedScene" uid="uid://bd25meeoukb72" path="res://assets/small_door.tscn" id="12_shujh"]
 [ext_resource type="PackedScene" uid="uid://clehtd5os8h8o" path="res://Objects/Note.tscn" id="14_d2cap"]
 [ext_resource type="PackedScene" uid="uid://7nb1ucn8kuy1" path="res://models/landingpad.gltf" id="17_mk40t"]
@@ -42,6 +44,237 @@ shader_parameter/baseAdd = 0.2
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_0xp03"]
 shader = ExtResource("9_1ektf")
 shader_parameter/amount = 2.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_mmlhe"]
+shader = ExtResource("10_dq8d4")
+shader_parameter/transparent_color = Color(0, 0.984375, 0, 1)
+shader_parameter/pickup_range = 0.3
+shader_parameter/fade_amount = 0.5
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jgpf5"]
+atlas = ExtResource("11_tvc62")
+region = Rect2(0, 0, 946, 720)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f2q5w"]
+atlas = ExtResource("11_tvc62")
+region = Rect2(946, 0, 946, 720)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uq0g3"]
+atlas = ExtResource("11_tvc62")
+region = Rect2(1892, 0, 946, 720)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qnep0"]
+atlas = ExtResource("11_tvc62")
+region = Rect2(2838, 0, 946, 720)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hijgu"]
+atlas = ExtResource("11_tvc62")
+region = Rect2(3784, 0, 946, 720)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lv525"]
+atlas = ExtResource("11_tvc62")
+region = Rect2(0, 720, 946, 720)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_x58tv"]
+atlas = ExtResource("11_tvc62")
+region = Rect2(946, 720, 946, 720)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c252j"]
+atlas = ExtResource("11_tvc62")
+region = Rect2(1892, 720, 946, 720)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mauw0"]
+atlas = ExtResource("11_tvc62")
+region = Rect2(2838, 720, 946, 720)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_k6b6x"]
+atlas = ExtResource("11_tvc62")
+region = Rect2(3784, 720, 946, 720)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lnhxr"]
+atlas = ExtResource("11_tvc62")
+region = Rect2(0, 1440, 946, 720)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_b5jgi"]
+atlas = ExtResource("11_tvc62")
+region = Rect2(946, 1440, 946, 720)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kxywr"]
+atlas = ExtResource("11_tvc62")
+region = Rect2(1892, 1440, 946, 720)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_o4wrj"]
+atlas = ExtResource("11_tvc62")
+region = Rect2(2838, 1440, 946, 720)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6toeq"]
+atlas = ExtResource("11_tvc62")
+region = Rect2(3784, 1440, 946, 720)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h86tm"]
+atlas = ExtResource("11_tvc62")
+region = Rect2(0, 2160, 946, 720)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_r61ms"]
+atlas = ExtResource("11_tvc62")
+region = Rect2(946, 2160, 946, 720)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uhxq3"]
+atlas = ExtResource("11_tvc62")
+region = Rect2(1892, 2160, 946, 720)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yl56c"]
+atlas = ExtResource("11_tvc62")
+region = Rect2(2838, 2160, 946, 720)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_e4mhf"]
+atlas = ExtResource("11_tvc62")
+region = Rect2(3784, 2160, 946, 720)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4tbjq"]
+atlas = ExtResource("11_tvc62")
+region = Rect2(0, 2880, 946, 720)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pihtp"]
+atlas = ExtResource("11_tvc62")
+region = Rect2(946, 2880, 946, 720)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_p5q25"]
+atlas = ExtResource("11_tvc62")
+region = Rect2(1892, 2880, 946, 720)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_a038k"]
+atlas = ExtResource("11_tvc62")
+region = Rect2(2838, 2880, 946, 720)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_52fc8"]
+atlas = ExtResource("11_tvc62")
+region = Rect2(3784, 2880, 946, 720)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fbm5r"]
+atlas = ExtResource("11_tvc62")
+region = Rect2(0, 3600, 946, 720)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_o6oqc"]
+atlas = ExtResource("11_tvc62")
+region = Rect2(946, 3600, 946, 720)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ja2ns"]
+atlas = ExtResource("11_tvc62")
+region = Rect2(1892, 3600, 946, 720)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_n4o0p"]
+atlas = ExtResource("11_tvc62")
+region = Rect2(2838, 3600, 946, 720)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jsun4"]
+atlas = ExtResource("11_tvc62")
+region = Rect2(3784, 3600, 946, 720)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tgwo6"]
+atlas = ExtResource("11_tvc62")
+region = Rect2(0, 4320, 946, 720)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_kkej6"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jgpf5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_f2q5w")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uq0g3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qnep0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hijgu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lv525")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_x58tv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_c252j")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mauw0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_k6b6x")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lnhxr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_b5jgi")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kxywr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_o4wrj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6toeq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_h86tm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_r61ms")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uhxq3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yl56c")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_e4mhf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4tbjq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pihtp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_p5q25")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_a038k")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_52fc8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fbm5r")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_o6oqc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ja2ns")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_n4o0p")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jsun4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tgwo6")
+}],
+"loop": false,
+"name": &"default",
+"speed": 30.0
+}]
 
 [sub_resource type="AnimatedTexture" id="AnimatedTexture_g84ow"]
 frames = 2
@@ -169,6 +402,20 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 1
 
+[node name="CanvasLayer" type="CanvasLayer" parent="Player/Effects"]
+
+[node name="TextureRect" type="TextureRect" parent="Player/Effects/CanvasLayer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Player/Effects/CanvasLayer"]
+material = SubResource("ShaderMaterial_mmlhe")
+position = Vector2(653, 371)
+sprite_frames = SubResource("SpriteFrames_kkej6")
+
 [node name="GUI" type="Control" parent="Player"]
 layout_mode = 3
 anchors_preset = 15
@@ -255,6 +502,48 @@ mesh = SubResource("BoxMesh_yvi8c")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="SmallDoor/ButtonSystem/StaticBody3D"]
 shape = SubResource("ConvexPolygonShape3D_8wejw")
 
+[node name="StaticBody3D2" type="StaticBody3D" parent="SmallDoor/ButtonSystem"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 1.341, 1.5731, -0.203901)
+collision_layer = 2
+collision_mask = 0
+script = ExtResource("19_8r8ar")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="SmallDoor/ButtonSystem/StaticBody3D2"]
+mesh = SubResource("BoxMesh_yvi8c")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="SmallDoor/ButtonSystem/StaticBody3D2"]
+shape = SubResource("ConvexPolygonShape3D_8wejw")
+
+[node name="SmallDoor2" parent="." instance=ExtResource("12_shujh")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -7.23902, 21.2577, -11.9728)
+
+[node name="ButtonSystem" type="Node3D" parent="SmallDoor2"]
+script = ExtResource("18_ay6ee")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="SmallDoor2/ButtonSystem"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 1.341, 1.5731, 0.289089)
+collision_layer = 2
+collision_mask = 0
+script = ExtResource("19_8r8ar")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="SmallDoor2/ButtonSystem/StaticBody3D"]
+mesh = SubResource("BoxMesh_yvi8c")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="SmallDoor2/ButtonSystem/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_8wejw")
+
+[node name="StaticBody3D2" type="StaticBody3D" parent="SmallDoor2/ButtonSystem"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 1.341, 1.5731, -0.189317)
+collision_layer = 2
+collision_mask = 0
+script = ExtResource("19_8r8ar")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="SmallDoor2/ButtonSystem/StaticBody3D2"]
+mesh = SubResource("BoxMesh_yvi8c")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="SmallDoor2/ButtonSystem/StaticBody3D2"]
+shape = SubResource("ConvexPolygonShape3D_8wejw")
+
 [node name="Note" parent="." instance=ExtResource("14_d2cap")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 21.6463, 22.687, -12.5052)
 collision_layer = 2
@@ -275,25 +564,34 @@ transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 26, 21, 24)
 [node name="OmniLight3D" type="OmniLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.10217, 24.5388, -11.9946)
 
+[node name="OmniLight3D2" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.67775, 24.5388, -11.9946)
+
 [node name="CSGCombiner3D" type="CSGCombiner3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.50202, 22.6312, -11.9946)
 use_collision = true
 
 [node name="CSGBox3D2" type="CSGBox3D" parent="CSGCombiner3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.07062, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.716295, 0, 1.07062, 0)
 size = Vector3(9.79903, 5.78514, 7.24461)
 material = SubResource("StandardMaterial3D_7h0l0")
 
 [node name="CSGBox3D3" type="CSGBox3D" parent="CSGCombiner3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.570425, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.716295, 0, 0.570425, 0)
 operation = 2
-size = Vector3(9, 4, 7)
+size = Vector3(9, 3.56559, 7)
 material = SubResource("StandardMaterial3D_7h0l0")
 
 [node name="CSGBox3D4" type="CSGBox3D" parent="CSGCombiner3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.62241, 0, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.62241, 0.0995979, 0)
 operation = 2
-size = Vector3(0.929075, 3.16894, 1.89577)
+size = Vector3(0.929075, 2.57393, 1.89577)
+material = SubResource("StandardMaterial3D_7h0l0")
+
+[node name="CSGBox3D5" type="CSGBox3D" parent="CSGCombiner3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.82924, 0.0995979, 0)
+operation = 2
+size = Vector3(0.929075, 2.57393, 1.89577)
 material = SubResource("StandardMaterial3D_7h0l0")
 
 [node name="Rooms" type="Node3D" parent="."]
@@ -307,3 +605,6 @@ transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -5, 1,
 
 [connection signal="timeout" from="Player/Timer" to="Player" method="_on_timer_timeout"]
 [connection signal="button_press" from="SmallDoor/ButtonSystem/StaticBody3D" to="SmallDoor" method="_on_static_body_3d_button_press"]
+[connection signal="button_press" from="SmallDoor/ButtonSystem/StaticBody3D2" to="SmallDoor" method="_on_static_body_3d_button_press"]
+[connection signal="button_press" from="SmallDoor2/ButtonSystem/StaticBody3D" to="SmallDoor2" method="_on_static_body_3d_button_press"]
+[connection signal="button_press" from="SmallDoor2/ButtonSystem/StaticBody3D2" to="SmallDoor2" method="_on_static_body_3d_button_press"]
