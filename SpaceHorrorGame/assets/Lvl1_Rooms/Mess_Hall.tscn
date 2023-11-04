@@ -1,19 +1,28 @@
-[gd_scene load_steps=7 format=3 uid="uid://dw5r0u10smu5b"]
+[gd_scene load_steps=10 format=3 uid="uid://dw5r0u10smu5b"]
 
 [ext_resource type="PackedScene" uid="uid://5cohjesbm055" path="res://assets/Room_Frames/Mess_Hall.glb" id="2_i37mg"]
-[ext_resource type="PackedScene" uid="uid://mawbl1xushrt" path="res://assets/Walls/Small_Wall_Door_Interior.glb" id="4_bixv4"]
-[ext_resource type="PackedScene" uid="uid://bksugwlenstt2" path="res://assets/Walls/Small_Wall_Inner_Interior.glb" id="5_cmkih"]
-[ext_resource type="PackedScene" uid="uid://dxbykv4wco63h" path="res://assets/Walls/Small_Wall_Ex.glb" id="5_jgl0n"]
-[ext_resource type="PackedScene" uid="uid://cc8t4le4i5m0y" path="res://assets/Walls/Large_Wall_Door_Interior.glb" id="5_pxocb"]
+[ext_resource type="PackedScene" uid="uid://bipxfae1mjbf7" path="res://assets/scene_walls/small_wall_inner_interior.tscn" id="5_jf2ab"]
+[ext_resource type="PackedScene" uid="uid://dxbykv4wco63h" path="res://assets/glb_walls/Small_Wall_Ex.glb" id="5_jgl0n"]
+[ext_resource type="PackedScene" uid="uid://mawbl1xushrt" path="res://assets/glb_walls/Small_Wall_Door_Interior.glb" id="5_pxocb"]
+[ext_resource type="PackedScene" uid="uid://cc8t4le4i5m0y" path="res://assets/glb_walls/Large_Wall_Door_Interior.glb" id="5_r4jrd"]
 
 [sub_resource type="Environment" id="Environment_fbuhg"]
 ambient_light_source = 2
 ambient_light_color = Color(0.427451, 0.427451, 0.427451, 1)
 sdfgi_enabled = true
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_gmolw"]
+size = Vector3(18.0188, 1, 18.0586)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_5evsy"]
+size = Vector3(1, 6.12607, 4.1153)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_7salu"]
+size = Vector3(1, 6.18844, 1.62987)
+
 [node name="Mess_Hall" type="Node3D"]
 
-[node name="Wall_To_Airlock" parent="." instance=ExtResource("4_bixv4")]
+[node name="Wall_To_Airlock" parent="." instance=ExtResource("5_pxocb")]
 transform = Transform3D(1.31134e-07, 0, 1, 0, 1, 0, -1, 0, 1.31134e-07, 12.8, 0, 5)
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
@@ -21,13 +30,49 @@ environment = SubResource("Environment_fbuhg")
 
 [node name="Mess_Hall_Frame" parent="." instance=ExtResource("2_i37mg")]
 
-[node name="Wall_To_Kitchen" parent="." instance=ExtResource("4_bixv4")]
+[node name="Floor" type="StaticBody3D" parent="Mess_Hall_Frame"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Mess_Hall_Frame/Floor"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.496056, 0)
+shape = SubResource("BoxShape3D_gmolw")
+
+[node name="Walls" type="StaticBody3D" parent="Mess_Hall_Frame"]
+
+[node name="Wall" type="CollisionShape3D" parent="Mess_Hall_Frame/Walls"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.04427, 3, 0)
+shape = SubResource("BoxShape3D_5evsy")
+
+[node name="Wall2" type="CollisionShape3D" parent="Mess_Hall_Frame/Walls"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.10971, 3, 0)
+shape = SubResource("BoxShape3D_5evsy")
+
+[node name="Wall3" type="CollisionShape3D" parent="Mess_Hall_Frame/Walls"]
+transform = Transform3D(1.31134e-07, 0, -1, 0, 1, 0, 1, 0, 1.31134e-07, 0, 3, -9.08411)
+shape = SubResource("BoxShape3D_5evsy")
+
+[node name="Edge" type="CollisionShape3D" parent="Mess_Hall_Frame/Walls"]
+transform = Transform3D(0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, -8.63924, 3.13714, 8.66524)
+shape = SubResource("BoxShape3D_7salu")
+
+[node name="Edge2" type="CollisionShape3D" parent="Mess_Hall_Frame/Walls"]
+transform = Transform3D(-0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, -0.707107, 8.60665, 3.13714, 8.6875)
+shape = SubResource("BoxShape3D_7salu")
+
+[node name="Edge3" type="CollisionShape3D" parent="Mess_Hall_Frame/Walls"]
+transform = Transform3D(0.707107, 0, -0.707107, 0, 1, 0, 0.707107, 0, 0.707107, -8.64906, 3.13714, -8.63001)
+shape = SubResource("BoxShape3D_7salu")
+
+[node name="Edge4" type="CollisionShape3D" parent="Mess_Hall_Frame/Walls"]
+transform = Transform3D(0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, 8.64998, 3.13714, -8.62944)
+shape = SubResource("BoxShape3D_7salu")
+
+[node name="Wall_To_Kitchen" parent="." instance=ExtResource("5_pxocb")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 0, -5)
 
-[node name="Small_Wall_Door_Interior" parent="." instance=ExtResource("4_bixv4")]
+[node name="Small_Wall_Door_Interior" parent="." instance=ExtResource("5_pxocb")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 5, 0, -5)
 
-[node name="Wall_To_Workshop" parent="." instance=ExtResource("4_bixv4")]
+[node name="Wall_To_Workshop" parent="." instance=ExtResource("5_pxocb")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -12.8, 0, 5)
 
 [node name="Lights" type="Node3D" parent="."]
@@ -52,11 +97,11 @@ transform = Transform3D(1, 0, 0, 0, -1, 2.62268e-07, 0, -2.62268e-07, -1, -5, 3.
 light_energy = 2.677
 omni_range = 9.66804
 
-[node name="Small_Wall_Inner_Interior" parent="." instance=ExtResource("5_cmkih")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -5, 0, -5)
-
-[node name="Large_Wall_Door_Interior" parent="." instance=ExtResource("5_pxocb")]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, 0)
-
 [node name="Small_Wall_Ex" parent="." instance=ExtResource("5_jgl0n")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 0, -5)
+
+[node name="Small_Wall_Inner_Interior" parent="." instance=ExtResource("5_jf2ab")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -5, 0, -5)
+
+[node name="Large_Wall_Door_Interior" parent="." instance=ExtResource("5_r4jrd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 17.8)
