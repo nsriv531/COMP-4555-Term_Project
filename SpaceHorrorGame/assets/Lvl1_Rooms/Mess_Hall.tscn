@@ -2,8 +2,8 @@
 
 [ext_resource type="PackedScene" uid="uid://5cohjesbm055" path="res://assets/Room_Frames/Mess_Hall.glb" id="2_i37mg"]
 [ext_resource type="PackedScene" uid="uid://mawbl1xushrt" path="res://assets/Walls/Small_Wall_Door_Interior.glb" id="4_bixv4"]
-[ext_resource type="PackedScene" uid="uid://opxf7lvsri4n" path="res://assets/Walls/Small_Wall.blend" id="4_p8ia2"]
 [ext_resource type="PackedScene" uid="uid://bksugwlenstt2" path="res://assets/Walls/Small_Wall_Inner_Interior.glb" id="5_cmkih"]
+[ext_resource type="PackedScene" uid="uid://dxbykv4wco63h" path="res://assets/Walls/Small_Wall_Ex.glb" id="5_jgl0n"]
 [ext_resource type="PackedScene" uid="uid://cc8t4le4i5m0y" path="res://assets/Walls/Large_Wall_Door_Interior.glb" id="5_pxocb"]
 
 [sub_resource type="Environment" id="Environment_fbuhg"]
@@ -20,9 +20,6 @@ transform = Transform3D(1.31134e-07, 0, 1, 0, 1, 0, -1, 0, 1.31134e-07, 12.8, 0,
 environment = SubResource("Environment_fbuhg")
 
 [node name="Mess_Hall_Frame" parent="." instance=ExtResource("2_i37mg")]
-
-[node name="Small_Wall" parent="." instance=ExtResource("4_p8ia2")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 0, -5)
 
 [node name="Wall_To_Kitchen" parent="." instance=ExtResource("4_bixv4")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 0, -5)
@@ -60,3 +57,6 @@ transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -5, 0,
 
 [node name="Large_Wall_Door_Interior" parent="." instance=ExtResource("5_pxocb")]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, 0)
+
+[node name="Small_Wall_Ex" parent="." instance=ExtResource("5_jgl0n")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 0, -5)
