@@ -12,6 +12,8 @@ const CAMERA_MIN_ANGLE = -80
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
 
+@onready var shhh = $Effects/CanvasLayer/AnimatedSprite2D
+
 @onready var head = $Head
 @onready var camera = $Head/Camera3D
 @onready var effects = $Effects
@@ -46,6 +48,10 @@ func _process(_delta):
 			
 	if Input.is_action_just_pressed("interact") && cur_interactable:
 		cur_interactable.interact(self)
+		
+	if self.position.y <= 0:
+		if shhh.frame == 0:
+			shhh.play("default")
 		
 	pass
 	
