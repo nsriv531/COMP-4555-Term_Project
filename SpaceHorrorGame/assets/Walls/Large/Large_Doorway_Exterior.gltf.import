@@ -4,12 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://cp5ph2ie2583g"
-path="res://.godot/imported/Large_Doorway_Exterior_.gltf-215d2de8f89435500bad0a6c9fe49c0f.scn"
+path="res://.godot/imported/Large_Doorway_Exterior.gltf-0596d2f337464a5d5195610408930f07.scn"
 
 [deps]
 
-source_file="res://assets/Walls/Large/Large_Doorway_Exterior_.gltf"
-dest_files=["res://.godot/imported/Large_Doorway_Exterior_.gltf-215d2de8f89435500bad0a6c9fe49c0f.scn"]
+source_file="res://assets/Walls/Large/Large_Doorway_Exterior.gltf"
+dest_files=["res://.godot/imported/Large_Doorway_Exterior.gltf-0596d2f337464a5d5195610408930f07.scn"]
 
 [params]
 
