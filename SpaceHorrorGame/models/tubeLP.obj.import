@@ -1,0 +1,21 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://bfntfge2q4owl"
+path="res://.godot/imported/tubeLP.obj-49cd36ebbd9ee5d223a5da0095889c5e.mesh"
+
+[deps]
+
+files=["res://.godot/imported/tubeLP.obj-49cd36ebbd9ee5d223a5da0095889c5e.mesh"]
+
+source_file="res://models/tubeLP.obj"
+dest_files=["res://.godot/imported/tubeLP.obj-49cd36ebbd9ee5d223a5da0095889c5e.mesh", "res://.godot/imported/tubeLP.obj-49cd36ebbd9ee5d223a5da0095889c5e.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true

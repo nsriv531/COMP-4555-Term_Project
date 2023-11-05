@@ -30,10 +30,9 @@ func _unhandled_input(event):
 		head.rotate_y(-event.relative.x * SENSITIVITY)
 		camera.rotate_x(-event.relative.y * SENSITIVITY)
 		camera.rotation.x = clamp(camera.rotation.x, deg_to_rad(CAMERA_MIN_ANGLE), deg_to_rad(CAMERA_MAX_ANGLE))
-		interact_raycast(INTERACT_DISTANCE)
 		
 func _process(_delta):
-	
+	interact_raycast(INTERACT_DISTANCE)
 	if gui.showingNote:
 		if Input.is_action_just_pressed("interact") || Input.is_action_just_pressed("ui_cancel"):
 			gui.hideNote()
