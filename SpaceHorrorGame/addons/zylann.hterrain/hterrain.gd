@@ -1663,8 +1663,3 @@ class HT_SetCastShadowSettingAction:
 		setting = s
 	func exec(chunk):
 		chunk.set_cast_shadow_setting(setting)
-
-
-
-func _on_air_lock_inner_area_body_entered(body):
-	pass # Replace with function body.

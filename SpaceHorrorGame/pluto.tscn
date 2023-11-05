@@ -1,4 +1,6 @@
-[gd_scene load_steps=80 format=3 uid="uid://1csibo7xkgx1"]
+
+[gd_scene load_steps=78 format=3 uid="uid://1csibo7xkgx1"]
+
 
 [ext_resource type="Script" path="res://addons/zylann.hterrain/hterrain.gd" id="1_ilc75"]
 [ext_resource type="Shader" path="res://Scripts/CameraEffects.gdshader" id="1_m1fa5"]
@@ -19,6 +21,8 @@
 [ext_resource type="Texture2D" uid="uid://cjd2w1befu7ug" path="res://ezgif-5-3568ee6a8d.png" id="11_tvc62"]
 [ext_resource type="PackedScene" uid="uid://bd25meeoukb72" path="res://assets/small_door.tscn" id="12_shujh"]
 [ext_resource type="PackedScene" uid="uid://clehtd5os8h8o" path="res://Objects/Note.tscn" id="14_d2cap"]
+[ext_resource type="AudioStream" uid="uid://by6gr0ob08hyt" path="res://Sounds/level1ambient.wav" id="14_o0cq4"]
+[ext_resource type="AudioStream" uid="uid://orqrfmactyx8" path="res://Sounds/footstep.ogg" id="14_rxa8h"]
 [ext_resource type="PackedScene" uid="uid://7nb1ucn8kuy1" path="res://models/landingpad.gltf" id="17_mk40t"]
 [ext_resource type="Script" path="res://ButtonSystem.gd" id="18_ay6ee"]
 [ext_resource type="Script" path="res://button.gd" id="19_8r8ar"]
@@ -466,6 +470,13 @@ expand_mode = 1
 stretch_mode = 3
 
 [node name="WalkingSound" type="AudioStreamPlayer3D" parent="Player"]
+stream = ExtResource("14_rxa8h")
+volume_db = -42.0
+max_db = 0.0
+
+[node name="WalkingSoundTimer" type="Timer" parent="Player"]
+wait_time = 0.3
+one_shot = true
 
 [node name="CSGBox3D" type="CSGBox3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.491164, 5.40769, 20.8931, -12.0736)
@@ -511,7 +522,10 @@ transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 26, 21, 6)
 [node name="landingpad3" parent="." instance=ExtResource("17_mk40t")]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 26, 21, 24)
 
-[node name="BackgroundNoise" type="AudioStreamPlayer3D" parent="."]
+[node name="BackgroundNoise" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("14_o0cq4")
+volume_db = -8.0
+autoplay = true
 
 [node name="OmniLight3D" type="OmniLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.10217, 24.5388, -11.9946)
