@@ -1,6 +1,19 @@
-[gd_scene load_steps=4 format=3 uid="uid://n10fi72j36mi"]
+[gd_scene load_steps=9 format=3 uid="uid://n10fi72j36mi"]
 
 [ext_resource type="PackedScene" uid="uid://cq5kew4w57rpx" path="res://assets/Walls/Small/Small_Doorway_Interior_2.gltf" id="1_kmqd0"]
+[ext_resource type="Texture2D" uid="uid://61j63csua6g2" path="res://room_textures/trim tex.png" id="2_wf4cs"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_g0mf8"]
+albedo_texture = ExtResource("2_wf4cs")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_elkrj"]
+albedo_texture = ExtResource("2_wf4cs")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8c2r1"]
+albedo_texture = ExtResource("2_wf4cs")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_d6ldt"]
+albedo_texture = ExtResource("2_wf4cs")
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_vadjm"]
 size = Vector3(2.16158, 6.11409, 1)
@@ -9,6 +22,18 @@ size = Vector3(2.16158, 6.11409, 1)
 size = Vector3(2.4416, 3.02562, 1)
 
 [node name="Small_Doorway_Interior_2" instance=ExtResource("1_kmqd0")]
+
+[node name="Doorway_Interior" parent="." index="0"]
+surface_material_override/0 = SubResource("StandardMaterial3D_g0mf8")
+
+[node name="Door_Wall" parent="." index="1"]
+surface_material_override/0 = SubResource("StandardMaterial3D_elkrj")
+
+[node name="Door_Frame" parent="." index="2"]
+surface_material_override/0 = SubResource("StandardMaterial3D_8c2r1")
+
+[node name="Small_Interior" parent="." index="3"]
+surface_material_override/0 = SubResource("StandardMaterial3D_d6ldt")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="." index="4"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, -4)
