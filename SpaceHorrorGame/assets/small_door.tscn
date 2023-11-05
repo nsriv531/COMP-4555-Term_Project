@@ -1,7 +1,9 @@
-[gd_scene load_steps=10 format=3 uid="uid://bd25meeoukb72"]
+[gd_scene load_steps=12 format=3 uid="uid://bd25meeoukb72"]
 
 [ext_resource type="PackedScene" uid="uid://d32pxhn7fkg5q" path="res://assets/small_door.glb" id="1_k5j0n"]
 [ext_resource type="Script" path="res://assets/Door.gd" id="2_dx7in"]
+[ext_resource type="AudioStream" uid="uid://dhtasf25ubx13" path="res://Sounds/DoorOpen.ogg" id="3_ddhwq"]
+[ext_resource type="AudioStream" uid="uid://kcc3a1axggf" path="res://Sounds/DoorClose.ogg" id="4_pk7p5"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_tv405"]
 size = Vector3(1, 0.5, 2)
@@ -74,6 +76,9 @@ bone_idx = 7
 transform = Transform3D(1, 0, 1.77636e-15, 0, 1, 0, -1.77636e-15, 0, 1, -0.8, 2.84217e-14, -1.45)
 shape = SubResource("BoxShape3D_0onbn")
 
+[node name="AnimationPlayer" parent="." index="2"]
+speed_scale = 0.1
+
 [node name="AnimationTree" type="AnimationTree" parent="." index="3"]
 tree_root = SubResource("AnimationNodeStateMachine_mhe6y")
 anim_player = NodePath("../AnimationPlayer")
@@ -85,5 +90,11 @@ active = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 0)
 shape = SubResource("BoxShape3D_4w532")
 
-[connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]
-[connection signal="body_exited" from="Area3D" to="." method="_on_area_3d_body_exited"]
+[node name="DoorClose" type="AudioStreamPlayer3D" parent="." index="5"]
+stream = ExtResource("4_pk7p5")
+
+[node name="DoorOpen" type="AudioStreamPlayer3D" parent="." index="6"]
+stream = ExtResource("3_ddhwq")
+
+[connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered" flags=18]
+[connection signal="body_exited" from="Area3D" to="." method="_on_area_3d_body_exited" flags=18]

@@ -1,6 +1,4 @@
-
-[gd_scene load_steps=78 format=3 uid="uid://1csibo7xkgx1"]
-
+[gd_scene load_steps=82 format=3 uid="uid://1csibo7xkgx1"]
 
 [ext_resource type="Script" path="res://addons/zylann.hterrain/hterrain.gd" id="1_ilc75"]
 [ext_resource type="Shader" path="res://Scripts/CameraEffects.gdshader" id="1_m1fa5"]
