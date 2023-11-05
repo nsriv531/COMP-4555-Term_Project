@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://c36vdt2y3rgmn"
-path="res://.godot/imported/Small_Wall_Interior_V1.gltf-32e83a3a2fd93622b90d6de7aab747ad.scn"
+uid="uid://uicmutigbbol"
+path="res://.godot/imported/Large_Doorway_Interior_2.gltf-aa2fd8b88117ce5986cbdd6133822853.scn"
 
 [deps]
 
-source_file="res://assets/glb_walls/Small_Wall_Interior_V1.gltf"
-dest_files=["res://.godot/imported/Small_Wall_Interior_V1.gltf-32e83a3a2fd93622b90d6de7aab747ad.scn"]
+source_file="res://assets/Walls/Large/Large_Doorway_Interior_2.gltf"
+dest_files=["res://.godot/imported/Large_Doorway_Interior_2.gltf-aa2fd8b88117ce5986cbdd6133822853.scn"]
 
 [params]
 
@@ -29,4 +29,4 @@ animation/trimming=false
 animation/remove_immutable_tracks=true
 import_script/path=""
 _subresources={}
-gltf/embedded_image_handling=0
+gltf/embedded_image_handling=1

@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://cc8t4le4i5m0y"
-path="res://.godot/imported/Large_Wall_Door_Interior.glb-d99fd455b2495af21fdf043a1cc00366.scn"
+uid="uid://df5j6g70d55ku"
+path="res://.godot/imported/Large_Wall_Exterior.gltf-5f2ff47a4bcee3d40532d0a0867960fe.scn"
 
 [deps]
 
-source_file="res://assets/glb_walls/Large_Wall_Door_Interior.glb"
-dest_files=["res://.godot/imported/Large_Wall_Door_Interior.glb-d99fd455b2495af21fdf043a1cc00366.scn"]
+source_file="res://assets/Walls/Large/Large_Wall_Exterior.gltf"
+dest_files=["res://.godot/imported/Large_Wall_Exterior.gltf-5f2ff47a4bcee3d40532d0a0867960fe.scn"]
 
 [params]
 
