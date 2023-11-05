@@ -1,0 +1,22 @@
+[gd_resource type="StandardMaterial3D" load_steps=7 format=3 uid="uid://dwexrstjqnw72"]
+
+[ext_resource type="Texture2D" uid="uid://kbocaw76525h" path="res://room_textures/ceiling_1/Sci-fi_Wall_008_basecolor.jpg" id="1_kaog2"]
+[ext_resource type="Texture2D" uid="uid://dl0c51paf220l" path="res://room_textures/ceiling_1/Sci-fi_Wall_008_ambientOcclusion.jpg" id="2_kkpju"]
+[ext_resource type="Texture2D" uid="uid://bbyr5l5c1hkp1" path="res://room_textures/ceiling_1/Sci-fi_Wall_008_height.png" id="3_0onqh"]
+[ext_resource type="Texture2D" uid="uid://dbrghidf6hsr5" path="res://room_textures/ceiling_1/Sci-fi_Wall_008_metallic.jpg" id="4_c5dl1"]
+[ext_resource type="Texture2D" uid="uid://cwp6e8fa22iyi" path="res://room_textures/ceiling_1/Sci-fi_Wall_008_normal.jpg" id="5_3wx3o"]
+[ext_resource type="Texture2D" uid="uid://jg86oj3v2jog" path="res://room_textures/ceiling_1/Sci-fi_Wall_008_roughness.jpg" id="6_4f3lj"]
+
+[resource]
+albedo_texture = ExtResource("1_kaog2")
+metallic = 1.0
+metallic_texture = ExtResource("4_c5dl1")
+roughness_texture = ExtResource("6_4f3lj")
+roughness_texture_channel = 1
+normal_enabled = true
+normal_texture = ExtResource("5_3wx3o")
+ao_enabled = true
+ao_texture = ExtResource("2_kkpju")
+ao_texture_channel = 2
+heightmap_enabled = true
+heightmap_texture = ExtResource("3_0onqh")

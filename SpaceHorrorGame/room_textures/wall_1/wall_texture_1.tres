@@ -1,0 +1,24 @@
+[gd_resource type="StandardMaterial3D" load_steps=7 format=3 uid="uid://catmnefrgar5c"]
+
+[ext_resource type="Texture2D" uid="uid://c5lmkq6s2ep10" path="res://room_textures/wall_1/Sci-fi_Metal_Plate_003_basecolor.jpg" id="1_8knjc"]
+[ext_resource type="Texture2D" uid="uid://crgs11wmnxhms" path="res://room_textures/wall_1/Sci-fi_Metal_Plate_003_ambientOcclusion.jpg" id="2_vvv0w"]
+[ext_resource type="Texture2D" uid="uid://cnv714n4kdybg" path="res://room_textures/wall_1/Sci-fi_Metal_Plate_003_height.png" id="3_n01oi"]
+[ext_resource type="Texture2D" uid="uid://cdokw6h7jxnwm" path="res://room_textures/wall_1/Sci-fi_Metal_Plate_003_metallic.jpg" id="4_5tbd7"]
+[ext_resource type="Texture2D" uid="uid://bqo3nffbtj2dy" path="res://room_textures/wall_1/Sci-fi_Metal_Plate_003_normal.jpg" id="5_l256n"]
+[ext_resource type="Texture2D" uid="uid://c2q0a5dgo0036" path="res://room_textures/wall_1/Sci-fi_Metal_Plate_003_roughness.jpg" id="6_1757g"]
+
+[resource]
+albedo_texture = ExtResource("1_8knjc")
+metallic = 1.0
+metallic_texture = ExtResource("4_5tbd7")
+roughness_texture = ExtResource("6_1757g")
+roughness_texture_channel = 1
+normal_enabled = true
+normal_texture = ExtResource("5_l256n")
+ao_enabled = true
+ao_texture = ExtResource("2_vvv0w")
+ao_texture_channel = 2
+heightmap_enabled = true
+heightmap_texture = ExtResource("3_n01oi")
+uv1_scale = Vector3(-8, -8, -8)
+uv1_offset = Vector3(-0.15, 0.8, 0)

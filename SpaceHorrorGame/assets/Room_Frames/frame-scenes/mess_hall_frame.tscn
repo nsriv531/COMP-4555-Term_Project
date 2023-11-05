@@ -1,0 +1,113 @@
+[gd_scene load_steps=14 format=3 uid="uid://djqjh3hpr37t6"]
+
+[ext_resource type="PackedScene" uid="uid://tyuxyrdm33qg" path="res://assets/Room_Frames/Mess_Hall.gltf" id="1_hnmqe"]
+[ext_resource type="Material" uid="uid://7td48tkybg4v" path="res://room_textures/flooring_1/flooring_texture_1.tres" id="2_aa5bq"]
+[ext_resource type="Material" uid="uid://cve246qthvu31" path="res://room_textures/flooring_3/flooring_texture_3.tres" id="2_y3j45"]
+[ext_resource type="Material" uid="uid://bkunc554mcx04" path="res://room_textures/ceiling_2/ceiling_texture_2.tres" id="4_07nr0"]
+[ext_resource type="Material" uid="uid://bv88wybfq6fgq" path="res://room_textures/ceiling_base_texture.tres" id="5_3sjf5"]
+[ext_resource type="Material" uid="uid://bevtmj4oabqj7" path="res://room_textures/wall_2/wall_texture_2.tres" id="6_mbg57"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_2fg0i"]
+size = Vector3(18.0125, 0.23588, 18.0199)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_juyjf"]
+emission_enabled = true
+emission = Color(0.321569, 0.658824, 0.843137, 1)
+emission_energy_multiplier = 2.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6n1uc"]
+emission_enabled = true
+emission = Color(0.980392, 0.980392, 0.980392, 1)
+emission_energy_multiplier = 8.0
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_n88d2"]
+size = Vector3(18.0143, 0.30048, 18.006)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_0qajb"]
+size = Vector3(1, 6.45858, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_gp4a1"]
+size = Vector3(1, 6.27553, 4.17116)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_mu6li"]
+size = Vector3(4.07134, 6.44019, 1)
+
+[node name="Mess_Hall" instance=ExtResource("1_hnmqe")]
+
+[node name="Room_Floor_Trim_16x16" parent="." index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.0678802, 0)
+gi_mode = 2
+surface_material_override/0 = ExtResource("2_y3j45")
+
+[node name="Room_Floor_Middle_16x16" parent="." index="1"]
+surface_material_override/0 = ExtResource("2_aa5bq")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Room_Floor_Middle_16x16" index="0"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Room_Floor_Middle_16x16/StaticBody3D" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.11397, 0)
+shape = SubResource("BoxShape3D_2fg0i")
+
+[node name="Room_Floor_16x16" parent="." index="2"]
+surface_material_override/0 = SubResource("StandardMaterial3D_juyjf")
+
+[node name="Room_Ceiling_Panel_16x16" parent="." index="3"]
+surface_material_override/0 = ExtResource("4_07nr0")
+
+[node name="Room_Ceiling_Lights_16x16" parent="." index="4"]
+surface_material_override/0 = SubResource("StandardMaterial3D_6n1uc")
+
+[node name="Room_Ceiling_Edge_Panel_16x16" parent="." index="5"]
+surface_material_override/0 = ExtResource("5_3sjf5")
+
+[node name="Room_Ceiling_16x16" parent="." index="6"]
+surface_material_override/0 = ExtResource("5_3sjf5")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Room_Ceiling_16x16" index="0"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Room_Ceiling_16x16/StaticBody3D" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.90746, 0)
+shape = SubResource("BoxShape3D_n88d2")
+
+[node name="Room_Base_Frame_16x16" parent="." index="7"]
+surface_material_override/0 = ExtResource("6_mbg57")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Room_Base_Frame_16x16" index="0"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Room_Base_Frame_16x16/StaticBody3D" index="0"]
+transform = Transform3D(0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, 8.6, 3, 8.6)
+shape = SubResource("BoxShape3D_0qajb")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="Room_Base_Frame_16x16/StaticBody3D" index="1"]
+transform = Transform3D(0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, 8.5, 3, -8.5)
+shape = SubResource("BoxShape3D_0qajb")
+
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="Room_Base_Frame_16x16/StaticBody3D" index="2"]
+transform = Transform3D(0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, -8.5, 3, 8.5)
+shape = SubResource("BoxShape3D_0qajb")
+
+[node name="CollisionShape3D4" type="CollisionShape3D" parent="Room_Base_Frame_16x16/StaticBody3D" index="3"]
+transform = Transform3D(0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, -8.5, 3, -8.5)
+shape = SubResource("BoxShape3D_0qajb")
+
+[node name="Room_Frame_Divider_x_axis" parent="." index="8"]
+surface_material_override/0 = ExtResource("6_mbg57")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Room_Frame_Divider_x_axis" index="0"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Room_Frame_Divider_x_axis/StaticBody3D" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9, 3, 0)
+shape = SubResource("BoxShape3D_gp4a1")
+
+[node name="Room_Frame_Divider_y_axis" parent="." index="9"]
+surface_material_override/0 = ExtResource("6_mbg57")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Room_Frame_Divider_y_axis" index="0"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Room_Frame_Divider_y_axis/StaticBody3D" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, -9)
+shape = SubResource("BoxShape3D_mu6li")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="Room_Frame_Divider_y_axis/StaticBody3D" index="1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 9)
+shape = SubResource("BoxShape3D_mu6li")

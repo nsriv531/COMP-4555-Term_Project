@@ -1,0 +1,25 @@
+[gd_resource type="StandardMaterial3D" load_steps=7 format=3 uid="uid://be33hd08spf1l"]
+
+[ext_resource type="Texture2D" uid="uid://drfjlsaqk7eyq" path="res://room_textures/flooring_2/Sci-fi_Floor_003_basecolor.jpg" id="1_5hkhr"]
+[ext_resource type="Texture2D" uid="uid://qtf6en7d3uyv" path="res://room_textures/flooring_2/Sci-fi_Floor_003_ambientOcclusion.jpg" id="2_hu8bs"]
+[ext_resource type="Texture2D" uid="uid://bshhgx7e67bps" path="res://room_textures/flooring_2/Sci-fi_Floor_003_height.png" id="3_0gd6v"]
+[ext_resource type="Texture2D" uid="uid://d0a3nhhc2fu88" path="res://room_textures/flooring_2/Sci-fi_Floor_003_metallic.jpg" id="4_o1ku1"]
+[ext_resource type="Texture2D" uid="uid://che1s3tklgp0i" path="res://room_textures/flooring_2/Sci-fi_Floor_003_normal.jpg" id="5_b1t2n"]
+[ext_resource type="Texture2D" uid="uid://b8mwws240lp8n" path="res://room_textures/flooring_2/Sci-fi_Floor_003_roughness.jpg" id="6_ymdjf"]
+
+[resource]
+albedo_texture = ExtResource("1_5hkhr")
+metallic = 0.34
+metallic_specular = 0.61
+metallic_texture = ExtResource("4_o1ku1")
+roughness_texture = ExtResource("6_ymdjf")
+roughness_texture_channel = 1
+normal_enabled = true
+normal_texture = ExtResource("5_b1t2n")
+ao_enabled = true
+ao_light_affect = 0.33
+ao_texture = ExtResource("2_hu8bs")
+ao_texture_channel = 2
+heightmap_enabled = true
+heightmap_scale = 1.0
+heightmap_texture = ExtResource("3_0gd6v")

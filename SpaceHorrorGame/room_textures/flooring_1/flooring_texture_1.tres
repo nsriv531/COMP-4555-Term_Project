@@ -1,0 +1,15 @@
+[gd_resource type="StandardMaterial3D" load_steps=5 format=3 uid="uid://7td48tkybg4v"]
+
+[ext_resource type="Texture2D" uid="uid://btgn7xfu8grxm" path="res://room_textures/flooring_1/Sci-fi_Floor_001_basecolor.jpg" id="1_4kb4r"]
+[ext_resource type="Texture2D" uid="uid://c8frtm0bh7a1t" path="res://room_textures/flooring_1/Sci-fi_Floor_001_ambientOcclusion.jpg" id="2_dxe5d"]
+[ext_resource type="Texture2D" uid="uid://tkih4hvq465l" path="res://room_textures/flooring_1/Sci-fi_Floor_001_metallic.jpg" id="3_oyvdr"]
+[ext_resource type="Texture2D" uid="uid://ctgd0oxs1sv32" path="res://room_textures/flooring_1/Sci-fi_Floor_001_roughness.jpg" id="4_6yibw"]
+
+[resource]
+albedo_texture = ExtResource("1_4kb4r")
+metallic = 1.0
+metallic_texture = ExtResource("3_oyvdr")
+roughness_texture = ExtResource("4_6yibw")
+ao_enabled = true
+ao_texture = ExtResource("2_dxe5d")
+ao_texture_channel = 2
