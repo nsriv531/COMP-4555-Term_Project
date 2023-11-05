@@ -1,7 +1,8 @@
-[gd_scene load_steps=82 format=3 uid="uid://1csibo7xkgx1"]
+[gd_scene load_steps=87 format=3 uid="uid://1csibo7xkgx1"]
 
 [ext_resource type="Script" path="res://addons/zylann.hterrain/hterrain.gd" id="1_ilc75"]
 [ext_resource type="Shader" path="res://Scripts/CameraEffects.gdshader" id="1_m1fa5"]
+[ext_resource type="Script" path="res://pluto.gd" id="1_o322i"]
 [ext_resource type="Resource" path="res://PlutoTerrain/data.hterrain" id="2_177fn"]
 [ext_resource type="Script" path="res://addons/zylann.hterrain/hterrain_texture_set.gd" id="3_0l8wc"]
 [ext_resource type="Texture2D" uid="uid://bo5743p4g4jd8" path="res://textures/rocks_ground_04_diff_4k.jpg" id="4_40ndm"]
@@ -30,6 +31,8 @@
 [ext_resource type="Script" path="res://AirLockInnerArea.gd" id="26_wyfa4"]
 [ext_resource type="PackedScene" uid="uid://di0axhxbprjv1" path="res://models/Tube.tscn" id="27_24fpu"]
 [ext_resource type="AudioStream" uid="uid://b1tprvlueafqk" path="res://Sounds/Air.ogg" id="27_mqdwd"]
+[ext_resource type="AudioEffectLowPassFilter" uid="uid://bj0pyg6plufxn" path="res://Muffle.tres" id="32_b5i18"]
+[ext_resource type="Script" path="res://MuffleEffect.gd" id="33_yh5b4"]
 
 [sub_resource type="Resource" id="Resource_2g886"]
 script = ExtResource("3_0l8wc")
@@ -340,7 +343,16 @@ uv1_triplanar = true
 [sub_resource type="BoxShape3D" id="BoxShape3D_ri145"]
 size = Vector3(6.41722, 2.47329, 4.89068)
 
+[sub_resource type="Animation" id="Animation_2r7hm"]
+resource_name = "new_animation"
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_xnq74"]
+_data = {
+"new_animation": SubResource("Animation_2r7hm")
+}
+
 [node name="Pluto" type="Node3D"]
+script = ExtResource("1_o322i")
 
 [node name="HTerrain" type="Node3D" parent="."]
 script = ExtResource("1_ilc75")
@@ -469,7 +481,7 @@ stretch_mode = 3
 
 [node name="WalkingSound" type="AudioStreamPlayer3D" parent="Player"]
 stream = ExtResource("14_rxa8h")
-volume_db = -42.0
+volume_db = -30.0
 max_db = 0.0
 
 [node name="WalkingSoundTimer" type="Timer" parent="Player"]
@@ -629,6 +641,17 @@ stream = ExtResource("27_mqdwd")
 
 [node name="Tube2" parent="." instance=ExtResource("27_24fpu")]
 transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, -2.46537, 23.2777, -10.5081)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_xnq74")
+}
+
+[node name="ResourcePreloader" type="ResourcePreloader" parent="."]
+resources = [PackedStringArray("Muffle"), [ExtResource("32_b5i18")]]
+
+[node name="MuffleEffect" type="Node3D" parent="."]
+script = ExtResource("33_yh5b4")
 
 [connection signal="timeout" from="Player/Timer" to="Player" method="_on_timer_timeout"]
 [connection signal="button_press" from="Rooms/AirLock/SmallDoor/ButtonSystem/StaticBody3D" to="Rooms/AirLock/SmallDoor" method="_on_static_body_3d_button_press"]

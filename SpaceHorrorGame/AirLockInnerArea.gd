@@ -23,12 +23,19 @@ func _process(delta):
 
 func _on_body_shape_entered(body_rid, body, body_shape_index, local_shape_index):
 	if (isReady):
+		
+		if door1.open == true:
+			Global.Pluto.unmuffle()
+		else:
+			Global.Pluto.muffle()
+			
 		isReady = false
 
 		doorArr[int(door1.open)] = door1
 		doorArr[int(door2.open)] = door2
 		
 		doorArr[1].onButtonPress()
+		
 		
 		airlock_sound_player.play()
 	pass # Replace with function body.
