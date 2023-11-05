@@ -54,6 +54,15 @@ func _physics_process(delta):
 	# Add the gravity.
 	if not is_on_floor():
 		velocity.y -= gravity * delta
+		
+	# Add walking sound
+	if is_on_floor() && not velocity.is_zero_approx():
+		if $WalkingSoundTimer.time_left <= 0:
+			$WalkingSound.pitch_scale = randf_range(0.8, 1.2)
+			$WalkingSound.play()
+			$WalkingSoundTimer.start(0.35)
+	else:
+		$WalkingSoundTimer.start(0.2)
 
 	# Handle Jump.
 	if Input.is_action_just_pressed("ui_accept") and is_on_floor():
