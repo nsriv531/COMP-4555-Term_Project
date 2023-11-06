@@ -1,4 +1,4 @@
-[gd_scene load_steps=89 format=3 uid="uid://1csibo7xkgx1"]
+[gd_scene load_steps=90 format=3 uid="uid://1csibo7xkgx1"]
 
 [ext_resource type="Script" path="res://addons/zylann.hterrain/hterrain.gd" id="1_ilc75"]
 [ext_resource type="Shader" path="res://Scripts/CameraEffects.gdshader" id="1_m1fa5"]
@@ -35,6 +35,7 @@
 [ext_resource type="AudioEffectLowPassFilter" uid="uid://bj0pyg6plufxn" path="res://Muffle.tres" id="32_b5i18"]
 [ext_resource type="PackedScene" uid="uid://cbnpoha7id8gp" path="res://assets/Lvl1_Rooms/Kitchen.tscn" id="32_v6vqc"]
 [ext_resource type="Script" path="res://MuffleEffect.gd" id="33_yh5b4"]
+[ext_resource type="VoxelGIData" uid="uid://cro30gb65wfdc" path="res://lightmap/pluto.VoxelGI_data.res" id="36_6no6g"]
 
 [sub_resource type="Resource" id="Resource_2g886"]
 script = ExtResource("3_0l8wc")
@@ -310,7 +311,6 @@ ambient_light_color = Color(0.941176, 0.941176, 0.941176, 1)
 ssr_enabled = true
 ssao_enabled = true
 ssil_enabled = true
-sdfgi_enabled = true
 glow_enabled = true
 glow_normalized = true
 glow_blend_mode = 0
@@ -500,10 +500,10 @@ material = SubResource("StandardMaterial3D_rquee")
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_him15")
 
-[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+[node name="Sun" type="DirectionalLight3D" parent="."]
 transform = Transform3D(0.586849, 0.722724, -0.365075, -0.0180013, 0.462412, 0.886482, 0.809497, -0.513659, 0.284376, -390.079, 748.531, 281.904)
-light_energy = 0.227
-light_volumetric_fog_energy = 0.465
+light_energy = 0.25
+light_volumetric_fog_energy = 0.0
 light_bake_mode = 1
 shadow_enabled = true
 shadow_opacity = 0.84
@@ -693,6 +693,11 @@ resources = [PackedStringArray("Muffle"), [ExtResource("32_b5i18")]]
 
 [node name="MuffleEffect" type="Node3D" parent="."]
 script = ExtResource("33_yh5b4")
+
+[node name="VoxelGI" type="VoxelGI" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 42.7033, 0)
+size = Vector3(134.957, 56.0929, 138.925)
+data = ExtResource("36_6no6g")
 
 [connection signal="timeout" from="Player/Timer" to="Player" method="_on_timer_timeout"]
 [connection signal="button_press" from="Rooms/AirLock/SmallDoor/ButtonSystem/StaticBody3D" to="Rooms/AirLock/SmallDoor" method="_on_static_body_3d_button_press"]
