@@ -1,4 +1,4 @@
-[gd_scene load_steps=86 format=3 uid="uid://1csibo7xkgx1"]
+[gd_scene load_steps=89 format=3 uid="uid://1csibo7xkgx1"]
 
 [ext_resource type="Script" path="res://addons/zylann.hterrain/hterrain.gd" id="1_ilc75"]
 [ext_resource type="Shader" path="res://Scripts/CameraEffects.gdshader" id="1_m1fa5"]
@@ -30,7 +30,10 @@
 [ext_resource type="Script" path="res://AirLockInnerArea.gd" id="26_wyfa4"]
 [ext_resource type="PackedScene" uid="uid://di0axhxbprjv1" path="res://models/Tube.tscn" id="27_24fpu"]
 [ext_resource type="AudioStream" uid="uid://b1tprvlueafqk" path="res://Sounds/Air.ogg" id="27_mqdwd"]
+[ext_resource type="PackedScene" uid="uid://bvmydm7o77js5" path="res://assets/Lvl1_Rooms/Storage_Bay.tscn" id="30_x5r3y"]
+[ext_resource type="PackedScene" uid="uid://dimbt0twyupqv" path="res://assets/Lvl1_Rooms/Sleeping_Quarters.tscn" id="31_or7hb"]
 [ext_resource type="AudioEffectLowPassFilter" uid="uid://bj0pyg6plufxn" path="res://Muffle.tres" id="32_b5i18"]
+[ext_resource type="PackedScene" uid="uid://cbnpoha7id8gp" path="res://assets/Lvl1_Rooms/Kitchen.tscn" id="32_v6vqc"]
 [ext_resource type="Script" path="res://MuffleEffect.gd" id="33_yh5b4"]
 
 [sub_resource type="Resource" id="Resource_2g886"]
@@ -330,7 +333,7 @@ albedo_color = Color(1, 1, 1, 0)
 material = SubResource("StandardMaterial3D_bkxlg")
 
 [sub_resource type="BoxMesh" id="BoxMesh_yvi8c"]
-size = Vector3(0.1, 0.5, 0.2)
+size = Vector3(0.1, 0.3, 0.1)
 
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_8wejw"]
 points = PackedVector3Array(0.05, 0.25, 0.1, -0.05, 0.25, 0.1, 0.05, -0.25, 0.1, 0.05, 0.25, -0.1, -0.05, 0.25, -0.1, -0.05, -0.25, 0.1, 0.05, -0.25, -0.1, -0.05, -0.25, -0.1)
@@ -506,11 +509,11 @@ shadow_enabled = true
 shadow_opacity = 0.84
 
 [node name="TestInteractableBlock" type="StaticBody3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.78674, 17.8048, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 28.9067, 19.8048, -19)
 script = ExtResource("11_gpuug")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="TestInteractableBlock"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 18.6917, 0)
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -4.54857, 5.43426, 1.88109)
 mesh = SubResource("BoxMesh_tduht")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="TestInteractableBlock"]
@@ -631,7 +634,49 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.0169, -22.3235, 11.9235)
 stream = ExtResource("27_mqdwd")
 
 [node name="Mess_Hall" parent="Rooms" instance=ExtResource("23_p3srr")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 3.2, -26.5)
+
+[node name="Storage_Bay" parent="Rooms" instance=ExtResource("30_x5r3y")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 18, 3.2, -31.5)
+
+[node name="storage_bay_door" parent="Rooms/Storage_Bay" instance=ExtResource("12_shujh")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, 9)
+
+[node name="door_system_outside" type="Node3D" parent="Rooms/Storage_Bay/storage_bay_door"]
+
+[node name="outside_button" type="StaticBody3D" parent="Rooms/Storage_Bay/storage_bay_door/door_system_outside"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -1.10922, 1.5731, -0.456675)
+collision_layer = 2
+collision_mask = 0
+script = ExtResource("19_8r8ar")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Rooms/Storage_Bay/storage_bay_door/door_system_outside/outside_button"]
+mesh = SubResource("BoxMesh_yvi8c")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Rooms/Storage_Bay/storage_bay_door/door_system_outside/outside_button"]
+transform = Transform3D(0.62, 0, 0, 0, 0.62, 0, 0, 0, 0.62, 0.0243378, -0.00645828, 0)
+shape = SubResource("ConvexPolygonShape3D_8wejw")
+
+[node name="door_system_inside" type="Node3D" parent="Rooms/Storage_Bay/storage_bay_door"]
+
+[node name="inside_button" type="StaticBody3D" parent="Rooms/Storage_Bay/storage_bay_door/door_system_inside"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 1.1598, 1.5731, 0.289089)
+collision_layer = 2
+collision_mask = 0
+script = ExtResource("19_8r8ar")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Rooms/Storage_Bay/storage_bay_door/door_system_inside/inside_button"]
+mesh = SubResource("BoxMesh_yvi8c")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Rooms/Storage_Bay/storage_bay_door/door_system_inside/inside_button"]
+transform = Transform3D(0.62, 0, 0, 0, 0.62, 0, 0, 0, 0.62, 0.0116887, -0.00645828, 0)
+shape = SubResource("ConvexPolygonShape3D_8wejw")
+
+[node name="Sleeping_Quarters" parent="Rooms" instance=ExtResource("31_or7hb")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 3.2, -8.5)
+
+[node name="kitchen" parent="Rooms" instance=ExtResource("32_v6vqc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 3.2, -39.5)
 
 [node name="Tube" parent="." instance=ExtResource("27_24fpu")]
 
@@ -654,3 +699,5 @@ script = ExtResource("33_yh5b4")
 [connection signal="button_press" from="Rooms/AirLock/SmallDoor2/ButtonSystem/StaticBody3D2" to="Rooms/AirLock/SmallDoor2" method="_on_static_body_3d_button_press"]
 [connection signal="body_shape_entered" from="Rooms/AirLock/AirLockInnerArea" to="Rooms/AirLock/AirLockInnerArea" method="_on_body_shape_entered"]
 [connection signal="finished" from="Rooms/AirLock/AirLockInnerArea/AirlockSoundPlayer" to="Rooms/AirLock/AirLockInnerArea" method="_on_audio_finished"]
+[connection signal="button_press" from="Rooms/Storage_Bay/storage_bay_door/door_system_outside/outside_button" to="Rooms/Storage_Bay/storage_bay_door" method="_on_static_body_3d_button_press"]
+[connection signal="button_press" from="Rooms/Storage_Bay/storage_bay_door/door_system_inside/inside_button" to="Rooms/Storage_Bay/storage_bay_door" method="_on_static_body_3d_button_press"]

@@ -1,11 +1,30 @@
-[gd_scene load_steps=3 format=3 uid="uid://dv1bmhjxxccgd"]
+[gd_scene load_steps=7 format=3 uid="uid://dv1bmhjxxccgd"]
 
 [ext_resource type="PackedScene" uid="uid://on22onw6vsog" path="res://assets/Walls/Large/Large_Wall_Interior_2.gltf" id="1_yechg"]
+[ext_resource type="Texture2D" uid="uid://61j63csua6g2" path="res://room_textures/trim tex.png" id="2_2gyy1"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_drmqn"]
+albedo_texture = ExtResource("2_2gyy1")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_62qwf"]
+albedo_texture = ExtResource("2_2gyy1")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_fajde"]
+albedo_texture = ExtResource("2_2gyy1")
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_kxroy"]
 size = Vector3(16.0415, 5.96679, 0.58763)
 
 [node name="Large_Wall_Interior_2" instance=ExtResource("1_yechg")]
+
+[node name="Middle_Interior_Panel" parent="." index="0"]
+surface_material_override/0 = SubResource("StandardMaterial3D_drmqn")
+
+[node name="Large_Wall_Interior" parent="." index="1"]
+surface_material_override/0 = SubResource("StandardMaterial3D_62qwf")
+
+[node name="Large_Wall" parent="." index="2"]
+surface_material_override/0 = SubResource("StandardMaterial3D_fajde")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="." index="3"]
 

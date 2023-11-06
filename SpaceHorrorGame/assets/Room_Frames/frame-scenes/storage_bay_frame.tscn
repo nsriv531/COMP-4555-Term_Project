@@ -1,0 +1,76 @@
+[gd_scene load_steps=11 format=3 uid="uid://dhn3bvw7d32te"]
+
+[ext_resource type="PackedScene" uid="uid://dp7otnqdj65lj" path="res://assets/Room_Frames/16X6_Frame.gltf" id="1_47iks"]
+[ext_resource type="Material" uid="uid://bkunc554mcx04" path="res://room_textures/ceiling_2/ceiling_texture_2.tres" id="2_dnv1a"]
+[ext_resource type="Material" uid="uid://bv88wybfq6fgq" path="res://room_textures/ceiling_base_texture.tres" id="3_ou726"]
+[ext_resource type="Material" uid="uid://bevtmj4oabqj7" path="res://room_textures/wall_2/wall_texture_2.tres" id="4_ayiqa"]
+[ext_resource type="Material" uid="uid://be33hd08spf1l" path="res://room_textures/flooring_2/flooring_texture_2.tres" id="5_7occ1"]
+[ext_resource type="Material" uid="uid://7td48tkybg4v" path="res://room_textures/flooring_1/flooring_texture_1.tres" id="6_kbbkr"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_qo87u"]
+albedo_color = Color(0.913725, 0.909804, 0.964706, 1)
+emission_enabled = true
+emission = Color(0.639216, 0.878431, 0.968627, 1)
+emission_energy_multiplier = 2.0
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_jkmlj"]
+size = Vector3(8.08022, 0.30048, 18.006)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ahj0t"]
+size = Vector3(1, 6.45858, 0.552956)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_xmfo0"]
+size = Vector3(8.2827, 0.23588, 18.0199)
+
+[node name="16X6_Frame" instance=ExtResource("1_47iks")]
+
+[node name="Room_Ceiling_Side_Panel_16x6" parent="." index="0"]
+surface_material_override/0 = ExtResource("2_dnv1a")
+
+[node name="Room_Ceiling_Lights_16x6" parent="." index="1"]
+surface_material_override/0 = SubResource("StandardMaterial3D_qo87u")
+
+[node name="Room_Ceiling_Edge_Panel_16x6" parent="." index="2"]
+surface_material_override/0 = ExtResource("3_ou726")
+
+[node name="Room_Ceiling_16x6" parent="." index="3"]
+surface_material_override/0 = ExtResource("3_ou726")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Room_Ceiling_16x6" index="0"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Room_Ceiling_16x6/StaticBody3D" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.90746, 0)
+shape = SubResource("BoxShape3D_jkmlj")
+
+[node name="Room_Base_Frame_16x6" parent="." index="4"]
+surface_material_override/0 = ExtResource("4_ayiqa")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Room_Base_Frame_16x6" index="0"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Room_Base_Frame_16x6/StaticBody3D" index="0"]
+transform = Transform3D(0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, 3.5, 3, 8.5)
+shape = SubResource("BoxShape3D_ahj0t")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="Room_Base_Frame_16x6/StaticBody3D" index="1"]
+transform = Transform3D(0.707107, 0, -0.707107, 0, 1, 0, 0.707107, 0, 0.707107, -3.5, 3, 8.5)
+shape = SubResource("BoxShape3D_ahj0t")
+
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="Room_Base_Frame_16x6/StaticBody3D" index="2"]
+transform = Transform3D(-0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, -0.707107, 3.5, 3, -8.5)
+shape = SubResource("BoxShape3D_ahj0t")
+
+[node name="CollisionShape3D4" type="CollisionShape3D" parent="Room_Base_Frame_16x6/StaticBody3D" index="3"]
+transform = Transform3D(0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, -3.5, 3, -8.5)
+shape = SubResource("BoxShape3D_ahj0t")
+
+[node name="Middle_Floor_16x6" parent="." index="5"]
+surface_material_override/0 = ExtResource("5_7occ1")
+
+[node name="Floor_16x6" parent="." index="6"]
+surface_material_override/0 = ExtResource("6_kbbkr")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Floor_16x6" index="0"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Floor_16x6/StaticBody3D" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.11397, 0)
+shape = SubResource("BoxShape3D_xmfo0")

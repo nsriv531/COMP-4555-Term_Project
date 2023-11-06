@@ -1,11 +1,36 @@
-[gd_scene load_steps=3 format=3 uid="uid://dru0ouunuvkwg"]
+[gd_scene load_steps=8 format=3 uid="uid://dru0ouunuvkwg"]
 
 [ext_resource type="PackedScene" uid="uid://br20rvw8khv8l" path="res://assets/Walls/Small/Small_Wall_Exterior_2.gltf" id="1_d10s7"]
+[ext_resource type="Texture2D" uid="uid://61j63csua6g2" path="res://room_textures/trim tex.png" id="2_pnwm0"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_frrcj"]
+albedo_texture = ExtResource("2_pnwm0")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_h13ml"]
+albedo_texture = ExtResource("2_pnwm0")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_c4rq2"]
+albedo_texture = ExtResource("2_pnwm0")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_rlhyn"]
+albedo_texture = ExtResource("2_pnwm0")
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_vadjm"]
 size = Vector3(6.10584, 6.30831, 0.333156)
 
 [node name="Small_Wall_Exterior_2" instance=ExtResource("1_d10s7")]
+
+[node name="Small_Wall" parent="." index="0"]
+surface_material_override/0 = SubResource("StandardMaterial3D_frrcj")
+
+[node name="Small_Hex" parent="." index="1"]
+surface_material_override/0 = SubResource("StandardMaterial3D_h13ml")
+
+[node name="Small_Border_Exterior" parent="." index="2"]
+surface_material_override/0 = SubResource("StandardMaterial3D_c4rq2")
+
+[node name="Small_Interior_2" parent="." index="3"]
+surface_material_override/0 = SubResource("StandardMaterial3D_rlhyn")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="." index="4"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -4)

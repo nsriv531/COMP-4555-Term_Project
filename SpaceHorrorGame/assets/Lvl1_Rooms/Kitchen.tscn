@@ -1,0 +1,18 @@
+[gd_scene load_steps=5 format=3 uid="uid://cbnpoha7id8gp"]
+
+[ext_resource type="PackedScene" uid="uid://bahpkoom07hwt" path="res://assets/Walls/wall-scenes/small/small_wall_interior_2.tscn" id="2_2w5ms"]
+[ext_resource type="PackedScene" uid="uid://cu5x3durp47ow" path="res://assets/Walls/wall-scenes/small/small_wall_interior_1.tscn" id="3_nj40l"]
+[ext_resource type="PackedScene" uid="uid://b06cyy4xmxmbx" path="res://assets/Walls/wall-scenes/small/small_doorway_interior_1.tscn" id="4_4mog2"]
+[ext_resource type="PackedScene" uid="uid://oiq6x553evme" path="res://assets/Room_Frames/frame-scenes/kitchen_frame.tscn" id="4_m2boq"]
+
+[node name="kitchen" type="Node3D"]
+
+[node name="Small_Wall_Interior_2" parent="." instance=ExtResource("2_2w5ms")]
+
+[node name="Small_Wall_Interior_1" parent="." instance=ExtResource("3_nj40l")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 0, 0)
+
+[node name="Small_Doorway_Interior_1" parent="." instance=ExtResource("4_4mog2")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 0, 0)
+
+[node name="6x6_Frame" parent="." instance=ExtResource("4_m2boq")]
