@@ -1,4 +1,4 @@
-[gd_scene load_steps=90 format=3 uid="uid://1csibo7xkgx1"]
+[gd_scene load_steps=86 format=3 uid="uid://1csibo7xkgx1"]
 
 [ext_resource type="Script" path="res://addons/zylann.hterrain/hterrain.gd" id="1_ilc75"]
 [ext_resource type="Shader" path="res://Scripts/CameraEffects.gdshader" id="1_m1fa5"]
@@ -16,7 +16,6 @@
 [ext_resource type="Shader" path="res://greenscreen.gdshader" id="10_dq8d4"]
 [ext_resource type="Script" path="res://GUI.gd" id="10_sxumy"]
 [ext_resource type="Texture2D" uid="uid://dh205y6pw3vdf" path="res://textures/note.png" id="10_xbnsg"]
-[ext_resource type="Script" path="res://Scripts/TestInteractableBlock.gd" id="11_gpuug"]
 [ext_resource type="Texture2D" uid="uid://cjd2w1befu7ug" path="res://ezgif-5-3568ee6a8d.png" id="11_tvc62"]
 [ext_resource type="PackedScene" uid="uid://bd25meeoukb72" path="res://assets/small_door.tscn" id="12_shujh"]
 [ext_resource type="PackedScene" uid="uid://clehtd5os8h8o" path="res://Objects/Note.tscn" id="14_d2cap"]
@@ -31,7 +30,7 @@
 [ext_resource type="PackedScene" uid="uid://di0axhxbprjv1" path="res://models/Tube.tscn" id="27_24fpu"]
 [ext_resource type="AudioStream" uid="uid://b1tprvlueafqk" path="res://Sounds/Air.ogg" id="27_mqdwd"]
 [ext_resource type="PackedScene" path="res://assets/Lvl1_Rooms/Storage_Bay.tscn" id="30_x5r3y"]
-[ext_resource type="PackedScene" path="res://assets/Lvl1_Rooms/Sleeping_Quarters.tscn" id="31_or7hb"]
+[ext_resource type="PackedScene" uid="uid://ctx1v53bqpdhs" path="res://assets/Lvl1_Rooms/Sleeping_Quarters.tscn" id="31_or7hb"]
 [ext_resource type="AudioEffectLowPassFilter" uid="uid://bj0pyg6plufxn" path="res://Muffle.tres" id="32_b5i18"]
 [ext_resource type="PackedScene" uid="uid://da1wjdx56b2uo" path="res://assets/Lvl1_Rooms/Kitchen.tscn" id="32_v6vqc"]
 [ext_resource type="Script" path="res://MuffleEffect.gd" id="33_yh5b4"]
@@ -59,7 +58,7 @@ shader_parameter/amount = 2.0
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_mmlhe"]
 shader = ExtResource("10_dq8d4")
 shader_parameter/transparent_color = Color(0, 0.984375, 0, 1)
-shader_parameter/pickup_range = 0.3
+shader_parameter/pickup_range = 0.5
 shader_parameter/fade_amount = 0.5
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_jgpf5"]
@@ -317,15 +316,6 @@ glow_blend_mode = 0
 volumetric_fog_enabled = true
 volumetric_fog_density = 0.0035
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7wr7n"]
-albedo_color = Color(0.388235, 0.666667, 0.376471, 1)
-
-[sub_resource type="BoxMesh" id="BoxMesh_tduht"]
-material = SubResource("StandardMaterial3D_7wr7n")
-
-[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_6jr4b"]
-points = PackedVector3Array(-0.5, -0.5, -0.5, 0.5, 0.5, 0.5, 0.5, -0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5, -0.5, 0.5, -0.5)
-
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_bkxlg"]
 albedo_color = Color(1, 1, 1, 0)
 
@@ -441,7 +431,8 @@ grow_vertical = 2
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Player/Effects/CanvasLayer"]
 material = SubResource("ShaderMaterial_mmlhe")
-position = Vector2(653, 371)
+position = Vector2(648.5, 353)
+scale = Vector2(0.990486, 0.95)
 sprite_frames = SubResource("SpriteFrames_kkej6")
 
 [node name="GUI" type="Control" parent="Player"]
@@ -507,17 +498,6 @@ light_volumetric_fog_energy = 0.0
 light_bake_mode = 1
 shadow_enabled = true
 shadow_opacity = 0.84
-
-[node name="TestInteractableBlock" type="StaticBody3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 28.9067, 19.8048, -19)
-script = ExtResource("11_gpuug")
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="TestInteractableBlock"]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -4.54857, 5.43426, 1.88109)
-mesh = SubResource("BoxMesh_tduht")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="TestInteractableBlock"]
-shape = SubResource("ConvexPolygonShape3D_6jr4b")
 
 [node name="Note" parent="." instance=ExtResource("14_d2cap")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 21.6463, 22.687, -12.5052)

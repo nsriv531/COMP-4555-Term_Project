@@ -51,7 +51,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3.5527e-15, -1)
 shape = SubResource("BoxShape3D_tv405")
 
 [node name="Top_Panel" parent="Door_Rig/Skeleton3D" index="1"]
-transform = Transform3D(1.58457, -4.76837e-07, 1.32502e-09, 3.68788e-08, -2.40055e-08, -1.58457, 5.36442e-07, 1.58457, -4.39837e-08, -3.95371e-08, -0.792286, 7.03617e-08)
+transform = Transform3D(1.58457, -4.76837e-07, 1.32502e-09, 3.68788e-08, -2.40055e-08, -1.58457, 5.36442e-07, 1.58457, -4.39837e-08, -3.95371e-08, -0.792281, 7.0362e-08)
 bone_idx = 3
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Door_Rig/Skeleton3D/Top_Panel" index="1"]
@@ -62,7 +62,7 @@ transform = Transform3D(1, 1.7053e-13, -2.48321e-16, -1.7053e-13, 1, 7.10543e-15
 shape = SubResource("BoxShape3D_pchl2")
 
 [node name="Right_Panel" parent="Door_Rig/Skeleton3D" index="2"]
-transform = Transform3D(1.58457, -2.48002e-07, 3.15536e-08, 1.20794e-07, -5.96046e-08, -1.58457, 2.21242e-07, 1.58457, 0, 0.000289202, -0.787567, -0.00128642)
+transform = Transform3D(1.58457, -2.48002e-07, 3.15536e-08, 1.20794e-07, -5.96046e-08, -1.58457, 2.21242e-07, 1.58457, 0, 0.000285387, -0.787568, -0.00128642)
 bone_idx = 5
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Door_Rig/Skeleton3D/Right_Panel" index="1"]
@@ -72,7 +72,7 @@ transform = Transform3D(1, 0, -1.85342e-15, 0, 1, 0, 1.85342e-15, 0, 1, -0.80000
 shape = SubResource("BoxShape3D_0onbn")
 
 [node name="Left_Panel" parent="Door_Rig/Skeleton3D" index="3"]
-transform = Transform3D(-1.58457, 3.28673e-07, 3.34473e-08, -2.6346e-08, 0, -1.58457, 2.21242e-07, 1.58457, 5.96046e-08, -0.0259538, -0.821811, -0.00643562)
+transform = Transform3D(-1.58457, 3.28673e-07, 3.34473e-08, -2.6346e-08, 0, -1.58457, 2.21242e-07, 1.58457, 5.96046e-08, -0.025955, -0.821808, -0.00643561)
 bone_idx = 7
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Door_Rig/Skeleton3D/Left_Panel" index="1"]
