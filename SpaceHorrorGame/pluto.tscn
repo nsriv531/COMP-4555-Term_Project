@@ -1,4 +1,4 @@
-[gd_scene load_steps=89 format=3 uid="uid://1csibo7xkgx1"]
+[gd_scene load_steps=90 format=3 uid="uid://1csibo7xkgx1"]
 
 [ext_resource type="Script" path="res://addons/zylann.hterrain/hterrain.gd" id="1_ilc75"]
 [ext_resource type="Shader" path="res://Scripts/CameraEffects.gdshader" id="1_m1fa5"]
@@ -32,6 +32,7 @@
 [ext_resource type="AudioStream" uid="uid://b1tprvlueafqk" path="res://Sounds/Air.ogg" id="27_mqdwd"]
 [ext_resource type="PackedScene" uid="uid://bvmydm7o77js5" path="res://assets/Lvl1_Rooms/Storage_Bay.tscn" id="30_x5r3y"]
 [ext_resource type="PackedScene" uid="uid://dimbt0twyupqv" path="res://assets/Lvl1_Rooms/Sleeping_Quarters.tscn" id="31_or7hb"]
+[ext_resource type="PackedScene" uid="uid://dsrkdm4ir7xml" path="res://assets/Doors/door-scenes/small_door_new.tscn" id="31_w7x6h"]
 [ext_resource type="AudioEffectLowPassFilter" uid="uid://bj0pyg6plufxn" path="res://Muffle.tres" id="32_b5i18"]
 [ext_resource type="PackedScene" uid="uid://cbnpoha7id8gp" path="res://assets/Lvl1_Rooms/Kitchen.tscn" id="32_v6vqc"]
 [ext_resource type="Script" path="res://MuffleEffect.gd" id="33_yh5b4"]
@@ -639,8 +640,8 @@ transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 3.2
 [node name="Storage_Bay" parent="Rooms" instance=ExtResource("30_x5r3y")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 18, 3.2, -31.5)
 
-[node name="storage_bay_door" parent="Rooms/Storage_Bay" instance=ExtResource("12_shujh")]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, 9)
+[node name="storage_bay_door" parent="Rooms/Storage_Bay" instance=ExtResource("31_w7x6h")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 9.1)
 
 [node name="door_system_outside" type="Node3D" parent="Rooms/Storage_Bay/storage_bay_door"]
 
@@ -660,7 +661,7 @@ shape = SubResource("ConvexPolygonShape3D_8wejw")
 [node name="door_system_inside" type="Node3D" parent="Rooms/Storage_Bay/storage_bay_door"]
 
 [node name="inside_button" type="StaticBody3D" parent="Rooms/Storage_Bay/storage_bay_door/door_system_inside"]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 1.1598, 1.5731, 0.289089)
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 1.15379, 1.5731, 0.289089)
 collision_layer = 2
 collision_mask = 0
 script = ExtResource("19_8r8ar")

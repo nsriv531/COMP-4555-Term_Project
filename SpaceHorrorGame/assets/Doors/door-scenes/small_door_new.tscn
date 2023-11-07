@@ -1,0 +1,105 @@
+[gd_scene load_steps=13 format=3 uid="uid://dsrkdm4ir7xml"]
+
+[ext_resource type="PackedScene" uid="uid://c2daja2u0ly6v" path="res://assets/Doors/Small_Door.gltf" id="1_23jw7"]
+[ext_resource type="AudioStream" uid="uid://kcc3a1axggf" path="res://Sounds/DoorClose.ogg" id="2_n8aki"]
+[ext_resource type="Script" path="res://Scripts/Door.gd" id="2_ytmfo"]
+[ext_resource type="Material" uid="uid://bv88wybfq6fgq" path="res://room_textures/ceiling_base_texture.tres" id="3_d8nl0"]
+[ext_resource type="AudioStream" uid="uid://dhtasf25ubx13" path="res://Sounds/DoorOpen.ogg" id="3_evg0v"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_mkqya"]
+size = Vector3(1.1781, 0.261963, 1.95422)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_dj6rj"]
+size = Vector3(1.31632, 0.261963, 1.02136)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_4mbgr"]
+size = Vector3(0.422453, 0.261963, 3.10104)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_yma56"]
+size = Vector3(0.422453, 0.261963, 3.10104)
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_fya5u"]
+animation = &"Small_Door_Closing"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_y42f6"]
+animation = &"Small_Door_Opening"
+
+[sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_f44jp"]
+states/Door_Closing/node = SubResource("AnimationNodeAnimation_fya5u")
+states/Door_Closing/position = Vector2(643, 108)
+states/Door_Opening/node = SubResource("AnimationNodeAnimation_y42f6")
+states/Door_Opening/position = Vector2(370, 100)
+
+[node name="Small_Door" instance=ExtResource("1_23jw7")]
+script = ExtResource("2_ytmfo")
+
+[node name="Skeleton3D" parent="Small_Door_Rig" index="0"]
+bones/2/position = Vector3(1.10153e-07, 3, -3.38584e-07)
+bones/4/position = Vector3(-0.98084, 0.997116, -8.56021e-08)
+bones/6/position = Vector3(0.980905, 1.00288, -3.13161e-07)
+
+[node name="Bottom_Panel" parent="Small_Door_Rig/Skeleton3D" index="0"]
+transform = Transform3D(1, 0, 0, 0, 0, -1, 0, 1, 0, 0, 0, 0)
+bone_idx = 1
+
+[node name="Bottom_Panel" parent="Small_Door_Rig/Skeleton3D/Bottom_Panel" index="0"]
+surface_material_override/0 = ExtResource("3_d8nl0")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Small_Door_Rig/Skeleton3D/Bottom_Panel/Bottom_Panel" index="0"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Small_Door_Rig/Skeleton3D/Bottom_Panel/Bottom_Panel/StaticBody3D" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3.5527e-15, -1)
+shape = SubResource("BoxShape3D_mkqya")
+
+[node name="Top_Panel" parent="Small_Door_Rig/Skeleton3D" index="1"]
+transform = Transform3D(1, -5.96046e-08, 3.645e-08, 5.26918e-08, -1.34359e-07, -1, -2.98023e-08, 1, -1.39643e-07, -1.47858e-08, -7.15256e-07, 4.54486e-08)
+bone_idx = 3
+
+[node name="Top_Panel" parent="Small_Door_Rig/Skeleton3D/Top_Panel" index="0"]
+surface_material_override/0 = ExtResource("3_d8nl0")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Small_Door_Rig/Skeleton3D/Top_Panel/Top_Panel" index="0"]
+transform = Transform3D(1, 7.10543e-15, 5.8875e-15, 0, 1, -2.84217e-14, 7.55692e-15, 0, 1, 7.28999e-08, -2.79286e-07, -2)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Small_Door_Rig/Skeleton3D/Top_Panel/Top_Panel/StaticBody3D" index="0"]
+transform = Transform3D(1, 0, 1.29929e-14, 0, 1, -5.68434e-14, 1.46623e-14, 0, 1, -1.84233e-08, 7.05811e-08, -0.49456)
+shape = SubResource("BoxShape3D_dj6rj")
+
+[node name="Right_Panel" parent="Small_Door_Rig/Skeleton3D" index="2"]
+transform = Transform3D(1, 1.51495e-08, -5.96046e-08, -7.08122e-14, -5.55439e-08, -1, -7.47536e-08, 1, -1.15148e-07, -8.06451e-05, -5.96046e-08, -3.40555e-06)
+bone_idx = 5
+
+[node name="Right_Panel" parent="Small_Door_Rig/Skeleton3D/Right_Panel" index="0"]
+surface_material_override/0 = ExtResource("3_d8nl0")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Small_Door_Rig/Skeleton3D/Right_Panel/Right_Panel" index="0"]
+transform = Transform3D(1, 7.10543e-15, 3.01662e-14, 0, 1, 1.42109e-14, 7.55691e-15, 0, 1, -1, -2.38891e-07, -1)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Small_Door_Rig/Skeleton3D/Right_Panel/Right_Panel/StaticBody3D" index="0"]
+transform = Transform3D(1, 0, 5.85879e-14, 0, 1, 7.10543e-14, 7.55701e-15, 0, 1, 0.207272, -0.00485752, -0.545934)
+shape = SubResource("BoxShape3D_4mbgr")
+
+[node name="Left_Panel" parent="Small_Door_Rig/Skeleton3D" index="3"]
+transform = Transform3D(-1, 1.3543e-08, 5.42159e-08, -2.31879e-08, -2.98023e-08, -1, 4.01626e-08, 1, -5.96046e-08, 6.09159e-05, -3.57628e-07, 1.33873e-07)
+bone_idx = 7
+
+[node name="Left_Panel" parent="Small_Door_Rig/Skeleton3D/Left_Panel" index="0"]
+surface_material_override/0 = ExtResource("3_d8nl0")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Small_Door_Rig/Skeleton3D/Left_Panel/Left_Panel" index="0"]
+transform = Transform3D(1, 7.10543e-15, 3.01662e-14, 0, 1, 1.42109e-14, 7.55691e-15, 0, 1, -1, -2.38891e-07, -1)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Small_Door_Rig/Skeleton3D/Left_Panel/Left_Panel/StaticBody3D" index="0"]
+transform = Transform3D(1, 0, 5.85879e-14, 0, 1, 7.10543e-14, 7.55701e-15, 0, 1, 0.207272, -0.00485752, -0.545934)
+shape = SubResource("BoxShape3D_yma56")
+
+[node name="DoorClose" type="AudioStreamPlayer3D" parent="." index="2"]
+stream = ExtResource("2_n8aki")
+
+[node name="DoorOpen" type="AudioStreamPlayer3D" parent="." index="3"]
+stream = ExtResource("3_evg0v")
+
+[node name="AnimationTree" type="AnimationTree" parent="." index="4"]
+tree_root = SubResource("AnimationNodeStateMachine_f44jp")
+anim_player = NodePath("../AnimationPlayer")
+active = true
