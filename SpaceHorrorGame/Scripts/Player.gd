@@ -43,7 +43,7 @@ func _process(_delta):
 			if Input.mouse_mode == Input.MOUSE_MODE_CAPTURED:
 				Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 			else:	
-				get_tree().quit()
+				Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 			
 	if Input.is_action_just_pressed("interact") && cur_interactable:
 		cur_interactable.interact(self)

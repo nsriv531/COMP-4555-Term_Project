@@ -16,7 +16,6 @@
 [ext_resource type="Shader" path="res://greenscreen.gdshader" id="10_dq8d4"]
 [ext_resource type="Script" path="res://GUI.gd" id="10_sxumy"]
 [ext_resource type="Texture2D" uid="uid://dh205y6pw3vdf" path="res://textures/note.png" id="10_xbnsg"]
-[ext_resource type="Script" path="res://Scripts/TestInteractableBlock.gd" id="11_gpuug"]
 [ext_resource type="Texture2D" uid="uid://cjd2w1befu7ug" path="res://ezgif-5-3568ee6a8d.png" id="11_tvc62"]
 [ext_resource type="PackedScene" uid="uid://bd25meeoukb72" path="res://assets/small_door.tscn" id="12_shujh"]
 [ext_resource type="PackedScene" uid="uid://clehtd5os8h8o" path="res://Objects/Note.tscn" id="14_d2cap"]
@@ -34,8 +33,9 @@
 [ext_resource type="PackedScene" uid="uid://dimbt0twyupqv" path="res://assets/Lvl1_Rooms/Sleeping_Quarters.tscn" id="31_or7hb"]
 [ext_resource type="PackedScene" uid="uid://dsrkdm4ir7xml" path="res://assets/Doors/door-scenes/small_door_new.tscn" id="31_w7x6h"]
 [ext_resource type="AudioEffectLowPassFilter" uid="uid://bj0pyg6plufxn" path="res://Muffle.tres" id="32_b5i18"]
-[ext_resource type="PackedScene" uid="uid://cbnpoha7id8gp" path="res://assets/Lvl1_Rooms/Kitchen.tscn" id="32_v6vqc"]
+[ext_resource type="PackedScene" uid="uid://da1wjdx56b2uo" path="res://assets/Lvl1_Rooms/Kitchen.tscn" id="32_v6vqc"]
 [ext_resource type="Script" path="res://MuffleEffect.gd" id="33_yh5b4"]
+[ext_resource type="VoxelGIData" uid="uid://cro30gb65wfdc" path="res://lightmap/pluto.VoxelGI_data.res" id="36_6no6g"]
 
 [sub_resource type="Resource" id="Resource_2g886"]
 script = ExtResource("3_0l8wc")
@@ -59,7 +59,7 @@ shader_parameter/amount = 2.0
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_mmlhe"]
 shader = ExtResource("10_dq8d4")
 shader_parameter/transparent_color = Color(0, 0.984375, 0, 1)
-shader_parameter/pickup_range = 0.3
+shader_parameter/pickup_range = 0.5
 shader_parameter/fade_amount = 0.5
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_jgpf5"]
@@ -311,21 +311,11 @@ ambient_light_color = Color(0.941176, 0.941176, 0.941176, 1)
 ssr_enabled = true
 ssao_enabled = true
 ssil_enabled = true
-sdfgi_enabled = true
 glow_enabled = true
 glow_normalized = true
 glow_blend_mode = 0
 volumetric_fog_enabled = true
 volumetric_fog_density = 0.0035
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7wr7n"]
-albedo_color = Color(0.388235, 0.666667, 0.376471, 1)
-
-[sub_resource type="BoxMesh" id="BoxMesh_tduht"]
-material = SubResource("StandardMaterial3D_7wr7n")
-
-[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_6jr4b"]
-points = PackedVector3Array(-0.5, -0.5, -0.5, 0.5, 0.5, 0.5, 0.5, -0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5, -0.5, 0.5, -0.5)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_bkxlg"]
 albedo_color = Color(1, 1, 1, 0)
@@ -442,7 +432,8 @@ grow_vertical = 2
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Player/Effects/CanvasLayer"]
 material = SubResource("ShaderMaterial_mmlhe")
-position = Vector2(653, 371)
+position = Vector2(648.5, 353)
+scale = Vector2(0.990486, 0.95)
 sprite_frames = SubResource("SpriteFrames_kkej6")
 
 [node name="GUI" type="Control" parent="Player"]
@@ -501,24 +492,13 @@ material = SubResource("StandardMaterial3D_rquee")
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_him15")
 
-[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+[node name="Sun" type="DirectionalLight3D" parent="."]
 transform = Transform3D(0.586849, 0.722724, -0.365075, -0.0180013, 0.462412, 0.886482, 0.809497, -0.513659, 0.284376, -390.079, 748.531, 281.904)
-light_energy = 0.227
-light_volumetric_fog_energy = 0.465
+light_energy = 0.25
+light_volumetric_fog_energy = 0.0
 light_bake_mode = 1
 shadow_enabled = true
 shadow_opacity = 0.84
-
-[node name="TestInteractableBlock" type="StaticBody3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 28.9067, 19.8048, -19)
-script = ExtResource("11_gpuug")
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="TestInteractableBlock"]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -4.54857, 5.43426, 1.88109)
-mesh = SubResource("BoxMesh_tduht")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="TestInteractableBlock"]
-shape = SubResource("ConvexPolygonShape3D_6jr4b")
 
 [node name="Note" parent="." instance=ExtResource("14_d2cap")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 21.6463, 22.687, -12.5052)
@@ -694,6 +674,11 @@ resources = [PackedStringArray("Muffle"), [ExtResource("32_b5i18")]]
 
 [node name="MuffleEffect" type="Node3D" parent="."]
 script = ExtResource("33_yh5b4")
+
+[node name="VoxelGI" type="VoxelGI" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 42.7033, 0)
+size = Vector3(134.957, 56.0929, 138.925)
+data = ExtResource("36_6no6g")
 
 [connection signal="timeout" from="Player/Timer" to="Player" method="_on_timer_timeout"]
 [connection signal="button_press" from="Rooms/AirLock/SmallDoor/ButtonSystem/StaticBody3D" to="Rooms/AirLock/SmallDoor" method="_on_static_body_3d_button_press"]
