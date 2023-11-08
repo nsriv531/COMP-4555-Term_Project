@@ -1,0 +1,103 @@
+[gd_scene load_steps=12 format=3 uid="uid://c7sm4dsareqas"]
+
+[ext_resource type="PackedScene" uid="uid://bwxp0d7cqix6m" path="res://assets/Doors/exterior_door.gltf" id="1_bs858"]
+[ext_resource type="Material" uid="uid://bdtnrqjti18l5" path="res://room_textures/black_base_temp_texture.tres" id="2_4w0ad"]
+[ext_resource type="Material" uid="uid://bv88wybfq6fgq" path="res://room_textures/ceiling_base_texture.tres" id="3_tsxx4"]
+[ext_resource type="AudioStream" uid="uid://kcc3a1axggf" path="res://Sounds/DoorClose.ogg" id="4_62jyr"]
+[ext_resource type="AudioStream" uid="uid://dhtasf25ubx13" path="res://Sounds/DoorOpen.ogg" id="5_868vo"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_4ttx7"]
+size = Vector3(0.582419, 0.0849696, 2.09002)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_kxao5"]
+emission_enabled = true
+emission = Color(0.878431, 0, 0.0431373, 1)
+emission_energy_multiplier = 3.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_m5k5m"]
+emission_enabled = true
+emission = Color(0.878431, 0, 0.0431373, 1)
+emission_energy_multiplier = 3.0
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_4131f"]
+animation = &"Exterior_Door_Closing"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_xenya"]
+animation = &"Exterior_Door_Opening"
+
+[sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_wlfbo"]
+states/Door_Closing/node = SubResource("AnimationNodeAnimation_4131f")
+states/Door_Closing/position = Vector2(657, 93.5)
+states/Door_Opening/node = SubResource("AnimationNodeAnimation_xenya")
+states/Door_Opening/position = Vector2(371.5, 108.5)
+states/Start/position = Vector2(194, 114.5)
+
+[node name="exterior_door" instance=ExtResource("1_bs858")]
+
+[node name="Left_Panel" parent="Exterior_Door_Rig/Skeleton3D" index="0"]
+transform = Transform3D(1.99113, 2.82722e-08, -2.40108e-14, 1.79203e-14, -8.15744e-08, -1.4991, -3.01648e-08, 1.86621, -6.55277e-08, 0, 1.5, 1.06581e-14)
+bone_idx = 1
+
+[node name="Left_Panel" parent="Exterior_Door_Rig/Skeleton3D/Left_Panel" index="0"]
+surface_material_override/0 = ExtResource("2_4w0ad")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Exterior_Door_Rig/Skeleton3D/Left_Panel/Left_Panel" index="0"]
+transform = Transform3D(1, 0, -1.48231e-21, 0, 1, -1.42109e-14, -3.65283e-21, 2.13163e-14, 1, -0.502226, 3.87273e-08, 1.33414)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Exterior_Door_Rig/Skeleton3D/Left_Panel/Left_Panel/StaticBody3D" index="0"]
+transform = Transform3D(0.999999, 8.88178e-15, -1.17526e-20, -3.55271e-15, 1, -2.13163e-14, 2.43522e-21, -6.75016e-14, 0.999999, 0.285422, -7.9456e-09, -1.35768)
+shape = SubResource("BoxShape3D_4ttx7")
+
+[node name="Left_Panel_Light" parent="Exterior_Door_Rig/Skeleton3D" index="1"]
+transform = Transform3D(1.99113, 2.82722e-08, -2.40108e-14, 1.79203e-14, -8.15744e-08, -1.4991, -3.01648e-08, 1.86621, -6.55277e-08, 0, 1.5, 1.06581e-14)
+bone_idx = 2
+
+[node name="Left_Panel_Light" parent="Exterior_Door_Rig/Skeleton3D/Left_Panel_Light" index="0"]
+surface_material_override/0 = SubResource("StandardMaterial3D_kxao5")
+
+[node name="Plane_002" parent="Exterior_Door_Rig/Skeleton3D" index="2"]
+transform = Transform3D(1.99113, 2.82722e-08, -2.40108e-14, 1.79203e-14, -8.15744e-08, -1.4991, -3.01648e-08, 1.86621, -6.55277e-08, 0, 1.5, 1.06581e-14)
+bone_idx = 3
+
+[node name="Plane_002" parent="Exterior_Door_Rig/Skeleton3D/Plane_002" index="0"]
+transform = Transform3D(1, 0, -7.41154e-22, 0, 1, -3.55271e-15, -8.99973e-22, 7.10543e-15, 1, 0, 0, 0)
+surface_material_override/0 = ExtResource("3_tsxx4")
+
+[node name="Right_Panel" parent="Exterior_Door_Rig/Skeleton3D" index="3"]
+transform = Transform3D(1.99113, -2.82722e-08, 8.93532e-08, 2.37362e-07, -2.52129e-07, -1.4991, 1.48846e-07, 1.86621, -1.13179e-07, 0, 1.5, -1.77636e-14)
+bone_idx = 5
+
+[node name="Right_Panel" parent="Exterior_Door_Rig/Skeleton3D/Right_Panel" index="0"]
+surface_material_override/0 = ExtResource("2_4w0ad")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Exterior_Door_Rig/Skeleton3D/Right_Panel/Right_Panel" index="0"]
+transform = Transform3D(1, -3.55271e-15, -8.61123e-16, 4.9738e-14, 1, -2.84217e-14, -4.18361e-14, 1.42109e-14, 1, 2.09545e-07, -1.32947e-09, 1.33414)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Exterior_Door_Rig/Skeleton3D/Right_Panel/Right_Panel/StaticBody3D" index="0"]
+transform = Transform3D(0.999999, 7.99361e-15, -8.61123e-16, 2.13163e-14, 1, -3.55271e-14, -1.34144e-14, 0, 0.999999, 0.2181, -6.34667e-09, -1.35768)
+shape = SubResource("BoxShape3D_4ttx7")
+
+[node name="Plane" parent="Exterior_Door_Rig/Skeleton3D" index="4"]
+transform = Transform3D(1.99113, -2.82722e-08, 8.93532e-08, 2.37362e-07, -2.52129e-07, -1.4991, 1.48846e-07, 1.86621, -1.13179e-07, 0, 1.5, -1.77636e-14)
+bone_idx = 6
+
+[node name="Plane" parent="Exterior_Door_Rig/Skeleton3D/Plane" index="0"]
+surface_material_override/0 = ExtResource("3_tsxx4")
+
+[node name="Right_Panel_Light" parent="Exterior_Door_Rig/Skeleton3D" index="5"]
+transform = Transform3D(1.99113, -2.82722e-08, 8.93532e-08, 2.37362e-07, -2.52129e-07, -1.4991, 1.48846e-07, 1.86621, -1.13179e-07, 0, 1.5, -1.77636e-14)
+bone_idx = 7
+
+[node name="Right_Panel_Light" parent="Exterior_Door_Rig/Skeleton3D/Right_Panel_Light" index="0"]
+surface_material_override/0 = SubResource("StandardMaterial3D_m5k5m")
+
+[node name="DoorClose" type="AudioStreamPlayer3D" parent="." index="2"]
+stream = ExtResource("4_62jyr")
+
+[node name="DoorOpen" type="AudioStreamPlayer3D" parent="." index="3"]
+stream = ExtResource("5_868vo")
+
+[node name="AnimationTree" type="AnimationTree" parent="." index="4"]
+tree_root = SubResource("AnimationNodeStateMachine_wlfbo")
+anim_player = NodePath("../AnimationPlayer")
+active = true
