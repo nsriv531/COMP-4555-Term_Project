@@ -1,4 +1,4 @@
-[gd_scene load_steps=90 format=3 uid="uid://1csibo7xkgx1"]
+[gd_scene load_steps=86 format=3 uid="uid://1csibo7xkgx1"]
 
 [ext_resource type="Script" path="res://addons/zylann.hterrain/hterrain.gd" id="1_ilc75"]
 [ext_resource type="Shader" path="res://Scripts/CameraEffects.gdshader" id="1_m1fa5"]
@@ -17,7 +17,6 @@
 [ext_resource type="Script" path="res://GUI.gd" id="10_sxumy"]
 [ext_resource type="Texture2D" uid="uid://dh205y6pw3vdf" path="res://textures/note.png" id="10_xbnsg"]
 [ext_resource type="Texture2D" uid="uid://cjd2w1befu7ug" path="res://ezgif-5-3568ee6a8d.png" id="11_tvc62"]
-[ext_resource type="PackedScene" uid="uid://bd25meeoukb72" path="res://assets/small_door.tscn" id="12_shujh"]
 [ext_resource type="PackedScene" uid="uid://clehtd5os8h8o" path="res://Objects/Note.tscn" id="14_d2cap"]
 [ext_resource type="AudioStream" uid="uid://by6gr0ob08hyt" path="res://Sounds/level1ambient.wav" id="14_o0cq4"]
 [ext_resource type="AudioStream" uid="uid://orqrfmactyx8" path="res://Sounds/footstep.ogg" id="14_rxa8h"]
@@ -33,7 +32,7 @@
 [ext_resource type="PackedScene" uid="uid://dimbt0twyupqv" path="res://assets/Lvl1_Rooms/Sleeping_Quarters.tscn" id="31_or7hb"]
 [ext_resource type="PackedScene" uid="uid://dsrkdm4ir7xml" path="res://assets/Doors/door-scenes/small_door_new.tscn" id="31_w7x6h"]
 [ext_resource type="AudioEffectLowPassFilter" uid="uid://bj0pyg6plufxn" path="res://Muffle.tres" id="32_b5i18"]
-[ext_resource type="PackedScene" uid="uid://da1wjdx56b2uo" path="res://assets/Lvl1_Rooms/Kitchen.tscn" id="32_v6vqc"]
+[ext_resource type="PackedScene" uid="uid://cbnpoha7id8gp" path="res://assets/Lvl1_Rooms/Kitchen.tscn" id="32_v6vqc"]
 [ext_resource type="Script" path="res://MuffleEffect.gd" id="33_yh5b4"]
 [ext_resource type="VoxelGIData" uid="uid://cro30gb65wfdc" path="res://lightmap/pluto.VoxelGI_data.res" id="36_6no6g"]
 
@@ -323,18 +322,18 @@ albedo_color = Color(1, 1, 1, 0)
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_4ljte"]
 material = SubResource("StandardMaterial3D_bkxlg")
 
-[sub_resource type="BoxMesh" id="BoxMesh_yvi8c"]
-size = Vector3(0.1, 0.3, 0.1)
-
-[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_8wejw"]
-points = PackedVector3Array(0.05, 0.25, 0.1, -0.05, 0.25, 0.1, 0.05, -0.25, 0.1, 0.05, 0.25, -0.1, -0.05, 0.25, -0.1, -0.05, -0.25, 0.1, 0.05, -0.25, -0.1, -0.05, -0.25, -0.1)
-
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7h0l0"]
 albedo_texture = ExtResource("23_mjbjg")
 uv1_triplanar = true
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_ri145"]
 size = Vector3(6.41722, 2.47329, 4.89068)
+
+[sub_resource type="BoxMesh" id="BoxMesh_yvi8c"]
+size = Vector3(0.1, 0.3, 0.1)
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_8wejw"]
+points = PackedVector3Array(0.05, 0.25, 0.1, -0.05, 0.25, 0.1, 0.05, -0.25, 0.1, 0.05, 0.25, -0.1, -0.05, 0.25, -0.1, -0.05, -0.25, 0.1, 0.05, -0.25, -0.1, -0.05, -0.25, -0.1)
 
 [sub_resource type="Animation" id="Animation_2r7hm"]
 resource_name = "new_animation"
@@ -537,42 +536,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16.3546, 18.1738, 9.48032)
 
 [node name="AirLock" type="Node3D" parent="Rooms"]
 
-[node name="SmallDoor" parent="Rooms/AirLock" instance=ExtResource("12_shujh")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 18.5227, 3.0839, -21.4531)
-
-[node name="ButtonSystem" type="Node3D" parent="Rooms/AirLock/SmallDoor"]
-script = ExtResource("18_ay6ee")
-
-[node name="StaticBody3D" type="StaticBody3D" parent="Rooms/AirLock/SmallDoor/ButtonSystem"]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 1.341, 1.5731, 0.289089)
-collision_layer = 2
-collision_mask = 0
-script = ExtResource("19_8r8ar")
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Rooms/AirLock/SmallDoor/ButtonSystem/StaticBody3D"]
-mesh = SubResource("BoxMesh_yvi8c")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Rooms/AirLock/SmallDoor/ButtonSystem/StaticBody3D"]
-shape = SubResource("ConvexPolygonShape3D_8wejw")
-
-[node name="SmallDoor2" parent="Rooms/AirLock" instance=ExtResource("12_shujh")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 9.11558, 3.0839, -21.4531)
-
-[node name="ButtonSystem" type="Node3D" parent="Rooms/AirLock/SmallDoor2"]
-script = ExtResource("18_ay6ee")
-
-[node name="StaticBody3D2" type="StaticBody3D" parent="Rooms/AirLock/SmallDoor2/ButtonSystem"]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 1.341, 1.5731, -0.189317)
-collision_layer = 2
-collision_mask = 0
-script = ExtResource("19_8r8ar")
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Rooms/AirLock/SmallDoor2/ButtonSystem/StaticBody3D2"]
-mesh = SubResource("BoxMesh_yvi8c")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Rooms/AirLock/SmallDoor2/ButtonSystem/StaticBody3D2"]
-shape = SubResource("ConvexPolygonShape3D_8wejw")
-
 [node name="AirLockBuilding" type="CSGCombiner3D" parent="Rooms/AirLock"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.8526, 4.4574, -21.4749)
 use_collision = true
@@ -603,8 +566,8 @@ material = SubResource("StandardMaterial3D_7h0l0")
 [node name="AirLockInnerArea" type="Area3D" parent="Rooms/AirLock" node_paths=PackedStringArray("door1", "door2")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.3377, 4.14974, -21.4038)
 script = ExtResource("26_wyfa4")
-door1 = NodePath("../SmallDoor")
-door2 = NodePath("../SmallDoor2")
+door1 = NodePath("../AirlockDoorOuter")
+door2 = NodePath("../AirlockDoorInner")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Rooms/AirLock/AirLockInnerArea"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.57438, 0.408596, -0.0848417)
@@ -613,6 +576,44 @@ shape = SubResource("BoxShape3D_ri145")
 [node name="AirlockSoundPlayer" type="AudioStreamPlayer3D" parent="Rooms/AirLock/AirLockInnerArea"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.0169, -22.3235, 11.9235)
 stream = ExtResource("27_mqdwd")
+
+[node name="AirlockDoorInner" parent="Rooms/AirLock" instance=ExtResource("31_w7x6h")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 9.1, 3, -21.453)
+
+[node name="ButtonSystem" type="Node3D" parent="Rooms/AirLock/AirlockDoorInner"]
+transform = Transform3D(1, 0, 3.55271e-15, 0, 1, 0, -3.55271e-15, 0, 1, -0.166643, 0, 0.487622)
+script = ExtResource("18_ay6ee")
+
+[node name="StaticBody3D2" type="StaticBody3D" parent="Rooms/AirLock/AirlockDoorInner/ButtonSystem"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 1.341, 1.5731, -0.189317)
+collision_layer = 2
+collision_mask = 0
+script = ExtResource("19_8r8ar")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Rooms/AirLock/AirlockDoorInner/ButtonSystem/StaticBody3D2"]
+mesh = SubResource("BoxMesh_yvi8c")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Rooms/AirLock/AirlockDoorInner/ButtonSystem/StaticBody3D2"]
+shape = SubResource("ConvexPolygonShape3D_8wejw")
+
+[node name="AirlockDoorOuter" parent="Rooms/AirLock" instance=ExtResource("31_w7x6h")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 18.523, 3, -21.453)
+
+[node name="ButtonSystem" type="Node3D" parent="Rooms/AirLock/AirlockDoorOuter"]
+transform = Transform3D(1, 0, 3.55271e-15, 0, 1, 0, -3.55271e-15, 0, 1, -0.166643, 0, 0.487622)
+script = ExtResource("18_ay6ee")
+
+[node name="StaticBody3D2" type="StaticBody3D" parent="Rooms/AirLock/AirlockDoorOuter/ButtonSystem"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 1.341, 1.5731, -0.189317)
+collision_layer = 2
+collision_mask = 0
+script = ExtResource("19_8r8ar")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Rooms/AirLock/AirlockDoorOuter/ButtonSystem/StaticBody3D2"]
+mesh = SubResource("BoxMesh_yvi8c")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Rooms/AirLock/AirlockDoorOuter/ButtonSystem/StaticBody3D2"]
+shape = SubResource("ConvexPolygonShape3D_8wejw")
 
 [node name="Mess_Hall" parent="Rooms" instance=ExtResource("23_p3srr")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 3.2, -26.5)
@@ -626,31 +627,33 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 9.1)
 [node name="door_system_outside" type="Node3D" parent="Rooms/Storage_Bay/storage_bay_door"]
 
 [node name="outside_button" type="StaticBody3D" parent="Rooms/Storage_Bay/storage_bay_door/door_system_outside"]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -1.10922, 1.5731, -0.456675)
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -1.10922, 1.5731, -0.339645)
 collision_layer = 2
 collision_mask = 0
 script = ExtResource("19_8r8ar")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Rooms/Storage_Bay/storage_bay_door/door_system_outside/outside_button"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00614548, 0, 0)
 mesh = SubResource("BoxMesh_yvi8c")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Rooms/Storage_Bay/storage_bay_door/door_system_outside/outside_button"]
-transform = Transform3D(0.62, 0, 0, 0, 0.62, 0, 0, 0, 0.62, 0.0243378, -0.00645828, 0)
+transform = Transform3D(0.88, 0, 0, 0, 0.88, 0, 0, 0, 0.88, -0.00799131, -0.00645828, 0)
 shape = SubResource("ConvexPolygonShape3D_8wejw")
 
 [node name="door_system_inside" type="Node3D" parent="Rooms/Storage_Bay/storage_bay_door"]
 
 [node name="inside_button" type="StaticBody3D" parent="Rooms/Storage_Bay/storage_bay_door/door_system_inside"]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 1.15379, 1.5731, 0.289089)
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 1.10935, 1.5731, 0.308019)
 collision_layer = 2
 collision_mask = 0
 script = ExtResource("19_8r8ar")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Rooms/Storage_Bay/storage_bay_door/door_system_inside/inside_button"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0109124, 0, 0)
 mesh = SubResource("BoxMesh_yvi8c")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Rooms/Storage_Bay/storage_bay_door/door_system_inside/inside_button"]
-transform = Transform3D(0.62, 0, 0, 0, 0.62, 0, 0, 0, 0.62, 0.0116887, -0.00645828, 0)
+transform = Transform3D(0.93, 0, 0, 0, 0.93, 0, 0, 0, 0.93, 0.0116887, -0.00645828, 0)
 shape = SubResource("ConvexPolygonShape3D_8wejw")
 
 [node name="Sleeping_Quarters" parent="Rooms" instance=ExtResource("31_or7hb")]
@@ -681,9 +684,9 @@ size = Vector3(134.957, 56.0929, 138.925)
 data = ExtResource("36_6no6g")
 
 [connection signal="timeout" from="Player/Timer" to="Player" method="_on_timer_timeout"]
-[connection signal="button_press" from="Rooms/AirLock/SmallDoor/ButtonSystem/StaticBody3D" to="Rooms/AirLock/SmallDoor" method="_on_static_body_3d_button_press"]
-[connection signal="button_press" from="Rooms/AirLock/SmallDoor2/ButtonSystem/StaticBody3D2" to="Rooms/AirLock/SmallDoor2" method="_on_static_body_3d_button_press"]
 [connection signal="body_shape_entered" from="Rooms/AirLock/AirLockInnerArea" to="Rooms/AirLock/AirLockInnerArea" method="_on_body_shape_entered"]
 [connection signal="finished" from="Rooms/AirLock/AirLockInnerArea/AirlockSoundPlayer" to="Rooms/AirLock/AirLockInnerArea" method="_on_audio_finished"]
+[connection signal="button_press" from="Rooms/AirLock/AirlockDoorInner/ButtonSystem/StaticBody3D2" to="Rooms/AirLock/AirlockDoorInner" method="_on_static_body_3d_button_press"]
+[connection signal="button_press" from="Rooms/AirLock/AirlockDoorOuter/ButtonSystem/StaticBody3D2" to="Rooms/AirLock/AirlockDoorOuter" method="_on_static_body_3d_button_press"]
 [connection signal="button_press" from="Rooms/Storage_Bay/storage_bay_door/door_system_outside/outside_button" to="Rooms/Storage_Bay/storage_bay_door" method="_on_static_body_3d_button_press"]
 [connection signal="button_press" from="Rooms/Storage_Bay/storage_bay_door/door_system_inside/inside_button" to="Rooms/Storage_Bay/storage_bay_door" method="_on_static_body_3d_button_press"]

@@ -33,3 +33,4 @@ func doorPlay(nearArea):
 func _on_static_body_3d_button_press():
 	onButtonPress()
 	pass # Replace with function body.
+

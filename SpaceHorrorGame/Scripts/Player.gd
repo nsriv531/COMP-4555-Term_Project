@@ -111,3 +111,4 @@ func interact_raycast(distance):
 func showNote(note:Texture2D):
 	effects.showBlur()
 	gui.showNote(note)
+

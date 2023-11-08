@@ -1,0 +1,80 @@
+[gd_scene load_steps=10 format=3 uid="uid://cddflpc4w4qru"]
+
+[ext_resource type="PackedScene" uid="uid://dy5qjxhwqjh4f" path="res://assets/Doors/large_door.gltf" id="1_12hx2"]
+[ext_resource type="Material" uid="uid://bv88wybfq6fgq" path="res://room_textures/ceiling_base_texture.tres" id="2_18g8v"]
+[ext_resource type="AudioStream" uid="uid://kcc3a1axggf" path="res://Sounds/DoorClose.ogg" id="3_lrrem"]
+[ext_resource type="AudioStream" uid="uid://dhtasf25ubx13" path="res://Sounds/DoorOpen.ogg" id="4_cl4fv"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_jf2lw"]
+size = Vector3(6.03789, 0.261963, 1.95422)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ubdne"]
+size = Vector3(3.02623, 0.261963, 2.11608)
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_ag71u"]
+animation = &"Large_Door_Closing"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_2a71u"]
+animation = &"Large_Door_Opening"
+
+[sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_i6vsj"]
+states/Door_Closing/node = SubResource("AnimationNodeAnimation_ag71u")
+states/Door_Closing/position = Vector2(678.781, 100)
+states/Door_Opening/node = SubResource("AnimationNodeAnimation_2a71u")
+states/Door_Opening/position = Vector2(373.781, 100)
+graph_offset = Vector2(-15.2192, 0)
+
+[node name="large_door" instance=ExtResource("1_12hx2")]
+
+[node name="Upper_Panel" parent="Large_Door_Rig/Skeleton3D" index="0"]
+transform = Transform3D(1, -2.98023e-08, 8.71583e-08, 5.30761e-08, -1.34359e-07, -1, 1.19209e-07, 1, -1.15208e-07, -2.33438e-08, 0, 0.1)
+bone_idx = 1
+
+[node name="Upper_Panel" parent="Large_Door_Rig/Skeleton3D/Upper_Panel" index="0"]
+surface_material_override/0 = ExtResource("2_18g8v")
+
+[node name="Upper" type="StaticBody3D" parent="Large_Door_Rig/Skeleton3D/Upper_Panel/Upper_Panel" index="0"]
+transform = Transform3D(1, 0, -3.43345e-15, 0, 1, 1.42109e-14, 1.74675e-15, 0, 1, 8.71583e-08, -1.11759e-07, -1)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Large_Door_Rig/Skeleton3D/Upper_Panel/Upper_Panel/Upper" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3.5527e-15, -1)
+shape = SubResource("BoxShape3D_jf2lw")
+
+[node name="Bottom_Panel_L" parent="Large_Door_Rig/Skeleton3D" index="1"]
+transform = Transform3D(1, 9.29922e-08, 3.71972e-09, -1.27276e-07, 8.9407e-08, -1, -1.0132e-07, 1, 1.49012e-07, 9.53674e-07, -3.57628e-07, 0.1)
+bone_idx = 3
+
+[node name="Bottom_Panel_L" parent="Large_Door_Rig/Skeleton3D/Bottom_Panel_L" index="0"]
+surface_material_override/0 = ExtResource("2_18g8v")
+
+[node name="Bottom_Left" type="StaticBody3D" parent="Large_Door_Rig/Skeleton3D/Bottom_Panel_L/Bottom_Panel_L" index="0"]
+transform = Transform3D(1, -1.42109e-14, -3.42082e-15, 0, 1, 1.42109e-14, 5.15211e-15, 7.10543e-15, 1, 8.34386e-08, -2.6077e-07, -2.38419e-07)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Large_Door_Rig/Skeleton3D/Bottom_Panel_L/Bottom_Panel_L/Bottom_Left" index="0"]
+transform = Transform3D(1, -2.84217e-14, -9.01514e-17, 0, 1, 0, 5.15211e-15, -7.10543e-15, 1, -1.50048, -1.49012e-07, -1)
+shape = SubResource("BoxShape3D_ubdne")
+
+[node name="Bottom_Panel_R" parent="Large_Door_Rig/Skeleton3D" index="2"]
+transform = Transform3D(-1, -1.48927e-08, -5.80947e-08, 6.71096e-10, 1.35973e-07, -1, -7.45096e-08, 1, 1.05239e-07, 0, -1.49012e-07, 0.1)
+bone_idx = 5
+
+[node name="Bottom_Panel_R" parent="Large_Door_Rig/Skeleton3D/Bottom_Panel_R" index="0"]
+surface_material_override/0 = ExtResource("2_18g8v")
+
+[node name="Bottom_Right" type="StaticBody3D" parent="Large_Door_Rig/Skeleton3D/Bottom_Panel_R/Bottom_Panel_R" index="0"]
+transform = Transform3D(1, -1.42109e-14, -3.42082e-15, 0, 1, 1.42109e-14, 5.15211e-15, 7.10543e-15, 1, 8.34386e-08, -2.6077e-07, -2.38419e-07)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Large_Door_Rig/Skeleton3D/Bottom_Panel_R/Bottom_Panel_R/Bottom_Right" index="0"]
+transform = Transform3D(1, -3.10862e-14, -1.22254e-14, 0, 1, -2.13163e-14, 5.18978e-15, 0, 1, -1.50533, -1.49012e-07, -1)
+shape = SubResource("BoxShape3D_ubdne")
+
+[node name="DoorClose" type="AudioStreamPlayer3D" parent="." index="2"]
+stream = ExtResource("3_lrrem")
+
+[node name="DoorOpen" type="AudioStreamPlayer3D" parent="." index="3"]
+stream = ExtResource("4_cl4fv")
+
+[node name="AnimationTree" type="AnimationTree" parent="." index="4"]
+tree_root = SubResource("AnimationNodeStateMachine_i6vsj")
+anim_player = NodePath("../AnimationPlayer")
+active = true
