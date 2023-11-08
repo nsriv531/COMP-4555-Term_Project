@@ -1,4 +1,4 @@
-[gd_scene load_steps=86 format=3 uid="uid://1csibo7xkgx1"]
+[gd_scene load_steps=89 format=3 uid="uid://1csibo7xkgx1"]
 
 [ext_resource type="Script" path="res://addons/zylann.hterrain/hterrain.gd" id="1_ilc75"]
 [ext_resource type="Shader" path="res://Scripts/CameraEffects.gdshader" id="1_m1fa5"]
@@ -28,6 +28,7 @@
 [ext_resource type="Script" path="res://AirLockInnerArea.gd" id="26_wyfa4"]
 [ext_resource type="PackedScene" uid="uid://di0axhxbprjv1" path="res://models/Tube.tscn" id="27_24fpu"]
 [ext_resource type="AudioStream" uid="uid://b1tprvlueafqk" path="res://Sounds/Air.ogg" id="27_mqdwd"]
+[ext_resource type="PackedScene" uid="uid://cddflpc4w4qru" path="res://assets/Doors/door-scenes/large_door_new.tscn" id="29_syr2i"]
 [ext_resource type="PackedScene" uid="uid://bvmydm7o77js5" path="res://assets/Lvl1_Rooms/Storage_Bay.tscn" id="30_x5r3y"]
 [ext_resource type="PackedScene" uid="uid://dimbt0twyupqv" path="res://assets/Lvl1_Rooms/Sleeping_Quarters.tscn" id="31_or7hb"]
 [ext_resource type="PackedScene" uid="uid://dsrkdm4ir7xml" path="res://assets/Doors/door-scenes/small_door_new.tscn" id="31_w7x6h"]
@@ -335,6 +336,12 @@ size = Vector3(0.1, 0.3, 0.1)
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_8wejw"]
 points = PackedVector3Array(0.05, 0.25, 0.1, -0.05, 0.25, 0.1, 0.05, -0.25, 0.1, 0.05, 0.25, -0.1, -0.05, 0.25, -0.1, -0.05, -0.25, 0.1, 0.05, -0.25, -0.1, -0.05, -0.25, -0.1)
 
+[sub_resource type="BoxMesh" id="BoxMesh_smwod"]
+size = Vector3(0.1, 0.3, 0.1)
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_vplr6"]
+points = PackedVector3Array(0.05, 0.25, 0.1, -0.05, 0.25, 0.1, 0.05, -0.25, 0.1, 0.05, 0.25, -0.1, -0.05, 0.25, -0.1, -0.05, -0.25, 0.1, 0.05, -0.25, -0.1, -0.05, -0.25, -0.1)
+
 [sub_resource type="Animation" id="Animation_2r7hm"]
 resource_name = "new_animation"
 
@@ -618,6 +625,25 @@ shape = SubResource("ConvexPolygonShape3D_8wejw")
 [node name="Mess_Hall" parent="Rooms" instance=ExtResource("23_p3srr")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 3.2, -26.5)
 
+[node name="Dormitory" parent="Rooms/Mess_Hall" instance=ExtResource("29_syr2i")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 9.00001, 0, 0)
+
+[node name="ButtonSystem" type="Node3D" parent="Rooms/Mess_Hall/Dormitory"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 2.97408, 0, 1.87557)
+script = ExtResource("18_ay6ee")
+
+[node name="StaticBody3D2" type="StaticBody3D" parent="Rooms/Mess_Hall/Dormitory/ButtonSystem"]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 1.41917, 1.19688, -0.232988)
+collision_layer = 2
+collision_mask = 0
+script = ExtResource("19_8r8ar")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Rooms/Mess_Hall/Dormitory/ButtonSystem/StaticBody3D2"]
+mesh = SubResource("BoxMesh_smwod")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Rooms/Mess_Hall/Dormitory/ButtonSystem/StaticBody3D2"]
+shape = SubResource("ConvexPolygonShape3D_vplr6")
+
 [node name="Storage_Bay" parent="Rooms" instance=ExtResource("30_x5r3y")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 18, 3.2, -31.5)
 
@@ -688,5 +714,6 @@ data = ExtResource("36_6no6g")
 [connection signal="finished" from="Rooms/AirLock/AirLockInnerArea/AirlockSoundPlayer" to="Rooms/AirLock/AirLockInnerArea" method="_on_audio_finished"]
 [connection signal="button_press" from="Rooms/AirLock/AirlockDoorInner/ButtonSystem/StaticBody3D2" to="Rooms/AirLock/AirlockDoorInner" method="_on_static_body_3d_button_press"]
 [connection signal="button_press" from="Rooms/AirLock/AirlockDoorOuter/ButtonSystem/StaticBody3D2" to="Rooms/AirLock/AirlockDoorOuter" method="_on_static_body_3d_button_press"]
+[connection signal="button_press" from="Rooms/Mess_Hall/Dormitory/ButtonSystem/StaticBody3D2" to="Rooms/Mess_Hall/Dormitory" method="_on_static_body_3d_button_press"]
 [connection signal="button_press" from="Rooms/Storage_Bay/storage_bay_door/door_system_outside/outside_button" to="Rooms/Storage_Bay/storage_bay_door" method="_on_static_body_3d_button_press"]
 [connection signal="button_press" from="Rooms/Storage_Bay/storage_bay_door/door_system_inside/inside_button" to="Rooms/Storage_Bay/storage_bay_door" method="_on_static_body_3d_button_press"]

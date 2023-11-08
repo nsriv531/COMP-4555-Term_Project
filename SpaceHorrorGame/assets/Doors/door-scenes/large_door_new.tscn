@@ -1,6 +1,7 @@
-[gd_scene load_steps=10 format=3 uid="uid://cddflpc4w4qru"]
+[gd_scene load_steps=11 format=3 uid="uid://cddflpc4w4qru"]
 
 [ext_resource type="PackedScene" uid="uid://dy5qjxhwqjh4f" path="res://assets/Doors/large_door.gltf" id="1_12hx2"]
+[ext_resource type="Script" path="res://Scripts/Door.gd" id="2_06ct6"]
 [ext_resource type="Material" uid="uid://bv88wybfq6fgq" path="res://room_textures/ceiling_base_texture.tres" id="2_18g8v"]
 [ext_resource type="AudioStream" uid="uid://kcc3a1axggf" path="res://Sounds/DoorClose.ogg" id="3_lrrem"]
 [ext_resource type="AudioStream" uid="uid://dhtasf25ubx13" path="res://Sounds/DoorOpen.ogg" id="4_cl4fv"]
@@ -25,6 +26,7 @@ states/Door_Opening/position = Vector2(373.781, 100)
 graph_offset = Vector2(-15.2192, 0)
 
 [node name="large_door" instance=ExtResource("1_12hx2")]
+script = ExtResource("2_06ct6")
 
 [node name="Upper_Panel" parent="Large_Door_Rig/Skeleton3D" index="0"]
 transform = Transform3D(1, -2.98023e-08, 8.71583e-08, 5.30761e-08, -1.34359e-07, -1, 1.19209e-07, 1, -1.15208e-07, -2.33438e-08, 0, 0.1)
