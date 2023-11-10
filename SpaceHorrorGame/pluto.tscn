@@ -1,4 +1,4 @@
-[gd_scene load_steps=91 format=3 uid="uid://1csibo7xkgx1"]
+[gd_scene load_steps=92 format=3 uid="uid://1csibo7xkgx1"]
 
 [ext_resource type="Script" path="res://addons/zylann.hterrain/hterrain.gd" id="1_ilc75"]
 [ext_resource type="Shader" path="res://Scripts/CameraEffects.gdshader" id="1_m1fa5"]
@@ -32,11 +32,12 @@
 [ext_resource type="Script" path="res://Scripts/Door.gd" id="29_iicju"]
 [ext_resource type="PackedScene" uid="uid://cddflpc4w4qru" path="res://assets/Doors/door-scenes/large_door_new.tscn" id="29_syr2i"]
 [ext_resource type="PackedScene" uid="uid://bvmydm7o77js5" path="res://assets/Lvl1_Rooms/Storage_Bay.tscn" id="30_x5r3y"]
-[ext_resource type="PackedScene" uid="uid://ctx1v53bqpdhs" path="res://assets/Lvl1_Rooms/Sleeping_Quarters.tscn" id="31_or7hb"]
+[ext_resource type="PackedScene" uid="uid://dimbt0twyupqv" path="res://assets/Lvl1_Rooms/Sleeping_Quarters.tscn" id="31_or7hb"]
 [ext_resource type="PackedScene" uid="uid://dsrkdm4ir7xml" path="res://assets/Doors/door-scenes/small_door_new.tscn" id="31_w7x6h"]
 [ext_resource type="AudioEffectLowPassFilter" uid="uid://bj0pyg6plufxn" path="res://Muffle.tres" id="32_b5i18"]
 [ext_resource type="PackedScene" uid="uid://cbnpoha7id8gp" path="res://assets/Lvl1_Rooms/Kitchen.tscn" id="32_v6vqc"]
 [ext_resource type="Script" path="res://MuffleEffect.gd" id="33_yh5b4"]
+[ext_resource type="PackedScene" uid="uid://dh1bu63e1xovq" path="res://assets/Greenhouse.gltf" id="34_sawj0"]
 [ext_resource type="VoxelGIData" uid="uid://cro30gb65wfdc" path="res://lightmap/pluto.VoxelGI_data.res" id="36_6no6g"]
 
 [sub_resource type="Resource" id="Resource_2g886"]
@@ -491,7 +492,7 @@ wait_time = 0.3
 one_shot = true
 
 [node name="CSGBox3D" type="CSGBox3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.491164, 5.40769, 20.8931, -12.0736)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.491164, 5.4079, 20.8902, -12.0779)
 gi_mode = 2
 use_collision = true
 size = Vector3(10, 1, 8.78895)
@@ -633,7 +634,7 @@ transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 3.2
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 9.00001, 0, 0)
 
 [node name="ButtonSystem" type="Node3D" parent="Rooms/Mess_Hall/Dormitory"]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 2.97408, 0, 1.87557)
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 3.07941, 0, 1.86326)
 script = ExtResource("18_ay6ee")
 
 [node name="StaticBody3D2" type="StaticBody3D" parent="Rooms/Mess_Hall/Dormitory/ButtonSystem"]
@@ -689,8 +690,11 @@ shape = SubResource("ConvexPolygonShape3D_8wejw")
 [node name="Sleeping_Quarters" parent="Rooms" instance=ExtResource("31_or7hb")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 3.2, -8.5)
 
-[node name="kitchen" parent="Rooms" instance=ExtResource("32_v6vqc")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 3.2, -39.5)
+[node name="Greenhouse" parent="Rooms" instance=ExtResource("34_sawj0")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -8, 3.2, -50.5)
+
+[node name="Kitchen" parent="Rooms" instance=ExtResource("32_v6vqc")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 3.2, -39.5)
 
 [node name="Tube" parent="." instance=ExtResource("27_24fpu")]
 

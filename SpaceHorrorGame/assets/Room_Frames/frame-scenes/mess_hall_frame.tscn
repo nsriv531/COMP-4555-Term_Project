@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://djqjh3hpr37t6"]
+[gd_scene load_steps=13 format=3 uid="uid://djqjh3hpr37t6"]
 
 [ext_resource type="PackedScene" uid="uid://tyuxyrdm33qg" path="res://assets/Room_Frames/Mess_Hall.gltf" id="1_hnmqe"]
 [ext_resource type="Material" uid="uid://7td48tkybg4v" path="res://room_textures/flooring_1/flooring_texture_1.tres" id="2_aa5bq"]
@@ -25,9 +25,6 @@ size = Vector3(18.0143, 0.30048, 18.006)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_0qajb"]
 size = Vector3(1, 6.45858, 1)
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_gp4a1"]
-size = Vector3(1, 6.27553, 4.17116)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_mu6li"]
 size = Vector3(4.07134, 6.44019, 1)
@@ -90,16 +87,7 @@ shape = SubResource("BoxShape3D_0qajb")
 transform = Transform3D(0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, -8.5, 3, -8.5)
 shape = SubResource("BoxShape3D_0qajb")
 
-[node name="Room_Frame_Divider_x_axis" parent="." index="8"]
-surface_material_override/0 = ExtResource("6_mbg57")
-
-[node name="StaticBody3D" type="StaticBody3D" parent="Room_Frame_Divider_x_axis" index="0"]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Room_Frame_Divider_x_axis/StaticBody3D" index="0"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9, 3, 0)
-shape = SubResource("BoxShape3D_gp4a1")
-
-[node name="Room_Frame_Divider_y_axis" parent="." index="9"]
+[node name="Room_Frame_Divider_y_axis" parent="." index="8"]
 surface_material_override/0 = ExtResource("6_mbg57")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Room_Frame_Divider_y_axis" index="0"]
