@@ -1,6 +1,6 @@
 [gd_scene load_steps=10 format=3 uid="uid://c35ad34xmmxv"]
 
-[ext_resource type="PackedScene" uid="uid://7q60j458vl3o" path="res://assets/Room_Frames/Sleeping_Quarters.gltf" id="1_4oc2y"]
+[ext_resource type="PackedScene" uid="uid://7q60j458vl3o" path="res://assets/Room_Frames/Dormitory_Frame.gltf" id="1_4oc2y"]
 [ext_resource type="Material" uid="uid://bv88wybfq6fgq" path="res://room_textures/ceiling_base_texture.tres" id="2_s2kmk"]
 [ext_resource type="Material" uid="uid://bevtmj4oabqj7" path="res://room_textures/wall_2/wall_texture_2.tres" id="3_en64y"]
 [ext_resource type="Material" uid="uid://dwexrstjqnw72" path="res://room_textures/ceiling_1/ceiling_texture_1.tres" id="4_nd523"]

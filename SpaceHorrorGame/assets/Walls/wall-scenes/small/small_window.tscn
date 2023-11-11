@@ -1,11 +1,15 @@
-[gd_scene load_steps=3 format=3 uid="uid://c1qwhmgdscypi"]
+[gd_scene load_steps=4 format=3 uid="uid://c1qwhmgdscypi"]
 
 [ext_resource type="PackedScene" uid="uid://5gipdvri8yuv" path="res://assets/Walls/Small/Small_Window.gltf" id="1_4blbd"]
+[ext_resource type="Material" uid="uid://n5cpoi6cut63" path="res://grey.tres" id="2_41ww6"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_vadjm"]
 size = Vector3(6.10584, 6.30831, 0.718777)
 
 [node name="Small_Window" instance=ExtResource("1_4blbd")]
+
+[node name="Extruded_Complete" parent="." index="5"]
+surface_material_override/0 = ExtResource("2_41ww6")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="." index="7"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.380637)

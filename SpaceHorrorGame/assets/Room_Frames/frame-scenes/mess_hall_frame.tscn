@@ -1,6 +1,6 @@
 [gd_scene load_steps=13 format=3 uid="uid://djqjh3hpr37t6"]
 
-[ext_resource type="PackedScene" uid="uid://tyuxyrdm33qg" path="res://assets/Room_Frames/Mess_Hall.gltf" id="1_hnmqe"]
+[ext_resource type="PackedScene" uid="uid://tyuxyrdm33qg" path="res://assets/Room_Frames/Cafeteria_Frame.gltf" id="1_hnmqe"]
 [ext_resource type="Material" uid="uid://7td48tkybg4v" path="res://room_textures/flooring_1/flooring_texture_1.tres" id="2_aa5bq"]
 [ext_resource type="Material" uid="uid://cve246qthvu31" path="res://room_textures/flooring_3/flooring_texture_3.tres" id="2_y3j45"]
 [ext_resource type="Material" uid="uid://bkunc554mcx04" path="res://room_textures/ceiling_2/ceiling_texture_2.tres" id="4_07nr0"]

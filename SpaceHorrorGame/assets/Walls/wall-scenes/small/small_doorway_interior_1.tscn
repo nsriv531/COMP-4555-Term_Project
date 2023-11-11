@@ -15,11 +15,11 @@ albedo_texture = ExtResource("2_kqd8g")
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2ujt1"]
 albedo_texture = ExtResource("2_kqd8g")
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_vadjm"]
-size = Vector3(2.16158, 6.11409, 1)
+[sub_resource type="BoxShape3D" id="BoxShape3D_cekn4"]
+size = Vector3(2.03625, 6.11409, 0.413814)
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_0sdp8"]
-size = Vector3(2.4416, 3.02562, 1)
+[sub_resource type="BoxShape3D" id="BoxShape3D_yrsdv"]
+size = Vector3(1.9892, 3.10069, 0.413814)
 
 [node name="Small_Doorway_Interior_1" instance=ExtResource("1_4jqrr")]
 
@@ -36,16 +36,16 @@ surface_material_override/0 = SubResource("StandardMaterial3D_yuk37")
 surface_material_override/0 = SubResource("StandardMaterial3D_2ujt1")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="." index="4"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, -4)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, 0.0221485)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" index="0"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.102213, 3, 0)
-shape = SubResource("BoxShape3D_vadjm")
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, -0.0229371)
+shape = SubResource("BoxShape3D_cekn4")
 
 [node name="CollisionShape3D2" type="CollisionShape3D" parent="StaticBody3D" index="1"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.10119, 3, 0)
-shape = SubResource("BoxShape3D_vadjm")
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 3, -0.0229371)
+shape = SubResource("BoxShape3D_cekn4")
 
 [node name="CollisionShape3D3" type="CollisionShape3D" parent="StaticBody3D" index="2"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 4.46432, 0)
-shape = SubResource("BoxShape3D_0sdp8")
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 4.5082, -0.0229371)
+shape = SubResource("BoxShape3D_yrsdv")

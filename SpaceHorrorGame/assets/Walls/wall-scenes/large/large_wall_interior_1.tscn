@@ -1,14 +1,14 @@
-[gd_scene load_steps=3 format=3 uid="uid://btec160l4qu3m"]
+[gd_scene load_steps=3 format=3 uid="uid://dewr1iemsxat7"]
 
-[ext_resource type="PackedScene" uid="uid://co5md6sct0o64" path="res://assets/Walls/Large/Large_Wall_Interior_1.gltf" id="1_rx78w"]
+[ext_resource type="PackedScene" uid="uid://83aptmko3q0a" path="res://assets/Walls/Large/Large_Wall_Interior_1.gltf" id="1_nbbb5"]
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_7iahd"]
-size = Vector3(16.0415, 5.96679, 0.58763)
+[sub_resource type="BoxShape3D" id="BoxShape3D_ijkmp"]
+size = Vector3(16.0745, 0.425288, 6.09403)
 
-[node name="Large_Wall_Interior_1" instance=ExtResource("1_rx78w")]
+[node name="Large_Wall_Interior_1" instance=ExtResource("1_nbbb5")]
 
-[node name="StaticBody3D" type="StaticBody3D" parent="." index="5"]
+[node name="StaticBody3D" type="StaticBody3D" parent="Large_Wall" index="0"]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" index="0"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00842905, 3, -0.0486012)
-shape = SubResource("BoxShape3D_7iahd")
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Large_Wall/StaticBody3D" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.2, -3)
+shape = SubResource("BoxShape3D_ijkmp")

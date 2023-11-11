@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://dh1bu63e1xovq"
-path="res://.godot/imported/Greenhouse.gltf-ed222ee1d99d44fb3c412c17c9b98de4.scn"
+uid="uid://b7fhcud2uire"
+path="res://.godot/imported/Small_Wall_Exterior.gltf-d841f3918176b87e810df373086f4b7e.scn"
 
 [deps]
 
-source_file="res://assets/Greenhouse.gltf"
-dest_files=["res://.godot/imported/Greenhouse.gltf-ed222ee1d99d44fb3c412c17c9b98de4.scn"]
+source_file="res://assets/Walls/Small/Small_Wall_Exterior.gltf"
+dest_files=["res://.godot/imported/Small_Wall_Exterior.gltf-d841f3918176b87e810df373086f4b7e.scn"]
 
 [params]
 

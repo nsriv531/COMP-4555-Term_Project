@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://ctxet3h8pte3n"]
+
+[ext_resource type="PackedScene" uid="uid://cno7jjr0h5fsq" path="res://assets/Walls/Large/Kitchen_Wall.gltf" id="1_of66m"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_6y5sq"]
+size = Vector3(10.0469, 1.80784, 6.2265)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_plmcb"]
+emission_enabled = true
+emission = Color(0.921569, 0.819608, 0.556863, 1)
+
+[node name="Kitchen_Wall" instance=ExtResource("1_of66m")]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Door_Wall" index="0"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Door_Wall/StaticBody3D" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.79924, -3)
+shape = SubResource("BoxShape3D_6y5sq")
+
+[node name="Light_Strip" parent="." index="2"]
+surface_material_override/0 = SubResource("StandardMaterial3D_plmcb")

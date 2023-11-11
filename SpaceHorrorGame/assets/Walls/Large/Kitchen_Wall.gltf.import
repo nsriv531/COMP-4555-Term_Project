@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://tyuxyrdm33qg"
-path="res://.godot/imported/Mess_Hall.gltf-5a6952b2a3a17c5fe5925088989a0f8e.scn"
+uid="uid://cno7jjr0h5fsq"
+path="res://.godot/imported/Kitchen_Wall.gltf-2ffe174281bf9ddd64379ebe85d64fb7.scn"
 
 [deps]
 
-source_file="res://assets/Room_Frames/Mess_Hall.gltf"
-dest_files=["res://.godot/imported/Mess_Hall.gltf-5a6952b2a3a17c5fe5925088989a0f8e.scn"]
+source_file="res://assets/Walls/Large/Kitchen_Wall.gltf"
+dest_files=["res://.godot/imported/Kitchen_Wall.gltf-2ffe174281bf9ddd64379ebe85d64fb7.scn"]
 
 [params]
 
@@ -29,4 +29,4 @@ animation/trimming=false
 animation/remove_immutable_tracks=true
 import_script/path=""
 _subresources={}
-gltf/embedded_image_handling=0
+gltf/embedded_image_handling=1
