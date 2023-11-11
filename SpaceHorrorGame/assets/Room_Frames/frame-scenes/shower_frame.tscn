@@ -1,0 +1,51 @@
+[gd_scene load_steps=6 format=3 uid="uid://6ttrke3wqyg7"]
+
+[ext_resource type="PackedScene" uid="uid://dhd5nl75ygjre" path="res://assets/Room_Frames/Shower_Frame.gltf" id="1_bus6q"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_klvuu"]
+size = Vector3(0.882563, 6.45858, 0.613211)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_syib7"]
+size = Vector3(8.02933, 0.30048, 8.0004)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_mcple"]
+emission_enabled = true
+emission = Color(0.556863, 0.913725, 1, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_824qs"]
+size = Vector3(8.02894, 0.23588, 8.03182)
+
+[node name="Shower_Frame" instance=ExtResource("1_bus6q")]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Shower_Base_Frame" index="0"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Shower_Base_Frame/StaticBody3D" index="0"]
+transform = Transform3D(0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, -3.5, 3, -3.5)
+shape = SubResource("BoxShape3D_klvuu")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="Shower_Base_Frame/StaticBody3D" index="1"]
+transform = Transform3D(-0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, -0.707107, -3.5, 3, 4.5)
+shape = SubResource("BoxShape3D_klvuu")
+
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="Shower_Base_Frame/StaticBody3D" index="2"]
+transform = Transform3D(0.707107, 0, -0.707107, 0, 1, 0, 0.707107, 0, 0.707107, 3.5, 3, -3.5)
+shape = SubResource("BoxShape3D_klvuu")
+
+[node name="CollisionShape3D4" type="CollisionShape3D" parent="Shower_Base_Frame/StaticBody3D" index="3"]
+transform = Transform3D(0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, 3.5, 3, 4.5)
+shape = SubResource("BoxShape3D_klvuu")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Shower_Ceiling" index="0"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Shower_Ceiling/StaticBody3D" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.90746, 0)
+shape = SubResource("BoxShape3D_syib7")
+
+[node name="Shower_Ceiling_Lights" parent="." index="4"]
+surface_material_override/0 = SubResource("StandardMaterial3D_mcple")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Shower_Floor_Middle" index="0"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Shower_Floor_Middle/StaticBody3D" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.11397, 0)
+shape = SubResource("BoxShape3D_824qs")

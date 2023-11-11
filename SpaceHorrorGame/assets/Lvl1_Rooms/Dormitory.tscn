@@ -11,10 +11,10 @@
 [node name="sleeping_quarters_frame" parent="." instance=ExtResource("1_23dkr")]
 
 [node name="Small_Doorway_Interior_1" parent="." instance=ExtResource("3_d3n84")]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -9, 0, 5)
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -8.8, 0, 5)
 
 [node name="Small_Doorway_Interior_2" parent="." instance=ExtResource("3_d3n84")]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -9, 0, -5)
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -8.8, 0, -5)
 
 [node name="Large_Wall_Interior_1" parent="." instance=ExtResource("3_n2ero")]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, 9)

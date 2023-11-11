@@ -3,13 +3,16 @@
 [ext_resource type="PackedScene" uid="uid://b7fhcud2uire" path="res://assets/Walls/Small/Small_Wall_Exterior.gltf" id="1_wcuxp"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_ge3sw"]
-size = Vector3(6.10584, 6.30831, 0.238447)
+size = Vector3(6.10584, 6.04875, 0.114358)
 
 [node name="Small_Wall_Exterior" instance=ExtResource("1_wcuxp")]
+
+[node name="Small_Wall" parent="." index="0"]
+visible = false
 
 [node name="StaticBody3D" type="StaticBody3D" parent="." index="3"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.110234)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" index="0"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0410697, 3, 0.105355)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0.06)
 shape = SubResource("BoxShape3D_ge3sw")

@@ -1,4 +1,4 @@
-[gd_scene load_steps=95 format=3 uid="uid://1csibo7xkgx1"]
+[gd_scene load_steps=97 format=3 uid="uid://1csibo7xkgx1"]
 
 [ext_resource type="Script" path="res://addons/zylann.hterrain/hterrain.gd" id="1_ilc75"]
 [ext_resource type="Shader" path="res://Scripts/CameraEffects.gdshader" id="1_m1fa5"]
@@ -42,6 +42,8 @@
 [ext_resource type="VoxelGIData" uid="uid://cro30gb65wfdc" path="res://lightmap/pluto.VoxelGI_data.res" id="36_6no6g"]
 [ext_resource type="PackedScene" uid="uid://b5oe0m6845gx5" path="res://assets/Room_Frames/frame-scenes/6x6_frame.tscn" id="36_qckui"]
 [ext_resource type="PackedScene" uid="uid://bbck2mtcovvs2" path="res://assets/Lvl1_Rooms/Greenhouse.tscn" id="37_nakde"]
+[ext_resource type="PackedScene" uid="uid://eicyxm43ptgm" path="res://assets/Lvl1_Rooms/Shower_1.tscn" id="38_xclxq"]
+[ext_resource type="PackedScene" uid="uid://p3mxan3e48wt" path="res://assets/Lvl1_Rooms/Shower_2.tscn" id="39_38to2"]
 
 [sub_resource type="Resource" id="Resource_2g886"]
 script = ExtResource("3_0l8wc")
@@ -704,6 +706,12 @@ mesh = SubResource("BoxMesh_smwod")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Rooms/Sleeping_Quarters/Dormitory_Door/ButtonSystem/StaticBody3D2"]
 shape = SubResource("ConvexPolygonShape3D_vplr6")
+
+[node name="Showers_1" parent="Rooms/Sleeping_Quarters" instance=ExtResource("38_xclxq")]
+transform = Transform3D(1, 0, 3.55271e-15, 0, 1, 0, -3.55271e-15, 0, 1, -13, 0, -5)
+
+[node name="Shower_2" parent="Rooms/Sleeping_Quarters" instance=ExtResource("39_38to2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13, 0, 4)
 
 [node name="Cafeteria" parent="Rooms" instance=ExtResource("23_p3srr")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 3.2, -26.5)

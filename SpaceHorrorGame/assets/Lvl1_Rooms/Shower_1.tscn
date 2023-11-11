@@ -1,0 +1,27 @@
+[gd_scene load_steps=6 format=3 uid="uid://eicyxm43ptgm"]
+
+[ext_resource type="PackedScene" uid="uid://n10fi72j36mi" path="res://assets/Walls/wall-scenes/small/small_doorway_interior_2.tscn" id="2_5xrvs"]
+[ext_resource type="PackedScene" uid="uid://6ttrke3wqyg7" path="res://assets/Room_Frames/frame-scenes/shower_frame.tscn" id="2_vewar"]
+[ext_resource type="PackedScene" uid="uid://c0hlbvbilumfu" path="res://assets/Walls/wall-scenes/small/small_shower_wall.tscn" id="3_se73v"]
+[ext_resource type="PackedScene" uid="uid://bwie56ms0q7kk" path="res://assets/Walls/wall-scenes/small/small_shower_interior.tscn" id="4_a5a40"]
+[ext_resource type="PackedScene" uid="uid://cl60ldfsr64jj" path="res://assets/Walls/wall-scenes/small/small_shower_doorway_1.tscn" id="5_6fmx4"]
+
+[node name="Showers" type="Node3D"]
+
+[node name="Small_Doorway_Interior_2" parent="." instance=ExtResource("2_5xrvs")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 3.8, 0, 0)
+visible = false
+
+[node name="Shower_Frame" parent="." instance=ExtResource("2_vewar")]
+
+[node name="Small_Shower_Wall" parent="." instance=ExtResource("3_se73v")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, 5)
+
+[node name="Small_Shower_Wall2" parent="." instance=ExtResource("3_se73v")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -4)
+
+[node name="Small_Shower_Interior" parent="." instance=ExtResource("4_a5a40")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -4, 0, 0)
+
+[node name="Small_Shower_Doorway" parent="." instance=ExtResource("5_6fmx4")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 3.8, 0, 0)
