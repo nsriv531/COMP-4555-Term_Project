@@ -1,36 +1,13 @@
 [gd_scene load_steps=7 format=3 uid="uid://dw5r0u10smu5b"]
 
-[ext_resource type="PackedScene" uid="uid://djqjh3hpr37t6" path="res://assets/Room_Frames/frame-scenes/mess_hall_frame.tscn" id="1_63bvl"]
 [ext_resource type="PackedScene" uid="uid://n10fi72j36mi" path="res://assets/Walls/wall-scenes/small/small_doorway_interior_2.tscn" id="2_8uoyc"]
 [ext_resource type="PackedScene" uid="uid://cu5x3durp47ow" path="res://assets/Walls/wall-scenes/small/small_wall_interior_1.tscn" id="3_jgo61"]
 [ext_resource type="PackedScene" uid="uid://b06cyy4xmxmbx" path="res://assets/Walls/wall-scenes/small/small_doorway_interior_1.tscn" id="5_5wqvx"]
 [ext_resource type="PackedScene" uid="uid://doknm5b5to4tq" path="res://assets/Walls/wall-scenes/large/large_doorway_interior_1.tscn" id="5_o50ck"]
 [ext_resource type="PackedScene" uid="uid://bqvu4ar4uo2ul" path="res://assets/Walls/wall-scenes/large/cafeteria_wall.tscn" id="6_160j5"]
+[ext_resource type="PackedScene" uid="uid://bqwrwf2v2m5dj" path="res://assets/Room_Frames/frame-scenes/cafeteria_frame.tscn" id="6_k5wjk"]
 
 [node name="Mess_Hall" type="Node3D"]
-
-[node name="Lights" type="Node3D" parent="."]
-visible = false
-
-[node name="OmniLight3D" type="OmniLight3D" parent="Lights"]
-transform = Transform3D(1, 0, 0, 0, -1, 8.74228e-08, 0, -8.74228e-08, -1, 5, 2.82427, -5)
-light_energy = 2.677
-omni_range = 9.83824
-
-[node name="OmniLight3D2" type="OmniLight3D" parent="Lights"]
-transform = Transform3D(1, 0, 0, 0, 1, -1.74846e-07, 0, 1.74846e-07, 1, -4, 3, -5)
-light_energy = 2.677
-omni_range = 9.51678
-
-[node name="OmniLight3D3" type="OmniLight3D" parent="Lights"]
-transform = Transform3D(1, 0, 0, 0, 1, -3.49691e-07, 0, 3.49691e-07, 1, 6, 3, 5)
-light_energy = 2.677
-omni_range = 9.75031
-
-[node name="OmniLight3D4" type="OmniLight3D" parent="Lights"]
-transform = Transform3D(1, 0, 0, 0, -1, 2.62268e-07, 0, -2.62268e-07, -1, -5, 3.82427, 4)
-light_energy = 2.677
-omni_range = 9.66804
 
 [node name="Doorway-to-Workshop" parent="." instance=ExtResource("2_8uoyc")]
 transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -5, 0, 8.8)
@@ -47,10 +24,10 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 0, -8.8)
 [node name="Small_Doorway_Interior_1" parent="." instance=ExtResource("5_5wqvx")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 0, -8.8)
 
-[node name="Mess_Hall" parent="." instance=ExtResource("1_63bvl")]
-
 [node name="Large_Doorway_Interior_1" parent="." instance=ExtResource("5_o50ck")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 9, 0, 0)
 
 [node name="Cafeteria_Wall" parent="." instance=ExtResource("6_160j5")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -9, 0, -3)
+
+[node name="Cafeteria_Frame" parent="." instance=ExtResource("6_k5wjk")]

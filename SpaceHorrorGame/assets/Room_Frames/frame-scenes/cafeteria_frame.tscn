@@ -1,0 +1,73 @@
+[gd_scene load_steps=8 format=3 uid="uid://bqwrwf2v2m5dj"]
+
+[ext_resource type="PackedScene" uid="uid://tyuxyrdm33qg" path="res://assets/Room_Frames/Cafeteria_Frame.gltf" id="1_e86m3"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_mrbc7"]
+size = Vector3(18.0159, 0.23588, 18.0349)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_l80xo"]
+emission_enabled = true
+emission = Color(1, 1, 1, 1)
+emission_energy_multiplier = 3.0
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_5yki5"]
+size = Vector3(18.0012, 0.30048, 18.0034)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_pvn8w"]
+size = Vector3(0.882563, 6.45858, 0.613211)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_6u2ak"]
+size = Vector3(4.07957, 6.45858, 0.413505)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_tqvmf"]
+emission_enabled = true
+emission = Color(0.733333, 0.733333, 0.733333, 1)
+emission_energy_multiplier = 0.5
+
+[node name="Cafeteria_Frame" instance=ExtResource("1_e86m3")]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Cafeteria_Floor_Middle" index="0"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Cafeteria_Floor_Middle/StaticBody3D" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.11397, 0)
+shape = SubResource("BoxShape3D_mrbc7")
+
+[node name="Cafeteria_Floor_Lights" parent="." index="2"]
+surface_material_override/0 = SubResource("StandardMaterial3D_l80xo")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Cafeteria_Ceiling" index="0"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Cafeteria_Ceiling/StaticBody3D" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.90746, 0)
+shape = SubResource("BoxShape3D_5yki5")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Cafeteria_Frame_Inside" index="0"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Cafeteria_Frame_Inside/StaticBody3D" index="0"]
+transform = Transform3D(0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, -8.5, 3, -8.5)
+shape = SubResource("BoxShape3D_pvn8w")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="Cafeteria_Frame_Inside/StaticBody3D" index="1"]
+transform = Transform3D(-0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, -0.707107, -8.5, 3, 8.5)
+shape = SubResource("BoxShape3D_pvn8w")
+
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="Cafeteria_Frame_Inside/StaticBody3D" index="2"]
+transform = Transform3D(0.707107, 0, -0.707107, 0, 1, 0, 0.707107, 0, 0.707107, 8.5, 3, -8.5)
+shape = SubResource("BoxShape3D_pvn8w")
+
+[node name="CollisionShape3D4" type="CollisionShape3D" parent="Cafeteria_Frame_Inside/StaticBody3D" index="3"]
+transform = Transform3D(0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, 8.5, 3, 8.5)
+shape = SubResource("BoxShape3D_pvn8w")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Cafeteria_Frame_Divider_Inside" index="0"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Cafeteria_Frame_Divider_Inside/StaticBody3D" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, -8.8)
+shape = SubResource("BoxShape3D_6u2ak")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="Cafeteria_Frame_Divider_Inside/StaticBody3D" index="1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 8.8)
+shape = SubResource("BoxShape3D_6u2ak")
+
+[node name="Cafeteria_Ceiling_Lights" parent="." index="10"]
+surface_material_override/0 = SubResource("StandardMaterial3D_tqvmf")

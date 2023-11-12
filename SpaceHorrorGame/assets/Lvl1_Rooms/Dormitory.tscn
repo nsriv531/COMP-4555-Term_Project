@@ -1,14 +1,12 @@
 [gd_scene load_steps=6 format=3 uid="uid://dimbt0twyupqv"]
 
-[ext_resource type="PackedScene" uid="uid://c35ad34xmmxv" path="res://assets/Room_Frames/frame-scenes/dormitory_frame.tscn" id="1_23dkr"]
 [ext_resource type="PackedScene" uid="uid://b06cyy4xmxmbx" path="res://assets/Walls/wall-scenes/small/small_doorway_interior_1.tscn" id="3_d3n84"]
 [ext_resource type="PackedScene" uid="uid://dewr1iemsxat7" path="res://assets/Walls/wall-scenes/large/large_wall_interior_1.tscn" id="3_n2ero"]
 [ext_resource type="PackedScene" uid="uid://cio231ct3imhe" path="res://assets/Walls/wall-scenes/large/large_doorway_interior_2.tscn" id="4_uhq4c"]
 [ext_resource type="PackedScene" uid="uid://c4v76k5h44qer" path="res://assets/Walls/wall-scenes/large/large_wall_exterior.tscn" id="5_elglv"]
+[ext_resource type="PackedScene" uid="uid://cvpfknfejfdjr" path="res://assets/Room_Frames/frame-scenes/dormitory_frame.tscn" id="5_lthf4"]
 
 [node name="Sleeping_Quarters" type="Node3D"]
-
-[node name="sleeping_quarters_frame" parent="." instance=ExtResource("1_23dkr")]
 
 [node name="Small_Doorway_Interior_1" parent="." instance=ExtResource("3_d3n84")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -8.8, 0, 5)
@@ -30,3 +28,5 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 9.1)
 
 [node name="Large_Wall_Exterior2" parent="." instance=ExtResource("5_elglv")]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, -9.1)
+
+[node name="Dormitory_Frame" parent="." instance=ExtResource("5_lthf4")]
