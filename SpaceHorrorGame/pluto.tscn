@@ -1,4 +1,4 @@
-[gd_scene load_steps=97 format=3 uid="uid://1csibo7xkgx1"]
+[gd_scene load_steps=101 format=3 uid="uid://1csibo7xkgx1"]
 
 [ext_resource type="Script" path="res://addons/zylann.hterrain/hterrain.gd" id="1_ilc75"]
 [ext_resource type="Shader" path="res://Scripts/CameraEffects.gdshader" id="1_m1fa5"]
@@ -44,11 +44,70 @@
 [ext_resource type="PackedScene" uid="uid://eicyxm43ptgm" path="res://assets/Lvl1_Rooms/Shower_1.tscn" id="38_xclxq"]
 [ext_resource type="PackedScene" uid="uid://p3mxan3e48wt" path="res://assets/Lvl1_Rooms/Shower_2.tscn" id="39_38to2"]
 [ext_resource type="PackedScene" uid="uid://ce31ok7avs5ak" path="res://assets/Lvl1_Rooms/Albert's Office.tscn" id="40_ow1vi"]
+[ext_resource type="PackedScene" uid="uid://cirokgp12pga2" path="res://bottle.tscn" id="45_jsbm1"]
 
 [sub_resource type="Resource" id="Resource_2g886"]
 script = ExtResource("3_0l8wc")
 mode = 0
 textures = [[ExtResource("4_40ndm")], [ExtResource("5_yc373")]]
+
+[sub_resource type="Animation" id="Animation_6yv0y"]
+resource_name = "bob"
+length = 2.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1, 2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 23.2079, 0), Vector3(0, 23.25, 0), Vector3(0, 23.2079, 0)]
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../..")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(2),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"playWalkSound"
+}]
+}
+
+[sub_resource type="Animation" id="Animation_jv6pj"]
+resource_name = "unbob"
+tracks/0/type = "position_3d"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = PackedFloat32Array(0, 1, 0, 23.308, 0, 1, 1, 0, 23.2079, 0)
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../..")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(),
+"transitions": PackedFloat32Array(),
+"values": []
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_n5jbq"]
+_data = {
+"bob": SubResource("Animation_6yv0y"),
+"unbob": SubResource("Animation_jv6pj")
+}
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_u2n4x"]
 margin = 0.1
@@ -382,6 +441,7 @@ shader_params/u_tile_reduction = null
 
 [node name="Player" type="CharacterBody3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 26.7454, 24.187, -11.5168)
+collision_layer = 2
 script = ExtResource("7_lpn7i")
 
 [node name="Head" type="Node3D" parent="Player"]
@@ -390,6 +450,15 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -22.7091, 0)
 [node name="Camera3D" type="Camera3D" parent="Player/Head"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 23.2079, 0)
 current = true
+
+[node name="CameraAnim" type="AnimationPlayer" parent="Player/Head/Camera3D"]
+speed_scale = 5.0
+libraries = {
+"": SubResource("AnimationLibrary_n5jbq")
+}
+
+[node name="Hands" type="Marker3D" parent="Player/Head/Camera3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.228336, -0.213596, -0.648585)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Player"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.0554142, 0)
@@ -470,6 +539,7 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="NoteTextRect" type="TextureRect" parent="Player/GUI/CanvasLayer/NoteContainer"]
+visible = false
 layout_mode = 2
 texture = ExtResource("10_xbnsg")
 
@@ -479,13 +549,26 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
 
 [node name="CrosshairTextRect" type="TextureRect" parent="Player/GUI/CanvasLayer/CrosshairContainer"]
 texture_filter = 1
 layout_mode = 2
 texture = SubResource("AnimatedTexture_g84ow")
-expand_mode = 1
-stretch_mode = 3
+
+[node name="ThrowBarContainer" type="CenterContainer" parent="Player/GUI/CanvasLayer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ThrowBar" type="ColorRect" parent="Player/GUI/CanvasLayer/ThrowBarContainer"]
+custom_minimum_size = Vector2(100, 6)
+layout_mode = 2
 
 [node name="WalkingSound" type="AudioStreamPlayer3D" parent="Player"]
 stream = ExtResource("14_rxa8h")
@@ -580,6 +663,7 @@ material = SubResource("StandardMaterial3D_7h0l0")
 
 [node name="AirLockInnerArea" type="Area3D" parent="Rooms/AirLock" node_paths=PackedStringArray("door1", "door2")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.3377, 4.14974, -21.4038)
+collision_mask = 3
 script = ExtResource("26_wyfa4")
 door1 = NodePath("../NewAirlockDoorOuter")
 door2 = NodePath("../NewAirlockDoorInner")
@@ -736,6 +820,9 @@ script = ExtResource("33_yh5b4")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 42.7033, 0)
 size = Vector3(134.957, 56.0929, 138.925)
 data = ExtResource("36_6no6g")
+
+[node name="Node3D" parent="." instance=ExtResource("45_jsbm1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 28.0835, 22.7761, -13.0984)
 
 [connection signal="timeout" from="Player/Timer" to="Player" method="_on_timer_timeout"]
 [connection signal="body_shape_entered" from="Rooms/AirLock/AirLockInnerArea" to="Rooms/AirLock/AirLockInnerArea" method="_on_body_shape_entered"]

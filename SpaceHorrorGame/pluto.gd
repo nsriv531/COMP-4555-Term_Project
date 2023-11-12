@@ -58,5 +58,5 @@ func _process(delta):
 	
 	#AudioServer.add_bus_effect(0,muffle,0)
 	
-	print(AudioServer.get_bus_effect(0,0).cutoff_hz)
+	#print(AudioServer.get_bus_effect(0,0).cutoff_hz)
 	pass
