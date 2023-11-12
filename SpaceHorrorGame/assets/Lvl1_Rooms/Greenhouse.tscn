@@ -1,5 +1,12 @@
-[gd_scene load_steps=2 format=3 uid="uid://bbck2mtcovvs2"]
+[gd_scene load_steps=3 format=3 uid="uid://bbck2mtcovvs2"]
 
 [ext_resource type="PackedScene" uid="uid://dh1bu63e1xovq" path="res://assets/Room_Frames/Greenhouse.gltf" id="1_vj2ld"]
+[ext_resource type="Material" uid="uid://nvs1pw5jy4sd" path="res://room_textures/glass_texture.tres" id="2_vdxmb"]
 
 [node name="Greenhouse" instance=ExtResource("1_vj2ld")]
+
+[node name="Roof_Window" parent="." index="5"]
+surface_material_override/0 = ExtResource("2_vdxmb")
+
+[node name="Side_Windows" parent="." index="6"]
+surface_material_override/0 = ExtResource("2_vdxmb")

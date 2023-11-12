@@ -1,13 +1,11 @@
 [gd_scene load_steps=5 format=3 uid="uid://bvmydm7o77js5"]
 
-[ext_resource type="PackedScene" uid="uid://dhn3bvw7d32te" path="res://assets/Room_Frames/frame-scenes/storage_bay_frame.tscn" id="1_e4ljx"]
+[ext_resource type="PackedScene" uid="uid://cqimnymmoxpwh" path="res://assets/Room_Frames/frame-scenes/storage_bay_frame.tscn" id="1_e4ljx"]
 [ext_resource type="PackedScene" uid="uid://cgveccc2f7c41" path="res://assets/Walls/wall-scenes/large/large_wall_interior_2.tscn" id="3_5ub8k"]
 [ext_resource type="PackedScene" uid="uid://b06cyy4xmxmbx" path="res://assets/Walls/wall-scenes/small/small_doorway_interior_1.tscn" id="4_r8spb"]
 [ext_resource type="PackedScene" uid="uid://c1qwhmgdscypi" path="res://assets/Walls/wall-scenes/small/small_window.tscn" id="4_wtfm8"]
 
 [node name="Storage_Bay" type="Node3D"]
-
-[node name="16X6_Frame" parent="." instance=ExtResource("1_e4ljx")]
 
 [node name="Large_Wall_Interior_2" parent="." instance=ExtResource("3_5ub8k")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 4, 0, 0)
@@ -20,3 +18,5 @@ transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, 
 
 [node name="Small_Window" parent="." instance=ExtResource("4_wtfm8")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -8.7)
+
+[node name="Storage_Bay_Frame" parent="." instance=ExtResource("1_e4ljx")]

@@ -1,5 +1,0 @@
-[gd_scene load_steps=2 format=3 uid="uid://b5oe0m6845gx5"]
-
-[ext_resource type="PackedScene" uid="uid://pwvhfuokjgce" path="res://assets/Room_Frames/6x6_Frame.gltf" id="1_h3pkh"]
-
-[node name="6x6_Frame" instance=ExtResource("1_h3pkh")]
