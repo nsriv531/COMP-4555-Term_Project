@@ -1,6 +1,8 @@
-[gd_scene load_steps=8 format=3 uid="uid://bqwrwf2v2m5dj"]
+[gd_scene load_steps=10 format=3 uid="uid://bqwrwf2v2m5dj"]
 
 [ext_resource type="PackedScene" uid="uid://tyuxyrdm33qg" path="res://assets/Room_Frames/Cafeteria_Frame.gltf" id="1_e86m3"]
+[ext_resource type="Material" uid="uid://ctihvcbbldelq" path="res://room_textures/glass_texture_interior.tres" id="2_gjp7b"]
+[ext_resource type="Material" uid="uid://nvs1pw5jy4sd" path="res://room_textures/glass_texture_exterior.tres" id="3_2qjii"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_mrbc7"]
 size = Vector3(18.0159, 0.23588, 18.0349)
@@ -69,5 +71,11 @@ shape = SubResource("BoxShape3D_6u2ak")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 8.8)
 shape = SubResource("BoxShape3D_6u2ak")
 
+[node name="Cafeteria_Ceiling_Glass_Interior" parent="." index="9"]
+surface_material_override/0 = ExtResource("2_gjp7b")
+
 [node name="Cafeteria_Ceiling_Lights" parent="." index="10"]
 surface_material_override/0 = SubResource("StandardMaterial3D_tqvmf")
+
+[node name="Cafeteria_Ceiling_Glass_Exterior" parent="." index="11"]
+surface_material_override/0 = ExtResource("3_2qjii")

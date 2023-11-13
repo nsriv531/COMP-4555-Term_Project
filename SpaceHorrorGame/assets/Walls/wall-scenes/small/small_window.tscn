@@ -1,15 +1,16 @@
-[gd_scene load_steps=5 format=3 uid="uid://c1qwhmgdscypi"]
+[gd_scene load_steps=6 format=3 uid="uid://c1qwhmgdscypi"]
 
 [ext_resource type="PackedScene" uid="uid://5gipdvri8yuv" path="res://assets/Walls/Small/Small_Window.gltf" id="1_4blbd"]
 [ext_resource type="Material" uid="uid://n5cpoi6cut63" path="res://grey.tres" id="2_41ww6"]
-[ext_resource type="Material" uid="uid://nvs1pw5jy4sd" path="res://room_textures/glass_texture.tres" id="2_mj43c"]
+[ext_resource type="Material" uid="uid://nvs1pw5jy4sd" path="res://room_textures/glass_texture_exterior.tres" id="2_mj43c"]
+[ext_resource type="Material" uid="uid://ctihvcbbldelq" path="res://room_textures/glass_texture_interior.tres" id="4_x5waf"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_vadjm"]
 size = Vector3(6.10584, 6.30831, 0.718777)
 
 [node name="Small_Window" instance=ExtResource("1_4blbd")]
 
-[node name="Window" parent="." index="2"]
+[node name="Window_Exterior" parent="." index="2"]
 surface_material_override/0 = ExtResource("2_mj43c")
 
 [node name="Extruded_Complete" parent="." index="5"]
@@ -21,3 +22,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.380637)
 [node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" index="0"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0410697, 3, 0.084433)
 shape = SubResource("BoxShape3D_vadjm")
+
+[node name="Window_Interior" parent="." index="8"]
+surface_material_override/0 = ExtResource("4_x5waf")
