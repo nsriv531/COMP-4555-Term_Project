@@ -1,0 +1,22 @@
+[gd_resource type="StandardMaterial3D" load_steps=7 format=3 uid="uid://dy3kgwpai115x"]
+
+[ext_resource type="Texture2D" uid="uid://nlr56ow7p0dn" path="res://room_textures/wall_3/Metal_Plate_011_basecolor.jpg" id="1_53282"]
+[ext_resource type="Texture2D" uid="uid://cvv8xcpwvuplr" path="res://room_textures/wall_3/Metal_Plate_011_ambientOcclusion.jpg" id="2_d0uxh"]
+[ext_resource type="Texture2D" uid="uid://l77cpf4vxft8" path="res://room_textures/wall_3/Metal_Plate_011_height.png" id="3_gygd8"]
+[ext_resource type="Texture2D" uid="uid://sdugxvs5wnr8" path="res://room_textures/wall_3/Metal_Plate_011_metallic.jpg" id="4_7eols"]
+[ext_resource type="Texture2D" uid="uid://d3fl0t1is85a2" path="res://room_textures/wall_3/Metal_Plate_011_normal.jpg" id="5_shf5e"]
+[ext_resource type="Texture2D" uid="uid://blx7nrqaw67fs" path="res://room_textures/wall_3/Metal_Plate_011_roughness.jpg" id="6_vrpjf"]
+
+[resource]
+albedo_texture = ExtResource("1_53282")
+metallic = 0.42
+metallic_texture = ExtResource("4_7eols")
+roughness_texture = ExtResource("6_vrpjf")
+roughness_texture_channel = 1
+normal_enabled = true
+normal_texture = ExtResource("5_shf5e")
+ao_enabled = true
+ao_light_affect = 0.22
+ao_texture = ExtResource("2_d0uxh")
+heightmap_enabled = true
+heightmap_texture = ExtResource("3_gygd8")
