@@ -724,7 +724,7 @@ transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 3.2
 transform = Transform3D(1.31134e-07, 0, 1, 0, 1, 0, -1, 0, 1.31134e-07, 8.9, 0, 0)
 
 [node name="ButtonSystem" type="Node3D" parent="Rooms/Dormitory/Dormitory_Door"]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 3.07941, 0, 1.86326)
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 3.38756, 0, 1.96251)
 script = ExtResource("18_ay6ee")
 
 [node name="StaticBody3D2" type="StaticBody3D" parent="Rooms/Dormitory/Dormitory_Door/ButtonSystem"]
