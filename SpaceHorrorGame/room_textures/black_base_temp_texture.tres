@@ -5,3 +5,5 @@ albedo_color = Color(0.14902, 0.14902, 0.14902, 1)
 metallic = 0.74
 roughness = 0.42
 roughness_texture_channel = 1
+emission = Color(0.282353, 0.282353, 0.282353, 1)
+emission_energy_multiplier = 10.83

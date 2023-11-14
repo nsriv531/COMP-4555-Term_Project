@@ -580,7 +580,7 @@ one_shot = true
 environment = SubResource("Environment_him15")
 
 [node name="Sun" type="DirectionalLight3D" parent="."]
-transform = Transform3D(0.586849, 0.722724, -0.365075, -0.0180013, 0.462412, 0.886482, 0.809497, -0.513659, 0.284376, -390.079, 748.531, 281.904)
+transform = Transform3D(0.586849, 0.722724, -0.365074, -0.0180013, 0.462412, 0.886483, 0.809497, -0.513659, 0.284376, -390.079, 748.531, 281.904)
 light_color = Color(0.780392, 0.780392, 0.780392, 1)
 light_energy = 0.1
 light_indirect_energy = 5.0
@@ -620,12 +620,13 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16.3546, 18.1738, 9.48032)
 
 [node name="AirLock" type="Node3D" parent="Rooms"]
 
-[node name="AirLockInnerArea" type="Area3D" parent="Rooms/AirLock" node_paths=PackedStringArray("door1", "door2")]
+[node name="AirLockInnerArea" type="Area3D" parent="Rooms/AirLock" node_paths=PackedStringArray("door1", "door2", "airlockMesh")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.3377, 4.14974, -21.4038)
 collision_mask = 3
 script = ExtResource("26_wyfa4")
 door1 = NodePath("../NewAirlockDoorOuter")
 door2 = NodePath("../NewAirlockDoorInner")
+airlockMesh = NodePath("../Airlock")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Rooms/AirLock/AirLockInnerArea"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.57438, 0.408596, -0.0848417)

@@ -9,6 +9,7 @@ var doorArr = []
 
 @export var door1:Node3D = null
 @export var door2:Node3D = null
+@export var airlockMesh:Node3D = null
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -43,4 +44,5 @@ func _on_body_shape_entered(body_rid, body, body_shape_index, local_shape_index)
 func _on_audio_finished():
 	isReady = true
 	doorArr[0].onButtonPress()
+	airlockMesh.changeColor(Color(0,1,0))
 	

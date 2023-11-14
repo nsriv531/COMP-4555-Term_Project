@@ -1,19 +1,16 @@
 [gd_scene load_steps=7 format=3 uid="uid://dw5r0u10smu5b"]
 
 [ext_resource type="PackedScene" uid="uid://n10fi72j36mi" path="res://assets/Walls/wall-scenes/small/small_doorway_interior_2.tscn" id="2_8uoyc"]
-[ext_resource type="PackedScene" uid="uid://cu5x3durp47ow" path="res://assets/Walls/wall-scenes/small/small_wall_interior_1.tscn" id="3_jgo61"]
 [ext_resource type="PackedScene" uid="uid://b06cyy4xmxmbx" path="res://assets/Walls/wall-scenes/small/small_doorway_interior_1.tscn" id="5_5wqvx"]
 [ext_resource type="PackedScene" uid="uid://doknm5b5to4tq" path="res://assets/Walls/wall-scenes/large/large_doorway_interior_1.tscn" id="5_o50ck"]
 [ext_resource type="PackedScene" uid="uid://bqvu4ar4uo2ul" path="res://assets/Walls/wall-scenes/large/cafeteria_wall.tscn" id="6_160j5"]
+[ext_resource type="PackedScene" uid="uid://bx2j31riie2y5" path="res://assets/Walls/wall-scenes/small/small_wall_interior_3.tscn" id="6_imbjv"]
 [ext_resource type="PackedScene" uid="uid://bqwrwf2v2m5dj" path="res://assets/Room_Frames/frame-scenes/cafeteria_frame.tscn" id="6_k5wjk"]
 
 [node name="Mess_Hall" type="Node3D" groups=["navigation_mesh_source_group"]]
 
 [node name="Doorway-to-Workshop" parent="." instance=ExtResource("2_8uoyc")]
 transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -5, 0, 8.8)
-
-[node name="Cafeteria-Hall" parent="." instance=ExtResource("3_jgo61")]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 5, 0, 9)
 
 [node name="Doorway-to-Kitchen" parent="." instance=ExtResource("2_8uoyc")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -8.8, 0, 5)
@@ -31,3 +28,6 @@ transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 9, 0, 
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -9, 0, -3)
 
 [node name="Cafeteria_Frame" parent="." instance=ExtResource("6_k5wjk")]
+
+[node name="Small_Wall_Interior_3" parent="." instance=ExtResource("6_imbjv")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 5, 0, 9)

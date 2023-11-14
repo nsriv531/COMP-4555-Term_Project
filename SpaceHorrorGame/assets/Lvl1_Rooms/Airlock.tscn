@@ -1,7 +1,8 @@
-[gd_scene load_steps=13 format=3 uid="uid://bwo8ufx8gsnai"]
+[gd_scene load_steps=14 format=3 uid="uid://bwo8ufx8gsnai"]
 
 [ext_resource type="PackedScene" uid="uid://copocgg28mgsi" path="res://assets/Room_Frames/Airlock.gltf" id="1_1vn67"]
 [ext_resource type="Material" uid="uid://bv88wybfq6fgq" path="res://room_textures/ceiling_base_texture.tres" id="2_b7tud"]
+[ext_resource type="Script" path="res://assets/Lvl1_Rooms/LvL1_Room_Scripts/Airlock.gd" id="2_ebi3i"]
 [ext_resource type="Material" uid="uid://bdtnrqjti18l5" path="res://room_textures/black_base_temp_texture.tres" id="3_qivd5"]
 [ext_resource type="Material" uid="uid://ctihvcbbldelq" path="res://room_textures/glass_texture_interior.tres" id="4_q2p1w"]
 [ext_resource type="Material" uid="uid://nvs1pw5jy4sd" path="res://room_textures/glass_texture_exterior.tres" id="5_nr2si"]
@@ -37,6 +38,8 @@ emission = Color(1, 0.529412, 0.262745, 1)
 emission_energy_multiplier = 2.0
 
 [node name="Airlock" groups=["navigation_mesh_source_group"] instance=ExtResource("1_1vn67")]
+script = ExtResource("2_ebi3i")
+
 
 [node name="Vent_Grate" parent="." index="0"]
 surface_material_override/0 = ExtResource("2_b7tud")
