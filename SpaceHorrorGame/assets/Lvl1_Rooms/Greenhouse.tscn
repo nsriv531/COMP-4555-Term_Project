@@ -32,7 +32,7 @@ emission = Color(0.196078, 0.792157, 0.207843, 1)
 [sub_resource type="BoxShape3D" id="BoxShape3D_vxn8b"]
 size = Vector3(0.882563, 6.45858, 0.613211)
 
-[node name="Greenhouse" instance=ExtResource("1_vj2ld")]
+[node name="Greenhouse" groups=["navigation_mesh_source_group"] instance=ExtResource("1_vj2ld")]
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Room_Base_Frame" index="0"]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -9, 0, 0)

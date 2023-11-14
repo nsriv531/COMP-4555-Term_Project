@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://cu5x3durp47ow" path="res://assets/Walls/wall-scenes/small/small_wall_interior_1.tscn" id="3_pd22c"]
 [ext_resource type="PackedScene" uid="uid://c1qwhmgdscypi" path="res://assets/Walls/wall-scenes/small/small_window.tscn" id="4_oeg2p"]
 
-[node name="Albert\'s Office" type="Node3D"]
+[node name="Albert\'s Office" type="Node3D" groups=["navigation_mesh_source_group"]]
 
 [node name="Office_Frame" parent="." instance=ExtResource("1_sfxax")]
 

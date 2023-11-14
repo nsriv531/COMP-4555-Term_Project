@@ -7,7 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://bqvu4ar4uo2ul" path="res://assets/Walls/wall-scenes/large/cafeteria_wall.tscn" id="6_160j5"]
 [ext_resource type="PackedScene" uid="uid://bqwrwf2v2m5dj" path="res://assets/Room_Frames/frame-scenes/cafeteria_frame.tscn" id="6_k5wjk"]
 
-[node name="Mess_Hall" type="Node3D"]
+[node name="Mess_Hall" type="Node3D" groups=["navigation_mesh_source_group"]]
 
 [node name="Doorway-to-Workshop" parent="." instance=ExtResource("2_8uoyc")]
 transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -5, 0, 8.8)

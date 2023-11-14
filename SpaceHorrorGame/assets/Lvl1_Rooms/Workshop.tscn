@@ -6,7 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://cdji13ipl6xh" path="res://assets/Walls/wall-scenes/large/workshop_doorway.tscn" id="5_3e6hl"]
 [ext_resource type="PackedScene" uid="uid://i5v8td5783et" path="res://assets/Walls/wall-scenes/large/workshop_wall.tscn" id="5_taivb"]
 
-[node name="Workshop" type="Node3D"]
+[node name="Workshop" type="Node3D" groups=["navigation_mesh_source_group"]]
 
 [node name="Workshop_Frame" parent="." instance=ExtResource("1_6h3h2")]
 

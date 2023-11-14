@@ -36,7 +36,7 @@ emission_enabled = true
 emission = Color(1, 0.529412, 0.262745, 1)
 emission_energy_multiplier = 2.0
 
-[node name="Airlock" instance=ExtResource("1_1vn67")]
+[node name="Airlock" groups=["navigation_mesh_source_group"] instance=ExtResource("1_1vn67")]
 
 [node name="Vent_Grate" parent="." index="0"]
 surface_material_override/0 = ExtResource("2_b7tud")

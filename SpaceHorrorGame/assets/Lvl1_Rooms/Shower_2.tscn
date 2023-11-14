@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://bwie56ms0q7kk" path="res://assets/Walls/wall-scenes/small/small_shower_interior.tscn" id="3_lid0s"]
 [ext_resource type="PackedScene" uid="uid://b75tn65m7p70x" path="res://assets/Walls/wall-scenes/small/small_shower_doorway_2.tscn" id="4_7hyhu"]
 
-[node name="Shower_2" type="Node3D"]
+[node name="Shower_2" type="Node3D" groups=["navigation_mesh_source_group"]]
 
 [node name="Shower_Frame" parent="." instance=ExtResource("1_q2srg")]
 

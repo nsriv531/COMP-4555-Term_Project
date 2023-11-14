@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://n10fi72j36mi" path="res://assets/Walls/wall-scenes/small/small_doorway_interior_2.tscn" id="4_us151"]
 [ext_resource type="PackedScene" uid="uid://4nrsukin7g22" path="res://assets/Room_Frames/frame-scenes/utility_room_frame.tscn" id="4_vp47p"]
 
-[node name="Utility Room" type="Node3D"]
+[node name="Utility Room" type="Node3D" groups=["navigation_mesh_source_group"]]
 
 [node name="Small_Wall_Interior_2" parent="." instance=ExtResource("2_ewcjy")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 4, 0, 0)

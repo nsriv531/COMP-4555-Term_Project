@@ -7,7 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://oiq6x553evme" path="res://assets/Room_Frames/frame-scenes/kitchen_frame.tscn" id="6_aaup7"]
 [ext_resource type="PackedScene" uid="uid://bahpkoom07hwt" path="res://assets/Walls/wall-scenes/small/small_wall_interior_2.tscn" id="6_yuw1h"]
 
-[node name="Kitchen" type="Node3D"]
+[node name="Kitchen" type="Node3D" groups=["navigation_mesh_source_group"]]
 
 [node name="Small_Doorway_Interior_1" parent="." instance=ExtResource("5_px5vj")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 3.8, 0, 5)

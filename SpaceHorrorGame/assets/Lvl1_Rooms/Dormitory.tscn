@@ -6,7 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://c4v76k5h44qer" path="res://assets/Walls/wall-scenes/large/large_wall_exterior.tscn" id="5_elglv"]
 [ext_resource type="PackedScene" uid="uid://cvpfknfejfdjr" path="res://assets/Room_Frames/frame-scenes/dormitory_frame.tscn" id="5_lthf4"]
 
-[node name="Sleeping_Quarters" type="Node3D"]
+[node name="Sleeping_Quarters" type="Node3D" groups=["navigation_mesh_source_group"]]
 
 [node name="Small_Doorway_Interior_1" parent="." instance=ExtResource("3_d3n84")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -8.8, 0, 5)
