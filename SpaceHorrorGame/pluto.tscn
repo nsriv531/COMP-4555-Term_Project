@@ -112,6 +112,7 @@ _data = {
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_u2n4x"]
 margin = 0.1
 radius = 0.702761
+height = 2.82878
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_rarkt"]
 shader = ExtResource("1_m1fa5")
@@ -436,7 +437,7 @@ shader_params/u_triplanar = null
 shader_params/u_tile_reduction = null
 
 [node name="Player" type="CharacterBody3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 26.7454, 24.187, -11.5168)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 26.7454, 25.0455, -11.5168)
 collision_layer = 2
 script = ExtResource("7_lpn7i")
 
