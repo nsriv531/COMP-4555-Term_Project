@@ -1,10 +1,10 @@
 [gd_scene load_steps=6 format=3 uid="uid://eicyxm43ptgm"]
 
-[ext_resource type="PackedScene" uid="uid://n10fi72j36mi" path="res://assets/Walls/wall-scenes/small/small_doorway_interior_2.tscn" id="2_5xrvs"]
+[ext_resource type="PackedScene" uid="uid://n10fi72j36mi" path="res://assets/Walls/wall-scenes/small/doorway walls/small_doorway_interior_2.tscn" id="2_5xrvs"]
 [ext_resource type="PackedScene" uid="uid://6ttrke3wqyg7" path="res://assets/Room_Frames/frame-scenes/shower_frame.tscn" id="2_vewar"]
-[ext_resource type="PackedScene" uid="uid://c0hlbvbilumfu" path="res://assets/Walls/wall-scenes/small/small_shower_wall.tscn" id="3_se73v"]
-[ext_resource type="PackedScene" uid="uid://bwie56ms0q7kk" path="res://assets/Walls/wall-scenes/small/small_shower_interior.tscn" id="4_a5a40"]
-[ext_resource type="PackedScene" uid="uid://cl60ldfsr64jj" path="res://assets/Walls/wall-scenes/small/small_shower_doorway_1.tscn" id="5_6fmx4"]
+[ext_resource type="PackedScene" uid="uid://c0hlbvbilumfu" path="res://assets/Walls/wall-scenes/small/shower walls/small_shower_wall.tscn" id="3_se73v"]
+[ext_resource type="PackedScene" uid="uid://bwie56ms0q7kk" path="res://assets/Walls/wall-scenes/small/shower walls/small_shower_interior.tscn" id="4_a5a40"]
+[ext_resource type="PackedScene" uid="uid://cl60ldfsr64jj" path="res://assets/Walls/wall-scenes/small/shower walls/small_shower_doorway_1.tscn" id="5_6fmx4"]
 
 [node name="Showers" type="Node3D" groups=["navigation_mesh_source_group"]]
 

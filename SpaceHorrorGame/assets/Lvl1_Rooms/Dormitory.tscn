@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://dimbt0twyupqv"]
 
-[ext_resource type="PackedScene" uid="uid://b06cyy4xmxmbx" path="res://assets/Walls/wall-scenes/small/small_doorway_interior_1.tscn" id="3_d3n84"]
+[ext_resource type="PackedScene" uid="uid://b06cyy4xmxmbx" path="res://assets/Walls/wall-scenes/small/doorway walls/small_doorway_interior_1.tscn" id="3_d3n84"]
 [ext_resource type="PackedScene" uid="uid://dewr1iemsxat7" path="res://assets/Walls/wall-scenes/large/large_wall_interior_1.tscn" id="3_n2ero"]
 [ext_resource type="PackedScene" uid="uid://cio231ct3imhe" path="res://assets/Walls/wall-scenes/large/large_doorway_interior_2.tscn" id="4_uhq4c"]
 [ext_resource type="PackedScene" uid="uid://c4v76k5h44qer" path="res://assets/Walls/wall-scenes/large/large_wall_exterior.tscn" id="5_elglv"]

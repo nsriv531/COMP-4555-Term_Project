@@ -1,7 +1,7 @@
 [gd_scene load_steps=7 format=3 uid="uid://dw5r0u10smu5b"]
 
-[ext_resource type="PackedScene" uid="uid://n10fi72j36mi" path="res://assets/Walls/wall-scenes/small/small_doorway_interior_2.tscn" id="2_8uoyc"]
-[ext_resource type="PackedScene" uid="uid://b06cyy4xmxmbx" path="res://assets/Walls/wall-scenes/small/small_doorway_interior_1.tscn" id="5_5wqvx"]
+[ext_resource type="PackedScene" uid="uid://n10fi72j36mi" path="res://assets/Walls/wall-scenes/small/doorway walls/small_doorway_interior_2.tscn" id="2_8uoyc"]
+[ext_resource type="PackedScene" uid="uid://b06cyy4xmxmbx" path="res://assets/Walls/wall-scenes/small/doorway walls/small_doorway_interior_1.tscn" id="5_5wqvx"]
 [ext_resource type="PackedScene" uid="uid://doknm5b5to4tq" path="res://assets/Walls/wall-scenes/large/large_doorway_interior_1.tscn" id="5_o50ck"]
 [ext_resource type="PackedScene" uid="uid://bqvu4ar4uo2ul" path="res://assets/Walls/wall-scenes/large/cafeteria_wall.tscn" id="6_160j5"]
 [ext_resource type="PackedScene" uid="uid://bx2j31riie2y5" path="res://assets/Walls/wall-scenes/small/small_wall_interior_3.tscn" id="6_imbjv"]
