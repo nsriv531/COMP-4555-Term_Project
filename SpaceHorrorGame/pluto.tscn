@@ -781,9 +781,11 @@ data = ExtResource("36_6no6g")
 [node name="Node3D" parent="." instance=ExtResource("45_jsbm1")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 28.0835, 22.7761, -13.0984)
 
-[node name="Monster" type="CharacterBody3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -41.0857, 22.9741, -20.1726)
+[node name="Monster" type="CharacterBody3D" parent="." groups=["enemies"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.6359, 22.6963, -12.0806)
 script = ExtResource("45_ctduu")
+
+[node name="NavigationAgent3D" type="NavigationAgent3D" parent="Monster"]
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Monster"]
 mesh = SubResource("CapsuleMesh_8xkb2")
@@ -794,8 +796,6 @@ shape = SubResource("CapsuleShape3D_ymk2q")
 [node name="NavigationRegion3D" type="NavigationRegion3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.6352, 22.8686, -18.7337)
 navigation_mesh = SubResource("NavigationMesh_ouue7")
-
-[node name="NavigationAgent3D" type="NavigationAgent3D" parent="."]
 
 [connection signal="timeout" from="Player/Timer" to="Player" method="_on_timer_timeout"]
 [connection signal="body_shape_entered" from="Rooms/AirLock/AirLockInnerArea" to="Rooms/AirLock/AirLockInnerArea" method="_on_body_shape_entered"]
