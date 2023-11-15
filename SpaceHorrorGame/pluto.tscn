@@ -795,6 +795,8 @@ shape = SubResource("CapsuleShape3D_ymk2q")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.6352, 22.8686, -18.7337)
 navigation_mesh = SubResource("NavigationMesh_ouue7")
 
+[node name="NavigationAgent3D" type="NavigationAgent3D" parent="."]
+
 [connection signal="timeout" from="Player/Timer" to="Player" method="_on_timer_timeout"]
 [connection signal="body_shape_entered" from="Rooms/AirLock/AirLockInnerArea" to="Rooms/AirLock/AirLockInnerArea" method="_on_body_shape_entered"]
 [connection signal="finished" from="Rooms/AirLock/AirLockInnerArea/AirlockSoundPlayer" to="Rooms/AirLock/AirLockInnerArea" method="_on_audio_finished"]
