@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://b75tn65m7p70x"]
 
-[ext_resource type="PackedScene" uid="uid://d3f0urs8kkbg1" path="res://assets/Walls/Small/Shower Walls/Small_Shower_Doorway_2.gltf" id="1_r87jn"]
+[ext_resource type="PackedScene" uid="uid://db1yi1e2d0vt3" path="res://assets/Walls/New Small/shower/Small_Shower_Doorway_2.gltf" id="1_r87jn"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_y4w0x"]
 size = Vector3(2.03625, 6.11409, 0.413814)

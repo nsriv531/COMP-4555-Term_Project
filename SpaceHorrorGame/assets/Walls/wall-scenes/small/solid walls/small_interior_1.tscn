@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://b6wvpl5y8cj6e"]
+
+[ext_resource type="PackedScene" uid="uid://cptmb5h8rlvsb" path="res://assets/Walls/New Small/solid/small_interior_1.glb" id="1_k152s"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_u6nn8"]
+size = Vector3(6.10584, 6.02916, 0.441758)
+
+[node name="small_interior_1" instance=ExtResource("1_k152s")]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." index="4"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0.2)
+shape = SubResource("BoxShape3D_u6nn8")

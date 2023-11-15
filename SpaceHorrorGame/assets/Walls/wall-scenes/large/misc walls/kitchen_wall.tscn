@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://cj6mlt2kyc4l4"]
+
+[ext_resource type="PackedScene" uid="uid://bnd1dmw3brp0h" path="res://assets/Walls/New Large/misc/kitchen_wall.glb" id="1_26vqb"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_3y4g4"]
+size = Vector3(10.0469, 1.9445, 6.2265)
+
+[node name="kitchen_wall" instance=ExtResource("1_26vqb")]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Kitchen_Wall" index="0"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Kitchen_Wall/StaticBody3D" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.86062, -3)
+shape = SubResource("BoxShape3D_3y4g4")

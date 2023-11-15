@@ -1,22 +1,22 @@
 [gd_scene load_steps=5 format=3 uid="uid://ce31ok7avs5ak"]
 
 [ext_resource type="PackedScene" uid="uid://cw8vexxgo7u40" path="res://assets/Room_Frames/frame-scenes/office_frame.tscn" id="1_sfxax"]
-[ext_resource type="PackedScene" uid="uid://n10fi72j36mi" path="res://assets/Walls/wall-scenes/small/small_doorway_interior_2.tscn" id="2_icq58"]
-[ext_resource type="PackedScene" uid="uid://cu5x3durp47ow" path="res://assets/Walls/wall-scenes/small/small_wall_interior_1.tscn" id="3_pd22c"]
-[ext_resource type="PackedScene" uid="uid://c1qwhmgdscypi" path="res://assets/Walls/wall-scenes/small/small_window.tscn" id="4_oeg2p"]
+[ext_resource type="PackedScene" uid="uid://d3sqeqsuqbfm5" path="res://assets/Walls/wall-scenes/small/small_window.tscn" id="2_t1frm"]
+[ext_resource type="PackedScene" uid="uid://cpwd2wp1munaw" path="res://assets/Walls/wall-scenes/small/solid walls/small_interior_2.tscn" id="3_8babr"]
+[ext_resource type="PackedScene" uid="uid://bs6xxjc8jih2k" path="res://assets/Walls/wall-scenes/small/doorway walls/small_doorway_2.tscn" id="4_iu4aq"]
 
 [node name="Albert\'s Office" type="Node3D" groups=["navigation_mesh_source_group"]]
 
 [node name="Office_Frame" parent="." instance=ExtResource("1_sfxax")]
 
-[node name="Small_Doorway_Interior_2" parent="." instance=ExtResource("2_icq58")]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 3.8, 0, 0)
+[node name="small_window" parent="." instance=ExtResource("2_t1frm")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -4, 0, 0)
 
-[node name="Small_Wall_Interior_1" parent="." instance=ExtResource("3_pd22c")]
+[node name="small_interior_2" parent="." instance=ExtResource("3_8babr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -4)
+
+[node name="small_interior_3" parent="." instance=ExtResource("3_8babr")]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, 4)
 
-[node name="Small_Window" parent="." instance=ExtResource("4_oeg2p")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -3.7, 0, 0)
-
-[node name="Small_Wall_Interior_2" parent="." instance=ExtResource("3_pd22c")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -4)
+[node name="small_doorway_2" parent="." instance=ExtResource("4_iu4aq")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 4, 0, 0)
