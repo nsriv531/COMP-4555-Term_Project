@@ -86,6 +86,8 @@ theme_override_fonts/font = SubResource("FontVariation_ywh08")
 theme_override_font_sizes/font_size = 79
 theme_override_styles/normal = SubResource("StyleBoxEmpty_ojkyf")
 theme_override_styles/hover = SubResource("StyleBoxTexture_vudiq")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_vudiq")
+theme_override_styles/focus = SubResource("StyleBoxTexture_vudiq")
 text = " Play"
 alignment = 0
 
@@ -99,6 +101,8 @@ theme_override_fonts/font = SubResource("FontVariation_52lqc")
 theme_override_font_sizes/font_size = 79
 theme_override_styles/normal = SubResource("StyleBoxEmpty_aurm7")
 theme_override_styles/hover = SubResource("StyleBoxTexture_ybfue")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_ybfue")
+theme_override_styles/focus = SubResource("StyleBoxTexture_ybfue")
 text = " Quit"
 alignment = 0
 
