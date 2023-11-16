@@ -7,6 +7,8 @@ extends Node3D
 var muffleEff
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	$Transition.play("fade in")
+	
 	muffleEff = AudioEffectLowPassFilter.new()
 	muffleEff.cutoff_hz = 1000
 	muffle_effect.hertz = 1000
