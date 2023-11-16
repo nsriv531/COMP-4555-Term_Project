@@ -1,32 +1,32 @@
 [gd_scene load_steps=6 format=3 uid="uid://bxme0mjbdbm7n"]
 
 [ext_resource type="PackedScene" uid="uid://b4fouldqaxjyo" path="res://assets/Room_Frames/frame-scenes/workshop_frame.tscn" id="1_6h3h2"]
-[ext_resource type="PackedScene" uid="uid://b06cyy4xmxmbx" path="res://assets/Walls/wall-scenes/small/small_doorway_interior_1.tscn" id="2_f76dw"]
-[ext_resource type="PackedScene" uid="uid://c1qwhmgdscypi" path="res://assets/Walls/wall-scenes/small/small_window.tscn" id="4_tqbmy"]
-[ext_resource type="PackedScene" uid="uid://cdji13ipl6xh" path="res://assets/Walls/wall-scenes/large/workshop_doorway.tscn" id="5_3e6hl"]
-[ext_resource type="PackedScene" uid="uid://i5v8td5783et" path="res://assets/Walls/wall-scenes/large/workshop_wall.tscn" id="5_taivb"]
+[ext_resource type="PackedScene" uid="uid://bs6xxjc8jih2k" path="res://assets/Walls/wall-scenes/small/doorway walls/small_doorway_2.tscn" id="4_12pia"]
+[ext_resource type="PackedScene" uid="uid://cdji13ipl6xh" path="res://assets/Walls/wall-scenes/oldLarge/workshop_doorway.tscn" id="5_3e6hl"]
+[ext_resource type="PackedScene" uid="uid://d3sqeqsuqbfm5" path="res://assets/Walls/wall-scenes/small/small_window.tscn" id="5_s3yh6"]
+[ext_resource type="PackedScene" uid="uid://i5v8td5783et" path="res://assets/Walls/wall-scenes/oldLarge/workshop_wall.tscn" id="5_taivb"]
 
 [node name="Workshop" type="Node3D" groups=["navigation_mesh_source_group"]]
 
 [node name="Workshop_Frame" parent="." instance=ExtResource("1_6h3h2")]
 
-[node name="Small_Doorway_Interior_1" parent="." instance=ExtResource("2_f76dw")]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -5, 0, 8.8)
-
-[node name="Small_Doorway_Interior_2" parent="." instance=ExtResource("2_f76dw")]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 5, 0, 8.8)
-
-[node name="Small_Window" parent="." instance=ExtResource("4_tqbmy")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -8.7, 0, 5)
-
-[node name="Small_Window2" parent="." instance=ExtResource("4_tqbmy")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 0, -8.7)
-
 [node name="Workshop_Wall" parent="." instance=ExtResource("5_taivb")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -9, 0, -3.15)
 
-[node name="Small_Doorway_Interior_3" parent="." instance=ExtResource("2_f76dw")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 0, -8.8)
-
 [node name="Workshop_Doorway" parent="." instance=ExtResource("5_3e6hl")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 8.8, 0, 3)
+
+[node name="small_doorway_2" parent="." instance=ExtResource("4_12pia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 0, -9)
+
+[node name="small_window" parent="." instance=ExtResource("5_s3yh6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 0, -9)
+
+[node name="small_window2" parent="." instance=ExtResource("5_s3yh6")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -9, 0, 5)
+
+[node name="small_doorway_3" parent="." instance=ExtResource("4_12pia")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -5, 0, 9)
+
+[node name="small_doorway_4" parent="." instance=ExtResource("4_12pia")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 5, 0, 9)

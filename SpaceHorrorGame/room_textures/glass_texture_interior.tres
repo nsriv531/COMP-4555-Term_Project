@@ -2,6 +2,6 @@
 
 [resource]
 albedo_color = Color(1, 1, 1, 0)
-roughness = 0.05
+roughness = 0.25
 refraction_enabled = true
 refraction_scale = 0.0

@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://ci128r2d5536j"]
+
+[ext_resource type="PackedScene" uid="uid://bit0hnpgaimwf" path="res://assets/Walls/New Large/misc/cafeteria_wall.glb" id="1_c74qv"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_yeyk1"]
+size = Vector3(10.067, 6.14624, 0.724075)
+
+[node name="cafeteria_wall" instance=ExtResource("1_c74qv")]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." index="5"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00842905, 3, 0.247148)
+shape = SubResource("BoxShape3D_yeyk1")

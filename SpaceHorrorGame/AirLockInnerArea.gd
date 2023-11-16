@@ -35,7 +35,8 @@ func _on_body_shape_entered(body_rid, body, body_shape_index, local_shape_index)
 		doorArr[int(door1.open)] = door1
 		doorArr[int(door2.open)] = door2
 		
-		doorArr[1].onButtonPress()
+		if doorArr[1] != null:
+			doorArr[1].onButtonPress()
 		
 		
 		airlock_sound_player.play()

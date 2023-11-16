@@ -1,0 +1,29 @@
+[gd_scene load_steps=5 format=3 uid="uid://cl60ldfsr64jj"]
+
+[ext_resource type="PackedScene" uid="uid://cvv1cxihvcrpw" path="res://assets/Walls/New Small/shower/Small_Shower_Doorway_1.gltf" id="1_j2rki"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_c4qjv"]
+size = Vector3(2.03625, 6.11409, 0.413814)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_4ohau"]
+size = Vector3(3.03165, 6.11409, 0.413814)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_0y4no"]
+size = Vector3(2.33969, 3.10069, 0.413814)
+
+[node name="Small_Shower_Doorway" instance=ExtResource("1_j2rki")]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." index="3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, 0.0221485)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
+shape = SubResource("BoxShape3D_c4qjv")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="StaticBody3D" index="1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.5, 3, 0)
+shape = SubResource("BoxShape3D_4ohau")
+
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="StaticBody3D" index="2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 4.5, 0)
+shape = SubResource("BoxShape3D_0y4no")

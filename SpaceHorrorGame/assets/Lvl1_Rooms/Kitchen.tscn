@@ -1,31 +1,31 @@
 [gd_scene load_steps=7 format=3 uid="uid://cbnpoha7id8gp"]
 
-[ext_resource type="PackedScene" uid="uid://c1qwhmgdscypi" path="res://assets/Walls/wall-scenes/small/small_window.tscn" id="4_q4yeg"]
-[ext_resource type="PackedScene" uid="uid://ctxet3h8pte3n" path="res://assets/Walls/wall-scenes/large/kitchen_wall.tscn" id="5_3i5j5"]
-[ext_resource type="PackedScene" uid="uid://b06cyy4xmxmbx" path="res://assets/Walls/wall-scenes/small/small_doorway_interior_1.tscn" id="5_px5vj"]
-[ext_resource type="PackedScene" uid="uid://bqvu4ar4uo2ul" path="res://assets/Walls/wall-scenes/large/cafeteria_wall.tscn" id="6_3h48s"]
+[ext_resource type="PackedScene" uid="uid://d3sqeqsuqbfm5" path="res://assets/Walls/wall-scenes/small/small_window.tscn" id="3_oi75r"]
+[ext_resource type="PackedScene" uid="uid://bs6xxjc8jih2k" path="res://assets/Walls/wall-scenes/small/doorway walls/small_doorway_2.tscn" id="4_i08l0"]
+[ext_resource type="PackedScene" uid="uid://b6wvpl5y8cj6e" path="res://assets/Walls/wall-scenes/small/solid walls/small_interior_1.tscn" id="5_fbooa"]
+[ext_resource type="PackedScene" uid="uid://ci128r2d5536j" path="res://assets/Walls/wall-scenes/large/misc walls/cafeteria_wall.tscn" id="5_idg0h"]
+[ext_resource type="PackedScene" uid="uid://cj6mlt2kyc4l4" path="res://assets/Walls/wall-scenes/large/misc walls/kitchen_wall.tscn" id="6_3vth4"]
 [ext_resource type="PackedScene" uid="uid://oiq6x553evme" path="res://assets/Room_Frames/frame-scenes/kitchen_frame.tscn" id="6_aaup7"]
-[ext_resource type="PackedScene" uid="uid://bahpkoom07hwt" path="res://assets/Walls/wall-scenes/small/small_wall_interior_2.tscn" id="6_yuw1h"]
 
 [node name="Kitchen" type="Node3D" groups=["navigation_mesh_source_group"]]
-
-[node name="Small_Doorway_Interior_1" parent="." instance=ExtResource("5_px5vj")]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 3.8, 0, 5)
-
-[node name="Small_Wall_Interior_2" parent="." instance=ExtResource("6_yuw1h")]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, 9)
-
-[node name="Small_Doorway_Interior_2" parent="." instance=ExtResource("5_px5vj")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -3.8, 0, 5)
-
-[node name="Cafeteria_Wall" parent="." instance=ExtResource("6_3h48s")]
-transform = Transform3D(1.31134e-07, 0, -1, 0, 1, 0, 1, 0, 1.31134e-07, 4, 0, -3)
-
-[node name="Small_Window" parent="." instance=ExtResource("4_q4yeg")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -8.7)
 
 [node name="Kitchen_Frame" parent="." instance=ExtResource("6_aaup7")]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, 0)
 
-[node name="Kitchen_Wall" parent="." instance=ExtResource("5_3i5j5")]
+[node name="small_window" parent="." instance=ExtResource("3_oi75r")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -9)
+
+[node name="small_doorway_2" parent="." instance=ExtResource("4_i08l0")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -4, 0, 5)
+
+[node name="small_interior_1" parent="." instance=ExtResource("5_fbooa")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, 9)
+
+[node name="small_doorway_3" parent="." instance=ExtResource("4_i08l0")]
+transform = Transform3D(1.31134e-07, 0, -1, 0, 1, 0, 1, 0, 1.31134e-07, 4, 0, 5)
+
+[node name="cafeteria_wall" parent="." instance=ExtResource("5_idg0h")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 4, 0, -3)
+
+[node name="kitchen_wall" parent="." instance=ExtResource("6_3vth4")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -4, 0, -3)
