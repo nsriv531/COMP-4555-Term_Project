@@ -25,6 +25,9 @@ func _process(delta):
 func _on_body_shape_entered(body_rid, body, body_shape_index, local_shape_index):
 	if (isReady):
 		
+		doorArr[0] = door1
+		doorArr[1] = door2
+		
 		if door1.open == true:
 			Global.Pluto.unmuffle()
 		else:

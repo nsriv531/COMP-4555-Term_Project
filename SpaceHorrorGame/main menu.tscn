@@ -10,7 +10,7 @@ var pluto
 
 func _on_play_button_down():
 	$Transition.play(\"fade out\")
-	pluto = preload(\"res://pluto.tscn\")
+	pluto = Global.Pluto
 
 
 func _on_quit_button_down():
@@ -18,7 +18,8 @@ func _on_quit_button_down():
 
 
 func _on_transition_animation_finished(anim_name):
-	get_tree().change_scene_to_packed(pluto)
+	get_tree().root.add_child(pluto)
+	get_tree().root.remove_child(self)
 "
 
 [sub_resource type="FontVariation" id="FontVariation_ywh08"]

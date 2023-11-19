@@ -1,10 +1,11 @@
 extends Node
 
+var plutoInst = preload("res://pluto.tscn")
 var Pluto
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	Pluto = get_tree().get_root().get_node("Pluto")
+	Pluto = plutoInst.instantiate()
 	pass # Replace with function body.
 
 
