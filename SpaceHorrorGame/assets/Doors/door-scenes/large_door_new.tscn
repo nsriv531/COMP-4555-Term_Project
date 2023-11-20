@@ -25,11 +25,11 @@ states/Door_Opening/node = SubResource("AnimationNodeAnimation_2a71u")
 states/Door_Opening/position = Vector2(373.781, 100)
 graph_offset = Vector2(-15.2192, 0)
 
-[node name="large_door" instance=ExtResource("1_12hx2")]
+[node name="large_door" groups=["navigation_mesh_source_group"] instance=ExtResource("1_12hx2")]
 script = ExtResource("2_06ct6")
 
 [node name="Upper_Panel" parent="Large_Door_Rig/Skeleton3D" index="0"]
-transform = Transform3D(1, -2.98023e-08, 8.71583e-08, 5.30761e-08, -1.34359e-07, -1, 1.19209e-07, 1, -1.15208e-07, -2.33438e-08, 0, 0.1)
+transform = Transform3D(1, -2.98023e-08, 8.71583e-08, 5.30761e-08, -1.34359e-07, -1, 1.19209e-07, 1, -1.15208e-07, -2.70691e-08, 0, 0.1)
 bone_idx = 1
 
 [node name="Upper_Panel" parent="Large_Door_Rig/Skeleton3D/Upper_Panel" index="0"]
@@ -43,7 +43,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3.5527e-15, -1)
 shape = SubResource("BoxShape3D_jf2lw")
 
 [node name="Bottom_Panel_L" parent="Large_Door_Rig/Skeleton3D" index="1"]
-transform = Transform3D(1, 9.29922e-08, 3.71972e-09, -1.27276e-07, 8.9407e-08, -1, -1.0132e-07, 1, 1.49012e-07, 9.53674e-07, -3.57628e-07, 0.1)
+transform = Transform3D(1, 9.29922e-08, 3.71972e-09, -1.27276e-07, 8.9407e-08, -1, -1.0132e-07, 1, 1.49012e-07, 7.15256e-07, -3.57628e-07, 0.1)
 bone_idx = 3
 
 [node name="Bottom_Panel_L" parent="Large_Door_Rig/Skeleton3D/Bottom_Panel_L" index="0"]
@@ -57,7 +57,7 @@ transform = Transform3D(1, -2.84217e-14, -9.01514e-17, 0, 1, 0, 5.15211e-15, -7.
 shape = SubResource("BoxShape3D_ubdne")
 
 [node name="Bottom_Panel_R" parent="Large_Door_Rig/Skeleton3D" index="2"]
-transform = Transform3D(-1, -1.48927e-08, -5.80947e-08, 6.71096e-10, 1.35973e-07, -1, -7.45096e-08, 1, 1.05239e-07, 0, -1.49012e-07, 0.1)
+transform = Transform3D(-1, 1.34359e-07, 0, 0, 7.35137e-08, -1, -1.34359e-07, -1, -7.35137e-08, 1.19209e-07, -2.08616e-07, 0.1)
 bone_idx = 5
 
 [node name="Bottom_Panel_R" parent="Large_Door_Rig/Skeleton3D/Bottom_Panel_R" index="0"]

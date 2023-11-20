@@ -96,8 +96,6 @@ func _process(_delta):
 
 func _physics_process(delta):
 	
-	get_tree().call_group("enemies", "update_target_loc", self.global_transform.origin)
-	
 	# Add the gravity.
 	if not is_on_floor():
 		velocity.y -= gravity * delta

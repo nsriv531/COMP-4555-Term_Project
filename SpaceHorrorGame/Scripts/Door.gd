@@ -10,18 +10,23 @@ extends Node3D
 var open = false
 
 func _ready():
+	#self.add_to_group("navigation_mesh_source_group")
+	#Global.emit_signal("mapChanged")
 	animation_player.speed_scale = 0.01
 
 func onButtonPress():
 	if open:
 		door_close.play(0.5)
 		playAnimation.travel("Door_Closing")
+		#self.add_to_group("navigation_mesh_source_group")
 		open = false
 	else:
 		door_open.play(0.2)
 		playAnimation.travel("Door_Opening")
+		#self.remove_from_group("navigation_mesh_source_group")
 		open = true
 	
+	#Global.emit_signal("mapChanged")
 
 func doorPlay(nearArea):
 	
