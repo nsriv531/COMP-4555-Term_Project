@@ -1,4 +1,4 @@
-[gd_scene load_steps=112 format=3 uid="uid://1csibo7xkgx1"]
+[gd_scene load_steps=111 format=3 uid="uid://1csibo7xkgx1"]
 
 [ext_resource type="Script" path="res://addons/zylann.hterrain/hterrain.gd" id="1_ilc75"]
 [ext_resource type="Shader" path="res://Scripts/CameraEffects.gdshader" id="1_m1fa5"]
@@ -28,6 +28,7 @@
 [ext_resource type="AudioStream" uid="uid://b1tprvlueafqk" path="res://Sounds/Air.ogg" id="27_mqdwd"]
 [ext_resource type="PackedScene" uid="uid://c7sm4dsareqas" path="res://assets/Doors/door-scenes/exterior_door.tscn" id="28_8mmej"]
 [ext_resource type="PackedScene" uid="uid://bwo8ufx8gsnai" path="res://assets/Lvl1_Rooms/Airlock.tscn" id="28_nfknk"]
+[ext_resource type="PackedScene" uid="uid://bg1icxgy6k4uu" path="res://door_region.tscn" id="28_t17bd"]
 [ext_resource type="PackedScene" uid="uid://dq5ynvv34dves" path="res://assets/Lvl1_Rooms/Utility Room.tscn" id="29_g0id7"]
 [ext_resource type="Script" path="res://Scripts/Door.gd" id="29_iicju"]
 [ext_resource type="PackedScene" uid="uid://cddflpc4w4qru" path="res://assets/Doors/door-scenes/large_door_new.tscn" id="29_syr2i"]
@@ -543,16 +544,6 @@ sample_partition_type = 1
 geometry_source_geometry_mode = 1
 cell_size = 0.5
 
-[sub_resource type="NavigationMesh" id="NavigationMesh_tqucu"]
-vertices = PackedVector3Array(-1.01562, 0.527067, -0.627836, -1.01562, 0.527067, 0.672164, 0.984377, 0.527067, 0.672164, 0.984377, 0.527067, -0.627836)
-polygons = [PackedInt32Array(3, 2, 0), PackedInt32Array(0, 2, 1)]
-geometry_parsed_geometry_type = 2
-geometry_collision_mask = 4294967040
-cell_size = 0.1
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_gykhf"]
-size = Vector3(3.03125, 0.494083, 2.25567)
-
 [node name="Pluto" type="Node3D" groups=["pluto"]]
 script = ExtResource("1_o322i")
 
@@ -830,6 +821,9 @@ mesh = SubResource("BoxMesh_yvi8c")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Rooms/AirLock/NewAirlockDoorInner/ButtonSystem/StaticBody3D2"]
 shape = SubResource("ConvexPolygonShape3D_8wejw")
 
+[node name="DoorRegion" parent="Rooms/AirLock/NewAirlockDoorInner" instance=ExtResource("28_t17bd")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -0.0156202, -0.218996, -0.110018)
+
 [node name="Airlock" parent="Rooms/AirLock" instance=ExtResource("28_nfknk")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16, 3.2, -21.5)
 
@@ -868,6 +862,9 @@ mesh = SubResource("BoxMesh_yvi8c")
 transform = Transform3D(0.93, 0, 0, 0, 0.93, 0, 0, 0, 0.93, 0.0116887, -0.00645828, 0)
 shape = SubResource("ConvexPolygonShape3D_8wejw")
 
+[node name="DoorRegion" parent="Rooms/storage_bay_door" instance=ExtResource("28_t17bd")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -0.0173759, -0.224752, -0.0142741)
+
 [node name="Storage_Bay" parent="Rooms" instance=ExtResource("30_x5r3y")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 18, 3.2, -31.5)
 
@@ -901,6 +898,9 @@ mesh = SubResource("BoxMesh_smwod")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Rooms/Dormitory_Door/ButtonSystem/StaticBody3D2"]
 shape = SubResource("ConvexPolygonShape3D_vplr6")
+
+[node name="DoorRegion" parent="Rooms/Dormitory_Door" instance=ExtResource("28_t17bd")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 1.4, -0.461132, -0.651525, 0.110545)
 
 [node name="Dormitory" parent="Rooms" instance=ExtResource("31_or7hb")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 3.2, -8.5)
@@ -981,21 +981,6 @@ stream = ExtResource("47_jn5s7")
 [node name="MainNavRegion" type="NavigationRegion3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.6352, 22.8686, -18.7337)
 navigation_mesh = SubResource("NavigationMesh_ouue7")
-
-[node name="DoorRegions" type="Node3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -17.2179, 22.3211, -16.4124)
-
-[node name="DoorRegion" type="NavigationRegion3D" parent="DoorRegions"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.78572, -1.17606, -5.59826)
-navigation_mesh = SubResource("NavigationMesh_tqucu")
-
-[node name="StaticBody3D" type="StaticBody3D" parent="DoorRegions/DoorRegion"]
-collision_layer = 256
-collision_mask = 256
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="DoorRegions/DoorRegion/StaticBody3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0241089, 0)
-shape = SubResource("BoxShape3D_gykhf")
 
 [connection signal="timeout" from="Player/Timer" to="Player" method="_on_timer_timeout"]
 [connection signal="body_shape_entered" from="Rooms/AirLock/AirLockInnerArea" to="Rooms/AirLock/AirLockInnerArea" method="_on_body_shape_entered"]

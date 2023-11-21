@@ -1,0 +1,23 @@
+[gd_scene load_steps=3 format=3 uid="uid://bg1icxgy6k4uu"]
+
+[sub_resource type="NavigationMesh" id="NavigationMesh_tqucu"]
+vertices = PackedVector3Array(-1.01562, 0.527067, -0.627836, -1.01562, 0.527067, 0.672164, 0.984377, 0.527067, 0.672164, 0.984377, 0.527067, -0.627836)
+polygons = [PackedInt32Array(3, 2, 0), PackedInt32Array(0, 2, 1)]
+geometry_parsed_geometry_type = 2
+geometry_collision_mask = 4294967040
+cell_size = 0.1
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_gykhf"]
+size = Vector3(3.03125, 0.494083, 2.25567)
+
+[node name="DoorRegion" type="NavigationRegion3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.78572, -1.17606, -5.59826)
+navigation_mesh = SubResource("NavigationMesh_tqucu")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+collision_layer = 256
+collision_mask = 256
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0241089, 0)
+shape = SubResource("BoxShape3D_gykhf")
