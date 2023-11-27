@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://copocgg28mgsi"
-path="res://.godot/imported/Airlock.gltf-8a204b8cd57278300bd55e93ac196bc0.scn"
+uid="uid://fk3cfgdco4jl"
+path="res://.godot/imported/Workshop.glb-dd42aff748a4c935fd6f6afcf0b0f2ec.scn"
 
 [deps]
 
-source_file="res://assets/Room_Frames/Airlock.gltf"
-dest_files=["res://.godot/imported/Airlock.gltf-8a204b8cd57278300bd55e93ac196bc0.scn"]
+source_file="res://assets/Room_Frames/Workshop.glb"
+dest_files=["res://.godot/imported/Workshop.glb-dd42aff748a4c935fd6f6afcf0b0f2ec.scn"]
 
 [params]
 

@@ -48,5 +48,5 @@ func _on_body_shape_entered(body_rid, body, body_shape_index, local_shape_index)
 func _on_audio_finished():
 	isReady = true
 	doorArr[0].onButtonPress()
-	airlockMesh.changeColor(Color(0,1,0))
+	airlockMesh.changeColor()
 	

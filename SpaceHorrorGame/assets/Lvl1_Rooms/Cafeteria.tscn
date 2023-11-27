@@ -3,12 +3,10 @@
 [ext_resource type="PackedScene" uid="uid://bs6xxjc8jih2k" path="res://assets/Walls/wall-scenes/small/doorway walls/small_doorway_2.tscn" id="3_t0yja"]
 [ext_resource type="PackedScene" uid="uid://ci128r2d5536j" path="res://assets/Walls/wall-scenes/large/misc walls/cafeteria_wall.tscn" id="4_512l6"]
 [ext_resource type="PackedScene" uid="uid://cpwd2wp1munaw" path="res://assets/Walls/wall-scenes/small/solid walls/small_interior_2.tscn" id="4_tgsm4"]
+[ext_resource type="PackedScene" uid="uid://t02frhgymon" path="res://assets/Room_Frames/frame-scenes/cafeteria_frame_new.tscn" id="5_i8xl8"]
 [ext_resource type="PackedScene" uid="uid://ym5itbtm4lbj" path="res://assets/Walls/wall-scenes/large/doorway walls/large_doorway_2.tscn" id="5_q5unr"]
-[ext_resource type="PackedScene" uid="uid://bqwrwf2v2m5dj" path="res://assets/Room_Frames/frame-scenes/cafeteria_frame.tscn" id="6_k5wjk"]
 
 [node name="Mess_Hall" type="Node3D" groups=["navigation_mesh_source_group"]]
-
-[node name="Cafeteria_Frame" parent="." instance=ExtResource("6_k5wjk")]
 
 [node name="workshopDoor" parent="." instance=ExtResource("3_t0yja")]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -5, 0, 9)
@@ -30,3 +28,5 @@ transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -9, 0,
 
 [node name="large_doorway_2" parent="." instance=ExtResource("5_q5unr")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 9, 0, 0)
+
+[node name="Cafeteria_Frame" parent="." instance=ExtResource("5_i8xl8")]

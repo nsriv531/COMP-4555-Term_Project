@@ -1,0 +1,27 @@
+[gd_resource type="StandardMaterial3D" load_steps=8 format=3 uid="uid://dabgovvjnjch"]
+
+[ext_resource type="Texture2D" uid="uid://bnbksaj80atrg" path="res://room_textures/scifi-grill-texture/Metal_Grill_015_basecolor.jpg" id="1_qmlf3"]
+[ext_resource type="Texture2D" uid="uid://1w7rjxxoj0ms" path="res://room_textures/scifi-grill-texture/Metal_Grill_015_ambientOcclusion.jpg" id="2_8wqtd"]
+[ext_resource type="Texture2D" uid="uid://bn071fp2fv1iy" path="res://room_textures/scifi-grill-texture/Metal_Grill_015_height.png" id="3_rx8yk"]
+[ext_resource type="Texture2D" uid="uid://bukuvpdh5ma6u" path="res://room_textures/scifi-grill-texture/Metal_Grill_015_metallic.jpg" id="4_cp6ca"]
+[ext_resource type="Texture2D" uid="uid://dh2sbynbjswx5" path="res://room_textures/scifi-grill-texture/Metal_Grill_015_normal.jpg" id="5_lu0xo"]
+[ext_resource type="Texture2D" uid="uid://bvagfalnjqnjk" path="res://room_textures/scifi-grill-texture/Metal_Grill_015_roughness.jpg" id="6_0uuhv"]
+[ext_resource type="Texture2D" uid="uid://c0qc0rtcnsm5x" path="res://room_textures/scifi-grill-texture/Metal_Grill_015_opacity.jpg" id="6_8p3vb"]
+
+[resource]
+transparency = 1
+albedo_texture = ExtResource("1_qmlf3")
+metallic = 0.41
+metallic_texture = ExtResource("4_cp6ca")
+roughness = 0.3
+roughness_texture = ExtResource("6_0uuhv")
+roughness_texture_channel = 1
+normal_enabled = true
+normal_texture = ExtResource("5_lu0xo")
+ao_enabled = true
+ao_texture = ExtResource("2_8wqtd")
+ao_texture_channel = 2
+heightmap_enabled = true
+heightmap_scale = 16.0
+heightmap_texture = ExtResource("3_rx8yk")
+refraction_texture = ExtResource("6_8p3vb")

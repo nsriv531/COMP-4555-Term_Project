@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://bqej43vqdah57"
-path="res://.godot/imported/Workshop_Frame.gltf-12f0dbffd728c71fbc32540078b82e94.scn"
+uid="uid://ckkxhp72over1"
+path="res://.godot/imported/greenhouse.glb-bfc43644b53a3d28dd8896ce5b630980.scn"
 
 [deps]
 
-source_file="res://assets/Room_Frames/Workshop_Frame.gltf"
-dest_files=["res://.godot/imported/Workshop_Frame.gltf-12f0dbffd728c71fbc32540078b82e94.scn"]
+source_file="res://assets/Room_Frames/greenhouse.glb"
+dest_files=["res://.godot/imported/greenhouse.glb-bfc43644b53a3d28dd8896ce5b630980.scn"]
 
 [params]
 

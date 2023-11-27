@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://c7sm4dsareqas"]
+[gd_scene load_steps=13 format=3 uid="uid://c7sm4dsareqas"]
 
 [ext_resource type="PackedScene" uid="uid://bwxp0d7cqix6m" path="res://assets/Doors/exterior_door.gltf" id="1_bs858"]
 [ext_resource type="Material" uid="uid://bdtnrqjti18l5" path="res://room_textures/black_base_temp_texture.tres" id="2_4w0ad"]
@@ -6,17 +6,35 @@
 [ext_resource type="AudioStream" uid="uid://kcc3a1axggf" path="res://Sounds/DoorClose.ogg" id="4_62jyr"]
 [ext_resource type="AudioStream" uid="uid://dhtasf25ubx13" path="res://Sounds/DoorOpen.ogg" id="5_868vo"]
 
+[sub_resource type="GDScript" id="GDScript_360ej"]
+script/source = "extends Node3D
+@onready var left_light = $Exterior_Door_Rig/Skeleton3D/Left_Panel_Light/Left_Panel_Light
+@onready var right_light = $Exterior_Door_Rig/Skeleton3D/Right_Panel_Light/Right_Panel_Light
+var color_ready = Color(0,1,0)
+var color_notReady= Color.html(\"#a10000\")
+
+# Called when the node enters the scene tree for the first time.
+func _ready():
+	left_light.material_override = left_light.get_active_material(0)
+	right_light.material_override = right_light.get_active_material(0)
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta):
+	pass
+"
+
 [sub_resource type="BoxShape3D" id="BoxShape3D_4ttx7"]
 size = Vector3(0.582419, 0.0849696, 2.09002)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_kxao5"]
 emission_enabled = true
-emission = Color(0.878431, 0, 0.0431373, 1)
+emission = Color(0.203922, 0.235294, 1, 1)
 emission_energy_multiplier = 3.0
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_m5k5m"]
 emission_enabled = true
-emission = Color(0.878431, 0, 0.0431373, 1)
+emission = Color(0.203922, 0.235294, 1, 1)
 emission_energy_multiplier = 3.0
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_4131f"]
@@ -33,6 +51,7 @@ states/Door_Opening/position = Vector2(371.5, 108.5)
 states/Start/position = Vector2(194, 114.5)
 
 [node name="exterior_door" groups=["navigation_mesh_source_group"] instance=ExtResource("1_bs858")]
+script = SubResource("GDScript_360ej")
 
 [node name="Left_Panel" parent="Exterior_Door_Rig/Skeleton3D" index="0"]
 transform = Transform3D(1.99113, 2.82722e-08, -2.40108e-14, 1.79203e-14, -8.15744e-08, -1.4991, -3.01648e-08, 1.86621, -6.55277e-08, 0, 1.5, 3.55271e-15)

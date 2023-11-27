@@ -3,11 +3,9 @@
 [ext_resource type="PackedScene" uid="uid://bhisunddd7aex" path="res://assets/Walls/wall-scenes/small/doorway walls/small_doorway_1.tscn" id="2_75yvt"]
 [ext_resource type="PackedScene" uid="uid://db1x07jen5tex" path="res://assets/Walls/wall-scenes/large/doorway walls/large_doorway_1.tscn" id="3_gorhx"]
 [ext_resource type="PackedScene" uid="uid://dy3uf0rj8pvc8" path="res://assets/Walls/wall-scenes/large/solid walls/large_interior_1.tscn" id="4_ecgoq"]
-[ext_resource type="PackedScene" uid="uid://cvpfknfejfdjr" path="res://assets/Room_Frames/frame-scenes/dormitory_frame.tscn" id="5_lthf4"]
+[ext_resource type="PackedScene" uid="uid://b8yfmssmm73rf" path="res://assets/Room_Frames/frame-scenes/dorm_frame.tscn" id="4_y0w38"]
 
 [node name="Sleeping_Quarters" type="Node3D" groups=["navigation_mesh_source_group"]]
-
-[node name="Dormitory_Frame" parent="." instance=ExtResource("5_lthf4")]
 
 [node name="small_doorway_1" parent="." instance=ExtResource("2_75yvt")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -9, 0, -5)
@@ -23,3 +21,5 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -9)
 
 [node name="large_interior_2" parent="." instance=ExtResource("4_ecgoq")]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, 9)
+
+[node name="Dorm_Frame" parent="." instance=ExtResource("4_y0w38")]

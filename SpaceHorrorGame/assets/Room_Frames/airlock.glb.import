@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://7q60j458vl3o"
-path="res://.godot/imported/Dormitory_Frame.gltf-f66187a3c3cb2040ad8f17c5c4223bd3.scn"
+uid="uid://m8wq4m3ivh3e"
+path="res://.godot/imported/airlock.glb-24cdce355b5c26957f42523cdc6ee8cc.scn"
 
 [deps]
 
-source_file="res://assets/Room_Frames/Dormitory_Frame.gltf"
-dest_files=["res://.godot/imported/Dormitory_Frame.gltf-f66187a3c3cb2040ad8f17c5c4223bd3.scn"]
+source_file="res://assets/Room_Frames/airlock.glb"
+dest_files=["res://.godot/imported/airlock.glb-24cdce355b5c26957f42523cdc6ee8cc.scn"]
 
 [params]
 

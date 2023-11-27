@@ -1,0 +1,199 @@
+[gd_scene load_steps=26 format=3 uid="uid://rxm824u5tj3t"]
+
+[ext_resource type="PackedScene" uid="uid://m8wq4m3ivh3e" path="res://assets/Room_Frames/airlock.glb" id="1_q4te4"]
+[ext_resource type="Script" path="res://assets/Lvl1_Rooms/LvL1_Room_Scripts/Airlock.gd" id="2_k6gkh"]
+[ext_resource type="Material" uid="uid://dsevd2g5vx6d7" path="res://room_textures/Base_Exterior_Color.tres" id="2_mcbgw"]
+[ext_resource type="Material" uid="uid://nvs1pw5jy4sd" path="res://room_textures/glass_texture_exterior.tres" id="3_hkpyn"]
+[ext_resource type="Material" uid="uid://ctihvcbbldelq" path="res://room_textures/glass_texture_interior.tres" id="4_nfo66"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jhpvj"]
+albedo_color = Color(0.698039, 0.698039, 0.698039, 1)
+metallic = 0.17
+roughness = 0.35
+roughness_texture_channel = 1
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ajhpv"]
+albedo_color = Color(0.509804, 0.509804, 0.509804, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8uvya"]
+albedo_color = Color(0.509804, 0.509804, 0.509804, 1)
+metallic = 0.2
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_87juc"]
+albedo_color = Color(0.627451, 0.627451, 0.627451, 1)
+metallic = 0.4
+roughness = 0.3
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_3tf8x"]
+size = Vector3(0.882563, 6.45858, 0.613211)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_xrfox"]
+size = Vector3(14.0851, 0.30048, 8.04946)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_l7d01"]
+emission_enabled = true
+emission = Color(0.733333, 0.733333, 0.733333, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_q4aua"]
+albedo_color = Color(0.431373, 0.431373, 0.431373, 1)
+metallic = 0.2
+roughness = 0.46
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_mvfke"]
+albedo_color = Color(0.639216, 0.639216, 0.639216, 1)
+metallic = 0.25
+roughness = 0.8
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ut2md"]
+size = Vector3(14.3153, 0.216982, 8.04239)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_r8yl5"]
+emission_enabled = true
+emission = Color(0.631373, 0, 0, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_cqxl7"]
+emission_enabled = true
+emission = Color(1, 0.529412, 0.262745, 1)
+emission_energy_multiplier = 2.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_fdhkq"]
+albedo_color = Color(0.498039, 0.498039, 0.498039, 1)
+metallic = 0.45
+roughness = 0.42
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_vyhy8"]
+size = Vector3(0.235247, 12.0178, 6.02483)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_mm31t"]
+size = Vector3(2.40771, 0.595605, 6.62961)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_nyrpg"]
+size = Vector3(1.99905, 0.414425, 6.62961)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4u7co"]
+albedo_color = Color(0.627451, 0.627451, 0.627451, 1)
+metallic = 0.4
+roughness = 0.3
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8wpjb"]
+emission_enabled = true
+emission = Color(0.631373, 0, 0, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ml4mx"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7bgyf"]
+albedo_color = Color(0.215686, 0.215686, 0.215686, 1)
+
+[node name="airlock" instance=ExtResource("1_q4te4")]
+script = ExtResource("2_k6gkh")
+
+[node name="Vent_Inner_Grate" parent="." index="0"]
+material_override = SubResource("StandardMaterial3D_jhpvj")
+
+[node name="Vent_Tubes" parent="." index="1"]
+material_override = SubResource("StandardMaterial3D_ajhpv")
+
+[node name="Vents" parent="." index="2"]
+material_override = SubResource("StandardMaterial3D_8uvya")
+
+[node name="Airlock_Base_Frame" parent="." index="3"]
+material_override = ExtResource("2_mcbgw")
+
+[node name="Airlock_Base_Frame_Inside" parent="." index="4"]
+material_override = SubResource("StandardMaterial3D_87juc")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Airlock_Base_Frame_Inside" index="0"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Airlock_Base_Frame_Inside/StaticBody3D" index="0"]
+transform = Transform3D(0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, -6.5, 3, -3.5)
+shape = SubResource("BoxShape3D_3tf8x")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="Airlock_Base_Frame_Inside/StaticBody3D" index="1"]
+transform = Transform3D(-0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, -0.707107, -6.5, 3, 3.5)
+shape = SubResource("BoxShape3D_3tf8x")
+
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="Airlock_Base_Frame_Inside/StaticBody3D" index="2"]
+transform = Transform3D(0.707107, 0, -0.707107, 0, 1, 0, 0.707107, 0, 0.707107, 6.5, 3, -3.5)
+shape = SubResource("BoxShape3D_3tf8x")
+
+[node name="CollisionShape3D4" type="CollisionShape3D" parent="Airlock_Base_Frame_Inside/StaticBody3D" index="3"]
+transform = Transform3D(0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, 6.5, 3, 3.5)
+shape = SubResource("BoxShape3D_3tf8x")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Ceiling_Frame" index="0"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Ceiling_Frame/StaticBody3D" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6, 0)
+shape = SubResource("BoxShape3D_xrfox")
+
+[node name="Ceiling_Lights" parent="." index="6"]
+material_override = SubResource("StandardMaterial3D_l7d01")
+
+[node name="Ceiling_Panels" parent="." index="7"]
+material_override = SubResource("StandardMaterial3D_q4aua")
+
+[node name="Floor" parent="." index="8"]
+material_override = SubResource("StandardMaterial3D_mvfke")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Floor" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0228026, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Floor/StaticBody3D" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.11397, 0)
+shape = SubResource("BoxShape3D_ut2md")
+
+[node name="Floor_Lights" parent="." index="9"]
+material_override = SubResource("StandardMaterial3D_r8yl5")
+
+[node name="Exterior_Border_Lights" parent="." index="10"]
+material_override = SubResource("StandardMaterial3D_cqxl7")
+
+[node name="Window_Exterior" parent="." index="11"]
+material_override = ExtResource("3_hkpyn")
+
+[node name="Wall_Exterior" parent="." index="12"]
+material_override = SubResource("StandardMaterial3D_fdhkq")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Wall_Exterior" index="0"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Wall_Exterior/StaticBody3D" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.9, 0, -3)
+shape = SubResource("BoxShape3D_vyhy8")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="Wall_Exterior/StaticBody3D" index="1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.9, 0, -3)
+shape = SubResource("BoxShape3D_vyhy8")
+
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="Wall_Exterior/StaticBody3D" index="2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 6.89208, -3.25728)
+shape = SubResource("BoxShape3D_mm31t")
+
+[node name="CollisionShape3D4" type="CollisionShape3D" parent="Wall_Exterior/StaticBody3D" index="3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, -6.80107, -3.25728)
+shape = SubResource("BoxShape3D_nyrpg")
+
+[node name="CollisionShape3D5" type="CollisionShape3D" parent="Wall_Exterior/StaticBody3D" index="4"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, -6.80107, -3.25728)
+shape = SubResource("BoxShape3D_nyrpg")
+
+[node name="CollisionShape3D6" type="CollisionShape3D" parent="Wall_Exterior/StaticBody3D" index="5"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 6.89208, -3.25728)
+shape = SubResource("BoxShape3D_mm31t")
+
+[node name="Wall_Exterior_Border" parent="." index="13"]
+material_override = ExtResource("2_mcbgw")
+
+[node name="Window_Interior" parent="." index="14"]
+material_override = ExtResource("4_nfo66")
+
+[node name="Wall_Pillar_Interior" parent="." index="15"]
+material_override = SubResource("StandardMaterial3D_4u7co")
+
+[node name="Wall_Interior_Lights" parent="." index="16"]
+material_override = SubResource("StandardMaterial3D_8wpjb")
+
+[node name="Wall_Interior" parent="." index="17"]
+material_override = SubResource("StandardMaterial3D_ml4mx")
+
+[node name="Door_Frame" parent="." index="18"]
+material_override = SubResource("StandardMaterial3D_7bgyf")

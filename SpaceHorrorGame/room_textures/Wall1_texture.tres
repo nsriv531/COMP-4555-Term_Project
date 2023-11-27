@@ -1,0 +1,8 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://b76x3kohpc77b"]
+
+[ext_resource type="Texture2D" uid="uid://58u45uxfe5av" path="res://room_textures/wall_2/Sci-Fi_Wall_014_roughness.jpg" id="1_exv36"]
+
+[resource]
+albedo_color = Color(0.309804, 0.309804, 0.309804, 1)
+roughness_texture = ExtResource("1_exv36")
+roughness_texture_channel = 1

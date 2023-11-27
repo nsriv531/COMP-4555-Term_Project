@@ -1,6 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://cw8vexxgo7u40"]
+[gd_scene load_steps=6 format=3 uid="uid://cw8vexxgo7u40"]
 
 [ext_resource type="PackedScene" uid="uid://bok83eay82bme" path="res://assets/Room_Frames/Office_Frame.gltf" id="1_3ykiy"]
+[ext_resource type="Material" uid="uid://dsevd2g5vx6d7" path="res://room_textures/Base_Exterior_Color.tres" id="2_u4u1s"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_4wjm6"]
 size = Vector3(0.882563, 6.45858, 0.613211)
@@ -12,6 +13,9 @@ size = Vector3(8.02894, 0.23588, 8.03182)
 size = Vector3(8.02933, 0.30048, 8.0004)
 
 [node name="Office_Frame" instance=ExtResource("1_3ykiy")]
+
+[node name="Room_Base_Frame_6x6" parent="." index="0"]
+material_override = ExtResource("2_u4u1s")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Room_Base_Frame_6x6" index="0"]
 
