@@ -3,6 +3,7 @@ extends Control
 
 @onready var blur = $Blur
 @onready var edge_fade = $EdgeFade
+@onready var pause_menu = $PauseMenu
 
 
 # Called when the node enters the scene tree for the first time.
@@ -21,5 +22,4 @@ func showBlur():
 	
 func hideBlur():
 	blur.hide()
-	
 	

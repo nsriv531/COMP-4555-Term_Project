@@ -19,6 +19,7 @@ var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
 @onready var head = $Head
 @onready var camera = $Head/Camera3D
 @onready var effects = $Effects
+@onready var pause_menu = $GUI/PauseMenu
 @onready var gui = $GUI
 @onready var walkingsound = $WalkingSound
 @onready var hands = $Head/Camera3D/Hands
@@ -77,12 +78,10 @@ func _process(_delta):
 			gui.hideNote()
 			effects.hideBlur()
 		return
-	
-	if Input.is_action_just_pressed("ui_cancel"):
-			if Input.mouse_mode == Input.MOUSE_MODE_CAPTURED:
-				Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
-			else:	
-				Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
+	else:
+		if Input.is_action_just_pressed("ui_cancel"):
+			if get_tree().get("paused") == false:
+				pause_menu.pause()
 			
 	if Input.is_action_just_pressed("interact") && cur_interactable:
 		cur_interactable.interact(self)

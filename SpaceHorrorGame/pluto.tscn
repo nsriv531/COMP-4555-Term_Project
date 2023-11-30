@@ -1,4 +1,4 @@
-[gd_scene load_steps=111 format=3 uid="uid://1csibo7xkgx1"]
+[gd_scene load_steps=118 format=3 uid="uid://1csibo7xkgx1"]
 
 [ext_resource type="Script" path="res://addons/zylann.hterrain/hterrain.gd" id="1_ilc75"]
 [ext_resource type="Shader" path="res://Scripts/CameraEffects.gdshader" id="1_m1fa5"]
@@ -17,9 +17,11 @@
 [ext_resource type="Script" path="res://GUI.gd" id="10_sxumy"]
 [ext_resource type="Texture2D" uid="uid://dh205y6pw3vdf" path="res://textures/note.png" id="10_xbnsg"]
 [ext_resource type="Texture2D" uid="uid://cjd2w1befu7ug" path="res://ezgif-5-3568ee6a8d.png" id="11_tvc62"]
+[ext_resource type="Script" path="res://Scripts/PauseMenu.gd" id="13_8b2il"]
 [ext_resource type="PackedScene" uid="uid://clehtd5os8h8o" path="res://Objects/Note.tscn" id="14_d2cap"]
 [ext_resource type="AudioStream" uid="uid://by6gr0ob08hyt" path="res://Sounds/level1ambient.wav" id="14_o0cq4"]
 [ext_resource type="AudioStream" uid="uid://orqrfmactyx8" path="res://Sounds/footstep.ogg" id="14_rxa8h"]
+[ext_resource type="FontFile" uid="uid://u6tcmb3b8aj2" path="res://assets/menu font.otf" id="14_yii0t"]
 [ext_resource type="PackedScene" uid="uid://7nb1ucn8kuy1" path="res://models/landingpad.gltf" id="17_mk40t"]
 [ext_resource type="Script" path="res://ButtonSystem.gd" id="18_ay6ee"]
 [ext_resource type="Script" path="res://button.gd" id="19_8r8ar"]
@@ -455,6 +457,23 @@ frame_0/texture = ExtResource("7_nje7c")
 frame_1/texture = ExtResource("8_rreq8")
 frame_1/duration = 1.0
 
+[sub_resource type="FontVariation" id="FontVariation_62vwt"]
+base_font = ExtResource("14_yii0t")
+spacing_glyph = 2
+spacing_space = -8
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_rl38r"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_efshi"]
+bg_color = Color(0.254902, 0.254902, 0.254902, 0.290196)
+
+[sub_resource type="FontVariation" id="FontVariation_a0yrx"]
+base_font = ExtResource("14_yii0t")
+spacing_glyph = 2
+spacing_space = -8
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_rp0u3"]
+
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_ihmrq"]
 panorama = ExtResource("7_g37dy")
 
@@ -711,6 +730,60 @@ grow_vertical = 2
 [node name="ThrowBar" type="ColorRect" parent="Player/GUI/CanvasLayer/ThrowBarContainer"]
 custom_minimum_size = Vector2(100, 6)
 layout_mode = 2
+
+[node name="PauseMenu" type="CanvasLayer" parent="Player/GUI"]
+process_mode = 3
+process_thread_group = 1
+process_thread_group_order = 0
+process_thread_messages = 0
+layer = 6
+script = ExtResource("13_8b2il")
+
+[node name="ColorRect" type="ColorRect" parent="Player/GUI/PauseMenu"]
+material = SubResource("ShaderMaterial_0xp03")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="Player/GUI/PauseMenu"]
+offset_left = 456.0
+offset_top = 264.0
+offset_right = 822.0
+offset_bottom = 456.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Player/GUI/PauseMenu/MarginContainer"]
+layout_direction = 1
+layout_mode = 2
+theme_override_constants/separation = 14
+alignment = 1
+
+[node name="Continue" type="Button" parent="Player/GUI/PauseMenu/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(0.831373, 0.976471, 0.776471, 1)
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = SubResource("FontVariation_62vwt")
+theme_override_font_sizes/font_size = 79
+theme_override_styles/normal = SubResource("StyleBoxEmpty_rl38r")
+theme_override_styles/hover = SubResource("StyleBoxFlat_efshi")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_efshi")
+text = " Continue"
+
+[node name="Quit" type="Button" parent="Player/GUI/PauseMenu/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(1, 0.780392, 0.741176, 1)
+theme_override_colors/font_pressed_color = Color(1, 0.901961, 0.623529, 1)
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = SubResource("FontVariation_a0yrx")
+theme_override_font_sizes/font_size = 79
+theme_override_styles/normal = SubResource("StyleBoxEmpty_rp0u3")
+theme_override_styles/hover = SubResource("StyleBoxFlat_efshi")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_efshi")
+text = " Quit"
 
 [node name="WalkingSound" type="AudioStreamPlayer3D" parent="Player"]
 stream = ExtResource("14_rxa8h")
@@ -979,6 +1052,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.6352, 22.8686, -18.7337)
 navigation_mesh = SubResource("NavigationMesh_ouue7")
 
 [connection signal="timeout" from="Player/Timer" to="Player" method="_on_timer_timeout"]
+[connection signal="button_down" from="Player/GUI/PauseMenu/MarginContainer/VBoxContainer/Continue" to="Player/GUI/PauseMenu" method="_on_continue_button_down"]
+[connection signal="button_down" from="Player/GUI/PauseMenu/MarginContainer/VBoxContainer/Quit" to="Player/GUI/PauseMenu" method="_on_quit_button_down"]
 [connection signal="body_shape_entered" from="Rooms/AirLock/AirLockInnerArea" to="Rooms/AirLock/AirLockInnerArea" method="_on_body_shape_entered"]
 [connection signal="finished" from="Rooms/AirLock/AirLockInnerArea/AirlockSoundPlayer" to="Rooms/AirLock/AirLockInnerArea" method="_on_audio_finished"]
 [connection signal="button_press" from="Rooms/AirLock/NewAirlockDoorOuter/ButtonSystem/StaticBody3D2" to="Rooms/AirLock/NewAirlockDoorOuter" method="_on_static_body_3d_button_press"]

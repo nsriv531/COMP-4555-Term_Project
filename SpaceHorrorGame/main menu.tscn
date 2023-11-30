@@ -32,11 +32,11 @@ spacing_space = -8
 [sub_resource type="Gradient" id="Gradient_wtyps"]
 colors = PackedColorArray(0.360784, 0.360784, 0.360784, 0.509804, 0.360784, 0.360784, 0.360784, 0)
 
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_duncx"]
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_s7u0i"]
 gradient = SubResource("Gradient_wtyps")
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_vudiq"]
-texture = SubResource("GradientTexture2D_duncx")
+texture = SubResource("GradientTexture2D_s7u0i")
 texture_margin_left = 5.0
 
 [sub_resource type="FontVariation" id="FontVariation_52lqc"]
@@ -49,11 +49,11 @@ spacing_space = -8
 [sub_resource type="Gradient" id="Gradient_pspym"]
 colors = PackedColorArray(0.360784, 0.360784, 0.360784, 0.509804, 0.360784, 0.360784, 0.360784, 0)
 
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_f0f5p"]
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_s4u68"]
 gradient = SubResource("Gradient_pspym")
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ybfue"]
-texture = SubResource("GradientTexture2D_f0f5p")
+texture = SubResource("GradientTexture2D_s4u68")
 texture_margin_left = 5.0
 
 [sub_resource type="Animation" id="Animation_wo04e"]
