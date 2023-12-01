@@ -3,7 +3,7 @@ extends Control
 
 @onready var blur = $Blur
 @onready var edge_fade = $EdgeFade
-@onready var pause_menu = $PauseMenu
+@onready var pause_menu = $"../GUI/PauseMenu"
 
 
 # Called when the node enters the scene tree for the first time.

@@ -1,6 +1,7 @@
 extends CanvasLayer
 
 func _ready():
+	self.set_visible(false)
 	pass
 
 # this is required because player cannot be processed when paused so an external always running script is required

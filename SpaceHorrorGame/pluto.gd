@@ -54,6 +54,8 @@ func unmuffle():
 	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
+	DebugDraw2D.clear_graphs()
+	DebugDraw3D.draw_line($Player.position, $TargetPos.position, Color(1, 0, 0))
 	
 	muffleEff = AudioServer.get_bus_effect(0,0)
 	muffleEff.set_cutoff(muffle_effect.hertz)

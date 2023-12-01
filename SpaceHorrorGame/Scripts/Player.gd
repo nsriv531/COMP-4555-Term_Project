@@ -1,7 +1,7 @@
 extends CharacterBody3D
 
 
-const SPEED = 5.0
+var speed = 5.0
 const JUMP_VELOCITY = 4.5
 const SENSITIVITY = 0.003
 const INTERACT_DISTANCE = 3
@@ -24,6 +24,7 @@ var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
 @onready var walkingsound = $WalkingSound
 @onready var hands = $Head/Camera3D/Hands
 
+var running = false
 var camera_pos
 var cur_interactable = null
 var camera_up = false
@@ -86,6 +87,14 @@ func _process(_delta):
 	if Input.is_action_just_pressed("interact") && cur_interactable:
 		cur_interactable.interact(self)
 		
+	if Input.is_action_just_pressed("run"):
+		speed = 7
+		running = true
+		
+	if Input.is_action_just_released("run"):
+		speed = 5
+		running = false
+		
 	if self.position.y <= 0:
 		if shhh.frame == 0:
 			shhh.play("default")
@@ -105,6 +114,10 @@ func _physics_process(delta):
 #			$WalkingSound.pitch_scale = randf_range(0.8, 1.2)
 #			$WalkingSound.play()
 		#$Head/Camera3D/CameraAnim.get_animation("bob").loop_mode = 1
+		if running:
+			$Head/Camera3D/CameraAnim.speed_scale = 7
+		else:
+			$Head/Camera3D/CameraAnim.speed_scale = 4
 		$Head/Camera3D/CameraAnim.play("bob")
 		camera_up = true
 		
@@ -135,8 +148,8 @@ func _physics_process(delta):
 		direction = (head.transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
 	
 	if direction:
-		velocity.x = direction.x * SPEED
-		velocity.z = direction.z * SPEED
+		velocity.x = direction.x * speed
+		velocity.z = direction.z * speed
 	else:
 		velocity.x = move_toward(velocity.x, 0, 0.9)
 		velocity.z = move_toward(velocity.z, 0, 0.9)
@@ -152,7 +165,10 @@ func interact_raycast(distance):
 		var from = camera.project_ray_origin(get_viewport().get_visible_rect().size / 2)
 		var to = from + camera.project_ray_normal(get_viewport().get_visible_rect().size / 2) * distance
 		var query = PhysicsRayQueryParameters3D.create(from,to,2)
+		query.exclude = [self]
 		var result = space_state.intersect_ray(query)
+		
+		print(result)
 		
 		if result && result.collider.has_method("interact"):
 			gui.crosshair_text_rect.texture.current_frame = 0
