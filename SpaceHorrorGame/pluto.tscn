@@ -525,6 +525,8 @@ _data = {
 points = PackedVector3Array(0, 1, 0, 0.194988, -1, -0.980814, 0, -1, -1, -0.195184, -1, -0.980814, -0.382733, -1, -0.924041, -0.555599, -1, -0.831637, -0.707126, -1, -0.707126, -0.831637, -1, -0.555599, -0.924041, -1, -0.382733, -0.980814, -1, -0.195184, -1, -1, -0.000195742, -0.980814, -1, 0.194988, -0.924041, -1, 0.382537, -0.831637, -1, 0.555403, -0.707126, -1, 0.70693, -0.555599, -1, 0.831441, -0.382733, -1, 0.923845, -0.195184, -1, 0.980619, -0.000195742, -1, 1, 0.194988, -1, 0.980619, 0.382537, -1, 0.923845, 0.555403, -1, 0.831441, 0.70693, -1, 0.70693, 0.831441, -1, 0.555403, 0.923845, -1, 0.382537, 0.980619, -1, 0.194988, 1, -1, -0.000195742, 0.980619, -1, -0.195184, 0.923845, -1, -0.382733, 0.831441, -1, -0.555599, 0.70693, -1, -0.707126, 0.555403, -1, -0.831637, 0.382537, -1, -0.924041)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_thq8a"]
+transparency = 1
+albedo_color = Color(1, 0, 0, 0.462745)
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_n5k4y"]
 _surfaces = [{
@@ -966,7 +968,7 @@ mesh = SubResource("BoxMesh_smwod")
 shape = SubResource("ConvexPolygonShape3D_vplr6")
 
 [node name="DoorRegion" parent="Rooms/Dormitory_Door" instance=ExtResource("28_t17bd")]
-transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 1.4, -0.461132, -0.651525, 0.110545)
+transform = Transform3D(2.68639, 0, 0, 0, 2, 0, 0, 0, 1.4, 0.0436611, -0.651525, 0.110545)
 
 [node name="Dormitory" parent="Rooms" instance=ExtResource("31_or7hb")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 3.2, -8.5)
@@ -1032,8 +1034,7 @@ transform = Transform3D(40, 0, 0, 0, -5.24537e-07, -8, 0, 12, -3.49691e-07, 0, 0
 shape = SubResource("ConvexPolygonShape3D_3ngts")
 
 [node name="Cone" type="MeshInstance3D" parent="Monster/Neck"]
-transform = Transform3D(20, 0, 0, 0, -5.46392e-07, -12, 0, 12.5, -5.24537e-07, 0, 0.416342, -12.3774)
-visible = false
+transform = Transform3D(40, 0, 0, 0, -5.24537e-07, -8, 0, 12, -3.49691e-07, 0, 0.416342, -11.5115)
 mesh = SubResource("ArrayMesh_yigba")
 skeleton = NodePath("")
 
