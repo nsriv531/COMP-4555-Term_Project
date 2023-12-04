@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://8ds5unyw14pf"]
+
+[ext_resource type="PackedScene" uid="uid://uancam8vrhlu" path="res://assets/Large_Ex_Wall_Window.glb" id="1_xl5u0"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_j0oac"]
+size = Vector3(16.066, 0.683601, 5.9561)
+
+[node name="Large_Ex_Wall_Window" instance=ExtResource("1_xl5u0")]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Large_Wall_Window" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -3)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Large_Wall_Window/StaticBody3D" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.305779, 0)
+shape = SubResource("BoxShape3D_j0oac")
+
+[node name="Large_Window" parent="." index="3"]
+transparency = 0.54
