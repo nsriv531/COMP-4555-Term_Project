@@ -7,18 +7,20 @@ extends Node3D
 var muffleEff
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	
 	$Transition.play("fade in")
 	
 	muffleEff = AudioEffectLowPassFilter.new()
-	muffleEff.cutoff_hz = 1000
-	muffle_effect.hertz = 1000
+	muffleEff.resonance = 0.1
+	muffleEff.cutoff_hz = 800
+	muffle_effect.hertz = 800
 	
 	var unmuffleAnim = Animation.new()
 	var track_index1 = unmuffleAnim.add_track(Animation.TYPE_VALUE)
 	unmuffleAnim.track_set_path(track_index1, "MuffleEffect:hertz")
 	
 	unmuffleAnim.length = 5.0
-	unmuffleAnim.track_insert_key(track_index1, 0.0, 1000)
+	unmuffleAnim.track_insert_key(track_index1, 0.0, 800)
 	unmuffleAnim.track_insert_key(track_index1, 5.0, 20000)
 	unmuffleAnim.loop_mode = Animation.LOOP_NONE
 
@@ -28,7 +30,7 @@ func _ready():
 	
 	muffleAnim.length = 5.0
 	muffleAnim.track_insert_key(track_index2, 0.0, 20000)
-	muffleAnim.track_insert_key(track_index2, 5.0, 1000)
+	muffleAnim.track_insert_key(track_index2, 5.0, 800)
 	muffleAnim.loop_mode = Animation.LOOP_NONE
 
 	var animlib = AnimationLibrary.new()
@@ -43,19 +45,24 @@ func _ready():
 	AudioServer.add_bus_effect(0,muffleEff)
 	#animation_player.play("muffles/muffle")
 	
+	AudioServer.set_bus_mute(1, true)
+	
+	print(AudioServer.bus_count)
 	
 	pass # Replace with function body.
 
 func muffle():
+	AudioServer.set_bus_mute(1, true)
 	animation_player.play("muffles/muffle")
 	
 func unmuffle():
+	AudioServer.set_bus_mute(1, false)
 	animation_player.play("muffles/unmuffle")
 	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	DebugDraw2D.clear_graphs()
-	DebugDraw3D.draw_line($Player.position, $TargetPos.position, Color(1, 0, 0))
+	#DebugDraw2D.clear_graphs()
+	#DebugDraw3D.draw_line($Player.position, $TargetPos.position, Color(1, 0, 0))
 	
 	muffleEff = AudioServer.get_bus_effect(0,0)
 	muffleEff.set_cutoff(muffle_effect.hertz)

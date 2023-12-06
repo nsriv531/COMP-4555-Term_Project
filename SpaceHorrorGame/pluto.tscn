@@ -1046,9 +1046,6 @@ player = NodePath("../Player")
 
 [node name="NavigationAgent3D" type="NavigationAgent3D" parent="Monster"]
 radius = 0.4
-debug_enabled = true
-debug_use_custom = true
-debug_path_custom_color = Color(1, 0, 1, 1)
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Monster"]
 mesh = SubResource("CapsuleMesh_8xkb2")
@@ -1082,9 +1079,13 @@ skeleton = NodePath("")
 
 [node name="footstep1" type="AudioStreamPlayer3D" parent="Monster"]
 stream = ExtResource("46_abkaf")
+bus = &"Monster"
+area_mask = 15
 
 [node name="footstep2" type="AudioStreamPlayer3D" parent="Monster"]
 stream = ExtResource("47_jn5s7")
+bus = &"Monster"
+area_mask = 15
 
 [node name="IdleTimer" type="Timer" parent="Monster"]
 
@@ -1095,6 +1096,7 @@ libraries = {
 
 [node name="TargetPos" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.6352, 22.8686, -18.7337)
+visible = false
 mesh = SubResource("SphereMesh_2wdoq")
 skeleton = NodePath("../MainNavRegion")
 

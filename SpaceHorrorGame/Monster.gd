@@ -91,7 +91,7 @@ func update_target_loc(tar_loc):
 	navigation_agent_3d.target_position = tar_loc
 	
 	$"../TargetPos".position = tar_loc
-	print(tar_loc, " : ", $"../TargetPos".position)
+	#print(tar_loc, " : ", $"../TargetPos".position)
 
 
 func _on_sight_body_entered(body):
@@ -127,6 +127,18 @@ func _on_raycast_timer_timeout():
 
 
 func _on_footstep_timeout():
+	var space_state = get_world_3d().direct_space_state
+	var query = PhysicsRayQueryParameters3D.create(self.position, player.position)
+	query.exclude = [self]
+	var result = space_state.intersect_ray(query)
+	if result.collider == player:
+		AudioServer.set_bus_effect_enabled(1,0, false)
+	else:
+		AudioServer.set_bus_effect_enabled(1,0, true)
+	
+	print(AudioServer.get_bus_effect(1,0))
+	print(AudioServer.is_bus_effect_enabled(1,0))
+	
 	get_node("footstep" + str(footnum + 1)).play()
 	footnum = (footnum + 1) % 2
 	pass # Replace with function body.
@@ -144,7 +156,7 @@ func set_random_nav_target():
 		var target = list[(randi_range(0,list.size()-1))]
 		target.y = 22.214
 		if position.distance_to(target) > 10:
-			navigation_agent_3d.target_position = target
+			update_target_loc(target)
 			if navigation_agent_3d.is_target_reachable():
 				break
 

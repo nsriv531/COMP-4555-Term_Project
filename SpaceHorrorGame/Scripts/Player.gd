@@ -168,7 +168,7 @@ func interact_raycast(distance):
 		query.exclude = [self]
 		var result = space_state.intersect_ray(query)
 		
-		print(result)
+		#print(result)
 		
 		if result && result.collider.has_method("interact"):
 			gui.crosshair_text_rect.texture.current_frame = 0
