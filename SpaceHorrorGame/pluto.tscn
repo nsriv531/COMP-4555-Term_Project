@@ -832,7 +832,6 @@ environment = SubResource("Environment_him15")
 [node name="Sun" type="DirectionalLight3D" parent="."]
 transform = Transform3D(0.586849, 0.722724, -0.365074, -0.0180013, 0.462412, 0.886483, 0.809497, -0.513659, 0.284376, -390.079, 748.531, 281.904)
 light_color = Color(0.780392, 0.780392, 0.780392, 1)
-light_energy = 0.1
 light_indirect_energy = 5.0
 light_volumetric_fog_energy = 0.0
 light_bake_mode = 1
