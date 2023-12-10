@@ -1,6 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://oiq6x553evme"]
+[gd_scene load_steps=6 format=3 uid="uid://oiq6x553evme"]
 
 [ext_resource type="PackedScene" uid="uid://cntd4iwnpveuq" path="res://assets/Room_Frames/Kitchen_Frame.gltf" id="1_5jndo"]
+[ext_resource type="Material" uid="uid://dsevd2g5vx6d7" path="res://room_textures/Base_Exterior_Color.tres" id="2_vb8cs"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_b6f6j"]
 size = Vector3(8.02933, 0.30048, 18.0105)
@@ -18,6 +19,9 @@ size = Vector3(8.02894, 0.23588, 18.0123)
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Room_Ceiling_16x6/StaticBody3D" index="0"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.90746, 0)
 shape = SubResource("BoxShape3D_b6f6j")
+
+[node name="Room_Base_Frame_16x6" parent="." index="3"]
+material_override = ExtResource("2_vb8cs")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Room_Base_Frame_16x6" index="0"]
 

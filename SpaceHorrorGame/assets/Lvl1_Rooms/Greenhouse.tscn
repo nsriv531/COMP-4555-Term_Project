@@ -1,7 +1,8 @@
-[gd_scene load_steps=14 format=3 uid="uid://cpar6kh7l6mh"]
+[gd_scene load_steps=15 format=3 uid="uid://cpar6kh7l6mh"]
 
 [ext_resource type="PackedScene" uid="uid://ckkxhp72over1" path="res://assets/Room_Frames/greenhouse.glb" id="1_jddr0"]
 [ext_resource type="Material" uid="uid://ctihvcbbldelq" path="res://room_textures/glass_texture_interior.tres" id="2_wj1qu"]
+[ext_resource type="Material" uid="uid://dsevd2g5vx6d7" path="res://room_textures/Base_Exterior_Color.tres" id="3_pkn4l"]
 [ext_resource type="Material" uid="uid://nvs1pw5jy4sd" path="res://room_textures/glass_texture_exterior.tres" id="3_sgog7"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_o7ovl"]
@@ -119,6 +120,9 @@ shape = SubResource("BoxShape3D_0gyts")
 [node name="Floor_Lights" parent="." index="8"]
 material_override = SubResource("StandardMaterial3D_2neqv")
 
+[node name="Roof" parent="." index="9"]
+material_override = ExtResource("3_pkn4l")
+
 [node name="StaticBody3D" type="StaticBody3D" parent="Roof" index="0"]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Roof/StaticBody3D" index="0"]
@@ -127,6 +131,9 @@ shape = SubResource("BoxShape3D_pdnau")
 
 [node name="Roof_Window_Exterior" parent="." index="10"]
 material_override = ExtResource("3_sgog7")
+
+[node name="Room_Base_Frame" parent="." index="11"]
+material_override = ExtResource("3_pkn4l")
 
 [node name="Side_Window_Exterior" parent="." index="12"]
 material_override = ExtResource("3_sgog7")
