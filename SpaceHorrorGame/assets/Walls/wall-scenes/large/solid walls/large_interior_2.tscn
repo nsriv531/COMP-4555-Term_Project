@@ -1,11 +1,15 @@
-[gd_scene load_steps=3 format=3 uid="uid://253134ladtjv"]
+[gd_scene load_steps=4 format=3 uid="uid://253134ladtjv"]
 
 [ext_resource type="PackedScene" uid="uid://y7hx8qn0du2f" path="res://assets/Walls/New Large/solid/large_interior_2.glb" id="1_hqqnd"]
+[ext_resource type="Material" uid="uid://dsevd2g5vx6d7" path="res://room_textures/Base_Exterior_Color.tres" id="2_fuatu"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_va6jr"]
 size = Vector3(16.0745, 0.425288, 6.09403)
 
 [node name="large_interior_2" instance=ExtResource("1_hqqnd")]
+
+[node name="Wall_Exterior" parent="." index="0"]
+material_override = ExtResource("2_fuatu")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Wall_Exterior" index="0"]
 

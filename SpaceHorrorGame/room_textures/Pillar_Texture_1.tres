@@ -3,7 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://blx7nrqaw67fs" path="res://room_textures/wall_3/Metal_Plate_011_roughness.jpg" id="1_bgf4m"]
 
 [resource]
-albedo_color = Color(0.741176, 0.741176, 0.741176, 1)
+albedo_color = Color(0.301961, 0.301961, 0.301961, 1)
 metallic = 0.9
 roughness = 0.8
 roughness_texture = ExtResource("1_bgf4m")

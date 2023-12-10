@@ -1,10 +1,11 @@
-[gd_scene load_steps=26 format=3 uid="uid://rxm824u5tj3t"]
+[gd_scene load_steps=27 format=3 uid="uid://rxm824u5tj3t"]
 
 [ext_resource type="PackedScene" uid="uid://m8wq4m3ivh3e" path="res://assets/Room_Frames/airlock.glb" id="1_q4te4"]
 [ext_resource type="Script" path="res://assets/Lvl1_Rooms/LvL1_Room_Scripts/Airlock.gd" id="2_k6gkh"]
 [ext_resource type="Material" uid="uid://dsevd2g5vx6d7" path="res://room_textures/Base_Exterior_Color.tres" id="2_mcbgw"]
 [ext_resource type="Material" uid="uid://nvs1pw5jy4sd" path="res://room_textures/glass_texture_exterior.tres" id="3_hkpyn"]
 [ext_resource type="Material" uid="uid://ctihvcbbldelq" path="res://room_textures/glass_texture_interior.tres" id="4_nfo66"]
+[ext_resource type="Texture2D" uid="uid://b0entxnd22a27" path="res://room_textures/Metal_scratched_009_roughness.jpg" id="5_y04nw"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jhpvj"]
 albedo_color = Color(0.698039, 0.698039, 0.698039, 1)
@@ -58,8 +59,8 @@ emission_energy_multiplier = 2.0
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_fdhkq"]
 albedo_color = Color(0.498039, 0.498039, 0.498039, 1)
-metallic = 0.45
-roughness = 0.42
+metallic = 0.2
+roughness_texture = ExtResource("5_y04nw")
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_vyhy8"]
 size = Vector3(0.235247, 12.0178, 6.02483)

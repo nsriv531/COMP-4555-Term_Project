@@ -1,6 +1,7 @@
-[gd_scene load_steps=7 format=3 uid="uid://cqimnymmoxpwh"]
+[gd_scene load_steps=8 format=3 uid="uid://cqimnymmoxpwh"]
 
 [ext_resource type="PackedScene" uid="uid://drm30reyv7bh0" path="res://assets/Room_Frames/Storage_Bay_Frame.gltf" id="1_cfh7c"]
+[ext_resource type="Material" uid="uid://dsevd2g5vx6d7" path="res://room_textures/Base_Exterior_Color.tres" id="2_mr7wk"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_m68eb"]
 emission_enabled = true
@@ -30,6 +31,9 @@ surface_material_override/0 = SubResource("StandardMaterial3D_m68eb")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Storage_Ceiling/StaticBody3D" index="0"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.90746, 0)
 shape = SubResource("BoxShape3D_h7cwh")
+
+[node name="Storage_Frame" parent="." index="4"]
+material_override = ExtResource("2_mr7wk")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Storage_Frame" index="0"]
 

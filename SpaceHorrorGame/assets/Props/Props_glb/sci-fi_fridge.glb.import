@@ -3,17 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-<<<<<<< HEAD
-uid="uid://dix4gqf5l4xrc"
-=======
-uid="uid://b1u0i0ret27kf"
->>>>>>> 79f3792280a1e16fea9b7104a124c62094ff7b9d
-path="res://.godot/imported/spaceship.glb-f2391be5ce73e130de48258141dac5de.scn"
+uid="uid://qff6ao5x1dcx"
+path="res://.godot/imported/sci-fi_fridge.glb-b4679194bf4cdc505903fd1c8e930bf3.scn"
 
 [deps]
 
-source_file="res://models/spaceship.glb"
-dest_files=["res://.godot/imported/spaceship.glb-f2391be5ce73e130de48258141dac5de.scn"]
+source_file="res://assets/Props/Props_glb/sci-fi_fridge.glb"
+dest_files=["res://.godot/imported/sci-fi_fridge.glb-b4679194bf4cdc505903fd1c8e930bf3.scn"]
 
 [params]
 
@@ -33,4 +29,4 @@ animation/trimming=false
 animation/remove_immutable_tracks=true
 import_script/path=""
 _subresources={}
-gltf/embedded_image_handling=1
+gltf/embedded_image_handling=0

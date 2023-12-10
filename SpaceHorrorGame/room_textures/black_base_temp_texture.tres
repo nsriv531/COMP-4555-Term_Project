@@ -1,9 +1,12 @@
-[gd_resource type="StandardMaterial3D" format=3 uid="uid://bdtnrqjti18l5"]
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://bdtnrqjti18l5"]
+
+[ext_resource type="Texture2D" uid="uid://b0entxnd22a27" path="res://room_textures/Metal_scratched_009_roughness.jpg" id="1_lk8xs"]
 
 [resource]
-albedo_color = Color(0.14902, 0.14902, 0.14902, 1)
-metallic = 0.74
-roughness = 0.42
+albedo_color = Color(0.870588, 0.870588, 0.870588, 1)
+metallic = 0.5
+roughness = 0.8
+roughness_texture = ExtResource("1_lk8xs")
 roughness_texture_channel = 1
 emission = Color(0.282353, 0.282353, 0.282353, 1)
 emission_energy_multiplier = 10.83

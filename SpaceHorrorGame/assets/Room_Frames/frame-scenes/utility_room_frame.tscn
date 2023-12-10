@@ -1,6 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://4nrsukin7g22"]
+[gd_scene load_steps=6 format=3 uid="uid://4nrsukin7g22"]
 
 [ext_resource type="PackedScene" uid="uid://bbhrugx3k01sr" path="res://assets/Room_Frames/Utility_Room_Frame.gltf" id="1_20skw"]
+[ext_resource type="Material" uid="uid://dsevd2g5vx6d7" path="res://room_textures/Base_Exterior_Color.tres" id="2_2s3j6"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_rdypd"]
 size = Vector3(0.882563, 6.45858, 0.613211)
@@ -12,6 +13,9 @@ size = Vector3(8.02933, 0.30048, 8.0004)
 size = Vector3(8.02894, 0.23588, 8.03182)
 
 [node name="Utility_Room_Frame" instance=ExtResource("1_20skw")]
+
+[node name="Room_Base_Frame_6x6" parent="." index="0"]
+material_override = ExtResource("2_2s3j6")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Room_Base_Frame_6x6" index="0"]
 
