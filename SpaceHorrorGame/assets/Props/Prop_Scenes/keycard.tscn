@@ -3,14 +3,17 @@
 [ext_resource type="PackedScene" uid="uid://bjink3labuo11" path="res://assets/Props/Props_glb/keycard/keycard.glb" id="1_75ock"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_r206q"]
-size = Vector3(0.184643, 0.00947818, 0.306098)
+size = Vector3(0.225183, 0.0732432, 0.344447)
 
 [node name="keycard" instance=ExtResource("1_75ock")]
 
 [node name="Cube" parent="." index="0"]
 transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 0, 0, 0)
+layers = 3
 
 [node name="StaticBody3D" type="StaticBody3D" parent="." index="1"]
+collision_layer = 3
+collision_mask = 3
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" index="0"]
 shape = SubResource("BoxShape3D_r206q")

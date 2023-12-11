@@ -4,6 +4,8 @@ extends Node3D
 @onready var door_open = $DoorOpen
 @onready var door_close = $DoorClose
 
+@onready var keycard = $Keycard
+
 @onready var near = false
 @onready var playAnimation = $AnimationTree.get("parameters/playback")
 
@@ -46,6 +48,6 @@ func doorPlay(nearArea):
 		playAnimation.travel("Door_Closing")
 
 func _on_static_body_3d_button_press():
-	onButtonPress()
+	if $Keycard == null:
+		onButtonPress()
 	pass # Replace with function body.
-
