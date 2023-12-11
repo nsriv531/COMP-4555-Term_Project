@@ -1,8 +1,9 @@
-[gd_scene load_steps=20 format=3 uid="uid://clhxwtayqevu7"]
+[gd_scene load_steps=21 format=3 uid="uid://clhxwtayqevu7"]
 
 [ext_resource type="Script" path="res://Monster.gd" id="1_fpvwy"]
 [ext_resource type="AudioStream" uid="uid://xbckcfd378a1" path="res://Sounds/monsterfootstep1.ogg" id="2_68jc7"]
 [ext_resource type="AudioStream" uid="uid://bamdcatr6ua53" path="res://Sounds/monsterfootstep2.ogg" id="3_v5oxi"]
+[ext_resource type="AudioStream" uid="uid://dxpnuoplcnfbr" path="res://jumpscare.ogg" id="4_014k5"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_8xkb2"]
 radius = 0.4
@@ -375,6 +376,10 @@ collision_mask = 15
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Detection Body"]
 shape = SubResource("CapsuleShape3D_ehdln")
+
+[node name="Jumpscare" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_014k5")
+panning_strength = 0.0
 
 [connection signal="target_reached" from="NavigationAgent3D" to="." method="_on_navigation_agent_3d_target_reached"]
 [connection signal="velocity_computed" from="NavigationAgent3D" to="." method="_on_navigation_agent_3d_velocity_computed"]

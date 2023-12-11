@@ -110,7 +110,7 @@ material_override = ExtResource("4_1evu3")
 [node name="Kitchen_Middle_Floor" parent="." index="7"]
 material_override = ExtResource("4_1evu3")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="Kitchen_Middle_Floor" index="0" groups=["navigation_mesh_source_group"]]
+[node name="StaticBody3D" type="StaticBody3D" parent="Kitchen_Middle_Floor" index="0"]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Kitchen_Middle_Floor/StaticBody3D" index="0"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.11397, 0)

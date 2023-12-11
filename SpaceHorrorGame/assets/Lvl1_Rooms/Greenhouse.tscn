@@ -6,7 +6,7 @@
 [ext_resource type="Material" uid="uid://nvs1pw5jy4sd" path="res://room_textures/glass_texture_exterior.tres" id="3_sgog7"]
 [ext_resource type="Material" uid="uid://b4i5uthrs3qyl" path="res://room_textures/wall_4_long/wall_4_long.tres" id="3_twsau"]
 [ext_resource type="Material" uid="uid://cve246qthvu31" path="res://room_textures/flooring_3/flooring_texture_3.tres" id="3_xwa36"]
-[ext_resource type="PackedScene" uid="uid://dvxt2iblki5v1" path="res://assets/Props/Prop_Scenes/hydroponics.tscn" id="7_sglw3"]
+[ext_resource type="PackedScene" path="res://assets/Props/Prop_Scenes/hydroponics.tscn" id="7_sglw3"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_o7ovl"]
 size = Vector3(0.882563, 6.45858, 0.613211)

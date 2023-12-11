@@ -5,8 +5,8 @@
 [ext_resource type="PackedScene" uid="uid://c0j244i5vis8i" path="res://assets/Walls/wall-scenes/small/solid walls/small_interior_2_v2.tscn" id="5_1c6hb"]
 [ext_resource type="PackedScene" uid="uid://t02frhgymon" path="res://assets/Room_Frames/frame-scenes/cafeteria_frame_new.tscn" id="5_i8xl8"]
 [ext_resource type="PackedScene" uid="uid://ym5itbtm4lbj" path="res://assets/Walls/wall-scenes/large/doorway walls/large_doorway_2.tscn" id="5_q5unr"]
-[ext_resource type="PackedScene" uid="uid://cbdrxwspegxkd" path="res://assets/Props/Prop_Scenes/cafeteria_set_2.tscn" id="6_0iwi5"]
-[ext_resource type="PackedScene" uid="uid://p3d0csccvskx" path="res://assets/Props/Prop_Scenes/cafeteria_set_1.tscn" id="7_hbbcx"]
+[ext_resource type="PackedScene" path="res://assets/Props/Prop_Scenes/cafeteria_set_2.tscn" id="6_0iwi5"]
+[ext_resource type="PackedScene" path="res://assets/Props/Prop_Scenes/cafeteria_set_1.tscn" id="7_hbbcx"]
 
 [node name="Mess_Hall" type="Node3D" groups=["navigation_mesh_source_group"]]
 

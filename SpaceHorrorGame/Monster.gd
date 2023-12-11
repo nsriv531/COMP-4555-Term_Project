@@ -39,7 +39,7 @@ func enable():
 		print("BRUH")
 		state = IDLE
 		$IdleTimer.start(1)
-		player.play_jumpscare()
+		$Jumpscare.play(0)
 
 func _process(delta):
 	
@@ -206,7 +206,7 @@ func _on_detection_body_entered(body):
 	print(player)
 	if body == player:
 		print("it works??")
-		get_tree().reload_current_scene()
+		get_tree().root.queue_free()
 	pass
 
 
