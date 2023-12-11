@@ -1,7 +1,8 @@
-[gd_scene load_steps=12 format=3 uid="uid://ch1ptajvr1x6f"]
+[gd_scene load_steps=13 format=3 uid="uid://ch1ptajvr1x6f"]
 
 [ext_resource type="Script" path="res://Monster.gd" id="1_fpvwy"]
 [ext_resource type="AudioStream" uid="uid://xbckcfd378a1" path="res://Sounds/monsterfootstep1.ogg" id="2_68jc7"]
+[ext_resource type="PackedScene" uid="uid://ctg4hfrlwbakx" path="res://assets/zombiewithanimations.glb" id="2_twawf"]
 [ext_resource type="AudioStream" uid="uid://bamdcatr6ua53" path="res://Sounds/monsterfootstep2.ogg" id="3_v5oxi"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_8xkb2"]
@@ -76,7 +77,11 @@ script = ExtResource("1_fpvwy")
 [node name="NavigationAgent3D" type="NavigationAgent3D" parent="."]
 radius = 0.4
 
+[node name="zombiewithanimations" parent="." instance=ExtResource("2_twawf")]
+transform = Transform3D(-0.999962, 0, 0.00872664, 0, 1, 0, -0.00872664, 0, -0.999962, 0, 0, 0)
+
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+visible = false
 mesh = SubResource("CapsuleMesh_8xkb2")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]

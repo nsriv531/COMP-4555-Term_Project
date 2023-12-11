@@ -4,7 +4,8 @@ var SPEED = 3.0
 const JUMP_VELOCITY = 4.5
 
 @onready var navigation_region_3d = $"../MainNavRegion"
-
+@onready var albertZombie = $zombiewithanimations
+@onready var albert_Animation_Player = $zombiewithanimations/AnimationPlayer
 @export var player:CharacterBody3D = null
 @onready var navigation_agent_3d = $NavigationAgent3D
 
@@ -40,6 +41,8 @@ func _process(delta):
 		
 	if state == CHASE:
 		if can_see_player:
+			albert_Animation_Player.play("Walk")
+			look_at(player.position)
 			update_target_loc(player.position)
 		else:
 			pass
@@ -70,6 +73,7 @@ func _physics_process(delta):
 		$AnimationPlayer.play("walk")
 	
 	if state == CHASE:
+		
 		#$Neck.rotation.y = lerp_angle($Neck.rotation.y,  deg_to_rad(90)-(Vector2(next_loc.x, next_loc.z).angle_to_point(Vector2(position.x, position.z))), 0.1)
 		if can_see_player:
 			$Neck.look_at(player.position)
