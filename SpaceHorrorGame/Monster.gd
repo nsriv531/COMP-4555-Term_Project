@@ -148,7 +148,7 @@ func _on_raycast_timer_timeout():
 	if result.collider == player:
 		state = CHASE
 		if SPEED == 3:
-			SPEED = 6
+			SPEED = 4
 		last_seen_player = player.position
 		can_see_player = true
 	else:
