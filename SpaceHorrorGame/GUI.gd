@@ -1,6 +1,6 @@
 extends Control
 
-@onready var note_text_rect = $CanvasLayer/NoteContainer/NoteTextRect
+@onready var note_text_rect = $CanvasLayer/NoteTextRect
 @onready var crosshair_text_rect = $CanvasLayer/CrosshairContainer/CrosshairTextRect
 
 var showingNote = false
