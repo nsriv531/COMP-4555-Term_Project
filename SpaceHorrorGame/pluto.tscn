@@ -1,4 +1,4 @@
-[gd_scene load_steps=113 format=3 uid="uid://1csibo7xkgx1"]
+[gd_scene load_steps=118 format=3 uid="uid://1csibo7xkgx1"]
 
 [ext_resource type="Script" path="res://addons/zylann.hterrain/hterrain.gd" id="1_ilc75"]
 [ext_resource type="Shader" path="res://Scripts/CameraEffects.gdshader" id="1_m1fa5"]
@@ -18,6 +18,7 @@
 [ext_resource type="Texture2D" uid="uid://dh205y6pw3vdf" path="res://textures/note.png" id="10_xbnsg"]
 [ext_resource type="Texture2D" uid="uid://cjd2w1befu7ug" path="res://ezgif-5-3568ee6a8d.png" id="11_tvc62"]
 [ext_resource type="Script" path="res://Scripts/PauseMenu.gd" id="13_8b2il"]
+[ext_resource type="Texture2D" uid="uid://cnjvwyk0mq35s" path="res://assets/(Mess Hall) EMAIL_NOTE_immediate extraction.png" id="14_4cfuf"]
 [ext_resource type="PackedScene" uid="uid://clehtd5os8h8o" path="res://Objects/Note.tscn" id="14_d2cap"]
 [ext_resource type="AudioStream" uid="uid://by6gr0ob08hyt" path="res://Sounds/level1ambient.wav" id="14_o0cq4"]
 [ext_resource type="AudioStream" uid="uid://orqrfmactyx8" path="res://Sounds/footstep.ogg" id="14_rxa8h"]
@@ -25,7 +26,11 @@
 [ext_resource type="PackedScene" uid="uid://7nb1ucn8kuy1" path="res://models/landingpad.gltf" id="17_mk40t"]
 [ext_resource type="Script" path="res://ButtonSystem.gd" id="18_ay6ee"]
 [ext_resource type="Script" path="res://button.gd" id="19_8r8ar"]
+[ext_resource type="Texture2D" uid="uid://n57yiclhi1ar" path="res://(Albert's office) EMAIL_NOTE_EXODUS.png" id="23_2tlv3"]
 [ext_resource type="PackedScene" uid="uid://dw5r0u10smu5b" path="res://assets/Lvl1_Rooms/Cafeteria.tscn" id="23_p3srr"]
+[ext_resource type="Texture2D" uid="uid://615wrkl0webl" path="res://(Albert's Office) CLASSIFIED DEBRIEF.png" id="24_fqeep"]
+[ext_resource type="Texture2D" uid="uid://cps716mb3khit" path="res://assets/note3.1.PNG" id="25_cd24b"]
+[ext_resource type="Texture2D" uid="uid://do4xwbryy3ej1" path="res://assets/note3.2.PNG" id="26_msnta"]
 [ext_resource type="Script" path="res://AirLockInnerArea.gd" id="26_wyfa4"]
 [ext_resource type="AudioStream" uid="uid://b1tprvlueafqk" path="res://Sounds/Air.ogg" id="27_mqdwd"]
 [ext_resource type="PackedScene" uid="uid://c7sm4dsareqas" path="res://assets/Doors/door-scenes/exterior_door.tscn" id="28_8mmej"]
@@ -657,17 +662,20 @@ script = ExtResource("10_sxumy")
 [node name="CanvasLayer" type="CanvasLayer" parent="Player/GUI"]
 layer = 3
 
+[node name="NoteTextRect" type="TextureRect" parent="Player/GUI/CanvasLayer"]
+offset_left = 340.0
+offset_top = 74.0
+offset_right = 959.0
+offset_bottom = 643.0
+texture = ExtResource("14_4cfuf")
+expand_mode = 1
+
 [node name="NoteContainer" type="CenterContainer" parent="Player/GUI/CanvasLayer"]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-
-[node name="NoteTextRect" type="TextureRect" parent="Player/GUI/CanvasLayer/NoteContainer"]
-visible = false
-layout_mode = 2
-texture = ExtResource("10_xbnsg")
 
 [node name="CrosshairContainer" type="CenterContainer" parent="Player/GUI/CanvasLayer"]
 anchors_preset = 15
@@ -776,6 +784,48 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 21.9032, 22.6185, -12.7266)
 collision_layer = 2
 collision_mask = 0
 noteImage = ExtResource("10_xbnsg")
+
+[node name="AlbertsOfficeNote" parent="." instance=ExtResource("14_d2cap")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -37.823, 21.6716, -14.767)
+collision_layer = 2
+collision_mask = 0
+noteImage = ExtResource("23_2tlv3")
+
+[node name="GerbitsOffice" parent="." instance=ExtResource("14_d2cap")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -39.195, 22.6294, -26.3397)
+collision_layer = 2
+collision_mask = 0
+noteImage = ExtResource("23_2tlv3")
+
+[node name="GerbitsOffice2" parent="." instance=ExtResource("14_d2cap")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -37.6436, 22.6625, -26.1779)
+collision_layer = 2
+collision_mask = 0
+noteImage = ExtResource("23_2tlv3")
+
+[node name="AlbertsOfficeNote2" parent="." instance=ExtResource("14_d2cap")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -39.0912, 21.4497, -10.0384)
+collision_layer = 2
+collision_mask = 0
+noteImage = ExtResource("24_fqeep")
+
+[node name="MessHall" parent="." instance=ExtResource("14_d2cap")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.4896, 22.3873, -16.6371)
+collision_layer = 2
+collision_mask = 0
+noteImage = ExtResource("14_4cfuf")
+
+[node name="Greenhouse" parent="." instance=ExtResource("14_d2cap")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -30.891, 22.5497, -42.3201)
+collision_layer = 2
+collision_mask = 0
+noteImage = ExtResource("25_cd24b")
+
+[node name="Greenhouse2" parent="." instance=ExtResource("14_d2cap")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -27.1228, 22.5497, -42.3201)
+collision_layer = 2
+collision_mask = 0
+noteImage = ExtResource("26_msnta")
 
 [node name="landingpad" parent="." instance=ExtResource("17_mk40t")]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 22.2, 20.975, -12)
