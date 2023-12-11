@@ -32,7 +32,6 @@ func enable():
 func _process(delta):
 	
 	
-	
 	if state == IDLE:
 		return
 	
@@ -41,8 +40,8 @@ func _process(delta):
 		
 	if state == CHASE:
 		if can_see_player:
-			albert_Animation_Player.play("Walk")
-			look_at(player.position)
+			$Neck/zombiewithanimations/AnimationPlayer.play("Walk")
+			#look_at(player.position)
 			update_target_loc(player.position)
 		else:
 			pass
@@ -53,8 +52,12 @@ func _process(delta):
 func _physics_process(delta):
 		
 	$AnimationPlayer.speed_scale = SPEED/3
+	$Neck/zombiewithanimations/AnimationPlayer.speed_scale = SPEED/3
 	if state != CHASE:
 		SPEED = 3
+	else:
+		print(SPEED)
+		SPEED += 0.001
 	
 	var cur_loc = global_transform.origin
 	var next_loc = navigation_agent_3d.get_next_path_position()
@@ -76,11 +79,14 @@ func _physics_process(delta):
 		
 		#$Neck.rotation.y = lerp_angle($Neck.rotation.y,  deg_to_rad(90)-(Vector2(next_loc.x, next_loc.z).angle_to_point(Vector2(position.x, position.z))), 0.1)
 		if can_see_player:
-			$Neck.look_at(player.position)
+			$To_Neck.look_at(next_loc)
+			$Neck.rotation.y = lerp_angle($Neck.rotation.y, $To_Neck.rotation.y, 0.9 * delta)
+			
 	elif state == WANDER:
 		#var desired_rotation_y = atan2(cur_loc.y - next_loc.y, cur_loc.x - next_loc.x)
 		$To_Neck.look_at(next_loc)
 		$Neck.rotation.y = lerp_angle($Neck.rotation.y, $To_Neck.rotation.y, 0.8 * delta)
+		
 		#$Neck.rotation.y = lerp_angle($Neck.rotation.y, desired_rotation_y, 0.5 * delta)
 		#$Neck.rotation.y = desired_rotation_y
 		#print("current rot: ", $Neck.rotation.y, ". desired rot: ", desired_rotation_y)
@@ -127,7 +133,8 @@ func _on_raycast_timer_timeout():
 	var result = space_state.intersect_ray(query)
 	if result.collider == player:
 		state = CHASE
-		SPEED = 6
+		if SPEED == 3:
+			SPEED = 6
 		last_seen_player = player.position
 		can_see_player = true
 	else:

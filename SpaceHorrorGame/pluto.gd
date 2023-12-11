@@ -47,7 +47,7 @@ func _ready():
 	
 	AudioServer.set_bus_mute(1, true)
 	
-	print(AudioServer.bus_count)
+	#print(AudioServer.bus_count)
 	
 	pass # Replace with function body.
 
