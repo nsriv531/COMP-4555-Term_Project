@@ -1,9 +1,9 @@
-[gd_scene load_steps=14 format=3 uid="uid://ch1ptajvr1x6f"]
+[gd_scene load_steps=13 format=3 uid="uid://clhxwtayqevu7"]
 
 [ext_resource type="Script" path="res://Monster.gd" id="1_fpvwy"]
 [ext_resource type="AudioStream" uid="uid://xbckcfd378a1" path="res://Sounds/monsterfootstep1.ogg" id="2_68jc7"]
-[ext_resource type="PackedScene" uid="uid://ctg4hfrlwbakx" path="res://assets/zombiewithanimations.glb" id="2_twawf"]
 [ext_resource type="AudioStream" uid="uid://bamdcatr6ua53" path="res://Sounds/monsterfootstep2.ogg" id="3_v5oxi"]
+[ext_resource type="PackedScene" uid="uid://ctg4hfrlwbakx" path="res://assets/zombiewithanimations.glb" id="4_mmrv4"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_8xkb2"]
 radius = 0.4
@@ -71,17 +71,11 @@ _data = {
 "walk": SubResource("Animation_3i66e")
 }
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_ifynj"]
-size = Vector3(2.30413, 3.20926, 1.9618)
-
 [node name="Monster" type="CharacterBody3D" groups=["enemies"]]
 script = ExtResource("1_fpvwy")
 
 [node name="NavigationAgent3D" type="NavigationAgent3D" parent="."]
 radius = 0.4
-
-[node name="zombiewithanimations" parent="." instance=ExtResource("2_twawf")]
-transform = Transform3D(-1.19995, 0, 0.010472, 0, 1.2, 0, -0.010472, 0, -1.19995, 0, -0.419758, 0)
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 visible = false
@@ -131,13 +125,7 @@ libraries = {
 "": SubResource("AnimationLibrary_sdyfg")
 }
 
-[node name="Detection" type="Area3D" parent="."]
-collision_layer = 0
-collision_mask = 2
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Detection"]
-transform = Transform3D(1, -0.000349066, 0, 0.000349066, 1, 0, 0, 0, 1, 0.00229339, 0.239602, -0.279176)
-shape = SubResource("BoxShape3D_ifynj")
+[node name="zombiewithanimations" parent="." instance=ExtResource("4_mmrv4")]
 
 [connection signal="target_reached" from="NavigationAgent3D" to="." method="_on_navigation_agent_3d_target_reached"]
 [connection signal="timeout" from="RaycastTimer" to="." method="_on_raycast_timer_timeout"]
@@ -145,4 +133,3 @@ shape = SubResource("BoxShape3D_ifynj")
 [connection signal="body_exited" from="Neck/Sight" to="." method="_on_sight_body_exited"]
 [connection signal="timeout" from="Footstep" to="." method="_on_footstep_timeout"]
 [connection signal="timeout" from="IdleTimer" to="." method="_on_idle_timer_timeout"]
-[connection signal="body_entered" from="Detection" to="." method="_on_detection_body_entered"]

@@ -1,0 +1,55 @@
+[gd_scene load_steps=7 format=3 uid="uid://mpubfu8rkfjw"]
+
+[ext_resource type="PackedScene" uid="uid://d2i2leuhjimmk" path="res://assets/Room_Frames/Office_Frame.glb" id="1_nmj0a"]
+[ext_resource type="Texture2D" uid="uid://b0entxnd22a27" path="res://room_textures/Metal_scratched_009_roughness.jpg" id="2_23ove"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_lcnti"]
+size = Vector3(0.882563, 6.45858, 0.613211)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3mvxo"]
+diffuse_mode = 1
+albedo_color = Color(0.211765, 0.290196, 0.423529, 1)
+metallic = 0.5
+roughness_texture = ExtResource("2_23ove")
+roughness_texture_channel = 1
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ji8pn"]
+size = Vector3(8.02894, 0.23588, 8.03182)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_m68i6"]
+size = Vector3(8.02933, 0.30048, 8.0004)
+
+[node name="Office_Frame" instance=ExtResource("1_nmj0a")]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Room_Base_Frame_6x6" index="0"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Room_Base_Frame_6x6/StaticBody3D" index="0"]
+transform = Transform3D(0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, -3.5, 3, -3.5)
+shape = SubResource("BoxShape3D_lcnti")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="Room_Base_Frame_6x6/StaticBody3D" index="1"]
+transform = Transform3D(-0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, -0.707107, -3.5, 3, 3.5)
+shape = SubResource("BoxShape3D_lcnti")
+
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="Room_Base_Frame_6x6/StaticBody3D" index="2"]
+transform = Transform3D(0.707107, 0, -0.707107, 0, 1, 0, 0.707107, 0, 0.707107, 3.5, 3, -3.5)
+shape = SubResource("BoxShape3D_lcnti")
+
+[node name="CollisionShape3D4" type="CollisionShape3D" parent="Room_Base_Frame_6x6/StaticBody3D" index="3"]
+transform = Transform3D(0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, 3.5, 3, 3.5)
+shape = SubResource("BoxShape3D_lcnti")
+
+[node name="Room_Base_Frame_Inside" parent="." index="1"]
+material_override = SubResource("StandardMaterial3D_3mvxo")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Office_Floor_Middle" index="0"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Office_Floor_Middle/StaticBody3D" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.11397, 0)
+shape = SubResource("BoxShape3D_ji8pn")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Office_Ceiling" index="0"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Office_Ceiling/StaticBody3D" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.90746, 0)
+shape = SubResource("BoxShape3D_m68i6")
