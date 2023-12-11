@@ -1,19 +1,34 @@
-[gd_scene load_steps=5 format=3 uid="uid://d3sqeqsuqbfm5"]
+[gd_scene load_steps=8 format=3 uid="uid://d3sqeqsuqbfm5"]
 
 [ext_resource type="PackedScene" uid="uid://hqqfc2mlsx81" path="res://assets/Walls/New Small/small_window.glb" id="1_3qgoj"]
+[ext_resource type="Material" uid="uid://dsevd2g5vx6d7" path="res://room_textures/Base_Exterior_Color.tres" id="2_l0lt5"]
 [ext_resource type="Material" uid="uid://nvs1pw5jy4sd" path="res://room_textures/glass_texture_exterior.tres" id="2_qfd3m"]
+[ext_resource type="Material" uid="uid://b76x3kohpc77b" path="res://room_textures/Wall1_texture.tres" id="3_6y3pk"]
 [ext_resource type="Material" uid="uid://ctihvcbbldelq" path="res://room_textures/glass_texture_interior.tres" id="3_ru687"]
+[ext_resource type="Material" uid="uid://dsgg0p7hok6l1" path="res://room_textures/Wall_Pillar_Texture.tres" id="5_np5wc"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_rn4ai"]
 size = Vector3(6.10584, 6.30831, 0.462662)
 
 [node name="small_window" instance=ExtResource("1_3qgoj")]
 
+[node name="Window_Wall" parent="." index="0"]
+material_override = ExtResource("2_l0lt5")
+
+[node name="Window Frame" parent="." index="1"]
+material_override = ExtResource("3_6y3pk")
+
 [node name="Window_Exterior" parent="." index="2"]
 material_override = ExtResource("2_qfd3m")
 
+[node name="Small_Interior_Panel" parent="." index="3"]
+material_override = ExtResource("5_np5wc")
+
 [node name="Window_Interior" parent="." index="4"]
 material_override = ExtResource("3_ru687")
+
+[node name="Small_Interior_3" parent="." index="5"]
+material_override = ExtResource("5_np5wc")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="." index="6"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.1)

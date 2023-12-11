@@ -1,11 +1,13 @@
-[gd_scene load_steps=8 format=3 uid="uid://cqimnymmoxpwh"]
+[gd_scene load_steps=10 format=3 uid="uid://cqimnymmoxpwh"]
 
 [ext_resource type="PackedScene" uid="uid://drm30reyv7bh0" path="res://assets/Room_Frames/Storage_Bay_Frame.gltf" id="1_cfh7c"]
+[ext_resource type="Material" uid="uid://bv88wybfq6fgq" path="res://room_textures/Interior_Wall_Pillar_Textures/ceiling_details_texture.tres" id="2_30i7a"]
 [ext_resource type="Material" uid="uid://dsevd2g5vx6d7" path="res://room_textures/Base_Exterior_Color.tres" id="2_mr7wk"]
+[ext_resource type="Material" uid="uid://cve246qthvu31" path="res://room_textures/flooring_3/flooring_texture_3.tres" id="3_h7xpi"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_m68eb"]
 emission_enabled = true
-emission = Color(0.337255, 0.337255, 0.337255, 1)
+emission = Color(0.737255, 0.737255, 0.737255, 1)
 emission_energy_multiplier = 1.5
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_h7cwh"]
@@ -26,11 +28,20 @@ emission = Color(0.266667, 0.568627, 0.615686, 1)
 [node name="Storage_Ceiling_Lights" parent="." index="0"]
 surface_material_override/0 = SubResource("StandardMaterial3D_m68eb")
 
+[node name="Storage_Ceiling_Edge" parent="." index="1"]
+material_override = ExtResource("2_30i7a")
+
+[node name="Storage_Ceiling" parent="." index="2"]
+material_override = ExtResource("2_30i7a")
+
 [node name="StaticBody3D" type="StaticBody3D" parent="Storage_Ceiling" index="0"]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Storage_Ceiling/StaticBody3D" index="0"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.90746, 0)
 shape = SubResource("BoxShape3D_h7cwh")
+
+[node name="Storage_Frame_Inside" parent="." index="3"]
+material_override = ExtResource("2_mr7wk")
 
 [node name="Storage_Frame" parent="." index="4"]
 material_override = ExtResource("2_mr7wk")
@@ -52,6 +63,12 @@ shape = SubResource("BoxShape3D_6lhv2")
 [node name="CollisionShape3D4" type="CollisionShape3D" parent="Storage_Frame/StaticBody3D" index="3"]
 transform = Transform3D(0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, -3.5, 3, -8.5)
 shape = SubResource("BoxShape3D_6lhv2")
+
+[node name="Storage_Floor_Middle" parent="." index="5"]
+material_override = ExtResource("3_h7xpi")
+
+[node name="Storage_Floor" parent="." index="6"]
+material_override = ExtResource("3_h7xpi")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Storage_Floor" index="0"]
 

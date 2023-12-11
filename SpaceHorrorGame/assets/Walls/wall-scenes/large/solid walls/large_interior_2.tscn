@@ -1,7 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://253134ladtjv"]
+[gd_scene load_steps=6 format=3 uid="uid://253134ladtjv"]
 
 [ext_resource type="PackedScene" uid="uid://y7hx8qn0du2f" path="res://assets/Walls/New Large/solid/large_interior_2.glb" id="1_hqqnd"]
 [ext_resource type="Material" uid="uid://dsevd2g5vx6d7" path="res://room_textures/Base_Exterior_Color.tres" id="2_fuatu"]
+[ext_resource type="Material" uid="uid://dsgg0p7hok6l1" path="res://room_textures/Wall_Pillar_Texture.tres" id="3_03ach"]
+[ext_resource type="Material" uid="uid://c1inpwfcak3ro" path="res://room_textures/wall_4_long/wall_4_long_2.tres" id="4_ui0tu"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_va6jr"]
 size = Vector3(16.0745, 0.425288, 6.09403)
@@ -16,3 +18,9 @@ material_override = ExtResource("2_fuatu")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Wall_Exterior/StaticBody3D" index="0"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.2, -3)
 shape = SubResource("BoxShape3D_va6jr")
+
+[node name="Large_Wall_Interior_Whole" parent="." index="1"]
+material_override = ExtResource("3_03ach")
+
+[node name="Wall_Interior" parent="." index="2"]
+material_override = ExtResource("4_ui0tu")

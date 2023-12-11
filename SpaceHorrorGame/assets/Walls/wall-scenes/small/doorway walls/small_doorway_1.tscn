@@ -1,6 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://bhisunddd7aex"]
+[gd_scene load_steps=7 format=3 uid="uid://bhisunddd7aex"]
 
 [ext_resource type="PackedScene" uid="uid://diql4vlvv10u1" path="res://assets/Walls/New Small/doorways/small_doorway_1.glb" id="1_y27s2"]
+[ext_resource type="Material" uid="uid://dsevd2g5vx6d7" path="res://room_textures/Base_Exterior_Color.tres" id="2_80byv"]
+[ext_resource type="Material" uid="uid://c1inpwfcak3ro" path="res://room_textures/wall_4_long/wall_4_long_2.tres" id="3_wgweg"]
+[ext_resource type="Material" uid="uid://ryn1m5owhe4w" path="res://room_textures/Kitchen_Counter_Texture.tres" id="4_3jfpo"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_cs4mb"]
 size = Vector3(2.03625, 6.11409, 0.413814)
@@ -9,6 +12,18 @@ size = Vector3(2.03625, 6.11409, 0.413814)
 size = Vector3(1.9892, 3.10069, 0.413814)
 
 [node name="small_doorway_1" instance=ExtResource("1_y27s2")]
+
+[node name="Door_Frame" parent="." index="0"]
+material_override = ExtResource("2_80byv")
+
+[node name="Door_Wall_Interior" parent="." index="2"]
+material_override = ExtResource("3_wgweg")
+
+[node name="Doorway_Interior" parent="." index="3"]
+material_override = ExtResource("4_3jfpo")
+
+[node name="Small_Interior" parent="." index="4"]
+material_override = ExtResource("4_3jfpo")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="." index="5"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, 0.22)

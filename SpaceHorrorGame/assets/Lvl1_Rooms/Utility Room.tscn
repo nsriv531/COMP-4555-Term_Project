@@ -1,16 +1,11 @@
 [gd_scene load_steps=5 format=3 uid="uid://dq5ynvv34dves"]
 
-[ext_resource type="PackedScene" uid="uid://bs6xxjc8jih2k" path="res://assets/Walls/wall-scenes/small/doorway walls/small_doorway_2.tscn" id="2_2uf1u"]
 [ext_resource type="PackedScene" uid="uid://b6wvpl5y8cj6e" path="res://assets/Walls/wall-scenes/small/solid walls/small_interior_1.tscn" id="3_04ssq"]
-[ext_resource type="PackedScene" uid="uid://cpwd2wp1munaw" path="res://assets/Walls/wall-scenes/small/solid walls/small_interior_2.tscn" id="4_ofc0o"]
-[ext_resource type="PackedScene" uid="uid://4nrsukin7g22" path="res://assets/Room_Frames/frame-scenes/utility_room_frame.tscn" id="4_vp47p"]
+[ext_resource type="PackedScene" uid="uid://cb0rk7t43bud5" path="res://assets/Walls/wall-scenes/small/solid walls/small_interior_2_v2.tscn" id="4_7cr06"]
+[ext_resource type="PackedScene" uid="uid://btm45afb6l8be" path="res://assets/Walls/wall-scenes/small/doorway walls/small_doorway_2_v2.tscn" id="4_k0ilw"]
+[ext_resource type="PackedScene" uid="uid://bw2fxw4cjinah" path="res://assets/Room_Frames/frame-scenes/utility_room_frame_new.tscn" id="4_xfws2"]
 
 [node name="Utility Room" type="Node3D" groups=["navigation_mesh_source_group"]]
-
-[node name="Utility_Room_Frame" parent="." instance=ExtResource("4_vp47p")]
-
-[node name="small_doorway_2" parent="." instance=ExtResource("2_2uf1u")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -4)
 
 [node name="small_interior_1" parent="." instance=ExtResource("3_04ssq")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 4, 0, 0)
@@ -18,5 +13,10 @@ transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 4, 0, 
 [node name="small_interior_2" parent="." instance=ExtResource("3_04ssq")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -4, 0, 0)
 
-[node name="small_interior_3" parent="." instance=ExtResource("4_ofc0o")]
+[node name="small_interior_3" parent="." instance=ExtResource("4_7cr06")]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, 4)
+
+[node name="small_doorway_3" parent="." instance=ExtResource("4_k0ilw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -4)
+
+[node name="Utility_Room_Frame" parent="." instance=ExtResource("4_xfws2")]

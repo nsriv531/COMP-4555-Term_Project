@@ -1,11 +1,29 @@
-[gd_scene load_steps=3 format=3 uid="uid://ci128r2d5536j"]
+[gd_scene load_steps=6 format=3 uid="uid://ci128r2d5536j"]
 
 [ext_resource type="PackedScene" uid="uid://bit0hnpgaimwf" path="res://assets/Walls/New Large/misc/cafeteria_wall.glb" id="1_c74qv"]
+[ext_resource type="Material" uid="uid://dsgg0p7hok6l1" path="res://room_textures/Wall_Pillar_Texture.tres" id="2_ts5mj"]
+[ext_resource type="Material" uid="uid://ryn1m5owhe4w" path="res://room_textures/Kitchen_Counter_Texture.tres" id="2_vgiub"]
+[ext_resource type="Material" uid="uid://b4i5uthrs3qyl" path="res://room_textures/wall_4_long/wall_4_long.tres" id="3_frhqb"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_yeyk1"]
 size = Vector3(10.067, 6.14624, 0.724075)
 
 [node name="cafeteria_wall" instance=ExtResource("1_c74qv")]
+
+[node name="Doorway_Interior_Bot" parent="." index="0"]
+material_override = ExtResource("2_ts5mj")
+
+[node name="Doorway_Interior_Top" parent="." index="1"]
+material_override = ExtResource("2_ts5mj")
+
+[node name="Kitchen_Counter" parent="." index="2"]
+material_override = ExtResource("2_vgiub")
+
+[node name="Kitchen_Counter_Top" parent="." index="3"]
+material_override = ExtResource("2_vgiub")
+
+[node name="Door_Wall" parent="." index="4"]
+material_override = ExtResource("3_frhqb")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="." index="5"]
 
