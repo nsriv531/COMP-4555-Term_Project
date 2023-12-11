@@ -1,4 +1,4 @@
-[gd_scene load_steps=115 format=3 uid="uid://1csibo7xkgx1"]
+[gd_scene load_steps=121 format=3 uid="uid://1csibo7xkgx1"]
 
 [ext_resource type="Script" path="res://addons/zylann.hterrain/hterrain.gd" id="1_ilc75"]
 [ext_resource type="Shader" path="res://Scripts/CameraEffects.gdshader" id="1_m1fa5"]
@@ -26,10 +26,16 @@
 [ext_resource type="PackedScene" uid="uid://7nb1ucn8kuy1" path="res://models/landingpad.gltf" id="17_mk40t"]
 [ext_resource type="Script" path="res://ButtonSystem.gd" id="18_ay6ee"]
 [ext_resource type="Script" path="res://button.gd" id="19_8r8ar"]
+[ext_resource type="Texture2D" uid="uid://dwq0fnmojaxpu" path="res://assets/note2.PNG" id="23_2rl67"]
 [ext_resource type="PackedScene" uid="uid://dw5r0u10smu5b" path="res://assets/Lvl1_Rooms/Cafeteria.tscn" id="23_p3srr"]
+[ext_resource type="Texture2D" uid="uid://cps716mb3khit" path="res://assets/note3.1.PNG" id="24_hs50l"]
+[ext_resource type="Texture2D" uid="uid://81ekyhsea2i5" path="res://(Gerrit office)EMAIL_NOTE_letmestay1.png" id="25_8lsh4"]
+[ext_resource type="Texture2D" uid="uid://cp7pewgw52tkb" path="res://(Gerrit Office) EMAIL_NOTE_letmestay3.png" id="26_6sex7"]
 [ext_resource type="Script" path="res://AirLockInnerArea.gd" id="26_wyfa4"]
+[ext_resource type="Texture2D" uid="uid://n57yiclhi1ar" path="res://(Albert's office) EMAIL_NOTE_EXODUS.png" id="27_kelyw"]
 [ext_resource type="AudioStream" uid="uid://b1tprvlueafqk" path="res://Sounds/Air.ogg" id="27_mqdwd"]
 [ext_resource type="PackedScene" uid="uid://c7sm4dsareqas" path="res://assets/Doors/door-scenes/exterior_door.tscn" id="28_8mmej"]
+[ext_resource type="Texture2D" uid="uid://615wrkl0webl" path="res://(Albert's Office) CLASSIFIED DEBRIEF.png" id="28_pl5sh"]
 [ext_resource type="PackedScene" uid="uid://bg1icxgy6k4uu" path="res://door_region.tscn" id="28_t17bd"]
 [ext_resource type="PackedScene" uid="uid://dq5ynvv34dves" path="res://assets/Lvl1_Rooms/Utility Room.tscn" id="29_g0id7"]
 [ext_resource type="Script" path="res://Scripts/Door.gd" id="29_iicju"]
@@ -790,10 +796,52 @@ collision_mask = 0
 noteImage = ExtResource("14_q5uce")
 
 [node name="SleepingQuartersNote" parent="." instance=ExtResource("14_d2cap")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18.5308, 21.4977, -3.44933)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -22.9609, 21.4934, -2.65634)
 collision_layer = 2
 collision_mask = 0
-noteImage = ExtResource("14_q5uce")
+noteImage = ExtResource("23_2rl67")
+
+[node name="GreenhouseNote" parent="." instance=ExtResource("14_d2cap")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -21.7692, 21.4712, -40.1572)
+collision_layer = 2
+collision_mask = 0
+noteImage = ExtResource("23_2rl67")
+
+[node name="GreenhouseNote2" parent="." instance=ExtResource("14_d2cap")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -26.7873, 21.4081, -40.1572)
+collision_layer = 2
+collision_mask = 0
+noteImage = ExtResource("24_hs50l")
+
+[node name="GeritNote1" parent="." instance=ExtResource("14_d2cap")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -39.0294, 21.4415, -27.8897)
+collision_layer = 2
+collision_mask = 0
+noteImage = ExtResource("25_8lsh4")
+
+[node name="GeritNote2" parent="." instance=ExtResource("14_d2cap")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -37.0543, 21.422, -27.8897)
+collision_layer = 2
+collision_mask = 0
+noteImage = ExtResource("25_8lsh4")
+
+[node name="GeritNote3" parent="." instance=ExtResource("14_d2cap")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -37.0543, 21.422, -30.4304)
+collision_layer = 2
+collision_mask = 0
+noteImage = ExtResource("26_6sex7")
+
+[node name="AlbertOffice1" parent="." instance=ExtResource("14_d2cap")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -37.0543, 21.4465, -13.1754)
+collision_layer = 2
+collision_mask = 0
+noteImage = ExtResource("27_kelyw")
+
+[node name="AlbertOffice2" parent="." instance=ExtResource("14_d2cap")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -39.6943, 21.4465, -10.0711)
+collision_layer = 2
+collision_mask = 0
+noteImage = ExtResource("28_pl5sh")
 
 [node name="landingpad" parent="." instance=ExtResource("17_mk40t")]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 22.2, 20.975, -12)
