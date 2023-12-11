@@ -1,12 +1,10 @@
-[gd_scene load_steps=13 format=3 uid="uid://cddflpc4w4qru"]
+[gd_scene load_steps=11 format=3 uid="uid://cddflpc4w4qru"]
 
 [ext_resource type="PackedScene" uid="uid://dy5qjxhwqjh4f" path="res://assets/Doors/large_door.gltf" id="1_12hx2"]
 [ext_resource type="Script" path="res://Scripts/Door.gd" id="2_06ct6"]
-[ext_resource type="Material" uid="uid://bv88wybfq6fgq" path="res://room_textures/Interior_Wall_Pillar_Textures/ceiling_details_texture.tres" id="2_18g8v"]
-[ext_resource type="Material" uid="uid://ryn1m5owhe4w" path="res://room_textures/Kitchen_Counter_Texture.tres" id="3_csp8b"]
+[ext_resource type="Material" uid="uid://bv88wybfq6fgq" path="res://room_textures/ceiling_base_texture.tres" id="2_18g8v"]
 [ext_resource type="AudioStream" uid="uid://kcc3a1axggf" path="res://Sounds/DoorClose.ogg" id="3_lrrem"]
 [ext_resource type="AudioStream" uid="uid://dhtasf25ubx13" path="res://Sounds/DoorOpen.ogg" id="4_cl4fv"]
-[ext_resource type="Material" uid="uid://c312lvpbj5eum" path="res://room_textures/Ceiling_Edge_Texture.tres" id="4_ngajm"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_jf2lw"]
 size = Vector3(6.03789, 0.261963, 1.95422)
@@ -35,8 +33,7 @@ transform = Transform3D(1, -2.98023e-08, 8.71583e-08, 5.30761e-08, -1.34359e-07,
 bone_idx = 1
 
 [node name="Upper_Panel" parent="Large_Door_Rig/Skeleton3D/Upper_Panel" index="0"]
-material_override = ExtResource("3_csp8b")
-surface_material_override/0 = ExtResource("4_ngajm")
+surface_material_override/0 = ExtResource("2_18g8v")
 
 [node name="Upper" type="StaticBody3D" parent="Large_Door_Rig/Skeleton3D/Upper_Panel/Upper_Panel" index="0"]
 transform = Transform3D(1, 0, -3.43345e-15, 0, 1, 1.42109e-14, 1.74675e-15, 0, 1, 8.71583e-08, -1.11759e-07, -1)
@@ -50,7 +47,6 @@ transform = Transform3D(1, 9.29922e-08, 3.71972e-09, -1.27276e-07, 8.9407e-08, -
 bone_idx = 3
 
 [node name="Bottom_Panel_L" parent="Large_Door_Rig/Skeleton3D/Bottom_Panel_L" index="0"]
-material_override = ExtResource("3_csp8b")
 surface_material_override/0 = ExtResource("2_18g8v")
 
 [node name="Bottom_Left" type="StaticBody3D" parent="Large_Door_Rig/Skeleton3D/Bottom_Panel_L/Bottom_Panel_L" index="0"]
@@ -65,7 +61,6 @@ transform = Transform3D(-1, 1.34359e-07, 0, 0, 7.35137e-08, -1, -1.34359e-07, -1
 bone_idx = 5
 
 [node name="Bottom_Panel_R" parent="Large_Door_Rig/Skeleton3D/Bottom_Panel_R" index="0"]
-material_override = ExtResource("3_csp8b")
 surface_material_override/0 = ExtResource("2_18g8v")
 
 [node name="Bottom_Right" type="StaticBody3D" parent="Large_Door_Rig/Skeleton3D/Bottom_Panel_R/Bottom_Panel_R" index="0"]

@@ -13,13 +13,13 @@ transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -9, 0,
 [node name="small_doorway_2" parent="." instance=ExtResource("2_75yvt")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -9, 0, 5)
 
-[node name="Dorm_Frame" parent="." instance=ExtResource("4_y0w38")]
+[node name="large_doorway_1" parent="." instance=ExtResource("3_gorhx")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 9, 0, 0)
+
+[node name="large_interior_1" parent="." instance=ExtResource("4_ecgoq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -9)
 
 [node name="large_interior_2" parent="." instance=ExtResource("4_ecgoq")]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, 9)
 
-[node name="large_interior_3" parent="." instance=ExtResource("4_ecgoq")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -9)
-
-[node name="large_doorway_2" parent="." instance=ExtResource("3_gorhx")]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 9, 0, 0)
+[node name="Dorm_Frame" parent="." instance=ExtResource("4_y0w38")]

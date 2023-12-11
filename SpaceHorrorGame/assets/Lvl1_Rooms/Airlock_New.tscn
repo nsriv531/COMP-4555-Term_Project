@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=3 uid="uid://rxm824u5tj3t"]
+[gd_scene load_steps=27 format=3 uid="uid://rxm824u5tj3t"]
 
 [ext_resource type="PackedScene" uid="uid://m8wq4m3ivh3e" path="res://assets/Room_Frames/airlock.glb" id="1_q4te4"]
 [ext_resource type="Script" path="res://assets/Lvl1_Rooms/LvL1_Room_Scripts/Airlock.gd" id="2_k6gkh"]
@@ -9,7 +9,6 @@
 [ext_resource type="Material" uid="uid://c312lvpbj5eum" path="res://room_textures/Ceiling_Edge_Texture.tres" id="5_wyp87"]
 [ext_resource type="Texture2D" uid="uid://b0entxnd22a27" path="res://room_textures/Metal_scratched_009_roughness.jpg" id="5_y04nw"]
 [ext_resource type="Material" uid="uid://dsgg0p7hok6l1" path="res://room_textures/Wall_Pillar_Texture.tres" id="6_2hp4g"]
-[ext_resource type="Material" uid="uid://cve246qthvu31" path="res://room_textures/flooring_3/flooring_texture_3.tres" id="7_f7w24"]
 [ext_resource type="Material" uid="uid://c1inpwfcak3ro" path="res://room_textures/wall_4_long/wall_4_long_2.tres" id="7_mh4q0"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jhpvj"]
@@ -22,6 +21,11 @@ roughness_texture_channel = 1
 albedo_color = Color(0.509804, 0.509804, 0.509804, 1)
 metallic = 0.2
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_87juc"]
+albedo_color = Color(0.627451, 0.627451, 0.627451, 1)
+metallic = 0.4
+roughness = 0.3
+
 [sub_resource type="BoxShape3D" id="BoxShape3D_3tf8x"]
 size = Vector3(0.882563, 6.45858, 0.613211)
 
@@ -31,6 +35,11 @@ size = Vector3(14.0851, 0.30048, 8.04946)
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_l7d01"]
 emission_enabled = true
 emission = Color(0.733333, 0.733333, 0.733333, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_mvfke"]
+albedo_color = Color(0.639216, 0.639216, 0.639216, 1)
+metallic = 0.25
+roughness = 0.8
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_ut2md"]
 size = Vector3(14.3153, 0.216982, 8.04239)
@@ -62,6 +71,9 @@ size = Vector3(1.99905, 0.414425, 6.62961)
 emission_enabled = true
 emission = Color(0.631373, 0, 0, 1)
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7bgyf"]
+albedo_color = Color(0.215686, 0.215686, 0.215686, 1)
+
 [node name="airlock" instance=ExtResource("1_q4te4")]
 script = ExtResource("2_k6gkh")
 
@@ -78,7 +90,7 @@ material_override = SubResource("StandardMaterial3D_8uvya")
 material_override = ExtResource("2_mcbgw")
 
 [node name="Airlock_Base_Frame_Inside" parent="." index="4"]
-material_override = ExtResource("2_mcbgw")
+material_override = SubResource("StandardMaterial3D_87juc")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Airlock_Base_Frame_Inside" index="0"]
 
@@ -114,7 +126,7 @@ material_override = SubResource("StandardMaterial3D_l7d01")
 material_override = ExtResource("6_2hp4g")
 
 [node name="Floor" parent="." index="8"]
-material_override = ExtResource("7_f7w24")
+material_override = SubResource("StandardMaterial3D_mvfke")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Floor" index="0"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0228026, 0)
@@ -177,4 +189,4 @@ material_override = SubResource("StandardMaterial3D_8wpjb")
 material_override = ExtResource("7_mh4q0")
 
 [node name="Door_Frame" parent="." index="18"]
-material_override = ExtResource("2_mcbgw")
+material_override = SubResource("StandardMaterial3D_7bgyf")

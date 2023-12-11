@@ -47,7 +47,7 @@
 [ext_resource type="PackedScene" uid="uid://ce31ok7avs5ak" path="res://assets/Lvl1_Rooms/Albert's Office.tscn" id="40_ow1vi"]
 [ext_resource type="PackedScene" uid="uid://cpar6kh7l6mh" path="res://assets/Lvl1_Rooms/Greenhouse.tscn" id="41_wkckt"]
 [ext_resource type="PackedScene" uid="uid://cirokgp12pga2" path="res://bottle.tscn" id="45_jsbm1"]
-[ext_resource type="PackedScene" path="res://monster.tscn" id="50_6ygo7"]
+[ext_resource type="PackedScene" uid="uid://ch1ptajvr1x6f" path="res://monster.tscn" id="50_6ygo7"]
 [ext_resource type="PackedScene" uid="uid://bi405ccd65ywc" path="res://assets/Props/Prop_Scenes/keycard.tscn" id="51_bfha1"]
 [ext_resource type="Script" path="res://Scripts/keycard.gd" id="52_7un7g"]
 

@@ -1,29 +1,15 @@
-[gd_scene load_steps=6 format=3 uid="uid://dy3uf0rj8pvc8"]
+[gd_scene load_steps=4 format=3 uid="uid://dy3uf0rj8pvc8"]
 
 [ext_resource type="PackedScene" uid="uid://d1otm4upin1fe" path="res://assets/Walls/New Large/solid/large_interior_1.glb" id="1_q41ke"]
 [ext_resource type="Material" uid="uid://dsevd2g5vx6d7" path="res://room_textures/Base_Exterior_Color.tres" id="2_eef21"]
-[ext_resource type="Material" uid="uid://ryn1m5owhe4w" path="res://room_textures/Kitchen_Counter_Texture.tres" id="2_fy6v3"]
-[ext_resource type="Material" uid="uid://c1inpwfcak3ro" path="res://room_textures/wall_4_long/wall_4_long_2.tres" id="4_4rc1u"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_va6jr"]
 size = Vector3(16.0745, 0.425288, 6.09403)
 
 [node name="large_interior_1" instance=ExtResource("1_q41ke")]
 
-[node name="Middle_Interior_Panel" parent="." index="0"]
-material_override = ExtResource("2_fy6v3")
-
-[node name="Large_Wall_Interior" parent="." index="1"]
-material_override = ExtResource("2_fy6v3")
-
 [node name="Wall_Exterior" parent="." index="2"]
 material_override = ExtResource("2_eef21")
-
-[node name="Wall_Pillars" parent="." index="3"]
-material_override = ExtResource("2_fy6v3")
-
-[node name="Wall_Interior" parent="." index="4"]
-material_override = ExtResource("4_4rc1u")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Wall_Interior" index="0"]
 
