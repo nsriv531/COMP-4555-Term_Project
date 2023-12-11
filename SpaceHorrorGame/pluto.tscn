@@ -1,8 +1,6 @@
-<<<<<<< Updated upstream
+
 [gd_scene load_steps=121 format=3 uid="uid://1csibo7xkgx1"]
-=======
-[gd_scene load_steps=116 format=3 uid="uid://1csibo7xkgx1"]
->>>>>>> Stashed changes
+
 
 [ext_resource type="Script" path="res://addons/zylann.hterrain/hterrain.gd" id="1_ilc75"]
 [ext_resource type="Shader" path="res://Scripts/CameraEffects.gdshader" id="1_m1fa5"]
@@ -30,11 +28,9 @@
 [ext_resource type="PackedScene" uid="uid://7nb1ucn8kuy1" path="res://models/landingpad.gltf" id="17_mk40t"]
 [ext_resource type="Script" path="res://ButtonSystem.gd" id="18_ay6ee"]
 [ext_resource type="Script" path="res://button.gd" id="19_8r8ar"]
-<<<<<<< Updated upstream
 [ext_resource type="Texture2D" uid="uid://dwq0fnmojaxpu" path="res://assets/note2.PNG" id="23_2rl67"]
-=======
+
 [ext_resource type="AudioStream" uid="uid://dxpnuoplcnfbr" path="res://jumpscare.ogg" id="20_wvj0g"]
->>>>>>> Stashed changes
 [ext_resource type="PackedScene" uid="uid://dw5r0u10smu5b" path="res://assets/Lvl1_Rooms/Cafeteria.tscn" id="23_p3srr"]
 [ext_resource type="Texture2D" uid="uid://cps716mb3khit" path="res://assets/note3.1.PNG" id="24_hs50l"]
 [ext_resource type="Texture2D" uid="uid://81ekyhsea2i5" path="res://(Gerrit office)EMAIL_NOTE_letmestay1.png" id="25_8lsh4"]
