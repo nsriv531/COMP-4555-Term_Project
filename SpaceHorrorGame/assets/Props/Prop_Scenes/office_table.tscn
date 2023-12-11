@@ -1,5 +1,14 @@
-[gd_scene load_steps=2 format=3 uid="uid://ilqkbsojq3fu"]
+[gd_scene load_steps=3 format=3 uid="uid://ilqkbsojq3fu"]
 
 [ext_resource type="PackedScene" uid="uid://bftwc6q1uma5h" path="res://assets/Props/Props_glb/officetable.glb" id="1_xw0jc"]
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_4lj80"]
+size = Vector3(0.931589, 0.657267, 0.616295)
+
 [node name="officetable" instance=ExtResource("1_xw0jc")]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." index="3"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.304951, -0.0111581)
+shape = SubResource("BoxShape3D_4lj80")

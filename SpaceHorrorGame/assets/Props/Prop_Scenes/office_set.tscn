@@ -1,0 +1,16 @@
+[gd_scene load_steps=4 format=3 uid="uid://icwjhm03c461"]
+
+[ext_resource type="PackedScene" uid="uid://ckbtp03mqq51o" path="res://assets/Props/Prop_Scenes/office_chair.tscn" id="1_167pl"]
+[ext_resource type="PackedScene" uid="uid://ilqkbsojq3fu" path="res://assets/Props/Prop_Scenes/office_table.tscn" id="2_6778y"]
+[ext_resource type="PackedScene" uid="uid://bgdttirclncm2" path="res://assets/Props/Prop_Scenes/computer_prop.tscn" id="3_510l8"]
+
+[node name="office_set" type="Node3D"]
+
+[node name="office_chair" parent="." instance=ExtResource("1_167pl")]
+transform = Transform3D(-0.577891, 0, 0.55321, 0, 0.8, 0, -0.55321, 0, -0.577891, -0.339965, 0, 1.23046)
+
+[node name="officetable" parent="." instance=ExtResource("2_6778y")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
+
+[node name="sci_-_fi_computer_game_ready" parent="." instance=ExtResource("3_510l8")]
+transform = Transform3D(0.15, 0, 0, 0, 0.15, 0, 0, 0, 0.15, 0, 1.19702, 0.0640185)

@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://bxme0mjbdbm7n"]
+[gd_scene load_steps=7 format=3 uid="uid://bxme0mjbdbm7n"]
 
 [ext_resource type="PackedScene" uid="uid://bs6xxjc8jih2k" path="res://assets/Walls/wall-scenes/small/doorway walls/small_doorway_2.tscn" id="4_12pia"]
 [ext_resource type="PackedScene" uid="uid://o1fua3lo1fif" path="res://assets/Walls/wall-scenes/large/misc walls/workshop_wall_new.tscn" id="5_b41fo"]
 [ext_resource type="PackedScene" uid="uid://bwjoqux0jmvwq" path="res://assets/Walls/wall-scenes/large/misc walls/workshop_doorway_new.tscn" id="5_q7ctf"]
 [ext_resource type="PackedScene" uid="uid://d3sqeqsuqbfm5" path="res://assets/Walls/wall-scenes/small/small_window.tscn" id="5_s3yh6"]
 [ext_resource type="PackedScene" uid="uid://ba6mps8qy3hwh" path="res://assets/Room_Frames/frame-scenes/workshop_frame_new.tscn" id="5_yvu80"]
+[ext_resource type="PackedScene" uid="uid://icwjhm03c461" path="res://assets/Props/Prop_Scenes/office_set.tscn" id="6_kn1f6"]
 
 [node name="Workshop" type="Node3D" groups=["navigation_mesh_source_group"]]
 
@@ -30,3 +31,6 @@ transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -9, 0,
 
 [node name="small_window2" parent="." instance=ExtResource("5_s3yh6")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 0, -9)
+
+[node name="office_set" parent="." instance=ExtResource("6_kn1f6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0, -1.15464)

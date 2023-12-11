@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://bvmydm7o77js5"]
+[gd_scene load_steps=6 format=3 uid="uid://bvmydm7o77js5"]
 
 [ext_resource type="PackedScene" uid="uid://cqimnymmoxpwh" path="res://assets/Room_Frames/frame-scenes/storage_bay_frame.tscn" id="1_e4ljx"]
 [ext_resource type="PackedScene" uid="uid://253134ladtjv" path="res://assets/Walls/wall-scenes/large/solid walls/large_interior_2.tscn" id="3_ockb7"]
 [ext_resource type="PackedScene" uid="uid://culf0emr3jjql" path="res://assets/Walls/wall-scenes/small/doorway walls/small_doorway_2_v2.tscn" id="4_4d462"]
 [ext_resource type="PackedScene" uid="uid://coiiq38j3d1nk" path="res://assets/Walls/wall-scenes/small/small_window_v2.tscn" id="4_kegsi"]
+[ext_resource type="PackedScene" uid="uid://c0txevehmjvks" path="res://assets/Props/Prop_Scenes/sci_fi_crate.tscn" id="5_a3ym6"]
 
 [node name="Storage_Bay" type="Node3D" groups=["navigation_mesh_source_group"]]
 
@@ -20,3 +21,38 @@ transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 0, 0, 
 
 [node name="small_window" parent="." instance=ExtResource("4_kegsi")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -9)
+
+[node name="crates" type="Node3D" parent="."]
+
+[node name="Sci-fi Crate" parent="crates" instance=ExtResource("5_a3ym6")]
+transform = Transform3D(1.69606, 0, -1.0599, 0, 2, 0, 1.0599, 0, 1.69606, 1.299, 0, -6.19188)
+
+[node name="Sci-fi Crate2" parent="crates" instance=ExtResource("5_a3ym6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.29897, 2, -6)
+
+[node name="Sci-fi Crate3" parent="crates" instance=ExtResource("5_a3ym6")]
+transform = Transform3D(2.61158, 0, -0.723715, 0, 2.71, 0, 0.723715, 0, 2.61158, -1.31062, 0, -1.06985)
+
+[node name="Sci-fi Crate4" parent="crates" instance=ExtResource("5_a3ym6")]
+transform = Transform3D(0.960808, 0, 0.277214, 0, 1, 0, -0.277214, 0, 0.960808, 2.8797, 0, 2.73608)
+
+[node name="Sci-fi Crate" parent="crates/Sci-fi Crate4" instance=ExtResource("5_a3ym6")]
+transform = Transform3D(0.827689, 0, -0.561188, 0, 1, 0, 0.561188, 0, 0.827689, 0, 0.982734, 0)
+
+[node name="Sci-fi Crate2" parent="crates/Sci-fi Crate4" instance=ExtResource("5_a3ym6")]
+transform = Transform3D(0.969137, 0, 0.246526, 0, 1, 0, -0.246526, 0, 0.969137, 0, 1.97989, 0)
+
+[node name="Sci-fi Crate5" parent="crates" instance=ExtResource("5_a3ym6")]
+transform = Transform3D(1.30049, 0, -0.594669, 0, 1.43, 0, 0.594669, 0, 1.30049, -2.13621, 0.00397015, 3.52937)
+
+[node name="Sci-fi Crate" parent="crates/Sci-fi Crate5" instance=ExtResource("5_a3ym6")]
+transform = Transform3D(1.42859, 0, -0.0634228, 0, 1.43, 0, 0.0634228, 0, 1.42859, 0.437979, 0.00397015, 1.24085)
+
+[node name="Sci-fi Crate6" parent="crates" instance=ExtResource("5_a3ym6")]
+transform = Transform3D(0.998496, 0, 0.0548457, 0, 1, 0, -0.0548457, 0, 0.998496, -2.37858, 1.99048, 5.43378)
+
+[node name="Sci-fi Crate7" parent="crates" instance=ExtResource("5_a3ym6")]
+transform = Transform3D(0.960808, 0, 0.277214, 0, 1, 0, -0.277214, 0, 0.960808, 2.42772, 0, 7.50029)
+
+[node name="Sci-fi Crate7" parent="crates/Sci-fi Crate7" instance=ExtResource("5_a3ym6")]
+transform = Transform3D(0.860734, 0, 0.509057, 0, 1, 0, -0.509057, 0, 0.860734, -0.00922036, 0.962692, 0.0457916)

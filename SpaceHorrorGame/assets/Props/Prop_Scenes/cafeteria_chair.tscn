@@ -1,4 +1,9 @@
-[gd_scene load_steps=8 format=3 uid="uid://de10eonoypjla"]
+[gd_scene load_steps=10 format=3 uid="uid://de10eonoypjla"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_fmnrt"]
+albedo_color = Color(0.117647, 0.117647, 0.117647, 1)
+metallic = 0.67
+roughness = 0.52
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1ykrc"]
 
@@ -31,6 +36,11 @@ _surfaces = [{
 }]
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_b2scd")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_h78gu"]
+albedo_color = Color(0.592157, 0.592157, 0.592157, 1)
+metallic = 0.7
+roughness = 0.42
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ukop0"]
 
@@ -71,11 +81,13 @@ size = Vector3(0.290815, 0.610474, 0.451836)
 
 [node name="Line007" type="MeshInstance3D" parent="."]
 transform = Transform3D(0.006, 0, 0, 0, -2.62268e-10, -0.006, 0, 0.006, -2.62268e-10, -0.32403, -0.0435779, -0.675114)
+material_override = SubResource("StandardMaterial3D_fmnrt")
 mesh = SubResource("ArrayMesh_3x544")
 skeleton = NodePath("")
 
 [node name="Object004" type="MeshInstance3D" parent="."]
 transform = Transform3D(0.006, 0, 0, 0, -2.62268e-10, -0.006, 0, 0.006, -2.62268e-10, -0.32403, -0.0435779, -0.675114)
+material_override = SubResource("StandardMaterial3D_h78gu")
 mesh = SubResource("ArrayMesh_jgjq6")
 skeleton = NodePath("")
 
