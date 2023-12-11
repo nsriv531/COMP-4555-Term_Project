@@ -187,3 +187,6 @@ func playWalkSound():
 	
 func setHolding(obj):
 	currentHolding = obj
+	
+func damage():
+	Global.Pluto.death()

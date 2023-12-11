@@ -1,0 +1,8 @@
+[gd_resource type="FontVariation" load_steps=2 format=3 uid="uid://bfsj6w18bmfey"]
+
+[ext_resource type="FontFile" uid="uid://u6tcmb3b8aj2" path="res://assets/menu font.otf" id="1_7u34i"]
+
+[resource]
+base_font = ExtResource("1_7u34i")
+spacing_glyph = 2
+spacing_space = -8

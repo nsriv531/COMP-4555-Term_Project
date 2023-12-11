@@ -1,6 +1,6 @@
 extends CharacterBody3D
 
-const SPEED = 3.0
+var SPEED = 3.0
 const JUMP_VELOCITY = 4.5
 
 @onready var navigation_region_3d = $"../MainNavRegion"
@@ -8,7 +8,7 @@ const JUMP_VELOCITY = 4.5
 @export var player:CharacterBody3D = null
 @onready var navigation_agent_3d = $NavigationAgent3D
 
-enum {CHASE,WANDER,IDLE,LOOKING}
+enum {CHASE,WANDER,IDLE,LOOKING,DISABLED}
 
 var can_see_player = false
 var last_seen_player
@@ -20,10 +20,17 @@ var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
 
 func _ready():
 	oldpos = position
-	$IdleTimer.start(4)
 	return
+	
+func enable():
+	print("henue")
+	if state == DISABLED:
+		state = IDLE
+		$IdleTimer.start(1)
 
 func _process(delta):
+	
+	
 	
 	if state == IDLE:
 		return
@@ -38,12 +45,13 @@ func _process(delta):
 			pass
 			
 		return
-		
 	return
 
 func _physics_process(delta):
 		
-	
+	$AnimationPlayer.speed_scale = SPEED/3
+	if state != CHASE:
+		SPEED = 3
 	
 	var cur_loc = global_transform.origin
 	var next_loc = navigation_agent_3d.get_next_path_position()
@@ -115,6 +123,7 @@ func _on_raycast_timer_timeout():
 	var result = space_state.intersect_ray(query)
 	if result.collider == player:
 		state = CHASE
+		SPEED = 6
 		last_seen_player = player.position
 		can_see_player = true
 	else:

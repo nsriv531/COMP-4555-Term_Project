@@ -3,7 +3,7 @@ extends Node3D
 
 @onready var animation_player = $AnimationPlayer
 @onready var muffle_effect = $MuffleEffect
-
+@onready var death_menu = preload("res://death menu.tscn")
 var muffleEff
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -71,3 +71,8 @@ func _process(delta):
 	
 	#print(AudioServer.get_bus_effect(0,0).cutoff_hz)
 	pass
+
+func death():
+	get_tree().root.add_child(death_menu.instantiate())
+	get_tree().root.remove_child(self)
+

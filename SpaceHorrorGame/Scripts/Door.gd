@@ -23,6 +23,11 @@ func _ready():
 	animation_player.speed_scale = 0.01
 
 func onButtonPress():
+	
+	if self.name == "Albert's Office Door":
+		print("henue")
+		get_tree().call_group("enemies", "enable")
+	
 	if open:
 		door_close.play(0.5)
 		if doorRegion != null:
