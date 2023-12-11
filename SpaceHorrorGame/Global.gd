@@ -1,6 +1,7 @@
 extends Node
 
 signal mapChanged
+signal bottleDrop
 
 var plutoInst = preload("res://pluto.tscn")
 var Pluto

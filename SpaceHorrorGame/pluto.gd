@@ -8,6 +8,8 @@ var muffleEff
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	
+	
+	
 	$Transition.play("fade in")
 	
 	muffleEff = AudioEffectLowPassFilter.new()
@@ -42,7 +44,8 @@ func _ready():
 	
 	
 	print(animation_player.get_animation_list())
-	AudioServer.add_bus_effect(0,muffleEff)
+	if AudioServer.get_bus_effect_count(0) == 0:
+		AudioServer.add_bus_effect(0,muffleEff)
 	#animation_player.play("muffles/muffle")
 	
 	AudioServer.set_bus_mute(1, true)

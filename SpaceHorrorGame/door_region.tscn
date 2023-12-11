@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://bg1icxgy6k4uu"]
 
 [sub_resource type="NavigationMesh" id="NavigationMesh_tqucu"]
-vertices = PackedVector3Array(-1.01562, 0.527067, -0.627836, -1.01562, 0.527067, 0.672164, 0.984377, 0.527067, 0.672164, 0.984377, 0.527067, -0.627836)
+vertices = PackedVector3Array(-1.01563, 0.527067, -0.627835, -1.01563, 0.527067, 0.672165, 0.984375, 0.527067, 0.672165, 0.984375, 0.527067, -0.627835)
 polygons = [PackedInt32Array(3, 2, 0), PackedInt32Array(0, 2, 1)]
 geometry_parsed_geometry_type = 2
 geometry_collision_mask = 4294967040

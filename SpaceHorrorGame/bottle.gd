@@ -26,6 +26,7 @@ func _on_body_entered(body):
 	if $BottleAudio.playing == false && state != HOLDING && impacted == false:
 		impacted = true
 		$BottleAudio.play(0)
+		Global.bottleDrop.emit(self.global_position)
 	pass # Replace with function body.
 	
 func interact(player):

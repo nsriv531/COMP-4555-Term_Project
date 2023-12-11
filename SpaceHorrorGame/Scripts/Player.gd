@@ -190,3 +190,7 @@ func setHolding(obj):
 	
 func damage():
 	Global.Pluto.death()
+	
+func play_jumpscare():
+	print("hi")
+	$Jumpscare.play()

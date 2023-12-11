@@ -9,30 +9,43 @@ const JUMP_VELOCITY = 4.5
 @export var player:CharacterBody3D = null
 @onready var navigation_agent_3d = $NavigationAgent3D
 
-enum {CHASE,WANDER,IDLE,LOOKING,DISABLED}
+enum {CHASE,WANDER,IDLE,LOOKING,DISABLED,INVESTIGATE}
 
 var can_see_player = false
 var last_seen_player
 var footnum = 0
-var state = IDLE
+var state = DISABLED
 var oldpos
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
 
 func _ready():
+	Global.bottleDrop.connect(on_sound_heard)
 	oldpos = position
 	return
+
+func on_sound_heard(pos):
+	if state == IDLE or state == WANDER:
+		var sound_pos = NavigationServer3D.map_get_closest_point(navigation_agent_3d.get_navigation_map(), pos)
+		SPEED = 6
+		state = INVESTIGATE
+		update_target_loc(sound_pos)
+		print(sound_pos)
+		print(pos)
 	
 func enable():
-	print("henue")
+	
 	if state == DISABLED:
+		print("BRUH")
 		state = IDLE
 		$IdleTimer.start(1)
+		player.play_jumpscare()
 
 func _process(delta):
 	
 	
 	if state == IDLE:
+		$Neck/zombiewithanimations/AnimationPlayer.stop()
 		return
 	
 	if state == WANDER:
@@ -53,10 +66,10 @@ func _physics_process(delta):
 		
 	$AnimationPlayer.speed_scale = SPEED/3
 	$Neck/zombiewithanimations/AnimationPlayer.speed_scale = SPEED/3
-	if state != CHASE:
+	if state != CHASE and state != INVESTIGATE:
 		SPEED = 3
 	else:
-		print(SPEED)
+		
 		SPEED += 0.001
 	
 	var cur_loc = global_transform.origin
@@ -80,12 +93,13 @@ func _physics_process(delta):
 		#$Neck.rotation.y = lerp_angle($Neck.rotation.y,  deg_to_rad(90)-(Vector2(next_loc.x, next_loc.z).angle_to_point(Vector2(position.x, position.z))), 0.1)
 		if can_see_player:
 			$To_Neck.look_at(next_loc)
-			$Neck.rotation.y = lerp_angle($Neck.rotation.y, $To_Neck.rotation.y, 0.9 * delta)
+			$Neck.rotation.y = lerp_angle($Neck.rotation.y, $To_Neck.rotation.y, 2 * delta)
 			
-	elif state == WANDER:
+	else:
 		#var desired_rotation_y = atan2(cur_loc.y - next_loc.y, cur_loc.x - next_loc.x)
-		$To_Neck.look_at(next_loc)
-		$Neck.rotation.y = lerp_angle($Neck.rotation.y, $To_Neck.rotation.y, 0.8 * delta)
+		if state != IDLE and state != DISABLED:
+			$To_Neck.look_at(next_loc)
+			$Neck.rotation.y = lerp_angle($Neck.rotation.y, $To_Neck.rotation.y, 2 * delta)
 		
 		#$Neck.rotation.y = lerp_angle($Neck.rotation.y, desired_rotation_y, 0.5 * delta)
 		#$Neck.rotation.y = desired_rotation_y
@@ -98,10 +112,10 @@ func _physics_process(delta):
 	
 	move_and_slide()
 	
-	if state == WANDER && oldpos == position:
-		print("stuck")
-		state = IDLE
-		$IdleTimer.start(0.5)
+#	if state != IDLE and state != DISABLED && oldpos == position:
+#		print("stuck")
+#		state = IDLE
+#		$IdleTimer.start(0.5)
 		
 	oldpos = position
 	
@@ -156,8 +170,8 @@ func _on_footstep_timeout():
 	else:
 		AudioServer.set_bus_effect_enabled(1,0, true)
 	
-	print(AudioServer.get_bus_effect(1,0))
-	print(AudioServer.is_bus_effect_enabled(1,0))
+	#print(AudioServer.get_bus_effect(1,0))
+	#print(AudioServer.is_bus_effect_enabled(1,0))
 	
 	get_node("footstep" + str(footnum + 1)).play()
 	footnum = (footnum + 1) % 2
@@ -194,3 +208,5 @@ func _on_detection_body_entered(body):
 		print("it works??")
 		get_tree().reload_current_scene()
 	pass
+
+
