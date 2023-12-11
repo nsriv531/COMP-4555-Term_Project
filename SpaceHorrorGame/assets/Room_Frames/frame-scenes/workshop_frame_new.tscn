@@ -1,9 +1,12 @@
-[gd_scene load_steps=15 format=3 uid="uid://ba6mps8qy3hwh"]
+[gd_scene load_steps=19 format=3 uid="uid://ba6mps8qy3hwh"]
 
 [ext_resource type="PackedScene" uid="uid://fk3cfgdco4jl" path="res://assets/Room_Frames/Workshop.glb" id="1_ybq7u"]
 [ext_resource type="Material" uid="uid://dsevd2g5vx6d7" path="res://room_textures/Base_Exterior_Color.tres" id="2_fsevb"]
+[ext_resource type="Material" uid="uid://cve246qthvu31" path="res://room_textures/flooring_3/flooring_texture_3.tres" id="3_ak46k"]
 [ext_resource type="Material" uid="uid://ctihvcbbldelq" path="res://room_textures/glass_texture_interior.tres" id="3_i2hb2"]
 [ext_resource type="Material" uid="uid://nvs1pw5jy4sd" path="res://room_textures/glass_texture_exterior.tres" id="4_l7hja"]
+[ext_resource type="Material" uid="uid://b4i5uthrs3qyl" path="res://room_textures/wall_4_long/wall_4_long.tres" id="5_jolsj"]
+[ext_resource type="Material" uid="uid://c312lvpbj5eum" path="res://room_textures/Ceiling_Edge_Texture.tres" id="6_e27lq"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_a1apu"]
 size = Vector3(4.07957, 6.45858, 0.413505)
@@ -13,6 +16,10 @@ size = Vector3(0.882563, 6.45858, 0.613211)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_tv4tc"]
 size = Vector3(18.0159, 0.23588, 18.0349)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_k3250"]
+emission_enabled = true
+emission = Color(0.164706, 0.780392, 0.780392, 1)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_hox2j"]
 size = Vector3(9.07478, 6.22806, 0.411916)
@@ -37,6 +44,9 @@ emission_enabled = true
 emission = Color(0.752941, 0.752941, 0.752941, 1)
 
 [node name="Workshop" instance=ExtResource("1_ybq7u")]
+
+[node name="Workshop_Frame_Inside" parent="." index="0"]
+material_override = ExtResource("2_fsevb")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Workshop_Frame_Inside" index="0"]
 
@@ -69,14 +79,23 @@ shape = SubResource("BoxShape3D_leq5h")
 [node name="Workshop_Frame" parent="." index="1"]
 material_override = ExtResource("2_fsevb")
 
+[node name="Workshop_Floor_Middle" parent="." index="2"]
+material_override = ExtResource("3_ak46k")
+
 [node name="StaticBody3D" type="StaticBody3D" parent="Workshop_Floor_Middle" index="0"]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Workshop_Floor_Middle/StaticBody3D" index="0"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.11397, 0)
 shape = SubResource("BoxShape3D_tv4tc")
 
+[node name="Workshop_Floor_Lights" parent="." index="3"]
+material_override = SubResource("StandardMaterial3D_k3250")
+
 [node name="Workshop_Ceiling_Glass_Interior" parent="." index="4"]
 material_override = ExtResource("3_i2hb2")
+
+[node name="Workshop_Frame_Office_Divider" parent="." index="5"]
+material_override = ExtResource("5_jolsj")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Workshop_Frame_Office_Divider" index="0"]
 
@@ -100,6 +119,9 @@ shape = SubResource("BoxShape3D_wemtr")
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0.8, 4.4, -3.5)
 shape = SubResource("BoxShape3D_726na")
 
+[node name="Workshop_Ceiling" parent="." index="6"]
+material_override = ExtResource("6_e27lq")
+
 [node name="StaticBody3D" type="StaticBody3D" parent="Workshop_Ceiling" index="0"]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Workshop_Ceiling/StaticBody3D" index="0"]
@@ -111,3 +133,9 @@ material_override = SubResource("StandardMaterial3D_jaqt2")
 
 [node name="Workshop_Ceiling_Glass_Exterior" parent="." index="8"]
 material_override = ExtResource("4_l7hja")
+
+[node name="Door_Frame" parent="." index="9"]
+material_override = ExtResource("2_fsevb")
+
+[node name="Workshop_Ceiling_Exterior" parent="." index="10"]
+material_override = ExtResource("2_fsevb")

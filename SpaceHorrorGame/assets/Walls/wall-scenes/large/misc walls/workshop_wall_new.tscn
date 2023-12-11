@@ -1,0 +1,30 @@
+[gd_scene load_steps=6 format=3 uid="uid://o1fua3lo1fif"]
+
+[ext_resource type="PackedScene" uid="uid://b7jssoeb12lsn" path="res://assets/Walls/New Large/misc/Workshop_Wall.glb" id="1_050cm"]
+[ext_resource type="Material" uid="uid://dsgg0p7hok6l1" path="res://room_textures/Wall_Pillar_Texture.tres" id="2_qgdof"]
+[ext_resource type="Material" uid="uid://dsevd2g5vx6d7" path="res://room_textures/Base_Exterior_Color.tres" id="3_m1cfn"]
+[ext_resource type="Material" uid="uid://b4i5uthrs3qyl" path="res://room_textures/wall_4_long/wall_4_long.tres" id="3_rqbwm"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_eubpw"]
+size = Vector3(9.62351, 0.425288, 6.09403)
+
+[node name="Workshop_Wall" instance=ExtResource("1_050cm")]
+
+[node name="Workshop_Pillar" parent="." index="0"]
+material_override = ExtResource("2_qgdof")
+
+[node name="Workshop_Wall_Exterior" parent="." index="1"]
+material_override = ExtResource("3_m1cfn")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Workshop_Wall_Exterior" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 5.68434e-14, 0, -5.68434e-14, 1, 0, 0.0170488, -6.09714e-09)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Workshop_Wall_Exterior/StaticBody3D" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.05, 0.2, -3)
+shape = SubResource("BoxShape3D_eubpw")
+
+[node name="Workshop_Wall_Inside" parent="." index="2"]
+material_override = ExtResource("2_qgdof")
+
+[node name="Workshop_Wall_Interior" parent="." index="3"]
+material_override = ExtResource("3_rqbwm")

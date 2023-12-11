@@ -1,0 +1,57 @@
+[gd_scene load_steps=11 format=3 uid="uid://bdwskc2r8yb6s"]
+
+[ext_resource type="PackedScene" uid="uid://b6kls451q0shy" path="res://assets/Room_Frames/shower_room.glb" id="1_dd0xf"]
+[ext_resource type="Texture2D" uid="uid://bqlvtcuh5v0te" path="res://room_textures/custom textures/marble_texture_base_color.jpg" id="2_divyh"]
+[ext_resource type="Material" uid="uid://dsgg0p7hok6l1" path="res://room_textures/Wall_Pillar_Texture.tres" id="3_4jjtc"]
+[ext_resource type="Material" uid="uid://dsevd2g5vx6d7" path="res://room_textures/Base_Exterior_Color.tres" id="4_7ft1u"]
+[ext_resource type="Material" uid="uid://cve246qthvu31" path="res://room_textures/flooring_3/flooring_texture_3.tres" id="5_dmtke"]
+[ext_resource type="Material" uid="uid://c312lvpbj5eum" path="res://room_textures/Ceiling_Edge_Texture.tres" id="6_hshpl"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_yb5ud"]
+albedo_texture = ExtResource("2_divyh")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_wates"]
+albedo_color = Color(0.537255, 0.537255, 0.537255, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_apns8"]
+albedo_texture = ExtResource("2_divyh")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_gl4qm"]
+emission_enabled = true
+emission = Color(0.411765, 0.717647, 0.376471, 1)
+emission_energy_multiplier = 2.0
+
+[node name="shower_room" instance=ExtResource("1_dd0xf")]
+
+[node name="Shower_Divider_2" parent="." index="0"]
+material_override = SubResource("StandardMaterial3D_yb5ud")
+
+[node name="Small_Interior_3" parent="." index="1"]
+material_override = ExtResource("3_4jjtc")
+
+[node name="Small_Wall_Exterior" parent="." index="2"]
+material_override = ExtResource("4_7ft1u")
+
+[node name="Shower_Head" parent="." index="3"]
+material_override = SubResource("StandardMaterial3D_wates")
+
+[node name="Door_Wall_Interior" parent="." index="4"]
+material_override = SubResource("StandardMaterial3D_apns8")
+
+[node name="Door_Frame" parent="." index="5"]
+material_override = ExtResource("4_7ft1u")
+
+[node name="Shower_Floor" parent="." index="6"]
+material_override = ExtResource("5_dmtke")
+
+[node name="Shower_Ceiling_Lights" parent="." index="7"]
+material_override = SubResource("StandardMaterial3D_gl4qm")
+
+[node name="Shower_Ceiling_Edge" parent="." index="8"]
+material_override = ExtResource("6_hshpl")
+
+[node name="Shower_Base_Frame_Inside" parent="." index="10"]
+material_override = ExtResource("4_7ft1u")
+
+[node name="Shower_Base_Frame" parent="." index="11"]
+material_override = ExtResource("4_7ft1u")

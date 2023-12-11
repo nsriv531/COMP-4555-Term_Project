@@ -1,6 +1,6 @@
 [gd_scene load_steps=13 format=3 uid="uid://blslhg5c6x4qg"]
 
-[ext_resource type="PackedScene" uid="uid://bsjnaaliaooos" path="res://assets/Lvl1_Rooms/Utility_Room_Frame.glb" id="1_ctvf6"]
+[ext_resource type="PackedScene" uid="uid://bsjnaaliaooos" path="res://assets/Room_Frames/Utility_Room_Frame.glb" id="1_ctvf6"]
 [ext_resource type="Material" uid="uid://dsevd2g5vx6d7" path="res://room_textures/Base_Exterior_Color.tres" id="2_lr6lp"]
 [ext_resource type="Texture2D" uid="uid://02gl1ct1vcyc" path="res://room_textures/Interior_Wall_Pillar_Textures/Kitchen_Base_Frame_Interior_Emission.jpg" id="3_gfwoo"]
 [ext_resource type="Material" uid="uid://c312lvpbj5eum" path="res://room_textures/Ceiling_Edge_Texture.tres" id="3_ysdcu"]

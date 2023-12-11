@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://dhd5nl75ygjre"
-path="res://.godot/imported/Shower_Frame.gltf-d43a8a9789189ece566b6d4377a5cc84.scn"
+uid="uid://b6kls451q0shy"
+path="res://.godot/imported/shower_room.glb-934caa3f5b2b71c41c350ad27426ad33.scn"
 
 [deps]
 
-source_file="res://assets/Room_Frames/Shower_Frame.gltf"
-dest_files=["res://.godot/imported/Shower_Frame.gltf-d43a8a9789189ece566b6d4377a5cc84.scn"]
+source_file="res://assets/Room_Frames/shower_room.glb"
+dest_files=["res://.godot/imported/shower_room.glb-934caa3f5b2b71c41c350ad27426ad33.scn"]
 
 [params]
 

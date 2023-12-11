@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://bsjnaaliaooos"
-path="res://.godot/imported/Utility_Room_Frame.glb-eeeafb2cd0e626d59e8fd030b6c15ae9.scn"
+uid="uid://b7jssoeb12lsn"
+path="res://.godot/imported/Workshop_Wall.glb-1fb07b8e178d6b3b9dc2a52459d72733.scn"
 
 [deps]
 
-source_file="res://assets/Lvl1_Rooms/Utility_Room_Frame.glb"
-dest_files=["res://.godot/imported/Utility_Room_Frame.glb-eeeafb2cd0e626d59e8fd030b6c15ae9.scn"]
+source_file="res://assets/Walls/New Large/misc/Workshop_Wall.glb"
+dest_files=["res://.godot/imported/Workshop_Wall.glb-1fb07b8e178d6b3b9dc2a52459d72733.scn"]
 
 [params]
 

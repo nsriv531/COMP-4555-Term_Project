@@ -7,9 +7,6 @@
 
 [node name="Albert\'s Office" type="Node3D" groups=["navigation_mesh_source_group"]]
 
-[node name="small_window" parent="." instance=ExtResource("2_t1frm")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -4, 0, 0)
-
 [node name="small_doorway_2" parent="." instance=ExtResource("4_iu4aq")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 4, 0, 0)
 
@@ -20,3 +17,6 @@ transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, 
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -4)
 
 [node name="Office_Frame" parent="." instance=ExtResource("4_vuosh")]
+
+[node name="small_window" parent="." instance=ExtResource("2_t1frm")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -4, 0, 0)
