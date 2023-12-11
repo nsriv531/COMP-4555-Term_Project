@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://bs6xxjc8jih2k" path="res://assets/Walls/wall-scenes/small/doorway walls/small_doorway_2.tscn" id="3_t0yja"]
 [ext_resource type="PackedScene" uid="uid://ci128r2d5536j" path="res://assets/Walls/wall-scenes/large/misc walls/cafeteria_wall.tscn" id="4_512l6"]
-[ext_resource type="PackedScene" uid="uid://cpwd2wp1munaw" path="res://assets/Walls/wall-scenes/small/solid walls/small_interior_2.tscn" id="4_tgsm4"]
+[ext_resource type="PackedScene" uid="uid://c0j244i5vis8i" path="res://assets/Walls/wall-scenes/small/solid walls/small_interior_2_v2.tscn" id="5_1c6hb"]
 [ext_resource type="PackedScene" uid="uid://t02frhgymon" path="res://assets/Room_Frames/frame-scenes/cafeteria_frame_new.tscn" id="5_i8xl8"]
 [ext_resource type="PackedScene" uid="uid://ym5itbtm4lbj" path="res://assets/Walls/wall-scenes/large/doorway walls/large_doorway_2.tscn" id="5_q5unr"]
 
@@ -20,9 +20,6 @@ transform = Transform3D(1, 0, 1.74846e-07, 0, 1, 0, -1.74846e-07, 0, 1, 5, 0, -9
 [node name="storageDoor" parent="." instance=ExtResource("3_t0yja")]
 transform = Transform3D(1, 0, 1.74846e-07, 0, 1, 0, -1.74846e-07, 0, 1, -5, 0, -9)
 
-[node name="small_interior_2" parent="." instance=ExtResource("4_tgsm4")]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 5, 0, 9)
-
 [node name="cafeteria_wall" parent="." instance=ExtResource("4_512l6")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -9, 0, -3)
 
@@ -30,3 +27,6 @@ transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -9, 0,
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 9, 0, 0)
 
 [node name="Cafeteria_Frame" parent="." instance=ExtResource("5_i8xl8")]
+
+[node name="small_interior_3" parent="." instance=ExtResource("5_1c6hb")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 5, 0, 9)

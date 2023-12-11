@@ -1,0 +1,26 @@
+[gd_scene load_steps=6 format=3 uid="uid://c0j244i5vis8i"]
+
+[ext_resource type="PackedScene" uid="uid://bef736uamjpaw" path="res://assets/Walls/New Small/solid/small_interior_2.glb" id="1_m3d2p"]
+[ext_resource type="Material" uid="uid://dsgg0p7hok6l1" path="res://room_textures/Wall_Pillar_Texture.tres" id="2_cq1uw"]
+[ext_resource type="Material" uid="uid://b76x3kohpc77b" path="res://room_textures/Wall1_texture.tres" id="3_1mtxh"]
+[ext_resource type="Material" uid="uid://b4i5uthrs3qyl" path="res://room_textures/wall_4_long/wall_4_long.tres" id="4_c4dky"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_f5fij"]
+size = Vector3(6.10584, 6.02916, 0.441758)
+
+[node name="small_interior_2" instance=ExtResource("1_m3d2p")]
+
+[node name="Small_Interior_3" parent="." index="0"]
+material_override = ExtResource("2_cq1uw")
+
+[node name="Small_Wall_Exterior" parent="." index="1"]
+material_override = ExtResource("3_1mtxh")
+
+[node name="Small_Wall_Interior" parent="." index="2"]
+material_override = ExtResource("4_c4dky")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." index="3"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0.2)
+shape = SubResource("BoxShape3D_f5fij")

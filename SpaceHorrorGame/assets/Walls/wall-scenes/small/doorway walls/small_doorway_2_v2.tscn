@@ -1,9 +1,9 @@
-[gd_scene load_steps=7 format=3 uid="uid://bs6xxjc8jih2k"]
+[gd_scene load_steps=7 format=3 uid="uid://culf0emr3jjql"]
 
-[ext_resource type="PackedScene" uid="uid://c0i5atuapxhd4" path="res://assets/Walls/New Small/doorways/small_doorway_2.glb" id="1_bvsf6"]
-[ext_resource type="Material" uid="uid://b4i5uthrs3qyl" path="res://room_textures/wall_4_long/wall_4_long.tres" id="2_ely7q"]
-[ext_resource type="Material" uid="uid://dsevd2g5vx6d7" path="res://room_textures/Base_Exterior_Color.tres" id="2_p11ee"]
-[ext_resource type="Material" uid="uid://dsgg0p7hok6l1" path="res://room_textures/Wall_Pillar_Texture.tres" id="3_e46cp"]
+[ext_resource type="PackedScene" uid="uid://c0i5atuapxhd4" path="res://assets/Walls/New Small/doorways/small_doorway_2.glb" id="1_ds2vx"]
+[ext_resource type="Material" uid="uid://dsevd2g5vx6d7" path="res://room_textures/Base_Exterior_Color.tres" id="2_mi2pr"]
+[ext_resource type="Material" uid="uid://c1inpwfcak3ro" path="res://room_textures/wall_4_long/wall_4_long_2.tres" id="3_ncmca"]
+[ext_resource type="Material" uid="uid://dsgg0p7hok6l1" path="res://room_textures/Wall_Pillar_Texture.tres" id="4_ehjcj"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_oxdx8"]
 size = Vector3(2.03625, 6.11409, 0.413814)
@@ -11,16 +11,16 @@ size = Vector3(2.03625, 6.11409, 0.413814)
 [sub_resource type="BoxShape3D" id="BoxShape3D_l5wj2"]
 size = Vector3(1.9892, 3.10069, 0.413814)
 
-[node name="small_doorway_2" instance=ExtResource("1_bvsf6")]
+[node name="small_doorway_2" instance=ExtResource("1_ds2vx")]
 
 [node name="Door_Frame" parent="." index="0"]
-material_override = ExtResource("2_p11ee")
+material_override = ExtResource("2_mi2pr")
 
 [node name="Door_Wall_Interior" parent="." index="2"]
-material_override = ExtResource("2_ely7q")
+material_override = ExtResource("3_ncmca")
 
 [node name="Doorway_Interior" parent="." index="3"]
-material_override = ExtResource("3_e46cp")
+material_override = ExtResource("4_ehjcj")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="." index="4"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, 0.22)

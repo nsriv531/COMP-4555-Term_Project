@@ -1,6 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://ym5itbtm4lbj"]
+[gd_scene load_steps=7 format=3 uid="uid://ym5itbtm4lbj"]
 
 [ext_resource type="PackedScene" uid="uid://kw5ogrxoenga" path="res://assets/Walls/New Large/doorway/large_doorway_2.glb" id="1_ygqfn"]
+[ext_resource type="Material" uid="uid://dsevd2g5vx6d7" path="res://room_textures/Base_Exterior_Color.tres" id="2_o7k0b"]
+[ext_resource type="Material" uid="uid://b4i5uthrs3qyl" path="res://room_textures/wall_4_long/wall_4_long.tres" id="3_j5d7m"]
+[ext_resource type="Material" uid="uid://dsgg0p7hok6l1" path="res://room_textures/Wall_Pillar_Texture.tres" id="4_04ds7"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_1ppfn"]
 size = Vector3(4.8069, 0.425288, 6.09403)
@@ -23,3 +26,12 @@ shape = SubResource("BoxShape3D_1ppfn")
 [node name="CollisionShape3D3" type="CollisionShape3D" parent="Doorway_Wall_Exterior/StaticBody3D" index="2"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.2, -4.51664)
 shape = SubResource("BoxShape3D_bmdth")
+
+[node name="Door_Frame" parent="." index="1"]
+material_override = ExtResource("2_o7k0b")
+
+[node name="Doorway_Wall_Interior" parent="." index="2"]
+material_override = ExtResource("3_j5d7m")
+
+[node name="Wall_Interior" parent="." index="3"]
+material_override = ExtResource("4_04ds7")

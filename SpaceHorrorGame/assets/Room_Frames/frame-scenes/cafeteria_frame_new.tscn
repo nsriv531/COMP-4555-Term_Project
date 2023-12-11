@@ -1,15 +1,32 @@
-[gd_scene load_steps=10 format=3 uid="uid://t02frhgymon"]
+[gd_scene load_steps=16 format=3 uid="uid://t02frhgymon"]
 
 [ext_resource type="PackedScene" uid="uid://22txhan5yna1" path="res://assets/Room_Frames/Cafeteria_Frame.glb" id="1_aj0cs"]
+[ext_resource type="Material" uid="uid://cve246qthvu31" path="res://room_textures/flooring_3/flooring_texture_3.tres" id="2_2h3ne"]
 [ext_resource type="Material" uid="uid://dsevd2g5vx6d7" path="res://room_textures/Base_Exterior_Color.tres" id="2_fv324"]
 [ext_resource type="Material" uid="uid://ctihvcbbldelq" path="res://room_textures/glass_texture_interior.tres" id="3_3f64y"]
+[ext_resource type="Material" uid="uid://dsgg0p7hok6l1" path="res://room_textures/Wall_Pillar_Texture.tres" id="4_fo5wd"]
+[ext_resource type="Texture2D" uid="uid://dt8ddyxgvuprl" path="res://room_textures/custom textures/Cafeteria_Frame_Divider_Inside_Emission.jpg" id="4_wv5ka"]
 [ext_resource type="Material" uid="uid://nvs1pw5jy4sd" path="res://room_textures/glass_texture_exterior.tres" id="4_xg7hg"]
+[ext_resource type="Texture2D" uid="uid://b0entxnd22a27" path="res://room_textures/Metal_scratched_009_roughness.jpg" id="5_a2ljb"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_80owg"]
 size = Vector3(18.0159, 0.23588, 18.0349)
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4t4ud"]
+emission_enabled = true
+emission = Color(0.223529, 0.65098, 0.65098, 1)
+
 [sub_resource type="BoxShape3D" id="BoxShape3D_x2d3k"]
 size = Vector3(18.0012, 0.30048, 18.0034)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_q0uvc"]
+diffuse_mode = 1
+albedo_color = Color(0.211765, 0.290196, 0.423529, 1)
+metallic = 0.5
+roughness_texture = ExtResource("5_a2ljb")
+roughness_texture_channel = 1
+emission_enabled = true
+emission_texture = ExtResource("4_wv5ka")
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_0k1bm"]
 size = Vector3(0.882563, 6.45858, 0.613211)
@@ -24,11 +41,26 @@ emission_energy_multiplier = 1.5
 
 [node name="Cafeteria_Frame" instance=ExtResource("1_aj0cs")]
 
+[node name="Cafeteria_Floor_Middle" parent="." index="0"]
+material_override = ExtResource("2_2h3ne")
+
 [node name="StaticBody3D" type="StaticBody3D" parent="Cafeteria_Floor_Middle" index="0"]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Cafeteria_Floor_Middle/StaticBody3D" index="0"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.11397, 0)
 shape = SubResource("BoxShape3D_80owg")
+
+[node name="Cafeteria_Floor_Lights" parent="." index="1"]
+material_override = SubResource("StandardMaterial3D_4t4ud")
+
+[node name="Cafeteria_Ceiling_Lights_Panel" parent="." index="2"]
+material_override = ExtResource("2_fv324")
+
+[node name="Cafeteria_Ceiling_Edge_Panel" parent="." index="3"]
+material_override = ExtResource("4_fo5wd")
+
+[node name="Cafeteria_Ceiling" parent="." index="4"]
+material_override = ExtResource("2_fv324")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Cafeteria_Ceiling" index="0"]
 
@@ -38,6 +70,9 @@ shape = SubResource("BoxShape3D_x2d3k")
 
 [node name="Cafeteria_Frame2" parent="." index="5"]
 material_override = ExtResource("2_fv324")
+
+[node name="Cafeteria_Frame_Divider_Inside" parent="." index="6"]
+material_override = SubResource("StandardMaterial3D_q0uvc")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Cafeteria_Frame_Divider_Inside" index="0"]
 

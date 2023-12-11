@@ -1,4 +1,4 @@
-[gd_scene load_steps=115 format=3 uid="uid://1csibo7xkgx1"]
+[gd_scene load_steps=114 format=3 uid="uid://1csibo7xkgx1"]
 
 [ext_resource type="Script" path="res://addons/zylann.hterrain/hterrain.gd" id="1_ilc75"]
 [ext_resource type="Shader" path="res://Scripts/CameraEffects.gdshader" id="1_m1fa5"]
@@ -25,7 +25,6 @@
 [ext_resource type="PackedScene" uid="uid://7nb1ucn8kuy1" path="res://models/landingpad.gltf" id="17_mk40t"]
 [ext_resource type="Script" path="res://ButtonSystem.gd" id="18_ay6ee"]
 [ext_resource type="Script" path="res://button.gd" id="19_8r8ar"]
-[ext_resource type="Texture2D" uid="uid://cnjvwyk0mq35s" path="res://assets/(Mess Hall) EMAIL_NOTE_immediate extraction.png" id="22_8ui8i"]
 [ext_resource type="PackedScene" uid="uid://dw5r0u10smu5b" path="res://assets/Lvl1_Rooms/Cafeteria.tscn" id="23_p3srr"]
 [ext_resource type="Script" path="res://AirLockInnerArea.gd" id="26_wyfa4"]
 [ext_resource type="AudioStream" uid="uid://b1tprvlueafqk" path="res://Sounds/Air.ogg" id="27_mqdwd"]
@@ -659,21 +658,17 @@ script = ExtResource("10_sxumy")
 [node name="CanvasLayer" type="CanvasLayer" parent="Player/GUI"]
 layer = 3
 
-[node name="NoteTextRect" type="TextureRect" parent="Player/GUI/CanvasLayer"]
-offset_left = 324.0
-offset_top = 44.0
-offset_right = 1005.0
-offset_bottom = 698.0
-scale = Vector2(0.978923, 0.95935)
-texture = ExtResource("22_8ui8i")
-expand_mode = 1
-
 [node name="NoteContainer" type="CenterContainer" parent="Player/GUI/CanvasLayer"]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+
+[node name="NoteTextRect" type="TextureRect" parent="Player/GUI/CanvasLayer/NoteContainer"]
+visible = false
+layout_mode = 2
+texture = ExtResource("10_xbnsg")
 
 [node name="CrosshairContainer" type="CenterContainer" parent="Player/GUI/CanvasLayer"]
 anchors_preset = 15
@@ -782,12 +777,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 21.9032, 22.6185, -12.7266)
 collision_layer = 2
 collision_mask = 0
 noteImage = ExtResource("10_xbnsg")
-
-[node name="MessHallNote" parent="." instance=ExtResource("14_d2cap")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16.0276, 21.426, -17.7239)
-collision_layer = 2
-collision_mask = 0
-noteImage = ExtResource("22_8ui8i")
 
 [node name="landingpad" parent="." instance=ExtResource("17_mk40t")]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 22.2, 20.975, -12)

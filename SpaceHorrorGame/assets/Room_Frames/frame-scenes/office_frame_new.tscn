@@ -1,25 +1,48 @@
-[gd_scene load_steps=7 format=3 uid="uid://mpubfu8rkfjw"]
+[gd_scene load_steps=13 format=3 uid="uid://mpubfu8rkfjw"]
 
 [ext_resource type="PackedScene" uid="uid://d2i2leuhjimmk" path="res://assets/Room_Frames/Office_Frame.glb" id="1_nmj0a"]
 [ext_resource type="Texture2D" uid="uid://b0entxnd22a27" path="res://room_textures/Metal_scratched_009_roughness.jpg" id="2_23ove"]
+[ext_resource type="Material" uid="uid://dsevd2g5vx6d7" path="res://room_textures/Base_Exterior_Color.tres" id="2_v3ytx"]
+[ext_resource type="Texture2D" uid="uid://02gl1ct1vcyc" path="res://room_textures/Interior_Wall_Pillar_Textures/Kitchen_Base_Frame_Interior_Emission.jpg" id="3_2sa0r"]
+[ext_resource type="Material" uid="uid://cve246qthvu31" path="res://room_textures/flooring_3/flooring_texture_3.tres" id="5_3wxc3"]
+[ext_resource type="Material" uid="uid://dsgg0p7hok6l1" path="res://room_textures/Wall_Pillar_Texture.tres" id="6_syh2c"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_lcnti"]
 size = Vector3(0.882563, 6.45858, 0.613211)
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3mvxo"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4uwg8"]
 diffuse_mode = 1
 albedo_color = Color(0.211765, 0.290196, 0.423529, 1)
 metallic = 0.5
 roughness_texture = ExtResource("2_23ove")
 roughness_texture_channel = 1
+emission_enabled = true
+emission_texture = ExtResource("3_2sa0r")
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_ji8pn"]
 size = Vector3(8.02894, 0.23588, 8.03182)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jl3e0"]
+emission_enabled = true
+emission = Color(0.2, 0.639216, 0.639216, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_arllh"]
+albedo_color = Color(0.870588, 0.870588, 0.870588, 1)
+metallic = 0.5
+roughness = 0.8
+roughness_texture = ExtResource("2_23ove")
+roughness_texture_channel = 1
+emission_enabled = true
+emission = Color(0.282353, 0.282353, 0.282353, 1)
+emission_energy_multiplier = 0.2
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_m68i6"]
 size = Vector3(8.02933, 0.30048, 8.0004)
 
 [node name="Office_Frame" instance=ExtResource("1_nmj0a")]
+
+[node name="Room_Base_Frame_6x6" parent="." index="0"]
+material_override = ExtResource("2_v3ytx")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Room_Base_Frame_6x6" index="0"]
 
@@ -40,13 +63,31 @@ transform = Transform3D(0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, 
 shape = SubResource("BoxShape3D_lcnti")
 
 [node name="Room_Base_Frame_Inside" parent="." index="1"]
-material_override = SubResource("StandardMaterial3D_3mvxo")
+material_override = SubResource("StandardMaterial3D_4uwg8")
+
+[node name="Office_Floor_Middle" parent="." index="2"]
+material_override = ExtResource("5_3wxc3")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Office_Floor_Middle" index="0"]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Office_Floor_Middle/StaticBody3D" index="0"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.11397, 0)
 shape = SubResource("BoxShape3D_ji8pn")
+
+[node name="Office_Floor_Edge_Light" parent="." index="3"]
+material_override = SubResource("StandardMaterial3D_jl3e0")
+
+[node name="Office_Floor_Edge" parent="." index="4"]
+material_override = ExtResource("5_3wxc3")
+
+[node name="Office_Ceiling_Middle_Panel" parent="." index="5"]
+material_override = SubResource("StandardMaterial3D_arllh")
+
+[node name="Office_Ceiling_Edge" parent="." index="6"]
+material_override = ExtResource("6_syh2c")
+
+[node name="Office_Ceiling" parent="." index="7"]
+material_override = ExtResource("6_syh2c")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Office_Ceiling" index="0"]
 

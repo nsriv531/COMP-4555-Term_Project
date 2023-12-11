@@ -1,7 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://4nrsukin7g22"]
+[gd_scene load_steps=7 format=3 uid="uid://cob7rtr7xqlo7"]
 
 [ext_resource type="PackedScene" uid="uid://bbhrugx3k01sr" path="res://assets/Room_Frames/Utility_Room_Frame.gltf" id="1_20skw"]
 [ext_resource type="Material" uid="uid://dsevd2g5vx6d7" path="res://room_textures/Base_Exterior_Color.tres" id="2_2s3j6"]
+[ext_resource type="Material" uid="uid://cve246qthvu31" path="res://room_textures/flooring_3/flooring_texture_3.tres" id="3_hyrs0"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_rdypd"]
 size = Vector3(0.882563, 6.45858, 0.613211)
@@ -40,6 +41,9 @@ shape = SubResource("BoxShape3D_rdypd")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Room_Ceiling_6x6/StaticBody3D" index="0"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.90746, 0)
 shape = SubResource("BoxShape3D_7iyxj")
+
+[node name="Utility_Floor_Middle" parent="." index="5"]
+material_override = ExtResource("3_hyrs0")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Utility_Floor_Middle" index="0"]
 

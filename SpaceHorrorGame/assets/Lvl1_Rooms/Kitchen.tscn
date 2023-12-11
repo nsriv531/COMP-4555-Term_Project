@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=3 uid="uid://c7gu835q2mraq"]
+[gd_scene load_steps=31 format=3 uid="uid://c7gu835q2mraq"]
 
 [ext_resource type="PackedScene" uid="uid://bwm2mbbcy45jf" path="res://assets/Room_Frames/New_Kitchen.glb" id="1_gii5c"]
 [ext_resource type="Material" uid="uid://dsevd2g5vx6d7" path="res://room_textures/Base_Exterior_Color.tres" id="2_efoww"]
@@ -7,9 +7,11 @@
 [ext_resource type="Material" uid="uid://dsgg0p7hok6l1" path="res://room_textures/Wall_Pillar_Texture.tres" id="3_0tx45"]
 [ext_resource type="Texture2D" uid="uid://d2gynulb137qw" path="res://room_textures/flooring_3/Sci-fi_Floor_002_metallic.jpg" id="3_2d0p4"]
 [ext_resource type="PackedScene" uid="uid://d3sqeqsuqbfm5" path="res://assets/Walls/wall-scenes/small/small_window.tscn" id="3_oi75r"]
+[ext_resource type="Material" uid="uid://cve246qthvu31" path="res://room_textures/flooring_3/flooring_texture_3.tres" id="4_1evu3"]
 [ext_resource type="Texture2D" uid="uid://ctji7imlr622e" path="res://room_textures/flooring_3/Sci-fi_Floor_002_roughness.jpg" id="4_yhl43"]
 [ext_resource type="Texture2D" uid="uid://02gl1ct1vcyc" path="res://room_textures/Interior_Wall_Pillar_Textures/Kitchen_Base_Frame_Interior_Emission.jpg" id="6_k3ogi"]
 [ext_resource type="Texture2D" uid="uid://b0entxnd22a27" path="res://room_textures/Metal_scratched_009_roughness.jpg" id="8_ieogr"]
+[ext_resource type="Material" uid="uid://ryn1m5owhe4w" path="res://room_textures/Kitchen_Counter_Texture.tres" id="9_hrynb"]
 [ext_resource type="PackedScene" uid="uid://c2pcfdepjjamc" path="res://assets/Props/Prop_Scenes/counter.tscn" id="10_t3roy"]
 [ext_resource type="PackedScene" uid="uid://3kfnta8rebwg" path="res://assets/Props/Prop_Scenes/counter_2.tscn" id="11_47u0e"]
 [ext_resource type="PackedScene" uid="uid://csseh3yqcrhe1" path="res://assets/Props/Prop_Scenes/sci_fi_fridge.tscn" id="13_gulr8"]
@@ -99,6 +101,15 @@ shape = SubResource("BoxShape3D_dkj1k")
 [node name="Kitchen_Ceiling_Edge_Panel" parent="." index="3"]
 material_override = ExtResource("2_jeg8a")
 
+[node name="Kitchen_Floor_Left" parent="." index="4"]
+material_override = ExtResource("4_1evu3")
+
+[node name="Kitchen_Floor_Right" parent="." index="6"]
+material_override = ExtResource("4_1evu3")
+
+[node name="Kitchen_Middle_Floor" parent="." index="7"]
+material_override = ExtResource("4_1evu3")
+
 [node name="StaticBody3D" type="StaticBody3D" parent="Kitchen_Middle_Floor" index="0"]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Kitchen_Middle_Floor/StaticBody3D" index="0"]
@@ -144,6 +155,9 @@ shape = SubResource("BoxShape3D_g7mvd")
 transform = Transform3D(0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, -3.5, 3, -8.5)
 shape = SubResource("BoxShape3D_g7mvd")
 
+[node name="Kitchen_Counter_Top" parent="." index="13"]
+material_override = ExtResource("9_hrynb")
+
 [node name="Kitchen_Counter" parent="." index="14"]
 material_override = SubResource("StandardMaterial3D_6aiol")
 
@@ -184,6 +198,9 @@ shape = SubResource("BoxShape3D_rvh13")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 4.5082, -0.0229371)
 shape = SubResource("BoxShape3D_drk67")
 
+[node name="Door_Frame" parent="." index="21"]
+material_override = ExtResource("2_efoww")
+
 [node name="Doorway_Interior_001" parent="." index="22"]
 material_override = ExtResource("3_0tx45")
 
@@ -204,6 +221,9 @@ shape = SubResource("BoxShape3D_rvh13")
 [node name="CollisionShape3D3" type="CollisionShape3D" parent="Door_Wall_002/StaticBody3D" index="2"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 4.5082, -0.0229371)
 shape = SubResource("BoxShape3D_drk67")
+
+[node name="Door_Frame_001" parent="." index="25"]
+material_override = ExtResource("2_efoww")
 
 [node name="Small_Wall_Interior" parent="." index="26"]
 material_override = ExtResource("2_u6w8t")
