@@ -1,4 +1,4 @@
-[gd_scene load_steps=114 format=3 uid="uid://1csibo7xkgx1"]
+[gd_scene load_steps=115 format=3 uid="uid://1csibo7xkgx1"]
 
 [ext_resource type="Script" path="res://addons/zylann.hterrain/hterrain.gd" id="1_ilc75"]
 [ext_resource type="Shader" path="res://Scripts/CameraEffects.gdshader" id="1_m1fa5"]
@@ -42,6 +42,7 @@
 [ext_resource type="Script" path="res://MuffleEffect.gd" id="33_yh5b4"]
 [ext_resource type="PackedScene" uid="uid://bxme0mjbdbm7n" path="res://assets/Lvl1_Rooms/Workshop.tscn" id="35_6q3ub"]
 [ext_resource type="VoxelGIData" uid="uid://cro30gb65wfdc" path="res://lightmap/pluto.VoxelGI_data.res" id="36_6no6g"]
+[ext_resource type="PackedScene" uid="uid://dkdptsb3mnnco" path="res://assets/metalchair.glb" id="36_0645r"]
 [ext_resource type="PackedScene" uid="uid://eicyxm43ptgm" path="res://assets/Lvl1_Rooms/Shower_1.tscn" id="38_xclxq"]
 [ext_resource type="PackedScene" uid="uid://p3mxan3e48wt" path="res://assets/Lvl1_Rooms/Shower_2.tscn" id="39_38to2"]
 [ext_resource type="PackedScene" uid="uid://ce31ok7avs5ak" path="res://assets/Lvl1_Rooms/Albert's Office.tscn" id="40_ow1vi"]
@@ -909,6 +910,24 @@ transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 3.2
 
 [node name="Cafeteria" parent="Rooms" instance=ExtResource("23_p3srr")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 3.2, -26.5)
+
+[node name="metalchair" parent="Rooms/Cafeteria" instance=ExtResource("36_0645r")]
+transform = Transform3D(-2.14703, 0, 2.77793, 0, 3.51093, 0, -2.77793, 0, -2.14703, 3.18519, -0.0114517, -1.32943)
+
+[node name="metalchair2" parent="Rooms/Cafeteria" instance=ExtResource("36_0645r")]
+transform = Transform3D(3.00567, 0, -1.7933, 0, 3.5, 0, 1.7933, 0, 3.00567, 1.08375, 0, 0)
+
+[node name="metalchair3" parent="Rooms/Cafeteria" instance=ExtResource("36_0645r")]
+transform = Transform3D(3.5, 0, 0, 0, 3.5, 0, 0, 0, 3.5, -3.77268, 0, 0)
+
+[node name="metalchair4" parent="Rooms/Cafeteria" instance=ExtResource("36_0645r")]
+transform = Transform3D(3.5, 0, 0, 0, 3.5, 0, 0, 0, 3.5, -5.81426, 0, 3.8147e-06)
+
+[node name="metalchair5" parent="Rooms/Cafeteria" instance=ExtResource("36_0645r")]
+transform = Transform3D(-1.48192, -0.226473, -3.16269, -0.0960911, 3.49267, -0.205077, 3.16934, -1.49012e-08, -1.48503, 0, 0, -3.9223)
+
+[node name="metalchair6" parent="Rooms/Cafeteria" instance=ExtResource("36_0645r")]
+transform = Transform3D(3.5, 0, 0, 0, 3.5, 0, 0, 0, 3.5, -1.6333, 0, 0)
 
 [node name="Workshop" parent="Rooms" instance=ExtResource("35_6q3ub")]
 transform = Transform3D(1, 0, 1.06581e-14, 0, 1, 0, -1.06581e-14, 0, 1, -18, 3.2, -34.5)
