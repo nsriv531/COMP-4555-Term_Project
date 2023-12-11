@@ -206,7 +206,8 @@ func _on_detection_body_entered(body):
 	print(player)
 	if body == player:
 		print("it works??")
-		get_tree().root.queue_free()
+		get_tree().quit()
+		#get_tree().root.queue_free()
 	pass
 
 
