@@ -173,10 +173,17 @@ func set_random_nav_target():
 			if navigation_agent_3d.is_target_reachable():
 				break
 
-
 func _on_idle_timer_timeout():
 	if state == IDLE:
 		print("wanderin..")
 		state = WANDER
 		set_random_nav_target()
 	pass # Replace with function body.
+
+func _on_detection_body_entered(body):
+	print(body)
+	print(player)
+	if body == player:
+		print("it works??")
+		get_tree().reload_current_scene()
+	pass
