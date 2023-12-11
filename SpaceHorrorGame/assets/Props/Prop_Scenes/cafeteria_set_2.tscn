@@ -1,0 +1,20 @@
+[gd_scene load_steps=3 format=3 uid="uid://cbdrxwspegxkd"]
+
+[ext_resource type="PackedScene" uid="uid://bhujmca5ilev6" path="res://assets/Props/Prop_Scenes/cafeteria_table.tscn" id="1_mg03g"]
+[ext_resource type="PackedScene" uid="uid://de10eonoypjla" path="res://assets/Props/Prop_Scenes/cafeteria_chair.tscn" id="2_gj2qk"]
+
+[node name="cafeteria_set" type="Node3D"]
+
+[node name="cafeteriatable" parent="." instance=ExtResource("1_mg03g")]
+
+[node name="cafeteria_chair" parent="." instance=ExtResource("2_gj2qk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.726182)
+
+[node name="cafeteria_chair2" parent="." instance=ExtResource("2_gj2qk")]
+transform = Transform3D(2.98023e-08, 0, -1, 0, 1, 0, 1, 0, 2.98023e-08, -0.425673, 0, 0.0055387)
+
+[node name="cafeteria_chair3" parent="." instance=ExtResource("2_gj2qk")]
+transform = Transform3D(-0.810369, 0, -0.58592, 0, 1, 0, 0.58592, 0, -0.810369, 0.0739045, 0, -0.599459)
+
+[node name="cafeteria_chair4" parent="." instance=ExtResource("2_gj2qk")]
+transform = Transform3D(0.652151, 0, 0.758089, 0, 1, 0, -0.758089, 0, 0.652151, 0.615799, 0, 0.152481)

@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=3 uid="uid://dvxt2iblki5v1"]
+
+[ext_resource type="PackedScene" uid="uid://bb57xs11rvych" path="res://assets/Props/Props_glb/plant_buttons.glb" id="1_lkkxm"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ec1th"]
+emission_enabled = true
+emission = Color(0.372549, 0.294118, 0.545098, 1)
+emission_energy_multiplier = 3.0
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_rbi23"]
+size = Vector3(2.12636, 4.07767, 2.91455)
+
+[node name="hydrophonics" instance=ExtResource("1_lkkxm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.23498, 0)
+
+[node name="LightHOles" parent="Hydro RIg/Top/Cloner" index="0"]
+material_override = SubResource("StandardMaterial3D_ec1th")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." index="4"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" index="0"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0.119315, 0)
+shape = SubResource("BoxShape3D_rbi23")

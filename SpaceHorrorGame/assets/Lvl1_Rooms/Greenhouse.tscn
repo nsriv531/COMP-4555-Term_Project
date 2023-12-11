@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://cpar6kh7l6mh"]
+[gd_scene load_steps=18 format=3 uid="uid://cpar6kh7l6mh"]
 
 [ext_resource type="PackedScene" uid="uid://ckkxhp72over1" path="res://assets/Room_Frames/greenhouse.glb" id="1_jddr0"]
 [ext_resource type="Material" uid="uid://ctihvcbbldelq" path="res://room_textures/glass_texture_interior.tres" id="2_wj1qu"]
@@ -6,6 +6,7 @@
 [ext_resource type="Material" uid="uid://nvs1pw5jy4sd" path="res://room_textures/glass_texture_exterior.tres" id="3_sgog7"]
 [ext_resource type="Material" uid="uid://b4i5uthrs3qyl" path="res://room_textures/wall_4_long/wall_4_long.tres" id="3_twsau"]
 [ext_resource type="Material" uid="uid://cve246qthvu31" path="res://room_textures/flooring_3/flooring_texture_3.tres" id="3_xwa36"]
+[ext_resource type="PackedScene" uid="uid://dvxt2iblki5v1" path="res://assets/Props/Prop_Scenes/hydroponics.tscn" id="7_sglw3"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_o7ovl"]
 size = Vector3(0.882563, 6.45858, 0.613211)
@@ -154,3 +155,35 @@ material_override = ExtResource("3_pkn4l")
 
 [node name="Side_Window_Exterior" parent="." index="12"]
 material_override = ExtResource("3_sgog7")
+
+[node name="Planters" type="Node3D" parent="." index="13"]
+
+[node name="hydrophonics" parent="Planters" index="0" instance=ExtResource("7_sglw3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.7, 1.2, -4.2)
+
+[node name="hydrophonics2" parent="Planters" index="1" instance=ExtResource("7_sglw3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.7, 1.2, 0)
+
+[node name="hydrophonics3" parent="Planters" index="2" instance=ExtResource("7_sglw3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.7, 1.2, 4.2)
+
+[node name="hydrophonics4" parent="Planters" index="3" instance=ExtResource("7_sglw3")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -1, 1.2, -4.2)
+
+[node name="hydrophonics5" parent="Planters" index="4" instance=ExtResource("7_sglw3")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -1, 1.2, 0)
+
+[node name="hydrophonics6" parent="Planters" index="5" instance=ExtResource("7_sglw3")]
+transform = Transform3D(1, 0, 1.74846e-07, 0, 1, 0, -1.74846e-07, 0, 1, 1, 1.2, -4.2)
+
+[node name="hydrophonics7" parent="Planters" index="6" instance=ExtResource("7_sglw3")]
+transform = Transform3D(1, 0, 1.74846e-07, 0, 1, 0, -1.74846e-07, 0, 1, 1, 1.2, 0)
+
+[node name="hydrophonics8" parent="Planters" index="7" instance=ExtResource("7_sglw3")]
+transform = Transform3D(-1, 0, -2.62268e-07, 0, 1, 0, 2.62268e-07, 0, -1, 6.3, 1.2, -4.2)
+
+[node name="hydrophonics9" parent="Planters" index="8" instance=ExtResource("7_sglw3")]
+transform = Transform3D(-1, 0, -2.62268e-07, 0, 1, 0, 2.62268e-07, 0, -1, 6.3, 1.2, 0)
+
+[node name="hydrophonics10" parent="Planters" index="9" instance=ExtResource("7_sglw3")]
+transform = Transform3D(-1, 0, -2.62268e-07, 0, 1, 0, 2.62268e-07, 0, -1, 6.3, 1.2, 4.2)

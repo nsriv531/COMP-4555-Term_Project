@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://b7iupk2lgvqil"]
+
+[ext_resource type="PackedScene" uid="uid://b5qgxx6me47lf" path="res://assets/Props/Props_glb/sci-fi_bed.glb" id="1_xum2f"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_sciwt"]
+size = Vector3(0.617895, 1.28388, 2.04899)
+
+[node name="sci-fi_bed" instance=ExtResource("1_xum2f")]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." index="1"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.00662959, 0)
+shape = SubResource("BoxShape3D_sciwt")

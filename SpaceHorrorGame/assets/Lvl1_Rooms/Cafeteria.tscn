@@ -1,10 +1,12 @@
-[gd_scene load_steps=6 format=3 uid="uid://dw5r0u10smu5b"]
+[gd_scene load_steps=8 format=3 uid="uid://dw5r0u10smu5b"]
 
 [ext_resource type="PackedScene" uid="uid://bs6xxjc8jih2k" path="res://assets/Walls/wall-scenes/small/doorway walls/small_doorway_2.tscn" id="3_t0yja"]
 [ext_resource type="PackedScene" uid="uid://ci128r2d5536j" path="res://assets/Walls/wall-scenes/large/misc walls/cafeteria_wall.tscn" id="4_512l6"]
 [ext_resource type="PackedScene" uid="uid://c0j244i5vis8i" path="res://assets/Walls/wall-scenes/small/solid walls/small_interior_2_v2.tscn" id="5_1c6hb"]
 [ext_resource type="PackedScene" uid="uid://t02frhgymon" path="res://assets/Room_Frames/frame-scenes/cafeteria_frame_new.tscn" id="5_i8xl8"]
 [ext_resource type="PackedScene" uid="uid://ym5itbtm4lbj" path="res://assets/Walls/wall-scenes/large/doorway walls/large_doorway_2.tscn" id="5_q5unr"]
+[ext_resource type="PackedScene" uid="uid://cbdrxwspegxkd" path="res://assets/Props/Prop_Scenes/cafeteria_set_2.tscn" id="6_0iwi5"]
+[ext_resource type="PackedScene" uid="uid://p3d0csccvskx" path="res://assets/Props/Prop_Scenes/cafeteria_set_1.tscn" id="7_hbbcx"]
 
 [node name="Mess_Hall" type="Node3D" groups=["navigation_mesh_source_group"]]
 
@@ -30,3 +32,18 @@ transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 9, 0, 
 
 [node name="small_interior_3" parent="." instance=ExtResource("5_1c6hb")]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 5, 0, 9)
+
+[node name="cafeteria_set4" parent="." instance=ExtResource("6_0iwi5")]
+transform = Transform3D(1.89466, 0, -0.640532, 0, 2, 0, 0.640532, 0, 1.89466, 3.86951, 0.00396967, 0.101192)
+
+[node name="cafeteria_set5" parent="." instance=ExtResource("6_0iwi5")]
+transform = Transform3D(1.89466, 0, -0.640532, 0, 2, 0, 0.640532, 0, 1.89466, 6.04928, 0.00396967, 5.42278)
+
+[node name="cafeteria_set6" parent="." instance=ExtResource("6_0iwi5")]
+transform = Transform3D(-1.08177, 0, -1.68219, 0, 2, 0, 1.68219, 0, -1.08177, -0.439442, 0.00396967, 5.42278)
+
+[node name="cafeteria_set" parent="." instance=ExtResource("7_hbbcx")]
+transform = Transform3D(1.75241, 0, -0.963874, 0, 2, 0, 0.963874, 0, 1.75241, -4.65175, 0.00396967, 0.601701)
+
+[node name="cafeteria_set2" parent="." instance=ExtResource("7_hbbcx")]
+transform = Transform3D(1.75241, 0, -0.963874, 0, 2, 0, 0.963874, 0, 1.75241, 0.0885575, 0.00396967, -5.95362)

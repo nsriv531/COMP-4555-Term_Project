@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://dimbt0twyupqv"]
+[gd_scene load_steps=6 format=3 uid="uid://dimbt0twyupqv"]
 
 [ext_resource type="PackedScene" uid="uid://bhisunddd7aex" path="res://assets/Walls/wall-scenes/small/doorway walls/small_doorway_1.tscn" id="2_75yvt"]
 [ext_resource type="PackedScene" uid="uid://db1x07jen5tex" path="res://assets/Walls/wall-scenes/large/doorway walls/large_doorway_1.tscn" id="3_gorhx"]
 [ext_resource type="PackedScene" uid="uid://dy3uf0rj8pvc8" path="res://assets/Walls/wall-scenes/large/solid walls/large_interior_1.tscn" id="4_ecgoq"]
 [ext_resource type="PackedScene" uid="uid://b8yfmssmm73rf" path="res://assets/Room_Frames/frame-scenes/dorm_frame.tscn" id="4_y0w38"]
+[ext_resource type="PackedScene" uid="uid://b7iupk2lgvqil" path="res://assets/Props/Prop_Scenes/sci_fi_bed.tscn" id="5_6atsg"]
 
 [node name="Sleeping_Quarters" type="Node3D" groups=["navigation_mesh_source_group"]]
 
@@ -23,3 +24,35 @@ transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, 
 
 [node name="large_doorway_2" parent="." instance=ExtResource("3_gorhx")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 9, 0, 0)
+
+[node name="Beds" type="Node3D" parent="."]
+
+[node name="sci-fi_bed" parent="Beds" instance=ExtResource("5_6atsg")]
+transform = Transform3D(3.27835e-07, 0, -2.5, 0, 2.5, 0, 2.5, 0, 3.27835e-07, 5, 1.5, -7)
+
+[node name="sci-fi_bed2" parent="Beds" instance=ExtResource("5_6atsg")]
+transform = Transform3D(3.27835e-07, 0, -2.5, 0, 2.5, 0, 2.5, 0, 3.27835e-07, 0, 1.5, -7)
+
+[node name="sci-fi_bed3" parent="Beds" instance=ExtResource("5_6atsg")]
+transform = Transform3D(-1.09278e-07, 0, 2.5, 0, 2.5, 0, -2.5, 0, -1.09278e-07, -5, 1.5, -7)
+
+[node name="sci-fi_bed4" parent="Beds" instance=ExtResource("5_6atsg")]
+transform = Transform3D(-1.09278e-07, 0, 2.5, 0, 2.5, 0, -2.5, 0, -1.09278e-07, -5, 1.5, -3)
+
+[node name="sci-fi_bed5" parent="Beds" instance=ExtResource("5_6atsg")]
+transform = Transform3D(-1.09278e-07, 0, 2.5, 0, 2.5, 0, -2.5, 0, -1.09278e-07, 0, 1.5, -3)
+
+[node name="sci-fi_bed6" parent="Beds" instance=ExtResource("5_6atsg")]
+transform = Transform3D(3.27835e-07, 0, -2.5, 0, 2.5, 0, 2.5, 0, 3.27835e-07, 0, 1.5, 2)
+
+[node name="sci-fi_bed7" parent="Beds" instance=ExtResource("5_6atsg")]
+transform = Transform3D(3.27835e-07, 0, -2.5, 0, 2.5, 0, 2.5, 0, 3.27835e-07, -5, 1.5, 2)
+
+[node name="sci-fi_bed8" parent="Beds" instance=ExtResource("5_6atsg")]
+transform = Transform3D(-5.46392e-07, 0, 2.5, 0, 2.5, 0, -2.5, 0, -5.46392e-07, 0, 1.5, 7)
+
+[node name="sci-fi_bed9" parent="Beds" instance=ExtResource("5_6atsg")]
+transform = Transform3D(-5.46392e-07, 0, 2.5, 0, 2.5, 0, -2.5, 0, -5.46392e-07, -5, 1.5, 7)
+
+[node name="sci-fi_bed10" parent="Beds" instance=ExtResource("5_6atsg")]
+transform = Transform3D(-5.46392e-07, 0, 2.5, 0, 2.5, 0, -2.5, 0, -5.46392e-07, 5, 1.5, 7)

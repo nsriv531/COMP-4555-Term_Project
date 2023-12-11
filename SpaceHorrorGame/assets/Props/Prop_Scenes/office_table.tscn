@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3 uid="uid://ilqkbsojq3fu"]
+
+[ext_resource type="PackedScene" uid="uid://bftwc6q1uma5h" path="res://assets/Props/Props_glb/officetable.glb" id="1_xw0jc"]
+
+[node name="officetable" instance=ExtResource("1_xw0jc")]
