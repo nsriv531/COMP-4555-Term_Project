@@ -2,18 +2,17 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://unsay6tf6jlq"
-path.s3tc="res://.godot/imported/sci-fi_fridge_3.png-d364db81e3fbe2d0ccdfaa9893fb90f6.s3tc.ctex"
+uid="uid://gc5vwwmfs2cv"
+path.s3tc="res://.godot/imported/Wall_Long_ambientOcclusion.jpg-4a0dbf644065f11ab4f7ae216c52b89f.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
-generator_parameters={}
 
 [deps]
 
-source_file="res://room_textures/sci-fi_fridge_3.png"
-dest_files=["res://.godot/imported/sci-fi_fridge_3.png-d364db81e3fbe2d0ccdfaa9893fb90f6.s3tc.ctex"]
+source_file="res://room_textures/wall_4_long/Wall_Long_ambientOcclusion.jpg"
+dest_files=["res://.godot/imported/Wall_Long_ambientOcclusion.jpg-4a0dbf644065f11ab4f7ae216c52b89f.s3tc.ctex"]
 
 [params]
 
@@ -21,12 +20,12 @@ compress/mode=2
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/hdr_compression=1
-compress/normal_map=1
+compress/normal_map=0
 compress/channel_pack=0
 mipmaps/generate=true
 mipmaps/limit=-1
-roughness/mode=1
-roughness/src_normal="res://room_textures/sci-fi_fridge_3.png"
+roughness/mode=8
+roughness/src_normal="res://room_textures/wall_4_long/Wall_Long_normal.jpg"
 process/fix_alpha_border=true
 process/premult_alpha=false
 process/normal_map_invert_y=false

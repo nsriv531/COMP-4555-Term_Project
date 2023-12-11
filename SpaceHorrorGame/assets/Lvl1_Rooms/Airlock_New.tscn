@@ -4,17 +4,18 @@
 [ext_resource type="Script" path="res://assets/Lvl1_Rooms/LvL1_Room_Scripts/Airlock.gd" id="2_k6gkh"]
 [ext_resource type="Material" uid="uid://dsevd2g5vx6d7" path="res://room_textures/Base_Exterior_Color.tres" id="2_mcbgw"]
 [ext_resource type="Material" uid="uid://nvs1pw5jy4sd" path="res://room_textures/glass_texture_exterior.tres" id="3_hkpyn"]
+[ext_resource type="Material" uid="uid://b76x3kohpc77b" path="res://room_textures/Wall1_texture.tres" id="3_j1iib"]
 [ext_resource type="Material" uid="uid://ctihvcbbldelq" path="res://room_textures/glass_texture_interior.tres" id="4_nfo66"]
+[ext_resource type="Material" uid="uid://c312lvpbj5eum" path="res://room_textures/Ceiling_Edge_Texture.tres" id="5_wyp87"]
 [ext_resource type="Texture2D" uid="uid://b0entxnd22a27" path="res://room_textures/Metal_scratched_009_roughness.jpg" id="5_y04nw"]
+[ext_resource type="Material" uid="uid://dsgg0p7hok6l1" path="res://room_textures/Wall_Pillar_Texture.tres" id="6_2hp4g"]
+[ext_resource type="Material" uid="uid://c1inpwfcak3ro" path="res://room_textures/wall_4_long/wall_4_long_2.tres" id="7_mh4q0"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jhpvj"]
 albedo_color = Color(0.698039, 0.698039, 0.698039, 1)
 metallic = 0.17
 roughness = 0.35
 roughness_texture_channel = 1
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ajhpv"]
-albedo_color = Color(0.509804, 0.509804, 0.509804, 1)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8uvya"]
 albedo_color = Color(0.509804, 0.509804, 0.509804, 1)
@@ -34,11 +35,6 @@ size = Vector3(14.0851, 0.30048, 8.04946)
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_l7d01"]
 emission_enabled = true
 emission = Color(0.733333, 0.733333, 0.733333, 1)
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_q4aua"]
-albedo_color = Color(0.431373, 0.431373, 0.431373, 1)
-metallic = 0.2
-roughness = 0.46
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_mvfke"]
 albedo_color = Color(0.639216, 0.639216, 0.639216, 1)
@@ -71,16 +67,9 @@ size = Vector3(2.40771, 0.595605, 6.62961)
 [sub_resource type="BoxShape3D" id="BoxShape3D_nyrpg"]
 size = Vector3(1.99905, 0.414425, 6.62961)
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4u7co"]
-albedo_color = Color(0.627451, 0.627451, 0.627451, 1)
-metallic = 0.4
-roughness = 0.3
-
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8wpjb"]
 emission_enabled = true
 emission = Color(0.631373, 0, 0, 1)
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ml4mx"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7bgyf"]
 albedo_color = Color(0.215686, 0.215686, 0.215686, 1)
@@ -92,7 +81,7 @@ script = ExtResource("2_k6gkh")
 material_override = SubResource("StandardMaterial3D_jhpvj")
 
 [node name="Vent_Tubes" parent="." index="1"]
-material_override = SubResource("StandardMaterial3D_ajhpv")
+material_override = ExtResource("3_j1iib")
 
 [node name="Vents" parent="." index="2"]
 material_override = SubResource("StandardMaterial3D_8uvya")
@@ -121,6 +110,9 @@ shape = SubResource("BoxShape3D_3tf8x")
 transform = Transform3D(0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, 6.5, 3, 3.5)
 shape = SubResource("BoxShape3D_3tf8x")
 
+[node name="Ceiling_Frame" parent="." index="5"]
+material_override = ExtResource("5_wyp87")
+
 [node name="StaticBody3D" type="StaticBody3D" parent="Ceiling_Frame" index="0"]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Ceiling_Frame/StaticBody3D" index="0"]
@@ -131,7 +123,7 @@ shape = SubResource("BoxShape3D_xrfox")
 material_override = SubResource("StandardMaterial3D_l7d01")
 
 [node name="Ceiling_Panels" parent="." index="7"]
-material_override = SubResource("StandardMaterial3D_q4aua")
+material_override = ExtResource("6_2hp4g")
 
 [node name="Floor" parent="." index="8"]
 material_override = SubResource("StandardMaterial3D_mvfke")
@@ -188,13 +180,13 @@ material_override = ExtResource("2_mcbgw")
 material_override = ExtResource("4_nfo66")
 
 [node name="Wall_Pillar_Interior" parent="." index="15"]
-material_override = SubResource("StandardMaterial3D_4u7co")
+material_override = ExtResource("6_2hp4g")
 
 [node name="Wall_Interior_Lights" parent="." index="16"]
 material_override = SubResource("StandardMaterial3D_8wpjb")
 
 [node name="Wall_Interior" parent="." index="17"]
-material_override = SubResource("StandardMaterial3D_ml4mx")
+material_override = ExtResource("7_mh4q0")
 
 [node name="Door_Frame" parent="." index="18"]
 material_override = SubResource("StandardMaterial3D_7bgyf")

@@ -2,18 +2,17 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cljq0ts227yjw"
-path.s3tc="res://.godot/imported/sci-fi_fridge_5.png-be56aca28c3aeadd6052c326f8b13e71.s3tc.ctex"
+uid="uid://gmmxmrjwlkg3"
+path.s3tc="res://.godot/imported/Stylized_Sci-fi_Wall_001_metallic.jpg-2252c466a47535a087333105b7f6abe3.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
-generator_parameters={}
 
 [deps]
 
-source_file="res://room_textures/sci-fi_fridge_5.png"
-dest_files=["res://.godot/imported/sci-fi_fridge_5.png-be56aca28c3aeadd6052c326f8b13e71.s3tc.ctex"]
+source_file="res://room_textures/wall_4/Stylized_Sci-fi_Wall_001_metallic.jpg"
+dest_files=["res://.godot/imported/Stylized_Sci-fi_Wall_001_metallic.jpg-2252c466a47535a087333105b7f6abe3.s3tc.ctex"]
 
 [params]
 

@@ -1,0 +1,39 @@
+[gd_scene load_steps=7 format=3 uid="uid://c2pcfdepjjamc"]
+
+[ext_resource type="PackedScene" uid="uid://c7g1hfrlldy3f" path="res://assets/Props/Props_glb/Counter.glb" id="1_i1o8n"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_grv4x"]
+albedo_color = Color(0.537255, 0.537255, 0.537255, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_s2n71"]
+albedo_color = Color(0.537255, 0.537255, 0.537255, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_va3jm"]
+emission_enabled = true
+emission = Color(0.890196, 0.890196, 0.890196, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_rrm78"]
+size = Vector3(1.79551, 1.49047, 2.60161)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0oex1"]
+albedo_color = Color(0.537255, 0.537255, 0.537255, 1)
+
+[node name="Counter" instance=ExtResource("1_i1o8n")]
+
+[node name="Counter_Base" parent="." index="0"]
+material_override = SubResource("StandardMaterial3D_grv4x")
+
+[node name="Counter_Edges" parent="." index="1"]
+material_override = SubResource("StandardMaterial3D_s2n71")
+
+[node name="Counter_Details" parent="." index="2"]
+material_override = SubResource("StandardMaterial3D_va3jm")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." index="3"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.936241, 0.726828, 0)
+shape = SubResource("BoxShape3D_rrm78")
+
+[node name="Counter_Top" parent="." index="4"]
+material_override = SubResource("StandardMaterial3D_0oex1")

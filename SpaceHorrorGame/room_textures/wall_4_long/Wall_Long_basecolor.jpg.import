@@ -2,18 +2,17 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bppurb3537bth"
-path.s3tc="res://.godot/imported/sci-fi_fridge_4.png-4f8efde81cb7bf77f17e9dc41a93d028.s3tc.ctex"
+uid="uid://ceeljuhhpgvh6"
+path.s3tc="res://.godot/imported/Wall_Long_basecolor.jpg-7e78d5bfe64ac44f0a5ae60b5ec384c8.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
-generator_parameters={}
 
 [deps]
 
-source_file="res://room_textures/sci-fi_fridge_4.png"
-dest_files=["res://.godot/imported/sci-fi_fridge_4.png-4f8efde81cb7bf77f17e9dc41a93d028.s3tc.ctex"]
+source_file="res://room_textures/wall_4_long/Wall_Long_basecolor.jpg"
+dest_files=["res://.godot/imported/Wall_Long_basecolor.jpg-7e78d5bfe64ac44f0a5ae60b5ec384c8.s3tc.ctex"]
 
 [params]
 

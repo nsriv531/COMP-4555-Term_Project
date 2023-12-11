@@ -1,0 +1,12 @@
+[gd_resource type="StandardMaterial3D" load_steps=3 format=3 uid="uid://c312lvpbj5eum"]
+
+[ext_resource type="Texture2D" uid="uid://d2gynulb137qw" path="res://room_textures/flooring_3/Sci-fi_Floor_002_metallic.jpg" id="1_mpvx3"]
+[ext_resource type="Texture2D" uid="uid://ctji7imlr622e" path="res://room_textures/flooring_3/Sci-fi_Floor_002_roughness.jpg" id="2_nng4a"]
+
+[resource]
+albedo_color = Color(0.2, 0.2, 0.2, 1)
+metallic = 0.6
+metallic_texture = ExtResource("1_mpvx3")
+roughness = 0.9
+roughness_texture = ExtResource("2_nng4a")
+roughness_texture_channel = 1

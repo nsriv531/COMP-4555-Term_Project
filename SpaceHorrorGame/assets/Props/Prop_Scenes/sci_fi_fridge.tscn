@@ -1,0 +1,53 @@
+[gd_scene load_steps=8 format=3 uid="uid://csseh3yqcrhe1"]
+
+[ext_resource type="PackedScene" uid="uid://qff6ao5x1dcx" path="res://assets/Props/Props_glb/sci-fi_fridge.glb" id="1_3n6ef"]
+[ext_resource type="Material" uid="uid://nvs1pw5jy4sd" path="res://room_textures/glass_texture_exterior.tres" id="2_0yila"]
+[ext_resource type="Texture2D" uid="uid://derxuij4qrug3" path="res://room_textures/fridge_texture/sci-fi_fridge_2.png" id="3_o8otj"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jecvj"]
+albedo_texture = ExtResource("3_o8otj")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_i5v35"]
+albedo_color = Color(1, 0.227451, 0, 1)
+emission_enabled = true
+emission = Color(1, 0.227451, 0, 1)
+emission_energy_multiplier = 0.15
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_i6h60"]
+albedo_texture = ExtResource("3_o8otj")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ciry2"]
+size = Vector3(7.247, 9.65823, 4.03435)
+
+[node name="sci-fi_fridge" instance=ExtResource("1_3n6ef")]
+
+[node name="Object_17" parent="Sketchfab_model/root/GLTF_SceneRootNode/Sketchfab_model_49/Project Name_fbx_48/RootNode_47/Sketchfab_model 1_32/Project Name_fbx_001_31/RootNode_002_30/Project Name_18/Sketchfab_model 1_001_17/Foods_fbx_16/RootNode_003_15/Cantaloupe_6/Cantaloupe_Foods_0_5/Cantaloupe_Foods_0_Foods_0_4/Cantaloupe_Foods_0_Foods_0_Foods_0_3" index="0"]
+transform = Transform3D(1, 6.54836e-10, 4.19095e-09, -2.97296e-08, 1, 1.49012e-08, -2.09548e-09, 0, 1, 10.2547, -3.07951, 0.236847)
+
+[node name="Object_22" parent="Sketchfab_model/root/GLTF_SceneRootNode/Sketchfab_model_49/Project Name_fbx_48/RootNode_47/Sketchfab_model 1_32/Project Name_fbx_001_31/RootNode_002_30/Project Name_18/Sketchfab_model 1_001_17/Foods_fbx_16/RootNode_003_15/Pineapple_10/Pineapple_Foods_0_9/Pineapple_Foods_0_Foods_0_8/Pineapple_Foods_0_Foods_0_Foods_0_7" index="0"]
+transform = Transform3D(1, -4.19095e-09, 6.78701e-08, 1.62981e-09, 1, -2.98023e-08, -5.29399e-08, -1.49012e-08, 1, 13.0727, 0.565227, -3.89656)
+
+[node name="Object_27" parent="Sketchfab_model/root/GLTF_SceneRootNode/Sketchfab_model_49/Project Name_fbx_48/RootNode_47/Sketchfab_model 1_32/Project Name_fbx_001_31/RootNode_002_30/Project Name_18/Sketchfab_model 1_001_17/Foods_fbx_16/RootNode_003_15/Watermelon_02_14/Watermelon_02_Foods_0_13/Watermelon_02_Foods_0_Foods_0_12/Watermelon_02_Foods_0_Foods_0_Foods_0_11" index="0"]
+transform = Transform3D(1, 0, 4.47035e-08, 2.98023e-08, 1, 2.98023e-08, 2.98023e-08, -2.98023e-08, 1, -6.19906, 1.64079, 5.52657)
+
+[node name="Object_39" parent="Sketchfab_model/root/GLTF_SceneRootNode/Sketchfab_model_49/Project Name_fbx_48/RootNode_47/Sketchfab_model 1_32/Project Name_fbx_001_31/RootNode_002_30/Sketchfab_model_002_29/Project Name_fbx_002_28/RootNode 1_27/Sketchfab_model 1_003_26/65c6b08417714006957ec9a5df016a6e_fbx_001_25/RootNode_005_24/Box005 1_23/Box005_02 - Default_0_22/Box005_02 - Default_0_02_-_Default_0_21/Box005_02 - Default_0_02_-_Default_0_02_-_Default 1_0_20/Box005_02 - Default_0_02_-_Default_0_02_-_Default 1_0_02_-_Defa_19" index="0"]
+transform = Transform3D(1, -2.32831e-10, 0, 0, 1, 1.74623e-10, -2.98023e-08, 5.82077e-11, 1, -10.406, 0.0173607, 43.5749)
+material_override = ExtResource("2_0yila")
+
+[node name="Object_47" parent="Sketchfab_model/root/GLTF_SceneRootNode/Sketchfab_model_49/Project Name_fbx_48/RootNode_47/Sketchfab_model_001_46/de14748050514b4b8b44fbe6d1dd6f60_fbx_45/RootNode_001_44/pCube42_43/polySurface10_35/polySurface10_black_0_34/polySurface10_black_0_black_0_33" index="0"]
+transform = Transform3D(1, 2.78452e-29, -3.15544e-30, -1.32349e-23, 1, -1.13687e-13, 6.31089e-30, 1.13687e-13, 1, 0, -86.2422, 5.81574e-05)
+material_override = SubResource("StandardMaterial3D_jecvj")
+
+[node name="Object_52" parent="Sketchfab_model/root/GLTF_SceneRootNode/Sketchfab_model_49/Project Name_fbx_48/RootNode_47/Sketchfab_model_001_46/de14748050514b4b8b44fbe6d1dd6f60_fbx_45/RootNode_001_44/pCube42_43/polySurface9_42/polySurface11_38/polySurface11_white_0_37/polySurface11_white_0_white_0_36" index="0"]
+transform = Transform3D(1, 2.78452e-29, -3.15544e-30, -1.32349e-23, 1, -1.13687e-13, 6.31089e-30, 1.13687e-13, 1, 0, -86.2422, 5.81574e-05)
+material_override = SubResource("StandardMaterial3D_i5v35")
+
+[node name="Object_56" parent="Sketchfab_model/root/GLTF_SceneRootNode/Sketchfab_model_49/Project Name_fbx_48/RootNode_47/Sketchfab_model_001_46/de14748050514b4b8b44fbe6d1dd6f60_fbx_45/RootNode_001_44/pCube42_43/polySurface9_42/polySurface12_41/polySurface12_black_0_40/polySurface12_black_0_black_0_39" index="0"]
+transform = Transform3D(1, 2.78452e-29, -3.15544e-30, -1.32349e-23, 1, -1.13687e-13, 6.31089e-30, 1.13687e-13, 1, 0, -86.2422, 5.81574e-05)
+material_override = SubResource("StandardMaterial3D_i6h60")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." index="2"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.550468, 4.62777, 0)
+shape = SubResource("BoxShape3D_ciry2")

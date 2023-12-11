@@ -1,0 +1,33 @@
+[gd_scene load_steps=6 format=3 uid="uid://dggtd7cc4rg6r"]
+
+[ext_resource type="PackedScene" uid="uid://c8xamdagbs8vq" path="res://assets/Props/Props_glb/Cabinet.glb" id="1_6bs08"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_u4upl"]
+emission_enabled = true
+emission = Color(0, 0, 0.803922, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2705t"]
+albedo_color = Color(0.537255, 0.537255, 0.537255, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_qljts"]
+albedo_color = Color(0.537255, 0.537255, 0.537255, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_o5wpq"]
+size = Vector3(0.545322, 1.49923, 3.07569)
+
+[node name="Cabinet" instance=ExtResource("1_6bs08")]
+
+[node name="Handles" parent="." index="0"]
+material_override = SubResource("StandardMaterial3D_u4upl")
+
+[node name="Cabinet_Edges" parent="." index="2"]
+material_override = SubResource("StandardMaterial3D_2705t")
+
+[node name="Cabinet_Base" parent="." index="3"]
+material_override = SubResource("StandardMaterial3D_qljts")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." index="4"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.350718, 3.28921, 0)
+shape = SubResource("BoxShape3D_o5wpq")

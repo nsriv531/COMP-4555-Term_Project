@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://cntd4iwnpveuq"
-path="res://.godot/imported/Kitchen_Frame.gltf-a688bacaa90b6ce505d1ab373ff571d1.scn"
+uid="uid://bwm2mbbcy45jf"
+path="res://.godot/imported/New_Kitchen.glb-d78417588073bc79babe4f22bd1928aa.scn"
 
 [deps]
 
-source_file="res://assets/Room_Frames/Kitchen_Frame.gltf"
-dest_files=["res://.godot/imported/Kitchen_Frame.gltf-a688bacaa90b6ce505d1ab373ff571d1.scn"]
+source_file="res://assets/Room_Frames/New_Kitchen.glb"
+dest_files=["res://.godot/imported/New_Kitchen.glb-d78417588073bc79babe4f22bd1928aa.scn"]
 
 [params]
 
