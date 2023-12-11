@@ -1,4 +1,4 @@
-[gd_scene load_steps=114 format=3 uid="uid://1csibo7xkgx1"]
+[gd_scene load_steps=115 format=3 uid="uid://1csibo7xkgx1"]
 
 [ext_resource type="Script" path="res://addons/zylann.hterrain/hterrain.gd" id="1_ilc75"]
 [ext_resource type="Shader" path="res://Scripts/CameraEffects.gdshader" id="1_m1fa5"]
@@ -20,6 +20,7 @@
 [ext_resource type="Script" path="res://Scripts/PauseMenu.gd" id="13_8b2il"]
 [ext_resource type="PackedScene" uid="uid://clehtd5os8h8o" path="res://Objects/Note.tscn" id="14_d2cap"]
 [ext_resource type="AudioStream" uid="uid://by6gr0ob08hyt" path="res://Sounds/level1ambient.wav" id="14_o0cq4"]
+[ext_resource type="Texture2D" uid="uid://cnjvwyk0mq35s" path="res://assets/(Mess Hall) EMAIL_NOTE_immediate extraction.png" id="14_q5uce"]
 [ext_resource type="AudioStream" uid="uid://orqrfmactyx8" path="res://Sounds/footstep.ogg" id="14_rxa8h"]
 [ext_resource type="FontFile" uid="uid://u6tcmb3b8aj2" path="res://assets/menu font.otf" id="14_yii0t"]
 [ext_resource type="PackedScene" uid="uid://7nb1ucn8kuy1" path="res://models/landingpad.gltf" id="17_mk40t"]
@@ -658,17 +659,20 @@ script = ExtResource("10_sxumy")
 [node name="CanvasLayer" type="CanvasLayer" parent="Player/GUI"]
 layer = 3
 
+[node name="NoteTextRect" type="TextureRect" parent="Player/GUI/CanvasLayer"]
+offset_left = 395.0
+offset_top = 31.0
+offset_right = 895.0
+offset_bottom = 681.0
+texture = ExtResource("14_q5uce")
+expand_mode = 1
+
 [node name="NoteContainer" type="CenterContainer" parent="Player/GUI/CanvasLayer"]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-
-[node name="NoteTextRect" type="TextureRect" parent="Player/GUI/CanvasLayer/NoteContainer"]
-visible = false
-layout_mode = 2
-texture = ExtResource("10_xbnsg")
 
 [node name="CrosshairContainer" type="CenterContainer" parent="Player/GUI/CanvasLayer"]
 anchors_preset = 15
@@ -703,6 +707,7 @@ process_thread_group = 1
 process_thread_group_order = 0
 process_thread_messages = 0
 layer = 6
+visible = false
 script = ExtResource("13_8b2il")
 
 [node name="ColorRect" type="ColorRect" parent="Player/GUI/PauseMenu"]
@@ -777,6 +782,18 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 21.9032, 22.6185, -12.7266)
 collision_layer = 2
 collision_mask = 0
 noteImage = ExtResource("10_xbnsg")
+
+[node name="MessHallNote" parent="." instance=ExtResource("14_d2cap")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20.3299, 21.4977, -20.8646)
+collision_layer = 2
+collision_mask = 0
+noteImage = ExtResource("14_q5uce")
+
+[node name="SleepingQuartersNote" parent="." instance=ExtResource("14_d2cap")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18.5308, 21.4977, -3.44933)
+collision_layer = 2
+collision_mask = 0
+noteImage = ExtResource("14_q5uce")
 
 [node name="landingpad" parent="." instance=ExtResource("17_mk40t")]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 22.2, 20.975, -12)
