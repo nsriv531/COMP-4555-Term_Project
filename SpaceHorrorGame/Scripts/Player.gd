@@ -193,4 +193,4 @@ func damage():
 	
 func play_jumpscare():
 	print("hi")
-	$Jumpscare.play()
+
